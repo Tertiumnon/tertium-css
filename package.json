@@ -1,0 +1,24 @@
+{
+  "name": "tertium-css",
+  "version": "0.0.0",
+  "description": "Tailwind-inspired CSS utility classes",
+  "main": "dist/tertium.min.css",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "release:patch": "node node_modules/@tertium/shared-js-configs-and-types/scripts/release.js patch",
+    "release:minor": "node node_modules/@tertium/shared-js-configs-and-types/scripts/release.js minor",
+    "release:major": "node node_modules/@tertium/shared-js-configs-and-types/scripts/release.js major"
+  },
+  "keywords": [
+    "css",
+    "utility",
+    "tailwind"
+  ],
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "@tertium/shared-js-configs-and-types": "^0.14.0"
+  }
+}

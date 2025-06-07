@@ -1,0 +1,26 @@
+/* Border width */
+.border { border-width: 1px; }
+.border-0 { border-width: 0; }
+.border-2 { border-width: 2px; }
+.border-4 { border-width: 4px; }
+
+/* Border style */
+.border-solid { border-style: solid; }
+.border-dashed { border-style: dashed; }
+.border-dotted { border-style: dotted; }
+
+/* Border color */
+.border-black { border-color: #000000; }
+.border-white { border-color: #ffffff; }
+.border-gray-300 { border-color: #d1d5db; }
+.border-gray-500 { border-color: #6b7280; }
+.border-blue-500 { border-color: #3b82f6; }
+.border-red-500 { border-color: #ef4444; }
+
+/* Border radius */
+.rounded-none { border-radius: 0; }
+.rounded-sm { border-radius: 0.125rem; }
+.rounded { border-radius: 0.25rem; }
+.rounded-md { border-radius: 0.375rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-full { border-radius: 9999px; }

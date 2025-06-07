@@ -1,0 +1,14 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "tertium-css",
+      "devDependencies": {
+        "@tertium/shared-js-configs-and-types": "^0.14.0",
+      },
+    },
+  },
+  "packages": {
+    "@tertium/shared-js-configs-and-types": ["@tertium/shared-js-configs-and-types@0.14.0", "", {}, "sha512-qi8oPzvxtKh+8VQ3pC9lz7R320sCySnUs6qSzfNeC7Z5IRBXypEj+jaEIRo12qgFougoen42Xpfg6vzaQ2Lmpw=="],
+  }
+}
