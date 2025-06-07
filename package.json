@@ -1,6 +1,6 @@
 {
   "name": "tertium-css",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Tailwind-inspired CSS utility classes",
   "main": "dist/tertium.min.css",
   "type": "module",
