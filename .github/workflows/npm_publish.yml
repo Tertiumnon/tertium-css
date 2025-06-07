@@ -1,31 +1,32 @@
-name: Build and Publish
+name: Publish Package
 
 on:
   push:
-    branches: [main]
-  release:
-    types: [created]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
-  build-and-publish:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+      - name: Install Bun
+        run: curl -fsSL https://bun.sh/install | bash
+
+      - name: Add Bun to PATH
+        run: echo "$HOME/.bun/bin" >> $GITHUB_PATH
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          bun-version: latest
-          registry-url: "https://registry.npmjs.org"
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org/"
 
       - name: Install dependencies
         run: bun install
 
-      - name: Build
-        run: bun run build
-
-      - name: Publish to npm
+      - name: Publish to npm (with Bun)
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
