@@ -1,6 +1,6 @@
 {
   "name": "@tertium/css",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Universal design system with tokens, themes, components, and utilities",
   "main": "dist/bundles/main.min.css",
   "type": "module",
