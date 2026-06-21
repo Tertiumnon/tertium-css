@@ -1,0 +1,229 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* DARK PURPLE GOLD THEME - Purple & Gold                              */
+/* Sophisticated dark theme with gold text accents                     */
+/* Extracted from dragons-legends.www                                  */
+/* Used for gaming, fantasy interfaces, and high-contrast scenarios    */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+[data-theme="dark-purple--gold"] {
+  /* PRIMARY THEME COLOR - GOLD for text/accents */
+  --color-primary: #f0c060;
+  --color-primary-light: #ffdb8f;
+  --color-primary-lighter: #fff5e6;
+  --color-primary-dark: #c8922a;
+  --color-primary-darker: #a06a1a;
+
+  /* LINK COLORS - derived from primary */
+  --color-link: var(--color-primary-light);
+  --color-link-visited: var(--color-primary-dark);
+  --color-link-hover: var(--color-primary-lighter);
+
+  --color-primary-rgb: 240, 192, 96;
+
+  /* BACKGROUND COLORS - all derived from base page color */
+  --color-bg-page: #0d0820;
+  --color-bg-main: color-mix(in srgb, var(--color-bg-page) 60%, black 40%);
+  --color-bg-main-active: color-mix(in srgb, var(--color-bg-page) 50%, black 50%);
+  --color-bg-form: color-mix(in srgb, var(--color-bg-page) 90%, black 10%);
+  --color-bg-form-input: color-mix(in srgb, var(--color-bg-page) 80%, var(--color-primary) 20%);
+  --color-bg-secondary: color-mix(in srgb, var(--color-bg-page) 85%, black 15%);
+  --color-bg-tertiary: color-mix(in srgb, var(--color-bg-page) 75%, black 25%);
+  --bg-card: rgba(30, 15, 50, 0.85);
+
+  /* SECONDARY ACCENT COLORS - Purple */
+  --color-secondary: #c084fc;
+  --color-secondary-light: #d4a6ff;
+  --color-secondary-dark: #9d4aed;
+  --color-secondary-lighter: #e6c7ff;
+
+  /* STATUS COLORS */
+  --color-success: #10b981;
+  --color-success-light: #e8f5e9;
+  --color-success-hover: #31c584;
+
+  --color-warning: #f59e0b;
+  --color-warning-light: #fffbeb;
+  --color-warning-hover: #f59e0b;
+
+  --color-danger: #ef4444;
+  --color-danger-light: #fee2e2;
+  --color-danger-hover: #f87171;
+
+  --color-info: #3b82f6;
+  --color-info-light: #eff6ff;
+  --color-info-hover: #60a5fa;
+
+  /* BORDER COLORS */
+  --color-border-light: color-mix(in srgb, var(--color-primary) 25%, #3a2555);
+  --color-border-medium: color-mix(in srgb, var(--color-primary) 50%, #5a3575);
+  --color-border-dark: var(--color-primary);
+
+  /* TEXT COLORS */
+  --color-text: #ede8f5;
+  --color-text-secondary: rgba(237, 232, 245, 0.85);
+  --color-text-tertiary: rgba(237, 232, 245, 0.65);
+  --color-text-muted: rgba(237, 232, 245, 0.5);
+
+  --color-text-inverse: #ffffff;
+  --color-text-on-primary: #ffffff;
+
+  /* CARD BACKGROUND */
+  --color-bg-card: #1a1028;
+
+  /* APPLICATION STYLING COLORS */
+  --bar-bg: rgba(13, 8, 32, 0.98);
+  --border: rgba(240, 192, 96, 0.15);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --text: #ede8f5;
+  --text-dim: rgba(237, 232, 245, 0.65);
+  --gold: #f0c060;
+  --gold-dim: #c8922a;
+  --gold-glow: rgba(240, 192, 96, 0.3);
+  --heading-c1: var(--color-primary);
+  --heading-c2: var(--color-primary);
+  --heading-c3: var(--color-primary);
+  --heading-shadow: rgba(240, 192, 96, 0.25);
+  --progress-track: rgba(240, 192, 96, 0.2);
+  --btn-bg: rgba(26, 15, 40, 0.9);
+  --btn-hover-bg: rgba(30, 20, 50, 0.95);
+  --purple: #c084fc;
+  --bg: #0d0820;
+  --bg-card: rgba(26, 15, 40, 0.95);
+
+  /* GRADIENT BACKGROUNDS */
+  --gradient-page: linear-gradient(180deg, #0d0820, rgba(26, 15, 40, 0.95));
+  --gradient-primary: linear-gradient(135deg, #f0c060, #c8922a);
+  --gradient-radial: radial-gradient(circle at center, #fff5e6, #c8922a);
+
+  /* NEUTRAL COLORS */
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #eeeeee;
+  --color-gray-300: #e0e0e0;
+  --color-gray-400: #bdbdbd;
+  --color-gray-500: #9e9e9e;
+  --color-gray-600: #757575;
+  --color-gray-700: #616161;
+  --color-gray-800: #424242;
+  --color-gray-900: #212121;
+
+  /* RESOURCE COLORS */
+  --color-health: #e74c3c;
+  --color-health-dark: #c0392b;
+  --color-stamina: #f39c12;
+  --color-stamina-dark: #e67e22;
+  --color-sanity: #9b59b6;
+  --color-sanity-dark: #8e44ad;
+  --color-mana: #3498db;
+  --color-mana-dark: #2980b9;
+
+  /* STAT FILL COLORS */
+  --stat-tel: linear-gradient(90deg, #7a4a2e, #c47a45);
+  --stat-tel-glow: rgba(196, 122, 69, 0.4);
+  --stat-sil: linear-gradient(90deg, #8a3030, #d96060);
+  --stat-sil-glow: rgba(217, 96, 96, 0.4);
+  --stat-lvk: linear-gradient(90deg, #2e7a5a, #4ec49a);
+  --stat-lvk-glow: rgba(78, 196, 154, 0.4);
+  --stat-wis: linear-gradient(90deg, #7c6fcd, #b29cfa);
+  --stat-wis-glow: rgba(178, 156, 250, 0.45);
+  --stat-int: linear-gradient(90deg, #3a8fbe, #66cff0);
+  --stat-int-glow: rgba(102, 207, 240, 0.4);
+  --stat-cha: linear-gradient(90deg, var(--gold-dim), var(--gold));
+  --stat-cha-glow: var(--gold-glow);
+
+  /* ACCENT COLORS */
+  --color-accent: #f0c060;
+  --color-accent-dark: #ffed4e;
+
+  /* DARK MODE COLORS */
+  --color-dark-bg: rgba(0, 0, 0, 0.25);
+  --color-dark-border: rgba(255, 255, 255, 0.12);
+  --color-dark-text: #ede8f5;
+  --color-dark-text-muted: rgba(237, 232, 245, 0.5);
+  --color-dark-text-dimmed: rgba(237, 232, 245, 0.25);
+
+  /* MODAL OVERLAY */
+  --color-modal-overlay: rgba(0, 0, 0, 0.75);
+
+  /* SPECIALTY COLORS */
+  --color-gold: #f0c060;
+  --color-brown: #b2a788;
+  --color-dark-red: #850000;
+  --color-dark-brown: #5a1a1a;
+  --color-light-brown: #3a2a1a;
+  --color-gray-text: #a0a0a0;
+  --color-gray-text-light: #c0c0c0;
+  --color-gray-text-lighter: #d0d0d0;
+  --color-gray-bg: #f0f0f0;
+  --color-gray-bg-light: #fafafa;
+  --color-gray-border: #2a2540;
+
+  /* PAGE-SPECIFIC COLORS */
+  --color-export-accent: #0066cc;
+  --color-export-accent-dark: #0052a3;
+  --color-export-accent-light: #e8f0fb;
+  --color-export-success-light: #fff0ee;
+  --color-skill-stat-dark: #5a3a00;
+  --color-skill-impact-dark: #8b0000;
+
+  /* OVERLAY AND SHADOW COLORS */
+  --color-overlay-light: rgba(255, 255, 255, 0.15);
+  --color-overlay-lighter: rgba(255, 255, 255, 0.08);
+  --color-overlay-medium: rgba(255, 255, 255, 0.4);
+  --color-overlay-dark: rgba(0, 0, 0, 0.2);
+  --color-overlay-darker: rgba(0, 0, 0, 0.35);
+  --color-overlay-darkest: rgba(0, 0, 0, 0.5);
+  --color-overlay-black-strong: rgba(0, 0, 0, 0.95);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* BODY STYLING                                                         */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+[data-theme="dark-purple--gold"] body {
+  color: #ede8f5;
+  position: relative;
+}
+
+[data-theme="dark-purple--gold"] body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 75% 15%, var(--bg-r1, rgba(140, 50, 220, 0.18)) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 85%, var(--bg-r2, rgba(50, 80, 200, 0.14)) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, var(--bg-r3, rgba(30, 10, 60, 0.6)) 0%, transparent 80%),
+    var(--gradient-page);
+  pointer-events: none;
+  z-index: -1;
+}
+
+[data-theme="dark-purple--gold"] a {
+  color: var(--color-link);
+}
+
+[data-theme="dark-purple--gold"] a:visited {
+  color: var(--color-link-visited);
+}
+
+[data-theme="dark-purple--gold"] a:hover {
+  color: var(--color-link-hover);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TYPOGRAPHY                                                          */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+h1 {
+  font-family: var(--font-heading);
+  color: var(--heading-c1);
+}
+
+h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--heading-c2);
+}
+

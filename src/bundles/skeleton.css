@@ -1,0 +1,16 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TERTIUM CSS - SKELETON (LAYOUT ESSENTIALS)                          */
+/* Design tokens + base reset + essential layout utilities             */
+/* Includes: flex, grid, spacing, positioning, display utilities       */
+/* Use for rapid prototyping, minimal layouts, prototype-to-component  */
+/* File size: ~8KB (minified)                                          */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@import '../system/tokens/design-tokens.css';
+@import '../system/base/reset.css';
+@import '../utilities/display.css';
+@import '../utilities/positioning.css';
+@import '../utilities/sizing.css';
+@import '../utilities/flexbox.css';
+@import '../utilities/spacing.css';
+@import '../utilities/containers.css';

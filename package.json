@@ -1,24 +1,70 @@
 {
   "name": "@tertium/css",
-  "version": "0.2.1",
-  "description": "Tailwind-inspired CSS utility classes",
-  "main": "dist/tertium.min.css",
+  "version": "1.0.0",
+  "description": "Universal design system with tokens, themes, components, and utilities",
+  "main": "dist/bundles/main.min.css",
   "type": "module",
   "scripts": {
-    "build": "node build.js",
-    "release:patch": "node node_modules/@tertium/shared-js-configs-and-types/scripts/release.js patch",
-    "release:minor": "node node_modules/@tertium/shared-js-configs-and-types/scripts/release.js minor",
-    "release:major": "node node_modules/@tertium/shared-js-configs-and-types/scripts/release.js major"
+    "build": "bun scripts/build/build.ts",
+    "release:patch": "node node_modules/@tertium/js/scripts/release.js patch",
+    "release:minor": "node node_modules/@tertium/js/scripts/release.js minor",
+    "release:major": "node node_modules/@tertium/js/scripts/release.js major"
   },
   "keywords": [
     "css",
-    "utility",
-    "tailwind"
+    "design-system",
+    "tokens",
+    "themes",
+    "components",
+    "utilities",
+    "tailwind",
+    "bootstrap",
+    "universal"
   ],
+  "exports": {
+    ".": "./dist/bundles/main.min.css",
+    "./skeleton": "./dist/bundles/skeleton.min.css",
+    "./utilities": "./dist/bundles/utilities.min.css",
+    "./components": "./dist/bundles/components.min.css",
+    "./variables": "./dist/bundles/variables.min.css",
+    "./dark.purple--purple.theme": "./dist/themes/dark.purple--purple.theme.min.css",
+    "./dark.purple--gold.theme": "./dist/themes/dark.purple--gold.theme.min.css",
+    "./dark.blue--blue.theme": "./dist/themes/dark.blue--blue.theme.min.css",
+    "./dark.deep-blue--purple.theme": "./dist/themes/dark.deep-blue--purple.theme.min.css",
+    "./light.red--red.theme": "./dist/themes/light.red--red.theme.min.css",
+    "./dist/bundles/main.min.css": "./dist/bundles/main.min.css",
+    "./dist/bundles/main.css": "./dist/bundles/main.css",
+    "./dist/bundles/skeleton.min.css": "./dist/bundles/skeleton.min.css",
+    "./dist/bundles/skeleton.css": "./dist/bundles/skeleton.css",
+    "./dist/bundles/utilities.min.css": "./dist/bundles/utilities.min.css",
+    "./dist/bundles/utilities.css": "./dist/bundles/utilities.css",
+    "./dist/bundles/components.min.css": "./dist/bundles/components.min.css",
+    "./dist/bundles/components.css": "./dist/bundles/components.css",
+    "./dist/bundles/variables.min.css": "./dist/bundles/variables.min.css",
+    "./dist/bundles/variables.css": "./dist/bundles/variables.css",
+    "./dist/themes/dark.purple--purple.theme.min.css": "./dist/themes/dark.purple--purple.theme.min.css",
+    "./dist/themes/dark.purple--purple.theme.css": "./dist/themes/dark.purple--purple.theme.css",
+    "./dist/themes/dark.purple--gold.theme.min.css": "./dist/themes/dark.purple--gold.theme.min.css",
+    "./dist/themes/dark.purple--gold.theme.css": "./dist/themes/dark.purple--gold.theme.css",
+    "./dist/themes/dark.blue--blue.theme.min.css": "./dist/themes/dark.blue--blue.theme.min.css",
+    "./dist/themes/dark.blue--blue.theme.css": "./dist/themes/dark.blue--blue.theme.css",
+    "./dist/themes/dark.deep-blue--purple.theme.min.css": "./dist/themes/dark.deep-blue--purple.theme.min.css",
+    "./dist/themes/dark.deep-blue--purple.theme.css": "./dist/themes/dark.deep-blue--purple.theme.css",
+    "./dist/themes/light.red--red.theme.min.css": "./dist/themes/light.red--red.theme.min.css",
+    "./dist/themes/light.red--red.theme.css": "./dist/themes/light.red--red.theme.css"
+  },
   "files": [
-    "dist/"
+    "dist/",
+    "docs/",
+    "src/system/",
+    "src/utilities/",
+    "src/components/",
+    "src/bundles/"
   ],
+  "repository": {
+    "type": "git"
+  },
   "devDependencies": {
-    "@tertium/shared-js-configs-and-types": "^0.14.0"
+    "@tertium/js": "^1.4.8"
   }
 }

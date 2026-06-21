@@ -1,0 +1,19 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TERTIUM CSS - UTILITIES ONLY                                        */
+/* Base reset + utility classes for Tailwind-like development          */
+/* Use this when you prefer utility-first CSS development without      */
+/* pre-built components. File size: ~12KB                              */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@import '../system/tokens/design-tokens.css';
+@import '../system/base/reset.css';
+@import '../utilities/containers.css';
+@import '../utilities/typography.css';
+@import '../utilities/spacing.css';
+@import '../utilities/flexbox.css';
+@import '../utilities/colors.css';
+@import '../utilities/borders.css';
+@import '../utilities/display.css';
+@import '../utilities/positioning.css';
+@import '../utilities/sizing.css';
+@import '../utilities/forms.css';
