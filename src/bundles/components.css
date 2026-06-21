@@ -1,0 +1,17 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TERTIUM CSS - COMPONENTS ONLY                                       */
+/* Design tokens + base reset + pre-built components                   */
+/* Includes: buttons, cards, forms, tables, alerts, badges, etc.       */
+/* Use when you want pre-styled components without utilities           */
+/* File size: ~6KB (minified)                                          */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@import '../system/tokens/design-tokens.css';
+@import '../system/base/reset.css';
+@import '../components/buttons.css';
+@import '../components/cards.css';
+@import '../components/section-card.css';
+@import '../components/tables.css';
+@import '../components/menu.css';
+@import '../components/theme-switcher.css';
+@import '../components/gradients.css';

@@ -1,4 +1,4 @@
-/* Base container */
+/* Responsive container with max-width breakpoints */
 .container {
   width: 100%;
   margin-left: auto;
@@ -7,7 +7,6 @@
   padding-right: 1rem;
 }
 
-/* Responsive containers with max-widths like Tailwind */
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
@@ -38,48 +37,11 @@
   }
 }
 
-/* Container modifiers */
+/* Fluid container (full width) */
 .container-fluid {
   width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* Flex container utilities */
-.flex-container {
-  display: flex;
-  width: 100%;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-/* Padding container utilities */
-.p-container {
-  padding: 1rem;
-}
-
-.py-container {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.px-container {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }

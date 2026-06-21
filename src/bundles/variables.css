@@ -1,0 +1,8 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TERTIUM CSS - VARIABLES ONLY                                        */
+/* Design tokens and CSS custom properties only                        */
+/* Use this when building custom components on top of a shared token   */
+/* system. File size: ~2KB                                             */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@import '../system/tokens/design-tokens.css';

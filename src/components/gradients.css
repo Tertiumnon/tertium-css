@@ -1,0 +1,42 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* GRADIENT BACKGROUNDS COMPONENT                                      */
+/* Reusable gradient classes for theme-aware backgrounds               */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* Base gradient variables - defined per theme */
+:root {
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  --gradient-page: linear-gradient(180deg, var(--bg), var(--bg-card));
+  --gradient-radial: radial-gradient(circle at center, var(--color-primary-lighter), var(--color-primary-dark));
+}
+
+/* Gradient utility classes */
+.gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.gradient-page {
+  background: var(--gradient-page);
+}
+
+.gradient-radial {
+  background: var(--gradient-radial);
+}
+
+/* Hero/accent gradient backgrounds */
+.gradient-hero {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+}
+
+.gradient-accent {
+  background: linear-gradient(90deg, var(--color-primary-lighter), var(--color-primary));
+}
+
+/* Soft background gradients */
+.gradient-soft {
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-card) 100%);
+}
+
+.gradient-subtle {
+  background: linear-gradient(135deg, transparent, var(--color-primary-lighter));
+}

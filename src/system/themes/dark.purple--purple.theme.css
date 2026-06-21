@@ -1,0 +1,140 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* DARK PURPLE THEME - Pure Purple                                   */
+/* Sophisticated dark theme with purple accents                      */
+/* Gaming and fantasy interfaces                                     */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+[data-theme="dark-purple--purple"] {
+  /* PRIMARY THEME COLOR */
+  --color-primary: #c084fc;
+  --color-primary-light: #d4a6ff;
+  --color-primary-lighter: #e6c7ff;
+  --color-primary-dark: #9d4aed;
+  --color-primary-darker: #7a2fd9;
+
+  --color-primary-rgb: 192, 132, 252;
+
+  /* BACKGROUND COLORS - all derived from base page color */
+  --color-bg-page: #0d0820;
+  --color-bg-main: color-mix(in srgb, var(--color-bg-page) 60%, black 40%);
+  --color-bg-main-active: color-mix(in srgb, var(--color-bg-page) 50%, black 50%);
+  --color-bg-form: color-mix(in srgb, var(--color-bg-page) 90%, black 10%);
+  --color-bg-form-input: color-mix(in srgb, var(--color-bg-page) 80%, var(--color-primary) 20%);
+  --color-bg-secondary: color-mix(in srgb, var(--color-bg-page) 85%, black 15%);
+  --color-bg-tertiary: color-mix(in srgb, var(--color-bg-page) 75%, black 25%);
+  --bg-card: rgba(30, 15, 50, 0.85);
+
+  /* SECONDARY ACCENT COLORS */
+  --color-secondary: #c084fc;
+  --color-secondary-light: #d4a6ff;
+  --color-secondary-dark: #9d4aed;
+  --color-secondary-lighter: #e6c7ff;
+
+  /* STATUS COLORS */
+  --color-success: #10b981;
+  --color-success-light: #e8f5e9;
+  --color-success-hover: #31c584;
+
+  --color-warning: #f59e0b;
+  --color-warning-light: #fffbeb;
+  --color-warning-hover: #f59e0b;
+
+  --color-danger: #ef4444;
+  --color-danger-light: #fee2e2;
+  --color-danger-hover: #f87171;
+
+  --color-info: #3b82f6;
+  --color-info-light: #eff6ff;
+  --color-info-hover: #60a5fa;
+
+  /* BORDER COLORS */
+  --color-border-light: color-mix(in srgb, var(--color-primary) 25%, #3a2555);
+  --color-border-medium: color-mix(in srgb, var(--color-primary) 50%, #5a3575);
+  --color-border-dark: var(--color-primary);
+
+  /* TEXT COLORS */
+  --color-text: #ede8f5;
+  --color-text-secondary: rgba(237, 232, 245, 0.85);
+  --color-text-tertiary: rgba(237, 232, 245, 0.65);
+  --color-text-muted: rgba(237, 232, 245, 0.5);
+
+  --color-text-inverse: #ffffff;
+  --color-text-on-primary: #ffffff;
+
+  /* CARD BACKGROUND */
+  --color-bg-card: #1a1028;
+
+  /* NEUTRAL COLORS */
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #eeeeee;
+  --color-gray-300: #e0e0e0;
+  --color-gray-400: #bdbdbd;
+  --color-gray-500: #9e9e9e;
+  --color-gray-600: #757575;
+  --color-gray-700: #616161;
+  --color-gray-800: #424242;
+  --color-gray-900: #212121;
+
+  /* RESOURCE COLORS */
+  --color-health: #e74c3c;
+  --color-health-dark: #c0392b;
+  --color-stamina: #f39c12;
+  --color-stamina-dark: #e67e22;
+  --color-sanity: #9b59b6;
+  --color-sanity-dark: #8e44ad;
+  --color-mana: #3498db;
+  --color-mana-dark: #2980b9;
+
+  /* ACCENT COLORS */
+  --color-accent: #c084fc;
+  --color-accent-dark: #d4a6ff;
+
+  /* DARK MODE COLORS */
+  --color-dark-bg: rgba(0, 0, 0, 0.25);
+  --color-dark-border: rgba(255, 255, 255, 0.12);
+  --color-dark-text: #ede8f5;
+  --color-dark-text-muted: rgba(237, 232, 245, 0.5);
+  --color-dark-text-dimmed: rgba(237, 232, 245, 0.25);
+
+  /* MODAL OVERLAY */
+  --color-modal-overlay: rgba(0, 0, 0, 0.75);
+
+  /* SPECIALTY COLORS */
+  --color-gold: #c084fc;
+  --color-brown: #b2a788;
+  --color-dark-red: #850000;
+  --color-dark-brown: #5a1a1a;
+  --color-light-brown: #3a2a1a;
+  --color-gray-text: #a0a0a0;
+  --color-gray-text-light: #c0c0c0;
+  --color-gray-text-lighter: #d0d0d0;
+  --color-gray-bg: #f0f0f0;
+  --color-gray-bg-light: #fafafa;
+  --color-gray-border: #2a2540;
+
+  /* PAGE-SPECIFIC COLORS */
+  --color-export-accent: #0066cc;
+  --color-export-accent-dark: #0052a3;
+  --color-export-accent-light: #e8f0fb;
+  --color-export-success-light: #fff0ee;
+  --color-skill-stat-dark: #5a3a00;
+  --color-skill-impact-dark: #8b0000;
+
+  /* OVERLAY AND SHADOW COLORS */
+  --color-overlay-light: rgba(255, 255, 255, 0.15);
+  --color-overlay-lighter: rgba(255, 255, 255, 0.08);
+  --color-overlay-medium: rgba(255, 255, 255, 0.4);
+  --color-overlay-dark: rgba(0, 0, 0, 0.2);
+  --color-overlay-darker: rgba(0, 0, 0, 0.35);
+  --color-overlay-darkest: rgba(0, 0, 0, 0.5);
+  --color-overlay-black-strong: rgba(0, 0, 0, 0.95);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* BODY STYLING                                                         */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+[data-theme="dark-purple--purple"] body {
+  background-color: #0d0820;
+}

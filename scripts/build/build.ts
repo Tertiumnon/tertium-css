@@ -1,0 +1,176 @@
+#!/usr/bin/env bun
+import { join, basename, dirname } from 'path';
+
+// Clear dist directory if it exists, then recreate it
+const distDir = './dist';
+const dirs = ['dist', 'dist/bundles', 'dist/themes', 'dist/utilities'];
+
+for (const dir of dirs) {
+  try {
+    await Bun.$`rm -rf ${dir}`.quiet();
+  } catch {}
+  if (dir !== 'dist') {
+    await Bun.$`mkdir -p ${dir}`.quiet();
+  } else {
+    await Bun.$`mkdir -p ${dir}`.quiet();
+  }
+}
+
+// Minify CSS
+function minifyCss(css: string): string {
+  return css
+    .replace(/\/\*(?:(?!\*\/)[\s\S])*\*\/|[\r\n\t]+/g, '')
+    .replace(/ {2,}/g, ' ')
+    .replace(/ ([{:}]) /g, '$1')
+    .replace(/([;,]) /g, '$1')
+    .replace(/ !/g, '!');
+}
+
+// Recursively resolve all @import statements
+async function resolveImports(filePath: string, visited = new Set<string>()): Promise<string> {
+  if (visited.has(filePath)) {
+    return ''; // Prevent circular imports
+  }
+  visited.add(filePath);
+
+  try {
+    const file = Bun.file(filePath);
+    let content = await file.text();
+
+    // Find all @import statements
+    const importRegex = /@import ['"](.+?)['"];/g;
+    let match;
+
+    while ((match = importRegex.exec(content)) !== null) {
+      const importPath = match[1];
+      const fullPath = join(dirname(filePath), importPath);
+
+      try {
+        const resolved = await resolveImports(fullPath, visited);
+        content = content.replace(match[0], resolved);
+      } catch (err) {
+        console.error(`Error reading import: ${fullPath}`, err);
+      }
+    }
+
+    return content;
+  } catch (err) {
+    console.error(`Error reading file: ${filePath}`, err);
+    return '';
+  }
+}
+
+// Helper to write both .css and .min.css versions
+async function writeBundle(name: string, content: string, dir = './dist'): Promise<void> {
+  const cssPath = `${dir}/${name}.css`;
+  const minPath = `${dir}/${name}.min.css`;
+  const minified = minifyCss(content);
+
+  await Bun.write(cssPath, content);
+  await Bun.write(minPath, minified);
+
+  const cssKb = (content.length / 1024).toFixed(1);
+  const minKb = (minified.length / 1024).toFixed(1);
+  console.log(`✓ ${cssPath} (${cssKb}KB)`);
+  console.log(`✓ ${minPath} (${minKb}KB)`);
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// BUILD BUNDLES (main entry points)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+console.log('\n📦 Building main bundles...\n');
+
+const bundles = [
+  { name: 'main', src: './src/bundles/main.css', desc: 'Full bundle (backward compatible)' },
+  { name: 'skeleton', src: './src/bundles/skeleton.css', desc: 'Skeleton (layout essentials)' },
+  { name: 'utilities', src: './src/bundles/utilities.css', desc: 'All utilities' },
+  { name: 'components', src: './src/bundles/components.css', desc: 'Components only' },
+  { name: 'variables', src: './src/bundles/variables.css', desc: 'Design tokens only' },
+];
+
+for (const bundle of bundles) {
+  try {
+    const content = await resolveImports(bundle.src);
+    await writeBundle(bundle.name, content, './dist/bundles');
+    console.log(`  └─ ${bundle.desc}\n`);
+  } catch (err) {
+    console.error(`✗ Error building ${bundle.name}:`, err);
+  }
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// BUILD INDIVIDUAL THEME FILES
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+console.log('🎨 Building theme files...\n');
+
+try {
+  const themeDir = Bun.file('./src/system/themes');
+  const files = await themeDir.exists() ?
+    await Bun.$`ls ./src/system/themes/*.theme.css 2>/dev/null`.text().then(t => t.trim().split('\n').filter(Boolean)) :
+    [];
+
+  for (const file of files) {
+    const fileName = basename(file);
+    if (fileName.endsWith('.theme.css')) {
+      const content = await Bun.file(file).text();
+      const baseName = basename(file, '.css');
+      await writeBundle(baseName, content, './dist/themes');
+    }
+  }
+} catch (err) {
+  console.error('Error building theme files:', err);
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// BUILD INDIVIDUAL UTILITY FILES
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+console.log('🎯 Building individual utility files...\n');
+
+try {
+  const utilDir = Bun.file('./src/utilities');
+  const files = await utilDir.exists() ?
+    await Bun.$`ls ./src/utilities/*.css 2>/dev/null`.text().then(t => t.trim().split('\n').filter(Boolean)) :
+    [];
+
+  for (const file of files) {
+    const fileName = basename(file);
+    if (fileName.endsWith('.css')) {
+      const content = await Bun.file(file).text();
+      const baseName = basename(file, '.css');
+      await writeBundle(baseName, content, './dist/utilities');
+    }
+  }
+} catch (err) {
+  console.error('Error building utility files:', err);
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// BUILD SUMMARY
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+console.log('\n✨ Build complete! Files generated in dist/\n');
+console.log('📚 Main bundles (dist/bundles/):');
+console.log('  main.css & main.min.css              - Full (backward compatible)');
+console.log('  skeleton.css & skeleton.min.css      - Skeleton (layout essentials)');
+console.log('  utilities.css & utilities.min.css    - All utilities');
+console.log('  components.css & components.min.css  - Components only');
+console.log('  variables.css & variables.min.css    - Design tokens only');
+console.log('\n🎨 Themes (dist/themes/):');
+console.log('  dark.purple-gold.theme.css & .min.css');
+console.log('  dark.blue.theme.css & .min.css');
+console.log('  dark.deep-blue.theme.css & .min.css');
+console.log('  light.red.theme.css & .min.css');
+console.log('\n🎯 Utilities (dist/utilities/):');
+console.log('  display.css & display.min.css');
+console.log('  positioning.css & positioning.min.css');
+console.log('  sizing.css & sizing.min.css');
+console.log('  spacing.css & spacing.min.css');
+console.log('  flexbox.css & flexbox.min.css');
+console.log('  containers.css & containers.min.css');
+console.log('  typography.css & typography.min.css');
+console.log('  colors.css & colors.min.css');
+console.log('  borders.css & borders.min.css');
+console.log('  forms.css & forms.min.css');

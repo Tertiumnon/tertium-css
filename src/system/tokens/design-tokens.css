@@ -1,0 +1,294 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TERTIUM CSS - Design Tokens                                          */
+/* Complete token hierarchy defining spacing, typography, colors, etc. */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* Import self-hosted fonts */
+@import './fonts.css';
+
+:root {
+  /* ─────────────────────────────────────────────────────────────── */
+  /* SPACING SCALE                                                   */
+  /* Base unit: 0.25rem (4px)                                        */
+  /* ─────────────────────────────────────────────────────────────── */
+
+  --spacing-1:     0.25rem;   /* 4px */
+  --spacing-2:     0.5rem;    /* 8px */
+  --spacing-3:     0.75rem;   /* 12px */
+  --spacing-4:     1rem;      /* 16px */
+  --spacing-6:     1.5rem;    /* 24px */
+  --spacing-8:     2rem;      /* 32px */
+  --spacing-12:    3rem;      /* 48px */
+  --spacing-16:    4rem;      /* 64px */
+  --spacing-20:    5rem;      /* 80px */
+  --spacing-24:    6rem;      /* 96px */
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* BORDER RADIUS                                                   */
+  /* ─────────────────────────────────────────────────────────────── */
+
+  --radius-sm:     0.25rem;   /* 4px */
+  --radius-md:     0.5rem;    /* 8px */
+  --radius-lg:     0.75rem;   /* 12px */
+  --radius-xl:     1rem;      /* 16px */
+  --radius-full:   9999px;    /* Fully rounded */
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* TYPOGRAPHY                                                      */
+  /* ─────────────────────────────────────────────────────────────── */
+
+  /* Font Families - provided by @tertium/fonts */
+  --font-body:           system-ui, -apple-system, sans-serif;
+  --font-heading:        Georgia, 'Times New Roman', serif;
+  --font-mono:           'Courier New', monospace;
+
+  /* Font Sizes */
+  --text-xs:      0.75rem;    /* 12px */
+  --text-sm:      0.875rem;   /* 14px */
+  --text-base:    1rem;       /* 16px */
+  --text-lg:      1.125rem;   /* 18px */
+  --text-xl:      1.25rem;    /* 20px */
+  --text-2xl:     1.5rem;     /* 24px */
+  --text-3xl:     1.875rem;   /* 30px */
+  --text-4xl:     2.25rem;    /* 36px */
+  --text-5xl:     3rem;       /* 48px */
+
+  /* Font Weights */
+  --font-weight-normal:       400;
+  --font-weight-medium:       500;
+  --font-weight-semibold:     600;
+  --font-weight-bold:         700;
+
+  /* Line Heights */
+  --line-height-tight:        1.2;
+  --line-height-normal:       1.5;
+  --line-height-relaxed:      1.75;
+
+  /* Letter Spacing */
+  --letter-spacing-tight:     -0.02em;
+  --letter-spacing-normal:    0em;
+  --letter-spacing-wide:      0.05em;
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* SHADOWS                                                         */
+  /* ─────────────────────────────────────────────────────────────── */
+
+  /* Shadow colors (overridden per theme) */
+  --shadow-color:             rgba(0, 0, 0, 0.1);
+
+  /* Shadow definitions */
+  --shadow-sm:    0 1px 2px var(--shadow-color);
+  --shadow-md:    0 4px 6px var(--shadow-color);
+  --shadow-lg:    0 10px 15px var(--shadow-color);
+  --shadow-xl:    0 20px 25px var(--shadow-color);
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* Z-INDEX SCALE                                                   */
+  /* ─────────────────────────────────────────────────────────────── */
+
+  --z-10:   10;
+  --z-20:   20;
+  --z-30:   30;
+  --z-40:   40;
+  --z-50:   50;
+  --z-auto: auto;
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* OPACITY                                                         */
+  /* ─────────────────────────────────────────────────────────────── */
+
+  --opacity-0:    0;
+  --opacity-25:   0.25;
+  --opacity-50:   0.5;
+  --opacity-75:   0.75;
+  --opacity-100:  1;
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* ANIMATION TIMING                                                */
+  /* ─────────────────────────────────────────────────────────────── */
+
+  --duration-fast:        150ms;
+  --duration-normal:      300ms;
+  --duration-slow:        500ms;
+
+  --timing-linear:        linear;
+  --timing-ease:          ease;
+  --timing-ease-in:       cubic-bezier(0.4, 0, 1, 1);
+  --timing-ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --timing-ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* BREAKPOINTS                                                     */
+  /* Used for responsive utilities and media queries                 */
+  /* ─────────────────────────────────────────────────────────────── */
+
+  --breakpoint-sm:  640px;   /* min-width: 640px */
+  --breakpoint-md:  768px;   /* min-width: 768px */
+  --breakpoint-lg:  1024px;  /* min-width: 1024px */
+  --breakpoint-xl:  1280px;  /* min-width: 1280px */
+  --breakpoint-2xl: 1536px;  /* min-width: 1536px */
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* CONTAINER WIDTHS                                                */
+  /* Used for max-width constraints on main content                  */
+  /* ─────────────────────────────────────────────────────────────── */
+
+  --container-sm:   640px;
+  --container-md:   768px;
+  --container-lg:   1024px;
+  --container-xl:   1280px;
+  --container-2xl:  1536px;
+
+  /* ─────────────────────────────────────────────────────────────── */
+  /* THEME TOKENS (defaults - overridden per theme)                  */
+  /* Semantic colors referenced by components                        */
+  /* ─────────────────────────────────────────────────────────────── */
+
+  /* Primary Palette */
+  --color-primary:         #c084fc;  /* Purple - primary brand color */
+  --color-primary-dark:    #9d4aed;  /* Darker purple for hover states */
+  --color-primary-light:   #e6c7ff;  /* Lighter purple for subtle backgrounds */
+
+  --color-secondary:       #f0c060;  /* Gold - secondary accent */
+  --color-secondary-dark:  #c8922a;  /* Darker gold */
+  --color-secondary-light: #ffd700;  /* Lighter gold */
+
+  /* Status Colors */
+  --color-success:         #10b981;  /* Success / positive */
+  --color-warning:         #f59e0b;  /* Warning / caution */
+  --color-danger:          #ef4444;  /* Error / destructive */
+  --color-info:            #3b82f6;  /* Info / neutral */
+
+  /* Neutral Colors */
+  --color-neutral:         #6b7280;  /* Neutral gray */
+  --color-neutral-dark:    #374151;  /* Dark neutral */
+  --color-neutral-light:   #e5e7eb;  /* Light neutral */
+
+  /* Text & Background Colors (theme-specific defaults) */
+  --bg:                    #0d0820;  /* Page background */
+  --bg-card:               rgba(40, 20, 65, 0.9);   /* Card/panel background */
+  --bg-overlay:            rgba(0, 0, 0, 0.5);      /* Overlay/modal background */
+
+  --text:                  #ede8f5;  /* Primary text */
+  --text-dim:              rgba(237, 232, 245, 0.55); /* Secondary/muted text */
+  --text-on-primary:       #ffffff;  /* Text on primary background */
+  --text-on-secondary:     #000000;  /* Text on secondary background */
+
+  /* Interactive Element Colors */
+  --btn-bg:                rgba(20, 8, 44, 0.7);    /* Default button background */
+  --btn-border:            rgba(192, 132, 252, 0.2);  /* Button border */
+  --btn-hover-bg:          rgba(100, 40, 160, 0.25);  /* Button hover background */
+  --btn-hover-border:      rgba(240, 192, 96, 0.45);  /* Button hover border */
+
+  /* Structural Colors */
+  --border:                rgba(240, 192, 96, 0.22);  /* Borders */
+  --border-strong:         rgba(240, 192, 96, 0.4);   /* Strong borders */
+  --cell-bg:               rgba(255, 255, 255, 0.02); /* Table cell background */
+  --progress-track:        rgba(255, 255, 255, 0.08); /* Progress bar track */
+
+  /* Heading Specific Colors */
+  --heading-c1:            #ffe080;  /* Primary heading color */
+  --heading-c2:            #f0c060;  /* Secondary heading color */
+  --heading-c3:            #e8920a;  /* Tertiary heading color */
+  --heading-shadow:        rgba(240, 192, 96, 0.35);  /* Heading text shadow */
+
+  /* Background Gradients (decorative) */
+  --bg-r1:  rgba(140, 50, 220, 0.18);  /* Radial gradient 1 */
+  --bg-r2:  rgba(50, 80, 200, 0.14);   /* Radial gradient 2 */
+  --bg-r3:  rgba(30, 10, 60, 0.6);     /* Radial gradient 3 */
+
+  /* Glow Effects */
+  --glow:   rgba(240, 192, 96, 0.4);   /* Glowing effect color */
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* UTILITY TOKEN SCALES                                                */
+/* Generated token groups for utilities and components                */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* Color Scales (used by utility generation) */
+:root {
+  /* Grays - Neutral palette */
+  --gray-50:   #f9fafb;
+  --gray-100:  #f3f4f6;
+  --gray-200:  #e5e7eb;
+  --gray-300:  #d1d5db;
+  --gray-400:  #9ca3af;
+  --gray-500:  #6b7280;
+  --gray-600:  #4b5563;
+  --gray-700:  #374151;
+  --gray-800:  #1f2937;
+  --gray-900:  #111827;
+
+  /* Blues - Professional palette */
+  --blue-50:   #eff6ff;
+  --blue-100:  #dbeafe;
+  --blue-200:  #bfdbfe;
+  --blue-300:  #93c5fd;
+  --blue-400:  #60a5fa;
+  --blue-500:  #3b82f6;
+  --blue-600:  #2563eb;
+  --blue-700:  #1d4ed8;
+  --blue-800:  #1e40af;
+  --blue-900:  #1e3a8a;
+
+  /* Reds - Alert & danger palette */
+  --red-50:    #fef2f2;
+  --red-100:   #fee2e2;
+  --red-200:   #fecaca;
+  --red-300:   #fca5a5;
+  --red-400:   #f87171;
+  --red-500:   #ef4444;
+  --red-600:   #dc2626;
+  --red-700:   #b91c1c;
+  --red-800:   #991b1b;
+  --red-900:   #7f1d1d;
+
+  /* Greens - Success palette */
+  --green-50:  #ecfdf5;
+  --green-100: #d1fae5;
+  --green-200: #a7f3d0;
+  --green-300: #6ee7b7;
+  --green-400: #34d399;
+  --green-500: #10b981;
+  --green-600: #059669;
+  --green-700: #047857;
+  --green-800: #065f46;
+  --green-900: #064e3b;
+
+  /* Yellows - Warning palette */
+  --yellow-50:  #fffbeb;
+  --yellow-100: #fef3c7;
+  --yellow-200: #fde68a;
+  --yellow-300: #fcd34d;
+  --yellow-400: #fbbf24;
+  --yellow-500: #f59e0b;
+  --yellow-600: #d97706;
+  --yellow-700: #b45309;
+  --yellow-800: #92400e;
+  --yellow-900: #78350f;
+
+  /* Purples - Brand palette */
+  --purple-50:  #f5f3ff;
+  --purple-100: #ede9fe;
+  --purple-200: #ddd6fe;
+  --purple-300: #c4b5fd;
+  --purple-400: #a78bfa;
+  --purple-500: #8b5cf6;
+  --purple-600: #7c3aed;
+  --purple-700: #6d28d9;
+  --purple-800: #5b21b6;
+  --purple-900: #4c1d95;
+
+  /* Pinks - Complementary palette */
+  --pink-50:   #fdf2f8;
+  --pink-100:  #fce7f3;
+  --pink-200:  #fbcfe8;
+  --pink-300:  #f9a8d4;
+  --pink-400:  #f472b6;
+  --pink-500:  #ec4899;
+  --pink-600:  #db2777;
+  --pink-700:  #be185d;
+  --pink-800:  #9d174d;
+  --pink-900:  #831843;
+}
