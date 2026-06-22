@@ -49,7 +49,7 @@ Tertium CSS is built on a foundation of **design tokens** (CSS variables) that d
 
 ### Core Concepts
 
-1. **Tokens** - CSS custom properties (--spacing-4, --color-primary, etc.)
+1. **Tokens** - CSS custom properties (--spacing-4, --bg-color--primary, etc.)
 2. **Themes** - Token presets that change appearance (Dark Purple Gold, Dark Blue, Dark Deep Blue, Light Red)
 3. **Skeleton** - Essential layout utilities (flexbox, grid, spacing, positioning)
 4. **Components** - Pre-built UI elements (buttons, cards, etc.)
@@ -165,7 +165,7 @@ In `your-app.css`:
 ```css
 .my-button {
   padding: var(--spacing-2) var(--spacing-4);
-  background: var(--color-primary);
+  background: var(--bg-color--primary);
   border-radius: var(--radius-md);
   font-size: var(--text-base);
 }
@@ -260,7 +260,7 @@ var(--text-2xl)
 var(--font-bold)
 
 /* Colors */
-var(--color-primary)
+var(--bg-color--primary)
 var(--color-success)
 var(--color-danger)
 

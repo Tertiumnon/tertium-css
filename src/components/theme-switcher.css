@@ -1,3 +1,4 @@
+@import "../system/tokens.css";
 .theme-switcher-tertium {
   position: relative;
   display: inline-flex;
@@ -10,7 +11,6 @@
   margin-left: 0;
   padding-left: 0;
 }
-
 
 .theme-switcher-tertium--compact .theme-switcher-tertium--option {
   padding: 6px 6px;
@@ -42,9 +42,9 @@
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  background: var(--color-bg-main);
-  color: var(--color-text-light);
-  border: 1px solid color-mix(in srgb, var(--color-bg-main) 85%, white 15%);
+  background: var(--bg-color--primary);
+  color: var(--font-color--primary--light);
+  border: 1px solid color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.85rem;
@@ -56,9 +56,9 @@
 }
 
 .theme-switcher-tertium--trigger:hover {
-  background: color-mix(in srgb, var(--color-bg-main) 85%, white 15%);
-  border-color: color-mix(in srgb, var(--color-bg-main) 70%, white 30%);
-  color: var(--color-text-light);
+  background: color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
+  border-color: color-mix(in srgb, var(--bg-color--primary) 70%, white 30%);
+  color: var(--font-color--primary--light);
 }
 
 .theme-switcher-tertium--color-dot {
@@ -85,8 +85,8 @@
   position: absolute;
   top: calc(100% + 4px);
   right: 0;
-  background-color: var(--color-bg-secondary);
-  border: 1px solid color-mix(in srgb, var(--color-bg-main) 70%, white 30%);
+  background-color: var(--bg-color--secondary);
+  border: 1px solid color-mix(in srgb, var(--bg-color--primary) 70%, white 30%);
   border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   width: max-content;
@@ -114,8 +114,9 @@
   padding: 10px 12px;
   background: none;
   border: none;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-bg-main) 85%, white 15%);
-  color: var(--color-text);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
+  color: var(--font-color--primary);
   cursor: pointer;
   text-align: left;
   font-size: 0.85rem;
@@ -129,11 +130,15 @@
 }
 
 .theme-switcher-tertium--option:hover {
-  background-color: color-mix(in srgb, var(--color-bg-main) 90%, white 10%);
+  background-color: color-mix(in srgb, var(--bg-color--primary) 90%, white 10%);
 }
 
 .theme-switcher-tertium--option-active {
-  background-color: color-mix(in srgb, var(--color-bg-main-active) 80%, white 20%);
+  background-color: color-mix(
+    in srgb,
+    var(--bg-color--primary-active) 80%,
+    white 20%
+  );
   font-weight: 600;
 }
 
@@ -146,18 +151,18 @@
 
 .theme-switcher-tertium--name {
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--font-color--primary);
   font-size: 0.85rem;
 }
 
 .theme-switcher-tertium--desc {
   font-size: 0.75rem;
-  color: var(--color-text-tertiary);
+  color: var(--font-color--tertiary);
   line-height: 1.2;
 }
 
 .theme-switcher-tertium--check {
-  color: var(--color-primary);
+  color: var(--bg-color--primary);
   font-weight: bold;
   font-size: 14px;
   flex-shrink: 0;

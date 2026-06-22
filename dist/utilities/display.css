@@ -1,6 +1,18 @@
+@import "../system/tokens.css";
+
 /* Display utilities */
-.block { display: block; }
-.inline-block { display: inline-block; }
-.inline { display: inline; }
-.hidden { display: none; }
-.grid { display: grid; }
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.inline {
+  display: inline;
+}
+.hidden {
+  display: none;
+}
+.grid {
+  display: grid;
+}

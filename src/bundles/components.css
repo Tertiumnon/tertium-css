@@ -6,12 +6,12 @@
 /* File size: ~6KB (minified)                                          */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-@import '../system/tokens.css';
-@import '../system/base.css';
-@import '../components/buttons.css';
-@import '../components/cards.css';
-@import '../components/section-card.css';
-@import '../components/tables.css';
-@import '../components/menu.css';
-@import '../components/theme-switcher.css';
-@import '../components/gradients.css';
+@import "../system/tokens.css";
+@import "../system/base.css";
+@import "../components/buttons.css";
+@import "../components/cards.css";
+@import "../components/section-card.css";
+@import "../components/tables.css";
+@import "../components/menu.css";
+@import "../components/theme-switcher.css";
+@import "../components/gradients.css";

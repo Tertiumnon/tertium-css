@@ -1,3 +1,4 @@
+@import "../system/tokens.css";
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* SECTION CARD COMPONENT                                             */
 /* Horizontal card for displaying sections/features with icon         */
@@ -23,8 +24,10 @@
 }
 
 .section-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-lg), 0 0 20px var(--glow);
+  border-color: var(--bg-color--primary);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 20px var(--glow);
   transform: translateY(-3px);
 }
 
@@ -32,7 +35,7 @@
   font-size: var(--text-2xl);
   flex-shrink: 0;
   filter: drop-shadow(0 0 8px var(--glow));
-  color: var(--color-primary);
+  color: var(--bg-color--primary);
 }
 
 .section-card__body {
@@ -62,11 +65,13 @@
   color: var(--text-dim);
   flex-shrink: 0;
   opacity: 0.5;
-  transition: opacity var(--duration-fast), transform var(--duration-fast);
+  transition:
+    opacity var(--duration-fast),
+    transform var(--duration-fast);
 }
 
 .section-card:hover .section-card__arrow {
   opacity: 1;
   transform: translateX(var(--spacing-1));
-  color: var(--color-primary);
+  color: var(--bg-color--primary);
 }

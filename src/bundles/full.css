@@ -9,46 +9,48 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 /* Design tokens (CSS variables) - foundation of all styling */
-@import '../system/tokens.css';
+@import "../system/tokens.css";
 
 /* Theme presets (Dark Purple Gold, Dark Blue, Dark Deep Blue, Light Red) - runtime switchable */
-@import '../themes/dark.purple--gold.theme.css';
-@import '../themes/dark.purple--purple.theme.css';
-@import '../themes/dark.blue--blue.theme.css';
-@import '../themes/dark.deep-blue--purple.theme.css';
-@import '../themes/light.white--red.theme.css';
+@import "../themes/dark.purple--gold.theme.css";
+@import "../themes/dark.purple--purple.theme.css";
+@import "../themes/dark.blue--blue.theme.css";
+@import "../themes/dark.deep-blue--purple.theme.css";
+@import "../themes/light.white--red.theme.css";
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* LEGACY: Existing utilities (maintained for backward compatibility)  */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-@import '../utilities/containers.css';
-@import '../utilities/typography.css';
-@import '../utilities/spacing.css';
-@import '../utilities/flexbox.css';
-@import '../utilities/colors.css';
-@import '../utilities/borders.css';
-@import '../utilities/display.css';
-@import '../utilities/positioning.css';
-@import '../utilities/sizing.css';
-@import '../utilities/forms.css';
+@import "../utilities/containers.css";
+@import "../utilities/typography.css";
+@import "../utilities/spacing.css";
+@import "../utilities/flexbox.css";
+@import "../utilities/colors.css";
+@import "../utilities/borders.css";
+@import "../utilities/display.css";
+@import "../utilities/positioning.css";
+@import "../utilities/sizing.css";
+@import "../utilities/forms.css";
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* NEW: Pre-built Components (optional, can be used with tokens)      */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-@import '../components/buttons.css';
-@import '../components/cards.css';
-@import '../components/section-card.css';
-@import '../components/tables.css';
-@import '../components/theme-switcher.css';
-@import '../components/gradients.css';
+@import "../components/buttons.css";
+@import "../components/cards.css";
+@import "../components/menu.css";
+@import "../components/section-card.css";
+@import "../components/tables.css";
+@import "../components/theme-switcher.css";
+@import "../components/gradients.css";
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* Legacy Body Styles (maintained for backward compatibility)         */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 body {
+  margin: 0;
   font-family: var(--font-body);
   line-height: 1.5;
 }

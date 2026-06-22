@@ -6,10 +6,13 @@
       "name": "tertium-css",
       "devDependencies": {
         "@tertium/js": "^1.4.8",
+        "prettier": "^3.8.4",
       },
     },
   },
   "packages": {
     "@tertium/js": ["@tertium/js@1.4.8", "", {}, "sha512-YZTVNDiH8h7TJEr+Z1PLlvXAawxFtTNhqlKv7ertX9Bl1PE5/rVOaXN7K+PncFS7KfgdW/bSKiQJ0aWE02fjWg=="],
+
+    "prettier": ["prettier@3.8.4", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q=="],
   }
 }

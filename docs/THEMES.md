@@ -66,7 +66,7 @@ initTheme();
 function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('theme-preference', theme);
-  
+
   // Dispatch custom event so components can react
   window.dispatchEvent(
     new CustomEvent('theme-change', { detail: { theme } })
@@ -98,18 +98,18 @@ Create a new theme by overriding variables:
 /* In your custom-theme.css */
 [data-theme="custom-brand"] {
   /* Override token values */
-  --color-primary: #ff6b6b;
-  --color-secondary: #4ecdc4;
+  --bg-color--primary: #ff6b6b;
+  --bg-color--seconday: #4ecdc4;
   --color-success: #45b7d1;
   --color-warning: #f7b731;
   --color-danger: #ee5a6f;
-  
+
   --bg: #f8f9fa;
   --bg-card: #ffffff;
   --text: #2c3e50;
   --text-dim: #7f8c8d;
   --border: rgba(0, 0, 0, 0.1);
-  
+
   --heading-c1: #ff6b6b;
   --heading-c2: #ee5a6f;
 }
@@ -130,7 +130,7 @@ Inherit from a base theme and override specific variables:
 
 [data-theme="custom-dark"] {
   /* Inherit all dark theme variables, override accent colors only */
-  --color-primary: #7c3aed;    /* Change purple to indigo */
+  --bg-color--primary: #7c3aed;    /* Change purple to indigo */
   --accent: #7c3aed;
 }
 ```
@@ -154,14 +154,14 @@ Define multiple theme variants:
 [data-theme="dark-warm"] {
   --heading-c1: #ffd700;
   --heading-c2: #ffa500;
-  --color-primary: #ff8c00;
+  --bg-color--primary: #ff8c00;
 }
 
 /* Cool variant */
 [data-theme="dark-cool"] {
   --heading-c1: #87ceeb;
   --heading-c2: #4169e1;
-  --color-primary: #1e90ff;
+  --bg-color--primary: #1e90ff;
 }
 ```
 
@@ -171,8 +171,8 @@ All themes define these token categories:
 
 ### Semantic Colors
 ```
---color-primary      /* Main brand color, CTAs */
---color-secondary    /* Secondary UI elements */
+--bg-color--primary      /* Main brand color, CTAs */
+--bg-color--seconday    /* Secondary UI elements */
 --color-success      /* Success states, positive actions */
 --color-warning      /* Warnings, caution states */
 --color-danger       /* Errors, destructive actions */
@@ -185,7 +185,7 @@ All themes define these token categories:
 --bg-card            /* Card, panel background */
 --bar-bg             /* Navigation bar background */
 --btn-bg             /* Default button background */
---btn-hover-bg       /* Button on hover/focus */
+--btn-bg--hover       /* Button on hover/focus */
 --cell-bg            /* Table cell background */
 --progress-track     /* Progress bar track background */
 ```
@@ -216,7 +216,7 @@ All themes define these token categories:
 ### Interactive States
 ```
 --btn-border         /* Button border color */
---btn-hover-bg       /* Button hover background */
+--btn-bg--hover       /* Button hover background */
 --btn-hover-border   /* Button hover border */
 --btn-focus-outline  /* Button focus outline */
 ```
@@ -234,9 +234,9 @@ All themes define these token categories:
 
 ```css
 .my-button {
-  background: var(--color-primary);
+  background: var(--bg-color--primary);
   color: var(--text-on-primary);
-  border: 2px solid var(--color-primary);
+  border: 2px solid var(--bg-color--primary);
   padding: var(--spacing-2) var(--spacing-4);
   border-radius: var(--radius-md);
   font-family: var(--font-body);
@@ -245,8 +245,8 @@ All themes define these token categories:
 }
 
 .my-button:hover {
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
+  background: var(--bg-color--primary--dark);
+  border-color: var(--bg-color--primary--dark);
   box-shadow: var(--shadow-md);
 }
 
@@ -294,7 +294,7 @@ The button automatically adapts to all three themes with one CSS rule!
 ```css
 /* In your app styles */
 :root {
-  --color-primary: #your-color;  /* Override just primary color */
+  --bg-color--primary: #your-color;  /* Override just primary color */
 }
 ```
 
@@ -344,7 +344,7 @@ function initTheme() {
   // Respect user's system preference
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const saved = localStorage.getItem('theme-preference');
-  
+
   const theme = saved || (prefersDark ? 'dark' : 'light');
   document.documentElement.setAttribute('data-theme', theme);
 }
@@ -360,7 +360,7 @@ Adjust borders and text weight for better readability:
     --border: rgba(255, 255, 255, 0.4);
     --text-dim: rgba(255, 255, 255, 0.7);
   }
-  
+
   [data-theme="light"] {
     --border: rgba(0, 0, 0, 0.3);
     --text-dim: rgba(0, 0, 0, 0.6);
@@ -409,15 +409,15 @@ Instead of changing all variables at once, scope overrides to specific elements:
 ```css
 /* Less efficient: override all variables */
 [data-theme="dark"] {
-  --color-primary: ...;
-  --color-secondary: ...;
+  --bg-color--primary: ...;
+  --bg-color--seconday: ...;
   /* ... 50 more variables ... */
 }
 
 /* More efficient: scope to where theme affects */
 .themed-section {
-  --color-primary: ...;
-  --color-secondary: ...;
+  --bg-color--primary: ...;
+  --bg-color--seconday: ...;
 }
 ```
 

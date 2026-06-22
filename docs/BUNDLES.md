@@ -32,7 +32,7 @@ Choose the bundle that matches your needs. All bundles include design tokens.
 ```
 
 **What you get:**
-- CSS custom properties (--spacing-4, --color-primary, etc.)
+- CSS custom properties (--spacing-4, --bg-color--primary, etc.)
 - No HTML classes at all
 
 **Example usage:**
@@ -47,7 +47,7 @@ Choose the bundle that matches your needs. All bundles include design tokens.
 
 .my-button {
   padding: var(--spacing-2) var(--spacing-4);
-  background: var(--color-primary);
+  background: var(--bg-color--primary);
   color: #fff;
   border-radius: var(--radius-md);
 }
@@ -228,7 +228,7 @@ document.documentElement.setAttribute('data-theme', 'blue');
     <h1 class="text-3xl font-bold text-blue-500 mb-4">
       Page Title
     </h1>
-    
+
     <div class="card card--primary mb-6">
       <div class="card-header">
         <h2 class="card-title">Section</h2>
@@ -239,7 +239,7 @@ document.documentElement.setAttribute('data-theme', 'blue');
       </div>
     </div>
   </div>
-  
+
   <aside class="w-64 bg-gray-100 p-6 rounded-lg">
     Sidebar
   </aside>

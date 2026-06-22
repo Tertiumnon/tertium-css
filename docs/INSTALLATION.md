@@ -28,10 +28,10 @@ npm install @tertium/css
   <button onclick="document.documentElement.setAttribute('data-theme', 'blue')">
     Blue
   </button>
-  
+
   <!-- Use component classes -->
   <button class="btn btn--primary">Click me</button>
-  
+
   <!-- Use utility classes for spacing/layout -->
   <div class="p-4 flex gap-4">
     <div class="flex-1">Half width</div>
@@ -65,7 +65,7 @@ In your `styles/my-components.css`:
 }
 
 .my-button {
-  background: var(--color-primary);
+  background: var(--bg-color--primary);
   color: var(--text-on-primary);
   padding: var(--spacing-2) var(--spacing-4);
   border-radius: var(--radius-md);
@@ -103,7 +103,7 @@ In your `styles/my-components.css`:
       background: var(--bg);
       color: var(--text);
     }
-    
+
     .card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -157,7 +157,7 @@ import { Injectable, inject, signal } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
   private storage = inject(LocalStorageService);
-  
+
   theme = signal<'dark' | 'light' | 'blue'>(
     (this.storage.get('theme') as any) ?? 'dark'
   );
@@ -184,7 +184,7 @@ export class ThemeService {
 import { useEffect, useState } from 'react';
 
 export function ThemeSwitcher() {
-  const [theme, setTheme] = useState(() => 
+  const [theme, setTheme] = useState(() =>
     localStorage.getItem('theme') || 'dark'
   );
 
@@ -209,8 +209,8 @@ export function ThemeSwitcher() {
 
 ```css
 /* Semantic colors */
---color-primary:        /* Main brand color */
---color-secondary:      /* Secondary accent */
+--bg-color--primary:        /* Main brand color */
+--bg-color--seconday:      /* Secondary accent */
 --color-success:        /* Success/positive actions */
 --color-warning:        /* Warning/attention needed */
 --color-danger:         /* Danger/destructive actions */
@@ -221,7 +221,7 @@ export function ThemeSwitcher() {
 --bg-card:              /* Card/panel background */
 --bar-bg:               /* Navigation bar background */
 --btn-bg:               /* Button background */
---btn-hover-bg:         /* Button hover state */
+--btn-bg--hover:         /* Button hover state */
 
 /* Text colors */
 --text:                 /* Primary text */
@@ -387,7 +387,7 @@ See [COMPONENTS.md](COMPONENTS.md) for complete component catalog.
   <style>
     /* Override theme colors for your project */
     :root {
-      --color-primary: #ff6b6b;
+      --bg-color--primary: #ff6b6b;
       --heading-c1: #ff6b6b;
     }
   </style>
@@ -399,7 +399,7 @@ See [COMPONENTS.md](COMPONENTS.md) for complete component catalog.
 ```css
 /* In your custom-theme.css */
 [data-theme="custom"] {
-  --color-primary: #your-color;
+  --bg-color--primary: #your-color;
   --bg: #your-bg;
   --text: #your-text;
   /* ... override other tokens */

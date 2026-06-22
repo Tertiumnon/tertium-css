@@ -201,7 +201,7 @@ docs/
 
 - **Kebab-case** for filenames: `button-variants.css`
 - **CSS class names** follow Tailwind convention: `.btn`, `.btn--primary`, `.text-lg`
-- **CSS variables** use semantic naming: `--color-primary`, `--spacing-unit`, not `--margin-1` or `--blue-300`
+- **CSS variables** use semantic naming: `--bg-color--primary`, `--spacing-unit`, not `--margin-1` or `--blue-300`
 - **Theme selectors** use data attributes: `[data-theme="light"]`
 
 ## Import Order

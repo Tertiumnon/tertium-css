@@ -1,3 +1,4 @@
+@import "../system/tokens.css";
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* BUTTON COMPONENTS                                                   */
 /* Reusable button styles with variants                                */
@@ -32,7 +33,7 @@
 }
 
 .btn:hover:not(:disabled) {
-  background: var(--btn-hover-bg);
+  background: var(--btn-bg--hover);
   border-color: var(--btn-hover-border);
   transform: translateY(-1px);
 }
@@ -42,7 +43,7 @@
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--bg-color--primary);
   outline-offset: 2px;
 }
 
@@ -57,27 +58,27 @@
 
 /* Primary Button */
 .btn--primary {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  background: var(--bg-color--primary);
+  border-color: var(--bg-color--primary);
   color: #ffffff;
 }
 
 .btn--primary:hover:not(:disabled) {
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
+  background: var(--bg-color--primary--dark);
+  border-color: var(--bg-color--primary--dark);
   box-shadow: 0 0 0 4px rgba(192, 132, 252, 0.15);
 }
 
 /* Secondary Button */
 .btn--secondary {
-  background: var(--color-secondary);
-  border-color: var(--color-secondary);
+  background: var(--bg-color--seconday);
+  border-color: var(--bg-color--seconday);
   color: #000000;
 }
 
 .btn--secondary:hover:not(:disabled) {
-  background: var(--color-secondary-dark);
-  border-color: var(--color-secondary-dark);
+  background: var(--bg-color--seconday-dark);
+  border-color: var(--bg-color--seconday-dark);
   box-shadow: 0 0 0 4px rgba(240, 192, 96, 0.15);
 }
 
@@ -90,8 +91,8 @@
 
 .btn--ghost:hover:not(:disabled) {
   background: var(--cell-bg);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  border-color: var(--bg-color--primary);
+  color: var(--bg-color--primary);
 }
 
 /* Danger Button */
@@ -144,7 +145,7 @@
 }
 
 .btn--loading::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 16px;
   height: 16px;
@@ -159,7 +160,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .btn--full {

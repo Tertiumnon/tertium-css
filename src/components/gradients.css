@@ -1,3 +1,4 @@
+@import "../system/tokens.css";
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* GRADIENT BACKGROUNDS COMPONENT                                      */
 /* Reusable gradient classes for theme-aware backgrounds               */
@@ -5,9 +6,17 @@
 
 /* Base gradient variables - defined per theme */
 :root {
-  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--bg-color--primary),
+    var(--bg-color--primary--dark)
+  );
   --gradient-page: linear-gradient(180deg, var(--bg), var(--bg-card));
-  --gradient-radial: radial-gradient(circle at center, var(--color-primary-lighter), var(--color-primary-dark));
+  --gradient-radial: radial-gradient(
+    circle at center,
+    var(--bg-color--primary--lighter),
+    var(--bg-color--primary--dark)
+  );
 }
 
 /* Gradient utility classes */
@@ -25,11 +34,19 @@
 
 /* Hero/accent gradient backgrounds */
 .gradient-hero {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  background: linear-gradient(
+    135deg,
+    var(--bg-color--primary),
+    var(--bg-color--primary--dark)
+  );
 }
 
 .gradient-accent {
-  background: linear-gradient(90deg, var(--color-primary-lighter), var(--color-primary));
+  background: linear-gradient(
+    90deg,
+    var(--bg-color--primary--lighter),
+    var(--bg-color--primary)
+  );
 }
 
 /* Soft background gradients */
@@ -38,5 +55,9 @@
 }
 
 .gradient-subtle {
-  background: linear-gradient(135deg, transparent, var(--color-primary-lighter));
+  background: linear-gradient(
+    135deg,
+    transparent,
+    var(--bg-color--primary--lighter)
+  );
 }

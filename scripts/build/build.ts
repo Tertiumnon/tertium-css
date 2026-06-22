@@ -83,7 +83,7 @@ async function writeBundle(name: string, content: string, dir = './dist'): Promi
 console.log('\n📦 Building main bundles...\n');
 
 const bundles = [
-  { name: 'main', src: './src/bundles/main.css', desc: 'Full bundle (backward compatible)' },
+  { name: 'full', src: './src/bundles/full.css', desc: 'Full bundle (all themes, components, utilities)' },
   { name: 'skeleton', src: './src/bundles/skeleton.css', desc: 'Skeleton (layout essentials)' },
   { name: 'utilities', src: './src/bundles/utilities.css', desc: 'All utilities' },
   { name: 'components', src: './src/bundles/components.css', desc: 'Components only' },
@@ -166,7 +166,7 @@ try {
 
 console.log('\n✨ Build complete! Files generated in dist/\n');
 console.log('📚 Bundles (dist/bundles/) - Pre-made combinations:');
-console.log('  main.css & main.min.css              - Full (backward compatible)');
+console.log('  full.css & full.min.css              - Full (all themes, components, utilities)');
 console.log('  skeleton.css & skeleton.min.css      - Skeleton (layout essentials)');
 console.log('  utilities.css & utilities.min.css    - All utilities');
 console.log('  components.css & components.min.css  - All components');

@@ -20,7 +20,7 @@ Practical examples for each bundle type.
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
     }
-    
+
     .product-card {
       border: 1px solid #e0e0e0;
       background: white;
@@ -41,7 +41,7 @@ Practical examples for each bundle type.
 
   <main class="p-8">
     <h2 class="mb-6">Featured Products</h2>
-    
+
     <div class="grid gap-6" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
       <div class="product-card p-6">
         <h3 class="mb-2">Product 1</h3>
@@ -50,7 +50,7 @@ Practical examples for each bundle type.
           Add to Cart
         </button>
       </div>
-      
+
       <div class="product-card p-6">
         <h3 class="mb-2">Product 2</h3>
         <p class="mb-4">Another great product</p>
@@ -88,7 +88,7 @@ Practical examples for each bundle type.
 <body>
   <div style="padding: 40px; background: #f5f5f5;">
     <h1>Button Variants</h1>
-    
+
     <div style="display: flex; gap: 16px; margin: 20px 0; flex-wrap: wrap;">
       <button class="btn btn--primary">Primary</button>
       <button class="btn btn--secondary">Secondary</button>
@@ -104,7 +104,7 @@ Practical examples for each bundle type.
     </div>
 
     <h1 style="margin-top: 40px;">Card Variants</h1>
-    
+
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 20px;">
       <div class="card">
         <div class="card-header">
@@ -203,7 +203,7 @@ Practical examples for each bundle type.
   <section class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl font-bold text-center mb-16">Features</h2>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="p-8 bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition">
           <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold mb-4">
@@ -278,7 +278,7 @@ Practical examples for each bundle type.
   <title>Themes + Skeleton</title>
   <link rel="stylesheet" href="node_modules/@tertium/css/dist/tertium.skeleton.min.css">
   <link rel="stylesheet" href="node_modules/@tertium/css/dist/tertium.themes.min.css">
-  
+
   <style>
     /* Custom components using tokens */
     body {
@@ -289,7 +289,7 @@ Practical examples for each bundle type.
 
     .custom-button {
       padding: var(--spacing-2) var(--spacing-4);
-      background: var(--color-primary);
+      background: var(--bg-color--primary);
       color: white;
       border: none;
       border-radius: var(--radius-md);
@@ -299,7 +299,7 @@ Practical examples for each bundle type.
     }
 
     .custom-button:hover {
-      background: var(--color-primary-dark);
+      background: var(--bg-color--primary--dark);
       transform: translateY(-2px);
     }
 
@@ -329,8 +329,8 @@ Practical examples for each bundle type.
 
     .theme-switcher button:hover,
     .theme-switcher button.active {
-      background: var(--color-primary);
-      border-color: var(--color-primary);
+      background: var(--bg-color--primary);
+      border-color: var(--bg-color--primary);
       color: white;
     }
   </style>
@@ -382,7 +382,7 @@ Practical examples for each bundle type.
     function setTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem('theme-preference', theme);
-      
+
       // Update active button
       document.querySelectorAll('.theme-switcher button').forEach(btn => {
         btn.classList.remove('active');
@@ -502,7 +502,7 @@ Practical examples for each bundle type.
 
   <script>
     let currentTheme = 'dark';
-    
+
     function switchTheme() {
       const themes = ['dark', 'light', 'blue'];
       const nextTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];

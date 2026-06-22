@@ -18,7 +18,7 @@ Pre-defined variables for spacing, colors, typography, shadows, etc.
 
 ```css
 var(--spacing-4)      /* 16px */
-var(--color-primary)  /* Primary color */
+var(--bg-color--primary)  /* Primary color */
 var(--text-base)      /* Base font size */
 ```
 
@@ -135,7 +135,7 @@ For greenfield components or new features, use the modular bundles instead of th
 /* New components use tokens */
 .hero {
   padding: var(--spacing-12);
-  background: var(--color-primary);
+  background: var(--bg-color--primary);
   color: white;
 }
 ```
