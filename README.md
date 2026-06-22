@@ -201,21 +201,21 @@ Purple (#c084fc) + Gold (#f0c060) on dark background. Perfect for gaming and fan
 ```html
 <html data-theme="dark">
 <!-- or explicitly -->
-<html data-theme="dark-purple-gold">
+<html data-theme="dark--purple-gold">
 ```
 
 ### Dark Blue
 Deep Blue (#2f365e) + Light Blue (#444175) on dark background. Professional coder theme synced from tertiumnon.github.io.
 
 ```html
-<html data-theme="dark-blue">
+<html data-theme="dark--deep-blue">
 ```
 
 ### Dark Deep Blue
 Purple (#b494f7) + Deep Blue (#1a1e3f, #2a3456) on dark background. Complex application theme synced from dragons-legends.gm.www.
 
 ```html
-<html data-theme="dark-deep-blue">
+<html data-theme="dark--deep-blue">
 ```
 
 ### Light Red

@@ -92,7 +92,7 @@
 .btn--ghost:hover:not(:disabled) {
   background: var(--cell-bg);
   border-color: var(--bg-color--primary);
-  color: var(--bg-color--primary);
+  color: var(--font-color--primary);
 }
 
 /* Danger Button */

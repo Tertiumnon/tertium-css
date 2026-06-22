@@ -20,7 +20,7 @@ Activate:
 ```html
 <html data-theme="dark">
 <!-- or explicitly -->
-<html data-theme="dark-purple-gold">
+<html data-theme="dark--purple-gold">
 ```
 
 ### Light Theme

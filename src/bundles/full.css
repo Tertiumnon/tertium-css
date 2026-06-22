@@ -11,11 +11,9 @@
 /* Design tokens (CSS variables) - foundation of all styling */
 @import "../system/tokens.css";
 
-/* Theme presets (Dark Purple Gold, Dark Blue, Dark Deep Blue, Light Red) - runtime switchable */
+/* Theme presets (Dark Purple Gold, Dark Deep Blue, Light Red) - runtime switchable */
 @import "../themes/dark.purple--gold.theme.css";
-@import "../themes/dark.purple--purple.theme.css";
-@import "../themes/dark.blue--blue.theme.css";
-@import "../themes/dark.deep-blue--purple.theme.css";
+@import "../themes/dark.deep-blue--blue.theme.css";
 @import "../themes/light.white--red.theme.css";
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */

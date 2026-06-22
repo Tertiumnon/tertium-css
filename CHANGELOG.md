@@ -114,7 +114,7 @@ src/
 ├── tokens/
 │   └── design-tokens.css          # Complete token system
 ├── themes/
-│   ├── dark-purple-gold-theme.css # Default theme
+│   ├── dark--purple-gold-theme.css # Default theme
 │   ├── light-theme.css
 │   ├── blue-theme.css
 │   ├── overrides.css              # Customization points

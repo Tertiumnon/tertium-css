@@ -4,7 +4,7 @@
 /* Used for documentation, content-focused applications                */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-[data-theme="light-white--red"] {
+[data-theme="light--white--red"] {
   /* PRIMARY COLOR - ONE base, all variants derived */
   --hue--primary: 0;
   --saturation--primary: 100%;
@@ -118,13 +118,58 @@
   --color-info-light: hsl(var(--info-hue), var(--info-saturation), 85%);
   --color-info-hover: hsl(var(--info-hue), var(--info-saturation), 53%);
 
-  /* TEXT COLORS */
-  --font-color--primary: #1f1f1f;
-  --font-color--primary-secondary: rgba(31, 31, 31, 0.85);
-  --font-color--tertiary: rgba(31, 31, 31, 0.65);
-  --font-color--primary-muted: rgba(31, 31, 31, 0.5);
-  --font-color--primary-inverse: #ffffff;
-  --font-color--primary-on-primary: #ffffff;
+  /* NAV COLORS - use accent secondary color (red) */
+  --nav-bg: hsl(
+    var(--hue--secondary),
+    var(--saturation--secondary),
+    calc(var(--lightness--secondary) - 5%)
+  );
+  --nav-text: #ffffff;
+  --nav-link: hsl(
+    var(--hue--secondary),
+    var(--saturation--secondary),
+    calc(var(--lightness--secondary) + 10%)
+  );
+  --nav-link-hover: hsl(
+    var(--hue--secondary),
+    var(--saturation--secondary),
+    calc(var(--lightness--secondary) + 20%)
+  );
+
+  /* TEXT COLORS - derived from background colors for contrast */
+  --font-color--primary: hsl(
+    var(--hue--primary),
+    var(--saturation--primary),
+    calc(var(--lightness--primary) - 40%)
+  );
+  --font-color--secondary: hsl(
+    var(--hue--primary),
+    var(--saturation--primary),
+    calc(var(--lightness--primary) - 25%)
+  );
+  --font-color--on-primary: hsl(
+    var(--hue--primary),
+    var(--saturation--primary),
+    calc(var(--lightness--primary) + 35%)
+  );
+  --font-color--on-secondary: hsl(
+    var(--hue--primary),
+    var(--saturation--primary),
+    calc(var(--lightness--primary) + 35%)
+  );
+  --font-color--inverse: #ffffff;
+
+  /* Dark text for form/button labels */
+  --font-color--primary--dark: hsl(
+    var(--hue--primary),
+    var(--saturation--primary),
+    calc(var(--lightness--primary) - 40%)
+  );
+  --font-color--primary--dark-tertiary: hsl(
+    var(--hue--primary),
+    var(--saturation--primary),
+    calc(var(--lightness--primary) - 25%)
+  );
 
   /* BACKGROUND COLORS */
   --bg-color--page: color-mix(
@@ -132,14 +177,37 @@
     var(--bg-color--primary) 15%,
     #ffffff 85%
   );
+  --bg-color--primary-active: color-mix(
+    in srgb,
+    var(--bg-color--primary) 20%,
+    #ffffff 80%
+  );
+  --bg-color--secondary: color-mix(
+    in srgb,
+    var(--bg-color--primary) 18%,
+    #ffffff 82%
+  );
   --bg-color--card: color-mix(
     in srgb,
     var(--bg-color--primary) 22%,
     #ffffff 78%
   );
+  --bg-color--form: color-mix(
+    in srgb,
+    var(--bg-color--primary) 10%,
+    #ffffff 90%
+  );
+  --bg-color--form-input: color-mix(
+    in srgb,
+    var(--bg-color--primary) 5%,
+    #ffffff 95%
+  );
 
   /* BORDER COLORS */
   --border: color-mix(in srgb, var(--bg-color--primary) 15%, transparent 85%);
+  --border-strong: color-mix(in srgb, var(--bg-color--primary) 25%, transparent 75%);
+  --border-light: color-mix(in srgb, var(--bg-color--primary) 8%, transparent 92%);
+  --border-medium: color-mix(in srgb, var(--bg-color--primary) 18%, transparent 82%);
 
   /* SHADOW COLORS */
   --shadow-color: color-mix(in srgb, #000000 10%, transparent 90%);
@@ -154,6 +222,9 @@
     transparent 85%
   );
 
+  /* FORM & STRUCTURAL */
+  --cell-bg: rgba(0, 0, 0, 0.02);
+
   /* PROGRESS */
   --progress-track: color-mix(
     in srgb,
@@ -161,13 +232,23 @@
     transparent 85%
   );
 
+  /* GLOW EFFECTS */
+  --glow: color-mix(in srgb, var(--bg-color--primary) 15%, transparent 85%);
+
+  /* BACKGROUND GRADIENTS */
+  --bg-r1: color-mix(in srgb, var(--bg-color--primary) 8%, transparent 92%);
+  --bg-r2: color-mix(in srgb, var(--bg-color--primary) 5%, transparent 95%);
+  --bg-r3: color-mix(in srgb, var(--bg-color--primary) 15%, #ffffff 85%);
+
   /* BUTTONS */
   --btn-bg: color-mix(in srgb, var(--bg-color--primary) 20%, #ffffff 80%);
+  --btn-border: color-mix(in srgb, var(--bg-color--primary) 12%, transparent 88%);
   --btn-bg--hover: color-mix(
     in srgb,
     var(--bg-color--primary) 28%,
     #ffffff 72%
   );
+  --btn-hover-border: color-mix(in srgb, var(--bg-color--primary) 25%, transparent 75%);
 
   /* GRADIENTS */
   --gradient-page: linear-gradient(
@@ -186,39 +267,19 @@
     var(--bg-color--primary--dark)
   );
 
-  /* NEUTRAL COLORS */
-  --color--gray-50: #fafafa;
-  --color--gray-100: #f5f5f5;
-  --color--gray-200: #eeeeee;
-  --color--gray-300: #e0e0e0;
-  --color--gray-400: #bdbdbd;
-  --color--gray-500: #9e9e9e;
-  --color--gray-600: #757575;
-  --color--gray-700: #616161;
-  --color--gray-800: #424242;
-  --color--gray-900: #212121;
-
-  /* OVERLAY COLORS */
-  --color-overlay--light: rgba(0, 0, 0, 0.05);
-  --color-overlay--lighter: rgba(0, 0, 0, 0.02);
-  --color-overlay--medium: rgba(0, 0, 0, 0.15);
-  --color-overlay--dark: rgba(0, 0, 0, 0.25);
-  --color-overlay--darker: rgba(0, 0, 0, 0.35);
-  --color-overlay--darkest: rgba(0, 0, 0, 0.5);
-  --color-overlay--black-strong: rgba(0, 0, 0, 0.8);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* BODY STYLING                                                         */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-[data-theme="light-white--red"] body {
+[data-theme="light--white--red"] body {
   background: var(--bg-color--page);
   color: var(--font-color--primary);
   position: relative;
 }
 
-[data-theme="light-white--red"] body::before {
+[data-theme="light--white--red"] body::before {
   content: "";
   position: fixed;
   top: 0;
@@ -226,6 +287,7 @@
   width: 100%;
   height: 100%;
   background:
+    var(--gradient-page),
     radial-gradient(
       ellipse at 75% 15%,
       color-mix(in srgb, var(--bg-color--primary) 5%, transparent 95%) 0%,
@@ -240,22 +302,21 @@
       ellipse at 50% 50%,
       color-mix(in srgb, var(--bg-color--primary) 30%, #ffffff 70%) 0%,
       transparent 80%
-    ),
-    var(--gradient-page);
+    );
   pointer-events: none;
   z-index: -1;
 }
 
-[data-theme="light-white--red"] a {
-  color: var(--bg-color--primary);
+[data-theme="light--white--red"] a {
+  color: var(--font-color--primary);
 }
 
-[data-theme="light-white--red"] a:visited {
-  color: var(--bg-color--primary--dark);
+[data-theme="light--white--red"] a:visited {
+  color: var(--font-color--primary--dark);
 }
 
-[data-theme="light-white--red"] a:hover {
-  color: var(--bg-color--primary--light);
+[data-theme="light--white--red"] a:hover {
+  color: var(--font-color--primary--light);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */

@@ -35,7 +35,7 @@
   font-size: var(--text-2xl);
   flex-shrink: 0;
   filter: drop-shadow(0 0 8px var(--glow));
-  color: var(--bg-color--primary);
+  color: var(--font-color--primary);
 }
 
 .section-card__body {
@@ -73,5 +73,5 @@
 .section-card:hover .section-card__arrow {
   opacity: 1;
   transform: translateX(var(--spacing-1));
-  color: var(--bg-color--primary);
+  color: var(--font-color--primary);
 }

@@ -66,7 +66,7 @@ Theme presets that override token defaults:
 
 ```
 themes/
-├── dark-purple-gold-theme.css  # Dark Purple Gold theme (default, from dragons-legends.www)
+├── dark--purple-gold-theme.css  # Dark Purple Gold theme (default, from dragons-legends.www)
 ├── light-theme.css             # Light theme (red/orange)
 ├── blue-theme.css              # Blue theme (professional)
 ├── overrides.css               # Extension points + legacy support

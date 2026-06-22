@@ -5,7 +5,7 @@
 /* Used for gaming, fantasy interfaces, and high-contrast scenarios    */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-[data-theme="dark-purple--gold"] {
+[data-theme="dark--purple--gold"] {
   /* PRIMARY COLOR - ONE base, all variants derived */
   --hue--primary: 280;
   --saturation--primary: 98%;
@@ -62,6 +62,24 @@
   --color-link: var(--bg-color--seconday--light);
   --color-link-visited: var(--bg-color--seconday-darker);
   --color-link-hover: var(--bg-color--seconday);
+
+  /* NAV COLORS - use accent secondary color */
+  --nav-bg: hsl(
+    var(--hue--secondary),
+    var(--saturation--secondary),
+    calc(var(--lightness--secondary) - 10%)
+  );
+  --nav-text: #ffffff;
+  --nav-link: hsl(
+    var(--hue--secondary),
+    var(--saturation--secondary),
+    calc(var(--lightness--secondary) + 5%)
+  );
+  --nav-link-hover: hsl(
+    var(--hue--secondary),
+    var(--saturation--secondary),
+    calc(var(--lightness--secondary) + 15%)
+  );
 
   /* STATUS COLORS - derived from base hues */
   --success-hue: 160;
@@ -124,28 +142,78 @@
   --color-info-light: hsl(var(--info-hue), var(--info-saturation), 85%);
   --color-info-hover: hsl(var(--info-hue), var(--info-saturation), 53%);
 
-  /* TEXT COLORS */
-  --font-color--primary: #ede8f5;
-  --font-color--primary-secondary: rgba(237, 232, 245, 0.85);
-  --font-color--tertiary: rgba(237, 232, 245, 0.65);
-  --font-color--primary-muted: rgba(237, 232, 245, 0.5);
-  --font-color--primary-inverse: #ffffff;
-  --font-color--primary-on-primary: #ffffff;
+  /* TEXT COLORS - derived from background colors for contrast */
+  --font-color--primary: hsl(
+    var(--hue--primary),
+    var(--saturation--primary),
+    calc(var(--lightness--primary) + 20%)
+  );
+  --font-color--secondary: hsl(
+    var(--hue--primary),
+    var(--saturation--primary),
+    calc(var(--lightness--primary) + 5%)
+  );
+  --font-color--on-primary: hsl(
+    var(--hue--primary),
+    var(--saturation--primary),
+    calc(var(--lightness--primary) - 50%)
+  );
+  --font-color--on-secondary: hsl(
+    var(--hue--secondary),
+    var(--saturation--secondary),
+    calc(var(--lightness--secondary) - 50%)
+  );
+  --font-color--inverse: #ffffff;
+
+  /* Dark text for light backgrounds (form labels, etc.) */
+  --font-color--primary--dark: hsl(
+    var(--hue--primary),
+    var(--saturation--primary),
+    calc(var(--lightness--primary) - 50%)
+  );
+  --font-color--primary--dark-tertiary: hsl(
+    var(--hue--primary),
+    var(--saturation--primary),
+    calc(var(--lightness--primary) - 35%)
+  );
 
   /* BACKGROUND COLORS */
   --bg-color--page: color-mix(
     in srgb,
-    var(--bg-color--primary) 8%,
-    #000000 92%
+    var(--bg-color--primary) 20%,
+    #000000 80%
+  );
+  --bg-color--primary-active: color-mix(
+    in srgb,
+    var(--bg-color--primary) 40%,
+    #000000 60%
+  );
+  --bg-color--secondary: color-mix(
+    in srgb,
+    var(--bg-color--primary) 33%,
+    #000000 67%
   );
   --bg-color--card: color-mix(
     in srgb,
-    var(--bg-color--primary) 16%,
-    #000000 84%
+    var(--bg-color--primary) 29%,
+    #000000 71%
+  );
+  --bg-color--form: color-mix(
+    in srgb,
+    var(--bg-color--primary) 23%,
+    #000000 77%
+  );
+  --bg-color--form-input: color-mix(
+    in srgb,
+    var(--bg-color--primary) 17%,
+    #000000 83%
   );
 
   /* BORDER COLORS */
   --border: color-mix(in srgb, var(--bg-color--primary) 15%, transparent 85%);
+  --border-strong: color-mix(in srgb, var(--bg-color--primary) 25%, transparent 75%);
+  --border-light: color-mix(in srgb, var(--bg-color--primary) 8%, transparent 92%);
+  --border-medium: rgba(var(--bg-color--primary), 0.18);
 
   /* SHADOW COLORS */
   --shadow-color: color-mix(in srgb, #000000 50%, transparent 50%);
@@ -160,6 +228,9 @@
     transparent 75%
   );
 
+  /* FORM & STRUCTURAL */
+  --cell-bg: rgba(255, 255, 255, 0.02);
+
   /* PROGRESS */
   --progress-track: color-mix(
     in srgb,
@@ -167,13 +238,23 @@
     transparent 80%
   );
 
+  /* GLOW EFFECTS */
+  --glow: color-mix(in srgb, var(--bg-color--primary) 35%, transparent 65%);
+
+  /* BACKGROUND GRADIENTS */
+  --bg-r1: color-mix(in srgb, var(--bg-color--primary) 12%, transparent 88%);
+  --bg-r2: color-mix(in srgb, var(--bg-color--primary) 8%, transparent 92%);
+  --bg-r3: color-mix(in srgb, var(--bg-color--primary) 25%, #000000 75%);
+
   /* BUTTONS - use secondary (gold) for primary button accents */
   --btn-bg: color-mix(in srgb, var(--bg-color--seconday) 14%, #000000 86%);
+  --btn-border: color-mix(in srgb, var(--bg-color--seconday) 12%, transparent 88%);
   --btn-bg--hover: color-mix(
     in srgb,
     var(--bg-color--seconday) 20%,
     #000000 80%
   );
+  --btn-hover-border: color-mix(in srgb, var(--bg-color--seconday) 35%, transparent 65%);
 
   /* GRADIENTS */
   --gradient-page: linear-gradient(
@@ -192,39 +273,19 @@
     var(--bg-color--primary--dark)
   );
 
-  /* NEUTRAL COLORS */
-  --color--gray-50: #fafafa;
-  --color--gray-100: #f5f5f5;
-  --color--gray-200: #eeeeee;
-  --color--gray-300: #e0e0e0;
-  --color--gray-400: #bdbdbd;
-  --color--gray-500: #9e9e9e;
-  --color--gray-600: #757575;
-  --color--gray-700: #616161;
-  --color--gray-800: #424242;
-  --color--gray-900: #212121;
-
-  /* OVERLAY COLORS */
-  --color-overlay--light: rgba(255, 255, 255, 0.15);
-  --color-overlay--lighter: rgba(255, 255, 255, 0.08);
-  --color-overlay--medium: rgba(255, 255, 255, 0.4);
-  --color-overlay--dark: rgba(0, 0, 0, 0.2);
-  --color-overlay--darker: rgba(0, 0, 0, 0.35);
-  --color-overlay--darkest: rgba(0, 0, 0, 0.5);
-  --color-overlay--black-strong: rgba(0, 0, 0, 0.95);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* BODY STYLING                                                         */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-[data-theme="dark-purple--gold"] body {
+[data-theme="dark--purple--gold"] body {
   background: var(--bg-color--page);
   color: var(--font-color--primary);
   position: relative;
 }
 
-[data-theme="dark-purple--gold"] body::before {
+[data-theme="dark--purple--gold"] body::before {
   content: "";
   position: fixed;
   top: 0;
@@ -232,6 +293,7 @@
   width: 100%;
   height: 100%;
   background:
+    var(--gradient-page),
     radial-gradient(
       ellipse at 75% 15%,
       color-mix(in srgb, var(--bg-color--primary) 18%, transparent 82%) 0%,
@@ -246,35 +308,19 @@
       ellipse at 50% 50%,
       color-mix(in srgb, var(--bg-color--primary) 60%, #000000 40%) 0%,
       transparent 80%
-    ),
-    var(--gradient-page);
+    );
   pointer-events: none;
   z-index: -1;
 }
 
-[data-theme="dark-purple--gold"] a {
+[data-theme="dark--purple--gold"] a {
   color: var(--color-link);
 }
 
-[data-theme="dark-purple--gold"] a:visited {
+[data-theme="dark--purple--gold"] a:visited {
   color: var(--color-link-visited);
 }
 
-[data-theme="dark-purple--gold"] a:hover {
+[data-theme="dark--purple--gold"] a:hover {
   color: var(--color-link-hover);
-}
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-/* TYPOGRAPHY                                                          */
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-
-h1 {
-  font-family: var(--font-heading);
-  color: var(--heading-c1);
-}
-
-h2,
-h3 {
-  font-family: var(--font-heading);
-  color: var(--heading-c2);
 }
