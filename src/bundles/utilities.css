@@ -5,8 +5,8 @@
 /* pre-built components. File size: ~12KB                              */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-@import '../system/tokens/design-tokens.css';
-@import '../system/base/reset.css';
+@import '../system/tokens.css';
+@import '../system/base.css';
 @import '../utilities/containers.css';
 @import '../utilities/typography.css';
 @import '../utilities/spacing.css';

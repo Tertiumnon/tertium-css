@@ -10,15 +10,6 @@
 /* Complete token hierarchy defining spacing, typography, colors, etc. */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-/* Import self-hosted fonts */
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-/* Font Declarations - Removed                                        */
-/* Fonts are now managed by @tertium/fonts package                   */
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-
-/* Placeholder for future @tertium/fonts integration */
-
-
 :root {
   /* ─────────────────────────────────────────────────────────────── */
   /* SPACING SCALE                                                   */

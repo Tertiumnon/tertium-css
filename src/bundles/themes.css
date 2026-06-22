@@ -6,7 +6,6 @@
 /* File size: ~4KB                                                     */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-@import '../system/tokens/design-tokens.css';
-@import '../system/themes/dark.purple-gold.theme.css';
-@import '../system/themes/light.red.theme.css';
-@import '../system/themes/overrides.css';
+@import '../system/tokens.css';
+@import '../themes/dark.purple--gold.theme.css';
+@import '../themes/light.white--red.theme.css';

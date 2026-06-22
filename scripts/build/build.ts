@@ -1,9 +1,10 @@
 #!/usr/bin/env bun
 import { join, basename, dirname } from 'path';
+import { readdirSync } from 'fs';
 
 // Clear dist directory if it exists, then recreate it
 const distDir = './dist';
-const dirs = ['dist', 'dist/bundles', 'dist/themes', 'dist/utilities'];
+const dirs = ['dist', 'dist/bundles', 'dist/themes', 'dist/utilities', 'dist/components'];
 
 for (const dir of dirs) {
   try {
@@ -106,18 +107,14 @@ for (const bundle of bundles) {
 console.log('🎨 Building theme files...\n');
 
 try {
-  const themeDir = Bun.file('./src/system/themes');
-  const files = await themeDir.exists() ?
-    await Bun.$`ls ./src/system/themes/*.theme.css 2>/dev/null`.text().then(t => t.trim().split('\n').filter(Boolean)) :
-    [];
+  const themeDir = './src/themes';
+  const files = readdirSync(themeDir).filter(f => f.endsWith('.theme.css'));
 
-  for (const file of files) {
-    const fileName = basename(file);
-    if (fileName.endsWith('.theme.css')) {
-      const content = await Bun.file(file).text();
-      const baseName = basename(file, '.css');
-      await writeBundle(baseName, content, './dist/themes');
-    }
+  for (const fileName of files) {
+    const file = join(themeDir, fileName);
+    const content = await Bun.file(file).text();
+    const baseName = basename(file, '.css');
+    await writeBundle(baseName, content, './dist/themes');
   }
 } catch (err) {
   console.error('Error building theme files:', err);
@@ -130,21 +127,37 @@ try {
 console.log('🎯 Building individual utility files...\n');
 
 try {
-  const utilDir = Bun.file('./src/utilities');
-  const files = await utilDir.exists() ?
-    await Bun.$`ls ./src/utilities/*.css 2>/dev/null`.text().then(t => t.trim().split('\n').filter(Boolean)) :
-    [];
+  const utilDir = './src/utilities';
+  const files = readdirSync(utilDir).filter(f => f.endsWith('.css'));
 
-  for (const file of files) {
-    const fileName = basename(file);
-    if (fileName.endsWith('.css')) {
-      const content = await Bun.file(file).text();
-      const baseName = basename(file, '.css');
-      await writeBundle(baseName, content, './dist/utilities');
-    }
+  for (const fileName of files) {
+    const file = join(utilDir, fileName);
+    const content = await Bun.file(file).text();
+    const baseName = basename(file, '.css');
+    await writeBundle(baseName, content, './dist/utilities');
   }
 } catch (err) {
   console.error('Error building utility files:', err);
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// BUILD INDIVIDUAL COMPONENT FILES
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+console.log('🧩 Building individual component files...\n');
+
+try {
+  const componentDir = './src/components';
+  const files = readdirSync(componentDir).filter(f => f.endsWith('.css'));
+
+  for (const fileName of files) {
+    const file = join(componentDir, fileName);
+    const content = await Bun.file(file).text();
+    const baseName = basename(file, '.css');
+    await writeBundle(baseName, content, './dist/components');
+  }
+} catch (err) {
+  console.error('Error building component files:', err);
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -152,18 +165,27 @@ try {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 console.log('\n✨ Build complete! Files generated in dist/\n');
-console.log('📚 Main bundles (dist/bundles/):');
+console.log('📚 Bundles (dist/bundles/) - Pre-made combinations:');
 console.log('  main.css & main.min.css              - Full (backward compatible)');
 console.log('  skeleton.css & skeleton.min.css      - Skeleton (layout essentials)');
 console.log('  utilities.css & utilities.min.css    - All utilities');
-console.log('  components.css & components.min.css  - Components only');
+console.log('  components.css & components.min.css  - All components');
 console.log('  variables.css & variables.min.css    - Design tokens only');
-console.log('\n🎨 Themes (dist/themes/):');
-console.log('  dark.purple-gold.theme.css & .min.css');
-console.log('  dark.blue.theme.css & .min.css');
-console.log('  dark.deep-blue.theme.css & .min.css');
-console.log('  light.red.theme.css & .min.css');
-console.log('\n🎯 Utilities (dist/utilities/):');
+console.log('\n🎨 Themes (dist/themes/) - Individual theme files:');
+console.log('  dark.purple--gold.theme.css & .min.css');
+console.log('  dark.purple--purple.theme.css & .min.css');
+console.log('  dark.blue--blue.theme.css & .min.css');
+console.log('  dark.deep-blue--purple.theme.css & .min.css');
+console.log('  light.white--red.theme.css & .min.css');
+console.log('\n🧩 Components (dist/components/) - Individual component files:');
+console.log('  buttons.css & buttons.min.css');
+console.log('  cards.css & cards.min.css');
+console.log('  gradients.css & gradients.min.css');
+console.log('  menu.css & menu.min.css');
+console.log('  section-card.css & section-card.min.css');
+console.log('  tables.css & tables.min.css');
+console.log('  theme-switcher.css & theme-switcher.min.css');
+console.log('\n🎯 Utilities (dist/utilities/) - Individual utility files:');
 console.log('  display.css & display.min.css');
 console.log('  positioning.css & positioning.min.css');
 console.log('  sizing.css & sizing.min.css');

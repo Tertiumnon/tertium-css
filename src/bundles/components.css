@@ -6,8 +6,8 @@
 /* File size: ~6KB (minified)                                          */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-@import '../system/tokens/design-tokens.css';
-@import '../system/base/reset.css';
+@import '../system/tokens.css';
+@import '../system/base.css';
 @import '../components/buttons.css';
 @import '../components/cards.css';
 @import '../components/section-card.css';

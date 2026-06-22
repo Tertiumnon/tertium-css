@@ -3,9 +3,6 @@
 /* Complete token hierarchy defining spacing, typography, colors, etc. */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-/* Import self-hosted fonts */
-@import './fonts.css';
-
 :root {
   /* ─────────────────────────────────────────────────────────────── */
   /* SPACING SCALE                                                   */

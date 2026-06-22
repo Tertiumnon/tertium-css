@@ -6,8 +6,8 @@
 /* File size: ~8KB (minified)                                          */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-@import '../system/tokens/design-tokens.css';
-@import '../system/base/reset.css';
+@import '../system/tokens.css';
+@import '../system/base.css';
 @import '../utilities/display.css';
 @import '../utilities/positioning.css';
 @import '../utilities/sizing.css';

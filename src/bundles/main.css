@@ -9,15 +9,14 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 /* Design tokens (CSS variables) - foundation of all styling */
-@import '../system/tokens/design-tokens.css';
+@import '../system/tokens.css';
 
 /* Theme presets (Dark Purple Gold, Dark Blue, Dark Deep Blue, Light Red) - runtime switchable */
-@import '../system/themes/dark.purple--gold.theme.css';
-@import '../system/themes/dark.purple--purple.theme.css';
-@import '../system/themes/dark.blue--blue.theme.css';
-@import '../system/themes/dark.deep-blue--purple.theme.css';
-@import '../system/themes/light.red--red.theme.css';
-@import '../system/themes/overrides.css';
+@import '../themes/dark.purple--gold.theme.css';
+@import '../themes/dark.purple--purple.theme.css';
+@import '../themes/dark.blue--blue.theme.css';
+@import '../themes/dark.deep-blue--purple.theme.css';
+@import '../themes/light.white--red.theme.css';
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* LEGACY: Existing utilities (maintained for backward compatibility)  */
