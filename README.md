@@ -4,6 +4,8 @@ A framework-agnostic, universal CSS design system with composable tokens, themes
 
 **🎉 Now with Design Tokens & Theme System!** This release adds a universal design system foundation while maintaining 100% backward compatibility with existing projects.
 
+**📖 [View Interactive Demo](demo/index.html)** - See all components, themes, and design tokens in action
+
 ## Quick Start
 
 ```bash
@@ -276,22 +278,144 @@ See [TOKENS.md](docs/TOKENS.md) for complete reference.
 
 Pre-built UI elements with multiple variants:
 
-```html
-<!-- Buttons -->
-<button class="btn btn--primary">Primary</button>
-<button class="btn btn--secondary">Secondary</button>
-<button class="btn btn--danger">Danger</button>
+### Buttons
 
-<!-- Cards -->
-<div class="card card--primary">
-  <div class="card-header">
-    <h3 class="card-title">Card Title</h3>
+```html
+<!-- Default button -->
+<button class="btn">Default</button>
+
+<!-- Primary button (uses accent color) -->
+<button class="btn btn--primary">Primary</button>
+
+<!-- Submit button (for forms) -->
+<button class="btn btn--submit" type="submit">Submit</button>
+
+<!-- Outline button (transparent with border) -->
+<button class="btn btn--outline">Outline</button>
+
+<!-- Disabled state -->
+<button class="btn" disabled>Disabled</button>
+```
+
+### Cards
+
+```html
+<!-- Standard card with primary background -->
+<div class="card">
+  <h3>Card Title</h3>
+  <p>Card content goes here</p>
+</div>
+
+<!-- Section card with darker background (better for grouping) -->
+<div class="section-card">
+  <div class="card">
+    <h2>Content Section</h2>
+    <p>Content inside</p>
   </div>
-  <div class="card-body">Content here</div>
 </div>
 ```
 
-See [COMPONENTS.md](docs/COMPONENTS.md) for all available components.
+### Forms
+
+```html
+<form class="form">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" class="form-input">
+  </div>
+  
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" class="form-input">
+  </div>
+  
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" class="form-input"></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn--primary">Send</button>
+</form>
+```
+
+### Tables
+
+```html
+<table class="table">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+      <td>Data 3</td>
+    </tr>
+    <tr>
+      <td>Data 4</td>
+      <td>Data 5</td>
+      <td>Data 6</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+### Navigation Bar
+
+```html
+<nav class="navbar">
+  <div class="container-2xl">
+    <div class="navbar-inner">
+      <a href="#" class="navbar-brand">Logo</a>
+      
+      <ul class="navbar-menu">
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Docs</a></li>
+      </ul>
+      
+      <div class="navbar-actions">
+        <button class="btn btn--primary">Sign In</button>
+      </div>
+    </div>
+  </div>
+</nav>
+```
+
+### Badges
+
+```html
+<!-- Color badges -->
+<span class="badge">Default</span>
+<span class="badge bg-success">Success</span>
+<span class="badge bg-warning">Warning</span>
+<span class="badge bg-danger">Danger</span>
+<span class="badge bg-info">Info</span>
+```
+
+### Utility Classes for Colors
+
+```html
+<!-- Background colors -->
+<div class="bg-primary">Primary background</div>
+<div class="bg-accent">Accent background</div>
+<div class="bg-success">Success background</div>
+<div class="bg-warning">Warning background</div>
+<div class="bg-danger">Danger background</div>
+<div class="bg-info">Info background</div>
+
+<!-- Text colors -->
+<p class="text-primary">Primary text</p>
+<p class="text-secondary">Secondary text</p>
+<p class="text-success">Success text</p>
+<p class="text-danger">Danger text</p>
+```
+
+See [COMPONENTS.md](docs/COMPONENTS.md) for detailed component API reference.
 
 ## File Structure
 
