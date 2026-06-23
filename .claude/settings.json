@@ -8,7 +8,9 @@
       "Bash(bun scripts/theme/generate/generate.ts dark.navy--cyan)",
       "Bash(bun scripts/theme/generate/generate.ts light.white--red)",
       "Bash(bun theme:generate:all)",
-      "Bash(bun run *)"
+      "Bash(bun run *)",
+      "Bash(sed -n '/^code,/,/^pre {/p' dist/system/base.css)",
+      "Bash(sed -n '/^code,/,/overflow-x:/p' dist/bundles/full.css)"
     ]
   }
 }

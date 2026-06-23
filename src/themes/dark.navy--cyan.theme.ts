@@ -1,7 +1,7 @@
 import { createTheme, generateBorderColors, generateTextColors } from "./theme.constants";
 
 const primaryHsl = { hue: 240, saturation: 100, lightness: 27 };
-const accentHsl = { hue: 240, saturation: 100, lightness: 80 };
+const accentHsl = { hue: 240, saturation: 100, lightness: 91.4 };
 
 export const theme = createTheme({
   metadata: {

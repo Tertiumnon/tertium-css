@@ -340,3 +340,37 @@
 .text-pink-700 {
   color: #be185d;
 }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* THEME-AWARE BACKGROUND COLORS WITH TEXT CONTRAST                  */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.bg-primary {
+  background: var(--primary-color);
+  color: var(--text-primary);
+}
+
+.bg-accent {
+  background: var(--accent-color);
+  color: var(--text-on-accent);
+}
+
+.bg-success {
+  background: var(--color-success);
+  color: var(--text-on-accent);
+}
+
+.bg-warning {
+  background: var(--color-warning);
+  color: var(--text-on-accent);
+}
+
+.bg-danger {
+  background: var(--color-danger);
+  color: var(--text-on-accent);
+}
+
+.bg-info {
+  background: var(--color-info);
+  color: var(--text-on-accent);
+}

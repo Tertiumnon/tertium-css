@@ -39,13 +39,13 @@
 /* NEW: Pre-built Components (optional, can be used with tokens)      */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-@import "../components/buttons.css";
-@import "../components/cards.css";
+@import "../components/button.css";
+@import "../components/card.css";
 @import "../components/navbar.css";
 @import "../components/section-card.css";
-@import "../components/tables.css";
+@import "../components/table.css";
 @import "../components/theme-switcher.css";
-@import "../components/gradients.css";
+@import "../components/gradient.css";
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* Legacy Body Styles (maintained for backward compatibility)         */

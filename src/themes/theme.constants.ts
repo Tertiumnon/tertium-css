@@ -6,10 +6,18 @@ import type { ThemeConfig } from "./theme.types";
  */
 
 export const DEFAULT_VARIATIONS = {
+  "primary-lightest-offset": 25,
+  "primary-lighter-offset": 15,
   "primary-light-offset": 8,
   "primary-dark-offset": -5,
+  "primary-darker-offset": -12,
+  "primary-darkest-offset": -20,
+  "accent-lightest-offset": 35,
+  "accent-lighter-offset": 25,
   "accent-light-offset": 15,
   "accent-dark-offset": -15,
+  "accent-darker-offset": -25,
+  "accent-darkest-offset": -35,
 } as const;
 
 export const DEFAULT_STATUS_COLORS = {
@@ -24,7 +32,7 @@ export const DEFAULT_STATUS_COLORS = {
  */
 export const DEFAULT_LIGHT_BACKGROUNDS = {
   "page-offset": 0,
-  "card-offset": -4,
+  "card-offset": 0,
   "form-offset": -1,
   "form-input-offset": 0,
   "button-light-offset": -15,
@@ -36,11 +44,11 @@ export const DEFAULT_LIGHT_BACKGROUNDS = {
  */
 export const DEFAULT_DARK_BACKGROUNDS = {
   "page-offset": -2,
-  "card-offset": 5,
+  "card-offset": 0,
   "form-offset": 8,
   "form-input-offset": 12,
-  "button-light-offset": -15,
-  "button-hover-light-offset": -5,
+  "button-light-offset": 8,
+  "button-hover-light-offset": 15,
 } as const;
 
 /**

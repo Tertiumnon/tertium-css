@@ -3,6 +3,25 @@ import { resolve } from "path";
 
 type ThemeConfig = any;
 
+/**
+ * Calculate button hover lightness based on theme darkness.
+ * RULE: Both primary and accent colors follow the same pattern
+ * Light themes: hover is DARKER (lower lightness)
+ * Dark themes: hover is LIGHTER (higher lightness)
+ */
+function calculateButtonHoverLightness(
+  baseLightness: number,
+  isDark: boolean
+): number {
+  if (isDark) {
+    // Dark theme: make hover lighter by +20%
+    return baseLightness + 20;
+  } else {
+    // Light theme: make hover darker by -20%
+    return baseLightness - 20;
+  }
+}
+
 async function generateTheme(themeName: string, cssPath: string): Promise<void> {
   // Import TypeScript theme config
   const tsPath = resolve(process.cwd(), `src/themes/${themeName}.theme.ts`);
@@ -12,6 +31,8 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   const dataTheme = metadata.name;
   const primaryHsl = primary.hsl;
   const accentHsl = accent.hsl;
+  const isDark = metadata.darkness === "dark";
+  const buttonHoverLightness = calculateButtonHoverLightness(primaryHsl.lightness, isDark);
 
   // Generate CSS
   let css = `/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */\n`;
@@ -41,18 +62,26 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  /* PRIMARY BG COLOR - Variations                                   */\n`;
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
 
-  css += `  --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));\n`;
+  css += `  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + ${variations["primary-lightest-offset"]}%));\n`;
+  css += `  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + ${variations["primary-lighter-offset"]}%));\n`;
   css += `  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + ${variations["primary-light-offset"]}%));\n`;
-  css += `  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + ${variations["primary-dark-offset"]}%));\n\n`;
+  css += `  --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));\n`;
+  css += `  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + ${variations["primary-dark-offset"]}%));\n`;
+  css += `  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + ${variations["primary-darker-offset"]}%));\n`;
+  css += `  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + ${variations["primary-darkest-offset"]}%));\n\n`;
 
   // Accent variations
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
   css += `  /* PRIMARY ACCENT COLOR - Variations                               */\n`;
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
 
-  css += `  --accent-color: hsl(var(--accent-hue), var(--accent-sat), var(--accent-light));\n`;
+  css += `  --accent-color--lightest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + ${variations["accent-lightest-offset"]}%));\n`;
+  css += `  --accent-color--lighter: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + ${variations["accent-lighter-offset"]}%));\n`;
   css += `  --accent-color--light: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + ${variations["accent-light-offset"]}%));\n`;
-  css += `  --accent-color--dark: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + ${variations["accent-dark-offset"]}%));\n\n`;
+  css += `  --accent-color: hsl(var(--accent-hue), var(--accent-sat), var(--accent-light));\n`;
+  css += `  --accent-color--dark: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + ${variations["accent-dark-offset"]}%));\n`;
+  css += `  --accent-color--darker: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + ${variations["accent-darker-offset"]}%));\n`;
+  css += `  --accent-color--darkest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + ${variations["accent-darkest-offset"]}%));\n\n`;
 
   // Contextual backgrounds
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
@@ -75,7 +104,22 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  --text-secondary: ${textColors.secondary};\n`;
   css += `  --text-on-primary: ${textColors["on-primary"]};\n`;
   css += `  --text-on-accent: ${textColors["on-accent"]};\n`;
-  css += `  --text-inverse: ${textColors.inverse};\n\n`;
+  css += `  --text-inverse: ${textColors.inverse};\n`;
+
+  // Derive lighter text color for subtle elements (borders, etc)
+  const textPrimaryLight = isDark
+    ? `hsla(0, 0%, 100%, 0.2)`  // Dark theme: white at 20% opacity
+    : `hsl(0, 0%, 75%)`          // Light theme: 75% gray (lighter than black)
+
+  css += `  --text-primary--light: ${textPrimaryLight};\n\n`;
+
+  // Code background colors
+  css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
+  css += `  /* CODE & PRE BACKGROUND COLORS                                    */\n`;
+  css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
+
+  css += `  --code-bg: var(--primary-color--darker);\n`;
+  css += `  --code-block-bg: var(--primary-color--darkest);\n\n`;
 
   // Headings
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
@@ -130,6 +174,51 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  --gradient-page: linear-gradient(180deg, var(--bg-page), var(--bg-card));\n`;
   css += `  --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-color--light));\n`;
   css += `  --gradient-radial: radial-gradient(circle at center, var(--primary-color--light), var(--primary-color--dark));\n\n`;
+
+  // Button colors
+  css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
+  css += `  /* BUTTON COLORS - Auto-derived from theme                          */\n`;
+  css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
+
+  css += `  /* Default button: darker primary bg, text-derived border, default text */\n`;
+  css += `  --button-default-bg: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + ${backgrounds["button-light-offset"]}%));\n`;
+  css += `  --button-default-border: var(--text-primary--light);\n`;
+  css += `  --button-default-text: var(--text-primary);\n`;
+  css += `  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), ${buttonHoverLightness}%);\n`;
+  css += `  --button-default-border--hover: var(--text-primary--light);\n`;
+  css += `  --button-default-text--hover: var(--text-primary);\n\n`;
+
+  // Calculate accent hover color using same rule as primary
+  const accentHoverLightness = calculateButtonHoverLightness(accentHsl.lightness, isDark);
+
+  css += `  /* Primary button: accent bg, darker accent border, text-on-accent */\n`;
+  css += `  --button-primary-bg: var(--accent-color);\n`;
+  css += `  --button-primary-border: var(--accent-color--dark);\n`;
+  css += `  --button-primary-text: var(--text-on-accent);\n`;
+  css += `  --button-primary-bg--hover: hsl(var(--accent-hue), var(--accent-sat), ${accentHoverLightness}%);\n`;
+  css += `  --button-primary-border--hover: hsl(var(--accent-hue), var(--accent-sat), ${accentHoverLightness}%);\n`;
+  css += `  --button-primary-text--hover: var(--text-on-accent);\n\n`;
+
+  css += `  /* Outline button: transparent bg, accent border, accent text */\n`;
+  css += `  --button-outline-bg: transparent;\n`;
+  css += `  --button-outline-border: var(--accent-color);\n`;
+  css += `  --button-outline-text: var(--accent-color);\n`;
+  css += `  --button-outline-bg--hover: transparent;\n`;
+  css += `  --button-outline-border--hover: hsl(var(--accent-hue), var(--accent-sat), ${accentHoverLightness}%);\n`;
+  css += `  --button-outline-text--hover: hsl(var(--accent-hue), var(--accent-sat), ${accentHoverLightness}%);\n\n`;
+
+  css += `  /* Submit button: accent bg, darker accent border, text-on-accent */\n`;
+  css += `  --button-submit-bg: var(--accent-color);\n`;
+  css += `  --button-submit-border: var(--accent-color--dark);\n`;
+  css += `  --button-submit-text: var(--text-on-accent);\n`;
+  css += `  --button-submit-bg--hover: hsl(var(--accent-hue), var(--accent-sat), ${accentHoverLightness}%);\n`;
+  css += `  --button-submit-border--hover: hsl(var(--accent-hue), var(--accent-sat), ${accentHoverLightness}%);\n`;
+  css += `  --button-submit-text--hover: var(--text-on-accent);\n\n`;
+
+  css += `  /* Borderless button: no border, accent text */\n`;
+  css += `  --button-text-color: var(--accent-color);\n`;
+  css += `  --button-text-bg--hover: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + ${isDark ? 15 : -15}%), 0.1);\n`;
+  css += `  --button-text-color--hover: var(--accent-color--dark);\n\n`;
 
   // Navbar & menu colors
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;

@@ -47,13 +47,13 @@ Every theme uses exactly TWO base colors from which all other colors are derived
 - The main background color for the entire theme
 - Used for body background, cards, forms, etc.
 - CSS variable: `--primary-color`
-- Variations: `--primary-color--light`, `--primary-color--dark`
+- Variations: `--primary-color--lightest`, `--primary-color--lighter`, `--primary-color--light`, `--primary-color--dark`, `--primary-color--darker`, `--primary-color--darkest`
 
 ### PRIMARY ACCENT COLOR
 - The secondary accent color for highlights and calls-to-action
 - Used for button backgrounds, links, headings, and navigation accents
 - CSS variable: `--accent-color`
-- Variations: `--accent-color--light`, `--accent-color--dark`
+- Variations: `--accent-color--lightest`, `--accent-color--lighter`, `--accent-color--light`, `--accent-color--dark`, `--accent-color--darker`, `--accent-color--darkest`
 
 ### How It Works
 
@@ -494,3 +494,305 @@ Verify:
 - HTML has `data-theme="{darkness}--{primary-color}--{accent-color}"` attribute
 - Theme file is imported in `src/bundles/full.css`
 - All selectors match the data-theme value exactly
+
+---
+
+## Rule 11: Border Color Hierarchy
+
+All borders must be **slightly darker than the background color** of their parent element to create visual separation and depth.
+
+### Principle
+
+- **Filled backgrounds**: Border is darker than background
+- **Transparent backgrounds**: Border is the primary color (accent)
+- **Purpose**: Borders define element boundaries and create visual structure
+
+### Examples
+
+**Button with background:**
+```css
+/* Default button */
+--button-default-bg: hsl(..., 85%);      /* light gray */
+--button-default-border: hsl(..., 70%);  /* darker gray */
+```
+
+**Card with background:**
+```css
+--bg-card: hsl(..., 80%);              /* card background */
+--border-color: hsla(..., 45%, 0.3);   /* darker, semi-transparent */
+```
+
+**Form input with background:**
+```css
+--bg-form-input: hsl(..., 82%);        /* input background */
+--border-color: hsla(..., 40%, 0.2);   /* darker border */
+```
+
+**Transparent outline:**
+```css
+/* Outline button (no fill) */
+--button-outline-bg: transparent;
+--button-outline-border: var(--accent-color);  /* primary color, no darkening needed */
+```
+
+### Implementation Rule
+
+For any component with a **filled background color**:
+1. Define background color variable
+2. Define border color variable as **8-15% darker** (lower lightness)
+3. Exception: Transparent backgrounds don't need darkening
+
+This creates automatic visual hierarchy without additional styling logic.
+
+---
+
+## Rule 12: Button Styling Patterns
+
+All button variants are **auto-generated** by the theme system. Button colors are derived from the two base colors (primary & accent) and are defined as CSS variables in each theme file. The `buttons.css` component uses only these generated variables, making it completely theme-agnostic.
+
+### Auto-Generated Button Color Variables
+
+For each theme, the generator creates the following CSS variables:
+
+```css
+/* Default button: darker primary bg, text-derived border, default text */
+--button-default-bg: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -15%));
+--button-default-border: var(--text-primary--light);
+--button-default-text: var(--text-primary);
+--button-default-bg--hover: [darker or lighter based on theme];
+--button-default-border--hover: var(--text-primary--light);
+--button-default-text--hover: var(--text-primary);
+
+/* Primary button: accent bg, darker accent border, text-on-accent */
+--button-primary-bg: var(--accent-color);
+--button-primary-border: var(--accent-color--dark);
+--button-primary-text: var(--text-on-accent);
+--button-primary-bg--hover: var(--accent-color--dark);
+--button-primary-border--hover: var(--accent-color--dark);
+
+/* Outline button: transparent bg, accent border, accent text */
+--button-outline-bg: transparent;
+--button-outline-border: var(--accent-color);
+--button-outline-text: var(--accent-color);
+--button-outline-bg--hover: rgba(var(--accent-hue), var(--accent-sat), var(--accent-light), 0.1);
+--button-outline-border--hover: var(--accent-color--dark);
+--button-outline-text--hover: var(--accent-color--dark);
+
+/* Submit button: accent bg, darker accent border, text-on-accent */
+--button-submit-bg: var(--accent-color);
+--button-submit-border: var(--accent-color--dark);
+--button-submit-text: var(--text-on-accent);
+--button-submit-bg--hover: var(--accent-color--dark);
+--button-submit-border--hover: var(--accent-color--dark);
+--button-submit-text--hover: var(--text-on-accent);
+
+/* Borderless button: no border, accent text */
+--button-text-color: var(--accent-color);
+--button-text-bg--hover: [subtle tint of accent color];
+--button-text-color--hover: var(--accent-color--dark);
+```
+
+### Button CSS Implementation
+
+The `src/components/buttons.css` uses only the generated variables, requiring **zero theme-specific CSS**:
+
+```css
+.btn {
+  background: var(--button-default-bg);
+  border-color: var(--button-default-border);
+  color: var(--button-default-text);
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--button-default-bg--hover);
+  border-color: var(--button-default-border--hover);
+  color: var(--button-default-text--hover);
+}
+
+.btn--primary {
+  background: var(--button-primary-bg);
+  border-color: var(--button-primary-border);
+  color: var(--button-primary-text);
+}
+
+.btn--secondary {
+  background: var(--button-secondary-bg);
+  border-color: var(--button-secondary-border);
+  color: var(--button-secondary-text);
+}
+
+.btn--outline {
+  background: var(--button-outline-bg);
+  border-color: var(--button-outline-border);
+  color: var(--button-outline-text);
+}
+
+.btn--submit {
+  background: var(--button-submit-bg);
+  border-color: var(--button-submit-border);
+  color: var(--button-submit-text);
+  padding: var(--spacing-2) var(--spacing-6);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.btn--text {
+  background: transparent;
+  border: none;
+  color: var(--button-text-color);
+}
+
+.btn--text:hover:not(:disabled) {
+  background: var(--button-text-bg--hover);
+  color: var(--button-text-color--hover);
+}
+
+/* Size variants */
+.btn--sm {
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: var(--text-sm);
+}
+
+.btn--lg {
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--text-lg);
+}
+```
+
+### Semantic Rules (Applied in Theme Generator)
+
+**Default Button (`.btn`)**
+- Background: Darker primary color (subtle contrast against page)
+- Border: `--text-primary--light` (lighter version of text color)
+- Text: `--text-primary` (default text color)
+- Hover: Background changes based on theme (darker in light, lighter in dark)
+- Use: Secondary actions, less prominent buttons
+
+**Primary Button (`.btn--primary`)**
+- Background: `--accent-color` (stands out)
+- Border: `--accent-color--dark` (darker than background)
+- Text: `--text-on-accent` (auto-adjusted for contrast)
+- Hover: Background and border darken to `--accent-color--dark`
+- Use: Main call-to-action, primary actions
+
+**Outline Button (`.btn--outline`)**
+- Background: `transparent`
+- Border: `--accent-color`
+- Text: `--accent-color`
+- Hover: Subtle tint + darker border
+- Use: Secondary alternative to default
+
+**Submit Button (`.btn--submit`)**
+- Same as primary button plus:
+- Padding: `var(--spacing-2) var(--spacing-6)` (more horizontal)
+- Text: `text-transform: uppercase`
+- Font weight: `600`
+- Use: Form submissions, explicit submit actions
+
+**Borderless Button (`.btn--text`)**
+- Background: `transparent`
+- Border: `none`
+- Text: `--accent-color`
+- Hover: Subtle tint background + darker text
+- Use: Minimal, text-only actions, links-styled buttons
+
+### How It Works Across Themes
+
+**Light Theme (white--red):**
+- `--button-default-bg` = light gray (derived from white with -4% offset)
+- `--button-primary-bg` = red (accent)
+- Default button is clearly different from page (white) background ✓
+
+**Dark Theme (navy--cyan):**
+- `--button-default-bg` = slightly lighter navy (derived from navy with +5% offset)
+- `--button-primary-bg` = cyan (accent)
+- Default button is clearly different from page (navy) background ✓
+
+### Adding New Button Variants
+
+To add a new button variant:
+1. Add generated variables in `scripts/theme/generate/generate.ts`
+2. Create CSS class in `src/components/buttons.css` using the generated variables
+3. Run `npm run build` to regenerate all themes
+4. The new variant automatically works across all themes
+
+### Why Auto-Generation
+
+1. **No theme-specific button CSS**: Buttons work the same in all themes
+2. **Consistency guaranteed**: All button colors come from the same base color system
+3. **Easy to modify**: Change button styling in one place (the generator) for all themes
+4. **Accessibility**: `--text-on-accent` ensures text contrast in all themes
+5. **Future-proof**: Adding new themes automatically includes all button colors
+
+---
+
+## Rule 13: Code and Pre Background Colors
+
+Inline `<code>` and block `<pre>` elements use the darkest primary color variations to create visual hierarchy and improve readability.
+
+### Background Color Hierarchy
+
+**Inline Code (`<code>`)**
+- Background: `--primary-color--darker` (3rd darkest primary variation)
+- Purpose: Subtle visual distinction from page background
+- Creates clear distinction between code and surrounding text
+- Accessible for monospace text readability
+
+**Code Blocks (`<pre>`)**
+- Background: `--primary-color--darkest` (darkest primary variation)
+- Darker than inline code: Creates stronger visual separation
+- Emphasizes blocks of code as distinct, important elements
+- Maximum contrast for readability of large code sections
+
+### Color Spectrum Usage
+
+Both code backgrounds use the established primary color spectrum:
+
+```
+--primary-color--lightest   (+25%)    [lightest]
+--primary-color--lighter    (+15%)    
+--primary-color--light      (+8%)     
+--primary-color             (base)    
+--primary-color--dark       (-5%)     
+--primary-color--darker     (-12%)    ← Used for <code>
+--primary-color--darkest    (-20%)    ← Used for <pre>
+```
+
+### Implementation in base.css
+
+```css
+code,
+pre {
+  font-family: monospace;
+  background: var(--code-bg);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: 0.375em;
+}
+
+pre {
+  overflow-x: auto;
+  padding: var(--spacing-4);
+  margin: 0;
+  background: var(--code-block-bg);
+}
+```
+
+### Generated CSS Variables
+
+The theme system automatically assigns the correct variations:
+
+```css
+[data-theme="dark--navy--cyan"] {
+  --code-bg: var(--primary-color--darker);
+  --code-block-bg: var(--primary-color--darkest);
+}
+```
+
+### Why This Rule
+
+1. **Semantic**: Uses defined color variations instead of arbitrary opacity values
+2. **Consistent**: Part of the unified primary color spectrum
+3. **Visual Hierarchy**: Darker shades clearly distinguish code from content
+4. **Theme Agnostic**: Works identically across light and dark themes
+5. **Scalable**: Adding new themes automatically includes correct code colors
+6. **Accessible**: Maximum contrast for code readability without custom CSS

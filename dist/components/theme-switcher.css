@@ -43,22 +43,22 @@
   gap: 6px;
   padding: 6px 12px;
   background: var(--primary-color);
-  color: var(--font-color--primary--light);
-  border: 1px solid color-mix(in srgb, var(--primary-color) 85%, white 15%);
+  color: var(--text-primary);
+  border: 1px solid var(--button-default-border);
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.85em;
   font-weight: 500;
   line-height: 1;
-  transition: all var(--transition-fast);
+  transition: all var(--duration-fast);
   white-space: nowrap;
   font-family: inherit;
 }
 
 .theme-switcher--trigger:hover {
-  background: color-mix(in srgb, var(--primary-color) 85%, white 15%);
-  border-color: color-mix(in srgb, var(--primary-color) 70%, white 30%);
-  color: var(--font-color--primary--light);
+  background: var(--primary-color--light);
+  border-color: var(--button-default-border);
+  color: var(--text-primary);
 }
 
 .theme-switcher--color-dot {
@@ -66,7 +66,7 @@
   height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--border-color--light);
 }
 
 .theme-switcher--label {
@@ -85,8 +85,8 @@
   position: absolute;
   top: calc(100% + 4px);
   right: 0;
-  background-color: var(--bg-color--secondary);
-  border: 1px solid color-mix(in srgb, var(--primary-color) 70%, white 30%);
+  background-color: var(--menu-bg);
+  border: 1px solid var(--border-color);
   border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   width: max-content;
@@ -111,16 +111,15 @@
   align-items: center;
   gap: 10px;
   width: 100%;
-  padding: 10px 12px;
+  padding: 8px 12px;
   background: none;
   border: none;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--primary-color) 85%, white 15%);
-  color: var(--font-color--primary);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--menu-text);
   cursor: pointer;
   text-align: left;
   font-size: 0.85em;
-  transition: all var(--transition-fast);
+  transition: all var(--duration-fast);
   font-family: inherit;
   box-sizing: border-box;
 }
@@ -130,15 +129,11 @@
 }
 
 .theme-switcher--option:hover {
-  background-color: color-mix(in srgb, var(--primary-color) 90%, white 10%);
+  background-color: var(--bg-form-input);
 }
 
 .theme-switcher--option-active {
-  background-color: color-mix(
-    in srgb,
-    var(--primary-color-active) 80%,
-    white 20%
-  );
+  background-color: var(--bg-form-input);
   font-weight: 600;
 }
 
@@ -151,18 +146,18 @@
 
 .theme-switcher--name {
   font-weight: 500;
-  color: var(--font-color--primary);
+  color: var(--menu-text);
   font-size: 0.85em;
 }
 
 .theme-switcher--desc {
   font-size: 0.75em;
-  color: var(--font-color--tertiary);
+  color: var(--text-secondary);
   line-height: 1.2;
 }
 
 .theme-switcher--check {
-  color: var(--font-color--primary);
+  color: var(--text-primary);
   font-weight: bold;
   font-size: 14px;
   flex-shrink: 0;

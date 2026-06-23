@@ -15,7 +15,7 @@
         <a href="#" class="navbar-brand">🎨 Tertium CSS</a>
         <ul class="navbar-menu">
           <li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li>
-          <li class="nav-item"><a href="#typography" class="nav-link active">Typography</a></li>
+          <li class="nav-item"><a href="#typography" class="nav-link">Typography</a></li>
           <li class="nav-item"><a href="#flexbox" class="nav-link">Flexbox</a></li>
           <li class="nav-item"><a href="#grid" class="nav-link">Grid</a></li>
           <li class="nav-item"><a href="#buttons" class="nav-link">Buttons</a></li>
@@ -42,7 +42,7 @@
               <span class="theme-option-arrow">›</span>
             </button>
             <div class="profile-menu--submenu">
-              <button class="theme-option active" data-theme="dark.purple--gold.theme.min.css">
+              <button class="theme-option" data-theme="dark.purple--gold.theme.min.css">
                 <span class="theme-color-dot purple"></span>
                 <span class="theme-option-label">Dark Purple & Gold</span>
                 <span class="theme-option-check">✓</span>
@@ -50,12 +50,12 @@
               <button class="theme-option" data-theme="dark.navy--cyan.theme.min.css">
                 <span class="theme-color-dot navy"></span>
                 <span class="theme-option-label">Dark Navy & Cyan</span>
-                <span class="theme-option-check hidden">✓</span>
+                <span class="theme-option-check">✓</span>
               </button>
               <button class="theme-option" data-theme="light.white--red.theme.min.css">
                 <span class="theme-color-dot red"></span>
                 <span class="theme-option-label">Light White & Red</span>
-                <span class="theme-option-check hidden">✓</span>
+                <span class="theme-option-check">✓</span>
               </button>
             </div>
             <button class="profile-menu--option">
@@ -76,7 +76,7 @@
     </div>
 
     <!-- Color System -->
-    <div class="card m-6 p-6" id="colors">
+    <div class="section-card m-6 p-6" id="colors">
       <h2>Color System</h2>
       <p>Current theme colors and their usage in the design system. Updates automatically when you switch themes.</p>
       <table class="table">
@@ -94,7 +94,7 @@
     </div>
 
     <!-- Navbar -->
-    <div class="card m-6 p-6" id="navbar">
+    <div class="section-card m-6 p-6" id="navbar">
       <h2>Navbar</h2>
       <p>A sticky navigation bar with brand, menu items, and action buttons. Visible at the top of this page.</p>
       <pre><code>&lt;nav class="navbar"&gt;
@@ -112,7 +112,7 @@
     </div>
 
     <!-- Typography -->
-    <div class="card m-6 p-6" id="typography">
+    <div class="section-card m-6 p-6" id="typography">
       <h2>Typography</h2>
       <h1>Heading 1</h1>
       <h2>Heading 2</h2>
@@ -121,30 +121,30 @@
     </div>
 
     <!-- Flexbox -->
-    <div class="card m-6 p-6" id="flexbox">
+    <div class="section-card m-6 p-6" id="flexbox">
       <h2>Flexbox Layout</h2>
       <div class="flex gap-4 my-4">
-        <div class="flex-1 p-4 rounded text-white text-center" style="background: var(--primary-color);">Flex Item 1</div>
-        <div class="flex-1 p-4 rounded text-white text-center" style="background: var(--primary-color);">Flex Item 2</div>
-        <div class="flex-1 p-4 rounded text-white text-center" style="background: var(--primary-color);">Flex Item 3</div>
+        <div class="flex-1 p-4 rounded text-center font-bold bg-primary">Flex Item 1</div>
+        <div class="flex-1 p-4 rounded text-center font-bold bg-primary">Flex Item 2</div>
+        <div class="flex-1 p-4 rounded text-center font-bold bg-primary">Flex Item 3</div>
       </div>
     </div>
 
     <!-- Grid -->
-    <div class="card m-6 p-6" id="grid">
+    <div class="section-card m-6 p-6" id="grid">
       <h2>Grid Layout</h2>
       <div class="grid grid-cols-3 gap-4 my-4">
-        <div class="p-4 rounded text-white text-center" style="background: var(--primary-color);">Grid 1</div>
-        <div class="p-4 rounded text-white text-center" style="background: var(--primary-color);">Grid 2</div>
-        <div class="p-4 rounded text-white text-center" style="background: var(--primary-color);">Grid 3</div>
-        <div class="p-4 rounded text-white text-center" style="background: var(--primary-color);">Grid 4</div>
-        <div class="p-4 rounded text-white text-center" style="background: var(--primary-color);">Grid 5</div>
-        <div class="p-4 rounded text-white text-center" style="background: var(--primary-color);">Grid 6</div>
+        <div class="p-4 rounded text-center font-bold bg-primary">Grid 1</div>
+        <div class="p-4 rounded text-center font-bold bg-primary">Grid 2</div>
+        <div class="p-4 rounded text-center font-bold bg-primary">Grid 3</div>
+        <div class="p-4 rounded text-center font-bold bg-primary">Grid 4</div>
+        <div class="p-4 rounded text-center font-bold bg-primary">Grid 5</div>
+        <div class="p-4 rounded text-center font-bold bg-primary">Grid 6</div>
       </div>
     </div>
 
     <!-- Buttons -->
-    <div class="card m-6 p-6" id="buttons">
+    <div class="section-card m-6 p-6" id="buttons">
       <h2>Buttons</h2>
 
       <div class="mb-6">
@@ -180,6 +180,14 @@
       </div>
 
       <div class="mb-6">
+        <h3>Borderless Button</h3>
+        <div class="my-4">
+          <button class="btn btn--text">Borderless Button</button>
+        </div>
+        <pre><code>&lt;button class="btn btn--text"&gt;Borderless Button&lt;/button&gt;</code></pre>
+      </div>
+
+      <div class="mb-6">
         <h3>Small Button</h3>
         <div class="my-4">
           <button class="btn btn--sm">Small</button>
@@ -187,17 +195,25 @@
         <pre><code>&lt;button class="btn btn--sm"&gt;Small&lt;/button&gt;</code></pre>
       </div>
 
-      <div>
-        <h3>Disabled Button</h3>
-        <div class="my-4">
-          <button class="btn" disabled>Disabled</button>
+      <div class="mb-6">
+        <h3>Disabled States</h3>
+        <div class="my-4" style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+          <button class="btn" disabled>Default</button>
+          <button class="btn btn--primary" disabled>Primary</button>
+          <button class="btn btn--outline" disabled>Outline</button>
+          <button class="btn btn--submit" disabled>Submit</button>
+          <button class="btn btn--text" disabled>Borderless</button>
         </div>
-        <pre><code>&lt;button class="btn" disabled&gt;Disabled&lt;/button&gt;</code></pre>
+        <pre><code>&lt;button class="btn" disabled&gt;Default&lt;/button&gt;
+&lt;button class="btn btn--primary" disabled&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn--outline" disabled&gt;Outline&lt;/button&gt;
+&lt;button class="btn btn--submit" disabled&gt;Submit&lt;/button&gt;
+&lt;button class="btn btn--text" disabled&gt;Borderless&lt;/button&gt;</code></pre>
       </div>
     </div>
 
     <!-- Cards -->
-    <div class="card m-6 p-6" id="cards">
+    <div class="section-card m-6 p-6" id="cards">
       <h2>Cards</h2>
       <div class="grid grid-cols-3 gap-4 my-4">
         <div class="card">
@@ -239,34 +255,33 @@
     </div>
 
     <!-- Forms -->
-    <div class="card m-6 p-6" id="forms">
+    <div class="section-card m-6 p-6" id="forms">
       <h2>Form Elements</h2>
-      <div class="grid grid-cols-2 gap-6 max-w-2xl my-4">
-        <div class="grid-cols-full">
-          <div class="form-group">
-            <label class="form-label">Search</label>
-            <div style="position: relative;">
-              <input type="text" class="form-input" placeholder="Search..." style="padding-right: 2.5em;">
-              <button style="position: absolute; right: 0.75em; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 0.25em; display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.35-4.35"></path>
-              </svg>
-            </button>
+      <div class="flex flex-wrap gap-4 max-w-2xl my-4">
+        <div class="form-group" style="flex: 1 1 100%;">
+          <label class="form-label">Search</label>
+          <div style="position: relative;">
+            <input type="text" class="form-input" placeholder="Search..." style="padding-right: 2.5em;">
+            <button style="position: absolute; right: 0.75em; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 0.25em; display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="flex: 1 1 calc(50% - 0.5rem);">
           <label class="form-label">Text Input</label>
           <input type="text" class="form-input" placeholder="Enter your name...">
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="flex: 1 1 calc(50% - 0.5rem);">
           <label class="form-label">Email</label>
           <input type="email" class="form-input" placeholder="your@email.com">
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="flex: 1 1 calc(50% - 0.5rem);">
           <label class="form-label">Select Option</label>
           <select class="form-select">
             <option>Option 1</option>
@@ -275,17 +290,44 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="flex: 1 1 100%;">
           <label class="form-label">Message</label>
           <textarea class="form-input" placeholder="Your message..." rows="4"></textarea>
         </div>
 
-        <button class="btn btn--submit">Submit</button>
+        <button class="btn btn--submit" style="flex: 1 1 100%;">Submit</button>
       </div>
+
+      <pre><code>&lt;div class="flex flex-wrap gap-4 max-w-2xl"&gt;
+  &lt;!-- Full width --&gt;
+  &lt;div class="form-group" style="flex: 1 1 100%;"&gt;
+    &lt;label class="form-label"&gt;Search&lt;/label&gt;
+    &lt;input type="text" class="form-input" placeholder="Search..."&gt;
+  &lt;/div&gt;
+
+  &lt;!-- 50% width on larger screens, 100% on mobile --&gt;
+  &lt;div class="form-group" style="flex: 1 1 calc(50% - 0.5rem);"&gt;
+    &lt;label class="form-label"&gt;Text Input&lt;/label&gt;
+    &lt;input type="text" class="form-input" placeholder="Enter your name..."&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-group" style="flex: 1 1 calc(50% - 0.5rem);"&gt;
+    &lt;label class="form-label"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="form-input" placeholder="your@email.com"&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Full width --&gt;
+  &lt;div class="form-group" style="flex: 1 1 100%;"&gt;
+    &lt;label class="form-label"&gt;Message&lt;/label&gt;
+    &lt;textarea class="form-input" placeholder="..."&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+
+  &lt;button class="btn btn--submit" style="flex: 1 1 100%;"&gt;Submit&lt;/button&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <!-- Pagination -->
-    <div class="card m-6 p-6">
+    <div class="section-card m-6 p-6">
       <h2>Pagination</h2>
       <div class="flex gap-2 flex-wrap items-center my-4">
         <button class="btn btn--pagination" disabled>← Previous</button>
@@ -301,19 +343,27 @@
     </div>
 
     <!-- Colors -->
-    <div class="card m-6 p-6">
+    <div class="section-card m-6 p-6">
       <h2>Colors</h2>
-      <div class="grid grid-cols-5 gap-4 my-4">
-        <div class="p-8 rounded text-white font-bold text-center" style="background: var(--primary-color);">Primary</div>
-        <div class="p-8 rounded text-white font-bold text-center" style="background: var(--color-success);">Success</div>
-        <div class="p-8 rounded font-bold text-center" style="background: var(--color-warning); color: black;">Warning</div>
-        <div class="p-8 rounded text-white font-bold text-center" style="background: var(--color-danger);">Danger</div>
-        <div class="p-8 rounded text-white font-bold text-center" style="background: var(--color-info);">Info</div>
+      <div class="flex flex-wrap gap-4 my-4">
+        <div class="p-8 rounded font-bold text-center bg-primary" style="flex: 1 1 calc(20% - 0.8rem);">Primary</div>
+        <div class="p-8 rounded font-bold text-center bg-success" style="flex: 1 1 calc(20% - 0.8rem);">Success</div>
+        <div class="p-8 rounded font-bold text-center bg-warning" style="flex: 1 1 calc(20% - 0.8rem);">Warning</div>
+        <div class="p-8 rounded font-bold text-center bg-danger" style="flex: 1 1 calc(20% - 0.8rem);">Danger</div>
+        <div class="p-8 rounded font-bold text-center bg-info" style="flex: 1 1 calc(20% - 0.8rem);">Info</div>
       </div>
+
+      <pre><code>&lt;div class="flex flex-wrap gap-4"&gt;
+  &lt;div class="p-8 rounded font-bold text-center bg-primary"&gt;Primary&lt;/div&gt;
+  &lt;div class="p-8 rounded font-bold text-center bg-success"&gt;Success&lt;/div&gt;
+  &lt;div class="p-8 rounded font-bold text-center bg-warning"&gt;Warning&lt;/div&gt;
+  &lt;div class="p-8 rounded font-bold text-center bg-danger"&gt;Danger&lt;/div&gt;
+  &lt;div class="p-8 rounded font-bold text-center bg-info"&gt;Info&lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <!-- Tables -->
-    <div class="card m-6 p-6">
+    <div class="section-card m-6 p-6">
       <h2>Tables</h2>
       <table class="table">
         <thead>
@@ -348,7 +398,7 @@
     </div>
 
     <!-- Footer -->
-    <div class="card m-6 p-6 text-center">
+    <div class="section-card m-6 p-6 text-center">
       <p>Tertium CSS © 2024 - Universal Design System</p>
     </div>
   </div>
@@ -362,15 +412,19 @@
     const themeSubmenuTrigger = document.querySelector('.theme-submenu-trigger');
     const themeSubmenu = document.querySelector('.profile-menu--submenu');
 
+    // Initialize dropdown visibility
+    profileDropdown.style.display = 'none';
+    themeSubmenu.style.display = 'none';
+
     profileTrigger.addEventListener('click', () => {
-      const isVisible = profileDropdown.style.display !== 'none';
+      const isVisible = profileDropdown.style.display === 'block';
       profileDropdown.style.display = isVisible ? 'none' : 'block';
       if (isVisible) themeSubmenu.style.display = 'none';
     });
 
     themeSubmenuTrigger.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isVisible = themeSubmenu.style.display !== 'none';
+      const isVisible = themeSubmenu.style.display === 'block';
       themeSubmenu.style.display = isVisible ? 'none' : 'block';
       themeSubmenuTrigger.classList.toggle('submenu-open');
     });
@@ -407,10 +461,24 @@
 
       // Close dropdown after selection
       profileDropdown.style.display = 'none';
+      themeSubmenu.style.display = 'none';
 
       // Update color table
       updateColorTable();
     };
+
+    // Initialize active theme on page load
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const currentThemeFile = Object.entries(themeMap).find(([_, attr]) => attr === currentTheme)?.[0];
+    if (currentThemeFile) {
+      themeOptions.forEach(opt => {
+        if (opt.dataset.theme === currentThemeFile) {
+          opt.classList.add('active');
+        } else {
+          opt.classList.remove('active');
+        }
+      });
+    }
 
     // Color table population
     const colorDefinitions = [
@@ -516,6 +584,32 @@
         updateTheme(opt.dataset.theme);
       });
     });
+
+    // Active nav link based on scroll position
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    const updateActiveNav = () => {
+      let currentSection = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - 100) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav();
   </script>
 </body>
 </html>

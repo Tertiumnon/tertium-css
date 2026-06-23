@@ -317,14 +317,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: var(--line-height-normal);
-  color: var(--text);
-  background: var(--bg);
-  transition:
-    background-color var(--duration-normal),
-    color var(--duration-normal);
+  font-family: Arial, Roboto, sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--bg-page);
 }
 
 /* ─────────────────────────────────────────────────────────────────── */
@@ -339,9 +336,9 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.2;
   color: var(--heading-color);
 }
 
@@ -405,16 +402,17 @@ small {
 
 code,
 pre {
-  font-family: var(--font-mono);
-  background: var(--cell-bg);
+  font-family: monospace;
+  background: var(--code-bg);
   padding: var(--spacing-1) var(--spacing-2);
-  border-radius: var(--radius-md);
+  border-radius: 0.375em;
 }
 
 pre {
   overflow-x: auto;
   padding: var(--spacing-4);
   margin: 0;
+  background: var(--code-block-bg);
 }
 
 /* ─────────────────────────────────────────────────────────────────── */
@@ -1674,6 +1672,40 @@ button:focus-visible {
 }
 .text-pink-700 {
   color: #be185d;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* THEME-AWARE BACKGROUND COLORS WITH TEXT CONTRAST                  */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.bg-primary {
+  background: var(--primary-color);
+  color: var(--text-primary);
+}
+
+.bg-accent {
+  background: var(--accent-color);
+  color: var(--text-on-accent);
+}
+
+.bg-success {
+  background: var(--color-success);
+  color: var(--text-on-accent);
+}
+
+.bg-warning {
+  background: var(--color-warning);
+  color: var(--text-on-accent);
+}
+
+.bg-danger {
+  background: var(--color-danger);
+  color: var(--text-on-accent);
+}
+
+.bg-info {
+  background: var(--color-info);
+  color: var(--text-on-accent);
 }
 
 

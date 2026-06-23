@@ -17,34 +17,42 @@
   /* ACCENT: cyan highlight */
   --accent-hue: 240;
   --accent-sat: 100%;
-  --accent-light: 80%;
+  --accent-light: 91.4%;
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* PRIMARY BG COLOR - Variations                                   */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
+  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 25%));
+  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 15%));
   --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
+  --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
   --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -5%));
+  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -12%));
+  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -20%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* PRIMARY ACCENT COLOR - Variations                               */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --accent-color: hsl(var(--accent-hue), var(--accent-sat), var(--accent-light));
+  --accent-color--lightest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 35%));
+  --accent-color--lighter: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 25%));
   --accent-color--light: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 15%));
+  --accent-color: hsl(var(--accent-hue), var(--accent-sat), var(--accent-light));
   --accent-color--dark: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -15%));
+  --accent-color--darker: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -25%));
+  --accent-color--darkest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -35%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* CONTEXTUAL BACKGROUND COLORS                                    */
   /* ═══════════════════════════════════════════════════════════════ */
 
   --bg-page: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -2%));
-  --bg-card: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 5%));
+  --bg-card: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 0%));
   --bg-form: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
   --bg-form-input: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 12%));
-  --bg-button: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -15%));
-  --bg-button--hover: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -5%));
+  --bg-button: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 8%));
+  --bg-button--hover: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 15%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* TEXT COLORS - Derived from primary/accent contrast              */
@@ -55,6 +63,14 @@
   --text-on-primary: #ffffff;
   --text-on-accent: #000000;
   --text-inverse: #ffffff;
+  --text-primary--light: hsla(0, 0%, 100%, 0.2);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* CODE & PRE BACKGROUND COLORS                                    */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --code-bg: var(--primary-color--darker);
+  --code-block-bg: var(--primary-color--darkest);
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* HEADING COLORS - Use accent                                    */
@@ -103,6 +119,47 @@
   --gradient-page: linear-gradient(180deg, var(--bg-page), var(--bg-card));
   --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-color--light));
   --gradient-radial: radial-gradient(circle at center, var(--primary-color--light), var(--primary-color--dark));
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* BUTTON COLORS - Auto-derived from theme                          */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  /* Default button: darker primary bg, text-derived border, default text */
+  --button-default-bg: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
+  --button-default-border: var(--text-primary--light);
+  --button-default-text: var(--text-primary);
+  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 47%);
+  --button-default-border--hover: var(--text-primary--light);
+  --button-default-text--hover: var(--text-primary);
+
+  /* Primary button: accent bg, darker accent border, text-on-accent */
+  --button-primary-bg: var(--accent-color);
+  --button-primary-border: var(--accent-color--dark);
+  --button-primary-text: var(--text-on-accent);
+  --button-primary-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
+  --button-primary-border--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
+  --button-primary-text--hover: var(--text-on-accent);
+
+  /* Outline button: transparent bg, accent border, accent text */
+  --button-outline-bg: transparent;
+  --button-outline-border: var(--accent-color);
+  --button-outline-text: var(--accent-color);
+  --button-outline-bg--hover: transparent;
+  --button-outline-border--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
+  --button-outline-text--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
+
+  /* Submit button: accent bg, darker accent border, text-on-accent */
+  --button-submit-bg: var(--accent-color);
+  --button-submit-border: var(--accent-color--dark);
+  --button-submit-text: var(--text-on-accent);
+  --button-submit-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
+  --button-submit-border--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
+  --button-submit-text--hover: var(--text-on-accent);
+
+  /* Borderless button: no border, accent text */
+  --button-text-color: var(--accent-color);
+  --button-text-bg--hover: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 15%), 0.1);
+  --button-text-color--hover: var(--accent-color--dark);
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* NAVBAR & MENU BACKGROUND - For dark themes                        */

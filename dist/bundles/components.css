@@ -318,14 +318,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: var(--line-height-normal);
-  color: var(--text);
-  background: var(--bg);
-  transition:
-    background-color var(--duration-normal),
-    color var(--duration-normal);
+  font-family: Arial, Roboto, sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--bg-page);
 }
 
 /* ─────────────────────────────────────────────────────────────────── */
@@ -340,9 +337,9 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.2;
   color: var(--heading-color);
 }
 
@@ -406,16 +403,17 @@ small {
 
 code,
 pre {
-  font-family: var(--font-mono);
-  background: var(--cell-bg);
+  font-family: monospace;
+  background: var(--code-bg);
   padding: var(--spacing-1) var(--spacing-2);
-  border-radius: var(--radius-md);
+  border-radius: 0.375em;
 }
 
 pre {
   overflow-x: auto;
   padding: var(--spacing-4);
   margin: 0;
+  background: var(--code-block-bg);
 }
 
 /* ─────────────────────────────────────────────────────────────────── */
@@ -593,10 +591,10 @@ button:focus-visible {
   font-weight: 500;
   line-height: 1.5;
 
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--button-default-border);
   border-radius: 0.375em;
-  background: var(--accent-color);
-  color: white;
+  background: var(--button-default-bg);
+  color: var(--button-default-text);
 
   cursor: pointer;
   transition: all 0.2s ease;
@@ -606,17 +604,13 @@ button:focus-visible {
 }
 
 .btn:hover:not(:disabled) {
-  background: var(--accent-color--dark);
-  border-color: var(--accent-color--dark);
-  transform: translateY(-1px);
-}
-
-.btn:active:not(:disabled) {
-  transform: translateY(0);
+  background: var(--button-default-bg--hover);
+  border-color: var(--button-default-border--hover);
+  color: var(--button-default-text--hover);
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--primary-color);
+  outline: 2px solid var(--button-default-border);
   outline-offset: 2px;
 }
 
@@ -631,83 +625,45 @@ button:focus-visible {
 
 /* Primary Button */
 .btn--primary {
-  background: var(--primary-color);
-  border-color: var(--primary-color);
-  color: white;
+  background: var(--button-primary-bg);
+  border-color: var(--button-primary-border);
+  color: var(--button-primary-text);
 }
 
 .btn--primary:hover:not(:disabled) {
-  background: var(--primary-color--dark);
-  border-color: var(--primary-color--dark);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-color) 15%, transparent 85%);
-}
-
-/* Secondary Button */
-.btn--secondary {
-  background: var(--bg-card);
-  border-color: var(--border-color);
-  color: var(--text-primary);
-}
-
-.btn--secondary:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--bg-card) 80%, var(--text-primary) 20%);
-  border-color: var(--border-color--strong);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--border-color) 15%, transparent 85%);
+  background: var(--button-primary-bg--hover);
+  border-color: var(--button-primary-border--hover);
+  color: var(--button-primary-text--hover);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--button-primary-bg) 15%, transparent 85%);
 }
 
 /* Outline Button */
 .btn--outline,
 .btn-outline {
-  background: transparent;
-  border-color: var(--accent-color);
-  color: var(--accent-color);
+  background: var(--button-outline-bg);
+  border-color: var(--button-outline-border);
+  color: var(--button-outline-text);
   padding: var(--spacing-2) var(--spacing-4);
 }
 
 .btn--outline:hover:not(:disabled),
 .btn-outline:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
-  border-color: var(--accent-color--dark);
-  color: var(--accent-color--dark);
+  background: var(--button-outline-bg--hover);
+  border-color: var(--button-outline-border--hover);
+  color: var(--button-outline-text--hover);
 }
 
-/* Ghost Button (outline only) */
-.btn--ghost {
+/* Borderless Button */
+.btn--text {
   background: transparent;
-  border-color: var(--border-color);
-  color: var(--text-primary);
+  border: none;
+  color: var(--button-text-color);
+  padding: var(--spacing-2) var(--spacing-4);
 }
 
-.btn--ghost:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--text-primary) 5%, transparent 95%);
-  border-color: var(--text-primary);
-  color: var(--text-primary);
-}
-
-/* Danger Button */
-.btn--danger {
-  background: var(--color-danger);
-  border-color: var(--color-danger);
-  color: white;
-}
-
-.btn--danger:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--color-danger) 85%, black 15%);
-  border-color: color-mix(in srgb, var(--color-danger) 85%, black 15%);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-danger) 15%, transparent 85%);
-}
-
-/* Success Button */
-.btn--success {
-  background: var(--color-success);
-  border-color: var(--color-success);
-  color: white;
-}
-
-.btn--success:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--color-success) 85%, black 15%);
-  border-color: color-mix(in srgb, var(--color-success) 85%, black 15%);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-success) 15%, transparent 85%);
+.btn--text:hover:not(:disabled) {
+  background: var(--button-text-bg--hover);
+  color: var(--button-text-color--hover);
 }
 
 /* ─────────────────────────────────────────────────────────────────── */
@@ -760,16 +716,19 @@ button:focus-visible {
 
 /* Submit Button */
 .btn--submit {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
-  color: white;
+  background: var(--button-submit-bg);
+  border-color: var(--button-submit-border);
+  color: var(--button-submit-text);
+  padding: var(--spacing-2) var(--spacing-6);
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 .btn--submit:hover:not(:disabled) {
-  background: var(--accent-color--dark);
-  border-color: var(--accent-color--dark);
-  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
+  background: var(--button-submit-bg--hover);
+  border-color: var(--button-submit-border--hover);
+  color: var(--button-submit-text--hover);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--button-submit-bg) 15%, transparent 85%);
 }
 
 
@@ -797,7 +756,6 @@ button:focus-visible {
 
 .card:hover {
   box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
 }
 
 /* ─────────────────────────────────────────────────────────────────── */
@@ -925,79 +883,24 @@ button:focus-visible {
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* SECTION CARD COMPONENT                                             */
-/* Horizontal card for displaying sections/features with icon         */
+/* Container section with dark primary background and content         */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 .section-card {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-6);
-
-  position: relative;
+  display: block;
   padding: var(--spacing-6);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background:
-    radial-gradient(ellipse at 75% 15%, var(--bg-r1) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 85%, var(--bg-r2) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, var(--bg-r3) 0%, transparent 80%),
-    var(--bg-card);
-  box-shadow: var(--shadow-md);
-
-  transition: all var(--duration-normal) var(--timing-ease-in-out);
+  border-radius: 0.375em;
+  background: var(--primary-color--dark);
+  box-shadow: 0px 0px 8px 0px var(--button-default-border);
 }
 
-.section-card:hover {
-  border-color: var(--primary-color);
-  box-shadow:
-    var(--shadow-lg),
-    0 0 20px var(--glow);
-  transform: translateY(-3px);
-}
-
-.section-card__icon {
-  font-size: var(--text-2xl);
-  flex-shrink: 0;
-  filter: drop-shadow(0 0 8px var(--glow));
-  color: var(--font-color--primary);
-}
-
-.section-card__body {
-  flex: 1;
-  position: relative;
-  z-index: 1;
-}
-
-.section-card__title {
-  font-family: var(--font-heading);
-  font-size: var(--text-lg);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--letter-spacing-wide);
-  color: var(--heading-c1);
-  margin: 0;
-}
-
-.section-card__desc {
-  font-size: var(--text-sm);
-  color: var(--text-dim);
-  margin: var(--spacing-1) 0 0;
-  line-height: var(--line-height-normal);
-}
-
-.section-card__arrow {
-  font-size: var(--text-lg);
-  color: var(--text-dim);
-  flex-shrink: 0;
-  opacity: 0.5;
-  transition:
-    opacity var(--duration-fast),
-    transform var(--duration-fast);
-}
-
-.section-card:hover .section-card__arrow {
-  opacity: 1;
-  transform: translateX(var(--spacing-1));
-  color: var(--font-color--primary);
+.section-card h1:first-child,
+.section-card h2:first-child,
+.section-card h3:first-child,
+.section-card h4:first-child,
+.section-card h5:first-child,
+.section-card h6:first-child {
+  margin-top: 0;
 }
 
 
@@ -1011,13 +914,14 @@ button:focus-visible {
   margin: var(--spacing-4) 0;
   font-size: 1em;
   border-collapse: collapse;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--button-default-border);
   border-radius: 0.375em;
   overflow: hidden;
 }
 
 .table thead {
   background: color-mix(in srgb, var(--primary-color) 8%, transparent 92%);
+  border-top: 1px solid var(--button-default-border);
 }
 
 .table th {
@@ -1027,23 +931,34 @@ button:focus-visible {
   padding: var(--spacing-3) var(--spacing-3);
   text-align: left;
   color: var(--heading-color);
-  border-bottom: 2px solid var(--border-color--strong);
+  border-bottom: 2px solid var(--button-default-border);
+  border-right: 1px solid var(--button-default-border);
   white-space: nowrap;
 }
 
+.table th:first-child {
+  border-left: 1px solid var(--button-default-border);
+}
+
 .table th:last-child {
-  border-right: none;
+  border-right: 1px solid var(--button-default-border);
 }
 
 .table td {
   padding: var(--spacing-2) var(--spacing-3);
-  border-bottom: 1px solid var(--border-color);
+  background: var(--primary-color);
+  border-bottom: 1px solid var(--button-default-border);
+  border-right: 1px solid var(--button-default-border);
   vertical-align: top;
   line-height: 1.6;
 }
 
+.table td:first-child {
+  border-left: 1px solid var(--button-default-border);
+}
+
 .table td:last-child {
-  border-right: none;
+  border-right: 1px solid var(--button-default-border);
 }
 
 .table tbody tr:last-child td {
@@ -1057,16 +972,28 @@ button:focus-visible {
 /* Table with visible borders on all cells */
 .table--border th,
 .table--border td {
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--button-default-border);
 }
 
 .table--border th:last-child,
 .table--border td:last-child {
-  border-right: 1px solid var(--border-color);
+  border-right: 1px solid var(--button-default-border);
 }
 
 .table--border tbody tr:last-child td {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--button-default-border);
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* LIGHT THEME OVERRIDES                                               */
+/* ─────────────────────────────────────────────────────────────────── */
+
+[data-theme*="light"] .table thead {
+  background: var(--button-default-bg);
+}
+
+[data-theme*="light"] .table th {
+  color: var(--accent-color);
 }
 
 
@@ -1221,7 +1148,7 @@ button:focus-visible {
   background: color-mix(in srgb, var(--primary-color) 15%, transparent 85%);
   color: var(--font-color--primary);
   border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-md);
+  border-radius: 50%;
   cursor: pointer;
   font-size: 1.3em;
   line-height: 1;
@@ -1304,6 +1231,63 @@ button:focus-visible {
   border-top: 1px solid
     color-mix(in srgb, var(--menu-bg) 85%, white 15%);
   animation: slideDown 150ms ease-out;
+}
+
+/* Theme option rows in submenu */
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--menu-bg) 85%, white 15%);
+  color: var(--menu-text);
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.85em;
+  transition: all var(--transition-fast);
+  font-family: var(--font-body);
+  box-sizing: border-box;
+}
+
+.theme-option:last-child {
+  border-bottom: none;
+}
+
+.theme-option:hover {
+  background-color: color-mix(in srgb, var(--menu-bg) 80%, white 20%);
+}
+
+.theme-option.active {
+  background-color: color-mix(in srgb, var(--menu-bg) 80%, white 20%);
+  font-weight: 600;
+}
+
+.theme-color-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.theme-option-label {
+  flex: 1;
+}
+
+.theme-option-check {
+  color: var(--menu-text);
+  font-weight: bold;
+  font-size: 14px;
+  flex-shrink: 0;
+  display: none;
+}
+
+.theme-option.active .theme-option-check {
+  display: inline;
 }
 
 @keyframes slideDown {
@@ -1647,7 +1631,6 @@ button:focus-visible {
   background-color: color-mix(in srgb, var(--primary-color) 85%, white 15%);
   border-color: color-mix(in srgb, var(--primary-color) 70%, white 30%);
   box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
 }
 
 .size-button:active:not(:disabled) {
@@ -1717,22 +1700,22 @@ button:focus-visible {
   gap: 6px;
   padding: 6px 12px;
   background: var(--primary-color);
-  color: var(--font-color--primary--light);
-  border: 1px solid color-mix(in srgb, var(--primary-color) 85%, white 15%);
+  color: var(--text-primary);
+  border: 1px solid var(--button-default-border);
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.85em;
   font-weight: 500;
   line-height: 1;
-  transition: all var(--transition-fast);
+  transition: all var(--duration-fast);
   white-space: nowrap;
   font-family: inherit;
 }
 
 .theme-switcher--trigger:hover {
-  background: color-mix(in srgb, var(--primary-color) 85%, white 15%);
-  border-color: color-mix(in srgb, var(--primary-color) 70%, white 30%);
-  color: var(--font-color--primary--light);
+  background: var(--primary-color--light);
+  border-color: var(--button-default-border);
+  color: var(--text-primary);
 }
 
 .theme-switcher--color-dot {
@@ -1740,7 +1723,7 @@ button:focus-visible {
   height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--border-color--light);
 }
 
 .theme-switcher--label {
@@ -1759,8 +1742,8 @@ button:focus-visible {
   position: absolute;
   top: calc(100% + 4px);
   right: 0;
-  background-color: var(--bg-color--secondary);
-  border: 1px solid color-mix(in srgb, var(--primary-color) 70%, white 30%);
+  background-color: var(--menu-bg);
+  border: 1px solid var(--border-color);
   border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   width: max-content;
@@ -1785,16 +1768,15 @@ button:focus-visible {
   align-items: center;
   gap: 10px;
   width: 100%;
-  padding: 10px 12px;
+  padding: 8px 12px;
   background: none;
   border: none;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--primary-color) 85%, white 15%);
-  color: var(--font-color--primary);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--menu-text);
   cursor: pointer;
   text-align: left;
   font-size: 0.85em;
-  transition: all var(--transition-fast);
+  transition: all var(--duration-fast);
   font-family: inherit;
   box-sizing: border-box;
 }
@@ -1804,15 +1786,11 @@ button:focus-visible {
 }
 
 .theme-switcher--option:hover {
-  background-color: color-mix(in srgb, var(--primary-color) 90%, white 10%);
+  background-color: var(--bg-form-input);
 }
 
 .theme-switcher--option-active {
-  background-color: color-mix(
-    in srgb,
-    var(--primary-color-active) 80%,
-    white 20%
-  );
+  background-color: var(--bg-form-input);
   font-weight: 600;
 }
 
@@ -1825,18 +1803,18 @@ button:focus-visible {
 
 .theme-switcher--name {
   font-weight: 500;
-  color: var(--font-color--primary);
+  color: var(--menu-text);
   font-size: 0.85em;
 }
 
 .theme-switcher--desc {
   font-size: 0.75em;
-  color: var(--font-color--tertiary);
+  color: var(--text-secondary);
   line-height: 1.2;
 }
 
 .theme-switcher--check {
-  color: var(--font-color--primary);
+  color: var(--text-primary);
   font-weight: bold;
   font-size: 14px;
   flex-shrink: 0;
