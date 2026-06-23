@@ -4,7 +4,7 @@
   display: inline-flex;
   align-items: center;
   margin-left: auto;
-  padding-left: 0.75rem;
+  padding-left: 0.75em;
 }
 
 .theme-switcher--compact {
@@ -23,7 +23,7 @@
 }
 
 .theme-switcher--compact .theme-switcher--name {
-  font-size: 0.8rem;
+  font-size: 0.8em;
   white-space: nowrap;
 }
 
@@ -42,12 +42,12 @@
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  background: var(--bg-color--primary);
+  background: var(--primary-color);
   color: var(--font-color--primary--light);
-  border: 1px solid color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
+  border: 1px solid color-mix(in srgb, var(--primary-color) 85%, white 15%);
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.85em;
   font-weight: 500;
   line-height: 1;
   transition: all var(--transition-fast);
@@ -56,8 +56,8 @@
 }
 
 .theme-switcher--trigger:hover {
-  background: color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
-  border-color: color-mix(in srgb, var(--bg-color--primary) 70%, white 30%);
+  background: color-mix(in srgb, var(--primary-color) 85%, white 15%);
+  border-color: color-mix(in srgb, var(--primary-color) 70%, white 30%);
   color: var(--font-color--primary--light);
 }
 
@@ -86,7 +86,7 @@
   top: calc(100% + 4px);
   right: 0;
   background-color: var(--bg-color--secondary);
-  border: 1px solid color-mix(in srgb, var(--bg-color--primary) 70%, white 30%);
+  border: 1px solid color-mix(in srgb, var(--primary-color) 70%, white 30%);
   border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   width: max-content;
@@ -115,11 +115,11 @@
   background: none;
   border: none;
   border-bottom: 1px solid
-    color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
+    color-mix(in srgb, var(--primary-color) 85%, white 15%);
   color: var(--font-color--primary);
   cursor: pointer;
   text-align: left;
-  font-size: 0.85rem;
+  font-size: 0.85em;
   transition: all var(--transition-fast);
   font-family: inherit;
   box-sizing: border-box;
@@ -130,13 +130,13 @@
 }
 
 .theme-switcher--option:hover {
-  background-color: color-mix(in srgb, var(--bg-color--primary) 90%, white 10%);
+  background-color: color-mix(in srgb, var(--primary-color) 90%, white 10%);
 }
 
 .theme-switcher--option-active {
   background-color: color-mix(
     in srgb,
-    var(--bg-color--primary-active) 80%,
+    var(--primary-color-active) 80%,
     white 20%
   );
   font-weight: 600;
@@ -152,11 +152,11 @@
 .theme-switcher--name {
   font-weight: 500;
   color: var(--font-color--primary);
-  font-size: 0.85rem;
+  font-size: 0.85em;
 }
 
 .theme-switcher--desc {
-  font-size: 0.75rem;
+  font-size: 0.75em;
   color: var(--font-color--tertiary);
   line-height: 1.2;
 }

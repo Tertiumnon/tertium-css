@@ -17,6 +17,26 @@ for (const dir of dirs) {
   }
 }
 
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// GENERATE THEMES FROM YAML SOURCE FILES
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+console.log('✨ Generating themes from TypeScript config...\n');
+
+const themes = ['dark.navy--cyan', 'dark.purple--gold', 'light.white--red'];
+
+for (const theme of themes) {
+  try {
+    const proc = await Bun.$`bun scripts/theme/generate/generate.ts ${theme}`;
+    console.log(`✓ Generated ${theme}`);
+  } catch (err) {
+    console.error(`✗ Error generating theme ${theme}:`, err);
+  }
+}
+
+console.log('');
+
+
 // Minify CSS
 function minifyCss(css: string): string {
   return css

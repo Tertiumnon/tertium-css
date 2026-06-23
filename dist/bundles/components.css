@@ -14,19 +14,19 @@
 :root {
   /* ─────────────────────────────────────────────────────────────── */
   /* SPACING SCALE                                                   */
-  /* Base unit: 0.25rem (4px)                                        */
+  /* Base unit: 0.25em (4px)                                        */
   /* ─────────────────────────────────────────────────────────────── */
 
-  --spacing-1: 0.25rem; /* 4px */
-  --spacing-2: 0.5rem; /* 8px */
-  --spacing-3: 0.75rem; /* 12px */
-  --spacing-4: 1rem; /* 16px */
-  --spacing-6: 1.5rem; /* 24px */
-  --spacing-8: 2rem; /* 32px */
-  --spacing-12: 3rem; /* 48px */
-  --spacing-16: 4rem; /* 64px */
-  --spacing-20: 5rem; /* 80px */
-  --spacing-24: 6rem; /* 96px */
+  --spacing-1: 0.25em; /* 4px */
+  --spacing-2: 0.5em; /* 8px */
+  --spacing-3: 0.75em; /* 12px */
+  --spacing-4: 1em; /* 16px */
+  --spacing-6: 1.5em; /* 24px */
+  --spacing-8: 2em; /* 32px */
+  --spacing-12: 3em; /* 48px */
+  --spacing-16: 4em; /* 64px */
+  --spacing-20: 5em; /* 80px */
+  --spacing-24: 6em; /* 96px */
 
   /* Semantic spacing aliases */
   --spacing-xs: var(--spacing-1);
@@ -43,10 +43,10 @@
   /* BORDER RADIUS                                                   */
   /* ─────────────────────────────────────────────────────────────── */
 
-  --radius-sm: 0.25rem; /* 4px */
-  --radius-md: 0.5rem; /* 8px */
-  --radius-lg: 0.75rem; /* 12px */
-  --radius-xl: 1rem; /* 16px */
+  --radius-sm: 0.25em; /* 4px */
+  --radius-md: 0.5em; /* 8px */
+  --radius-lg: 0.75em; /* 12px */
+  --radius-xl: 1em; /* 16px */
   --radius-full: 9999px; /* Fully rounded */
 
   /* ─────────────────────────────────────────────────────────────── */
@@ -59,15 +59,15 @@
   --font-mono: "Courier New", monospace;
 
   /* Font Sizes */
-  --text-xs: 0.75rem; /* 12px */
-  --text-sm: 0.875rem; /* 14px */
-  --text-base: 1rem; /* 16px */
-  --text-lg: 1.125rem; /* 18px */
-  --text-xl: 1.25rem; /* 20px */
-  --text-2xl: 1.5rem; /* 24px */
-  --text-3xl: 1.875rem; /* 30px */
-  --text-4xl: 2.25rem; /* 36px */
-  --text-5xl: 3rem; /* 48px */
+  --text-xs: 0.75em; /* 12px */
+  --text-sm: 0.875em; /* 14px */
+  --text-base: 1em; /* 16px */
+  --text-lg: 1.125em; /* 18px */
+  --text-xl: 1.25em; /* 20px */
+  --text-2xl: 1.5em; /* 24px */
+  --text-3xl: 1.875em; /* 30px */
+  --text-4xl: 2.25em; /* 36px */
+  --text-5xl: 3em; /* 48px */
 
   /* Font Weights */
   --font-weight-normal: 400;
@@ -166,6 +166,11 @@
   /* ─────────────────────────────────────────────────────────────── */
 
   /* Theme colors are set by [data-theme] selectors in theme files */
+
+  /* Navbar and menu fallback colors (overridden per theme) */
+  --navbar-bg: #f5f5f5;
+  --menu-bg: #f5f5f5;
+  --menu-text: #212121;
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -333,44 +338,48 @@ h3,
 h4,
 h5,
 h6 {
-  margin: var(--spacing-6) 0 var(--spacing-3) 0;
+  margin: 0;
   padding: 0;
   font-family: var(--font-heading);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
+  color: var(--heading-color);
 }
 
 h1 {
-  color: var(--heading-c1);
-  margin-top: var(--spacing-6);
-  margin-bottom: var(--spacing-3);
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+  font-size: 2.5em;
 }
 
 h2 {
-  color: var(--heading-c2);
-  margin-top: var(--spacing-5);
-  margin-bottom: var(--spacing-2);
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+  font-size: 1.875em;
 }
 
 h3 {
-  color: var(--heading-c2);
-  margin-top: var(--spacing-4);
-  margin-bottom: var(--spacing-2);
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+  font-size: 1.5em;
 }
 
 h4 {
-  margin-top: var(--spacing-4);
-  margin-bottom: var(--spacing-2);
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+  font-size: 1.25em;
 }
 
 h5 {
-  margin-top: var(--spacing-3);
-  margin-bottom: var(--spacing-1);
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+  font-size: 1.125em;
 }
 
 h6 {
-  margin-top: var(--spacing-3);
-  margin-bottom: var(--spacing-1);
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+  font-size: 1em;
 }
 
 /* ─────────────────────────────────────────────────────────────────── */
@@ -425,7 +434,7 @@ a:hover {
 }
 
 a:focus-visible {
-  outline: 2px solid var(--bg-color--primary);
+  outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
 
@@ -490,7 +499,7 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: var(--bg-color--primary);
+  border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.1);
 }
 
@@ -554,7 +563,7 @@ h6 + p {
 /* ─────────────────────────────────────────────────────────────────── */
 
 :focus-visible {
-  outline: 2px solid var(--bg-color--primary);
+  outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
 
@@ -579,26 +588,26 @@ button:focus-visible {
   gap: var(--spacing-2);
 
   padding: var(--spacing-2) var(--spacing-4);
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-normal);
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.5;
 
-  border: 2px solid var(--btn-border);
-  border-radius: var(--radius-md);
-  background: var(--btn-bg);
-  color: var(--text);
+  border: 2px solid var(--accent-color);
+  border-radius: 0.375em;
+  background: var(--accent-color);
+  color: white;
 
   cursor: pointer;
-  transition: all var(--duration-fast) var(--timing-ease-in-out);
+  transition: all 0.2s ease;
   text-decoration: none;
   white-space: nowrap;
   user-select: none;
 }
 
 .btn:hover:not(:disabled) {
-  background: var(--btn-bg--hover);
-  border-color: var(--btn-hover-border);
+  background: var(--accent-color--dark);
+  border-color: var(--accent-color--dark);
   transform: translateY(-1px);
 }
 
@@ -607,7 +616,7 @@ button:focus-visible {
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--bg-color--primary);
+  outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
 
@@ -622,67 +631,83 @@ button:focus-visible {
 
 /* Primary Button */
 .btn--primary {
-  background: var(--bg-color--primary);
-  border-color: var(--bg-color--primary);
-  color: #ffffff;
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
 }
 
 .btn--primary:hover:not(:disabled) {
-  background: var(--bg-color--primary--dark);
-  border-color: var(--bg-color--primary--dark);
-  box-shadow: 0 0 0 4px rgba(192, 132, 252, 0.15);
+  background: var(--primary-color--dark);
+  border-color: var(--primary-color--dark);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-color) 15%, transparent 85%);
 }
 
 /* Secondary Button */
 .btn--secondary {
-  background: var(--bg-color--seconday);
-  border-color: var(--bg-color--seconday);
-  color: #000000;
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
 }
 
 .btn--secondary:hover:not(:disabled) {
-  background: var(--bg-color--seconday-dark);
-  border-color: var(--bg-color--seconday-dark);
-  box-shadow: 0 0 0 4px rgba(240, 192, 96, 0.15);
+  background: color-mix(in srgb, var(--bg-card) 80%, var(--text-primary) 20%);
+  border-color: var(--border-color--strong);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--border-color) 15%, transparent 85%);
+}
+
+/* Outline Button */
+.btn--outline,
+.btn-outline {
+  background: transparent;
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  padding: var(--spacing-2) var(--spacing-4);
+}
+
+.btn--outline:hover:not(:disabled),
+.btn-outline:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
+  border-color: var(--accent-color--dark);
+  color: var(--accent-color--dark);
 }
 
 /* Ghost Button (outline only) */
 .btn--ghost {
   background: transparent;
-  border-color: var(--border);
-  color: var(--text);
+  border-color: var(--border-color);
+  color: var(--text-primary);
 }
 
 .btn--ghost:hover:not(:disabled) {
-  background: var(--cell-bg);
-  border-color: var(--bg-color--primary);
-  color: var(--font-color--primary);
+  background: color-mix(in srgb, var(--text-primary) 5%, transparent 95%);
+  border-color: var(--text-primary);
+  color: var(--text-primary);
 }
 
 /* Danger Button */
 .btn--danger {
   background: var(--color-danger);
   border-color: var(--color-danger);
-  color: #ffffff;
+  color: white;
 }
 
 .btn--danger:hover:not(:disabled) {
-  background: #dc2626;
-  border-color: #dc2626;
-  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
+  background: color-mix(in srgb, var(--color-danger) 85%, black 15%);
+  border-color: color-mix(in srgb, var(--color-danger) 85%, black 15%);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-danger) 15%, transparent 85%);
 }
 
 /* Success Button */
 .btn--success {
   background: var(--color-success);
   border-color: var(--color-success);
-  color: #ffffff;
+  color: white;
 }
 
 .btn--success:hover:not(:disabled) {
-  background: #059669;
-  border-color: #059669;
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+  background: color-mix(in srgb, var(--color-success) 85%, black 15%);
+  border-color: color-mix(in srgb, var(--color-success) 85%, black 15%);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-success) 15%, transparent 85%);
 }
 
 /* ─────────────────────────────────────────────────────────────────── */
@@ -731,6 +756,20 @@ button:focus-visible {
 
 .btn--full {
   width: 100%;
+}
+
+/* Submit Button */
+.btn--submit {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+  font-weight: 600;
+}
+
+.btn--submit:hover:not(:disabled) {
+  background: var(--accent-color--dark);
+  border-color: var(--accent-color--dark);
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
 }
 
 
@@ -840,7 +879,7 @@ button:focus-visible {
 
 /* Primary Accent Card */
 .card--primary {
-  border-left: 4px solid var(--bg-color--primary);
+  border-left: 4px solid var(--primary-color);
 }
 
 /* Success Card */
@@ -873,30 +912,14 @@ button:focus-visible {
   padding: var(--spacing-8);
 }
 
-/* ─────────────────────────────────────────────────────────────────── */
-/* CARD GRID LAYOUTS                                                   */
-/* ─────────────────────────────────────────────────────────────────── */
-
-.card-grid {
-  display: grid;
-  gap: var(--spacing-6);
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
-@media (min-width: 768px) {
-  .card-grid--2col {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .card-grid--3col {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .card-grid--4col {
-    grid-template-columns: repeat(4, 1fr);
-  }
+/* First header in card has no top margin */
+.card > h1:first-child,
+.card > h2:first-child,
+.card > h3:first-child,
+.card > h4:first-child,
+.card > h5:first-child,
+.card > h6:first-child {
+  margin-top: 0;
 }
 
 
@@ -925,7 +948,7 @@ button:focus-visible {
 }
 
 .section-card:hover {
-  border-color: var(--bg-color--primary);
+  border-color: var(--primary-color);
   box-shadow:
     var(--shadow-lg),
     0 0 20px var(--glow);
@@ -985,32 +1008,26 @@ button:focus-visible {
 
 .table {
   width: 100%;
-  margin: var(--spacing-6) 0;
-  font-size: 0.96rem;
-  border-collapse: separate;
-  border-spacing: 0;
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-sm) var(--radius-sm) var(--radius-lg)
-    var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  margin: var(--spacing-4) 0;
+  font-size: 1em;
+  border-collapse: collapse;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375em;
   overflow: hidden;
 }
 
 .table thead {
-  background: var(--bg-color--secondary);
+  background: color-mix(in srgb, var(--primary-color) 8%, transparent 92%);
 }
 
 .table th {
-  font-family: var(--font-heading);
-  font-size: 0.79rem;
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-wide);
+  font-size: 0.95em;
+  font-weight: 600;
   text-transform: uppercase;
-  padding: var(--spacing-3) var(--spacing-4);
+  padding: var(--spacing-3) var(--spacing-3);
   text-align: left;
-  color: var(--font-color--primary);
-  border-bottom: 2px solid var(--color-border-light);
-  border-right: 1px solid var(--color-border-light);
+  color: var(--heading-color);
+  border-bottom: 2px solid var(--border-color--strong);
   white-space: nowrap;
 }
 
@@ -1019,12 +1036,10 @@ button:focus-visible {
 }
 
 .table td {
-  padding: var(--spacing-2) var(--spacing-4);
-  border-bottom: 1px solid var(--color-border-light);
-  border-right: 1px solid var(--color-border-light);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-bottom: 1px solid var(--border-color);
   vertical-align: top;
-  line-height: var(--line-height-relaxed);
-  transition: background var(--transition-normal);
+  line-height: 1.6;
 }
 
 .table td:last-child {
@@ -1036,7 +1051,22 @@ button:focus-visible {
 }
 
 .table tbody tr:hover td {
-  background: var(--bg-color--secondary);
+  background: color-mix(in srgb, var(--primary-color) 4%, transparent 96%);
+}
+
+/* Table with visible borders on all cells */
+.table--border th,
+.table--border td {
+  border: 1px solid var(--border-color);
+}
+
+.table--border th:last-child,
+.table--border td:last-child {
+  border-right: 1px solid var(--border-color);
+}
+
+.table--border tbody tr:last-child td {
+  border-bottom: 1px solid var(--border-color);
 }
 
 
@@ -1051,6 +1081,7 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 100;
+  background-color: var(--navbar-bg, #f5f5f5);
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1065,7 +1096,8 @@ button:focus-visible {
   align-items: center;
   gap: var(--spacing-lg);
   padding: var(--spacing-lg) var(--spacing-xl);
-  width: calc(100% - var(--spacing-xl) * 2);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ===== NAVBAR BRAND (logo/app name) ===== */
@@ -1073,7 +1105,7 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
-  font-size: 1.1rem;
+  font-size: 1.1em;
   font-weight: 700;
   color: var(--font-color--primary);
   text-decoration: none;
@@ -1115,11 +1147,11 @@ button:focus-visible {
   gap: var(--spacing-md);
   padding: var(--spacing-sm) var(--spacing-sm);
   background: transparent;
-  color: var(--font-color--primary);
+  color: var(--accent-color);
   border: none;
   border-bottom: 2px solid transparent;
   border-radius: 0;
-  font-size: 0.9rem;
+  font-size: 0.9em;
   font-weight: 500;
   font-family: var(--font-body);
   cursor: pointer;
@@ -1130,20 +1162,25 @@ button:focus-visible {
   position: relative;
 }
 
+.nav-link:visited {
+  color: var(--accent-color) !important;
+  text-decoration: none;
+}
+
 .nav-link:hover {
-  color: var(--font-color--primary);
-  background: color-mix(in srgb, var(--bg-color--primary) 8%, transparent 92%);
+  color: var(--accent-color--light);
+  background: color-mix(in srgb, var(--primary-color) 8%, transparent 92%);
 }
 
 .nav-link.active {
-  color: var(--font-color--primary);
-  border-bottom-color: var(--font-color--primary);
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
   font-weight: 600;
   background: transparent;
 }
 
 .nav-link:focus-visible {
-  outline: 2px solid var(--font-color--primary);
+  outline: 2px solid var(--accent-color);
   outline-offset: -2px;
   border-radius: var(--radius-sm);
 }
@@ -1181,12 +1218,12 @@ button:focus-visible {
   width: 40px;
   height: 40px;
   padding: 0;
-  background: color-mix(in srgb, var(--bg-color--primary) 15%, transparent 85%);
+  background: color-mix(in srgb, var(--primary-color) 15%, transparent 85%);
   color: var(--font-color--primary);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-md);
   cursor: pointer;
-  font-size: 1.3rem;
+  font-size: 1.3em;
   line-height: 1;
   transition: all var(--transition-fast);
   white-space: nowrap;
@@ -1194,8 +1231,8 @@ button:focus-visible {
 }
 
 .profile-menu--trigger:hover {
-  background: color-mix(in srgb, var(--bg-color--primary) 25%, transparent 75%);
-  border-color: var(--bg-color--primary);
+  background: color-mix(in srgb, var(--primary-color) 25%, transparent 75%);
+  border-color: var(--primary-color);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -1214,8 +1251,8 @@ button:focus-visible {
   position: absolute;
   top: calc(100% + 4px);
   right: 0;
-  background-color: var(--bg-color--secondary);
-  border: 1px solid color-mix(in srgb, var(--bg-color--primary) 70%, white 30%);
+  background-color: var(--menu-bg);
+  border: 1px solid color-mix(in srgb, var(--menu-bg) 70%, white 30%);
   border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   min-width: 180px;
@@ -1234,11 +1271,11 @@ button:focus-visible {
   background: none;
   border: none;
   border-bottom: 1px solid
-    color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
-  color: var(--font-color--primary);
+    color-mix(in srgb, var(--menu-bg) 85%, white 15%);
+  color: var(--menu-text);
   cursor: pointer;
   text-align: left;
-  font-size: 0.85rem;
+  font-size: 0.85em;
   font-weight: 500;
   transition: all var(--transition-fast);
   font-family: var(--font-body);
@@ -1249,7 +1286,7 @@ button:focus-visible {
 }
 
 .profile-menu--option:hover {
-  background-color: color-mix(in srgb, var(--bg-color--primary) 90%, white 10%);
+  background-color: color-mix(in srgb, var(--menu-bg) 80%, white 20%);
 }
 
 .profile-menu--option-label {
@@ -1265,7 +1302,7 @@ button:focus-visible {
 /* Profile submenu (for nested options like themes) */
 .profile-menu--submenu {
   border-top: 1px solid
-    color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
+    color-mix(in srgb, var(--menu-bg) 85%, white 15%);
   animation: slideDown 150ms ease-out;
 }
 
@@ -1286,7 +1323,7 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   margin-left: auto;
-  padding-left: 0.75rem;
+  padding-left: 0.75em;
   font-family: var(--font-body);
 }
 
@@ -1304,12 +1341,12 @@ button:focus-visible {
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  background: var(--bg-color--primary);
+  background: var(--primary-color);
   color: var(--font-color--primary--light);
-  border: 1px solid color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
+  border: 1px solid color-mix(in srgb, var(--primary-color) 85%, white 15%);
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.85em;
   font-weight: 500;
   line-height: 1;
   transition: all var(--transition-fast);
@@ -1318,8 +1355,8 @@ button:focus-visible {
 }
 
 .theme-switcher--trigger:hover {
-  background: color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
-  border-color: color-mix(in srgb, var(--bg-color--primary) 70%, white 30%);
+  background: color-mix(in srgb, var(--primary-color) 85%, white 15%);
+  border-color: color-mix(in srgb, var(--primary-color) 70%, white 30%);
   color: var(--font-color--primary--light);
 }
 
@@ -1346,8 +1383,8 @@ button:focus-visible {
   position: absolute;
   top: calc(100% + 4px);
   right: 0;
-  background-color: var(--bg-color--secondary);
-  border: 1px solid color-mix(in srgb, var(--bg-color--primary) 70%, white 30%);
+  background-color: var(--menu-bg);
+  border: 1px solid color-mix(in srgb, var(--menu-bg) 70%, white 30%);
   border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   min-width: 240px;
@@ -1365,11 +1402,11 @@ button:focus-visible {
   background: none;
   border: none;
   border-bottom: 1px solid
-    color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
-  color: var(--font-color--primary);
+    color-mix(in srgb, var(--menu-bg) 85%, white 15%);
+  color: var(--menu-text);
   cursor: pointer;
   text-align: left;
-  font-size: 0.85rem;
+  font-size: 0.85em;
   transition: all var(--transition-fast);
   font-family: var(--font-body);
 }
@@ -1379,13 +1416,13 @@ button:focus-visible {
 }
 
 .theme-switcher--option:hover {
-  background-color: color-mix(in srgb, var(--bg-color--primary) 90%, white 10%);
+  background-color: color-mix(in srgb, var(--menu-bg) 80%, white 20%);
 }
 
 .theme-switcher--option-active {
   background-color: color-mix(
     in srgb,
-    var(--bg-color--primary-active) 80%,
+    var(--primary-color-active) 80%,
     white 20%
   );
   font-weight: 600;
@@ -1401,11 +1438,11 @@ button:focus-visible {
 .theme-switcher--name {
   font-weight: 500;
   color: var(--font-color--primary);
-  font-size: 0.85rem;
+  font-size: 0.85em;
 }
 
 .theme-switcher--desc {
-  font-size: 0.75rem;
+  font-size: 0.75em;
   color: var(--font-color--tertiary);
   line-height: 1.2;
 }
@@ -1456,7 +1493,7 @@ button:focus-visible {
   background-color: var(--bg-color--form-input);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-md);
-  font-size: 0.9rem;
+  font-size: 0.9em;
   color: var(--font-color--primary);
   height: 32px;
   transition: all var(--transition-fast);
@@ -1474,8 +1511,8 @@ button:focus-visible {
 
 .search-input:focus {
   outline: none;
-  border-color: var(--bg-color--primary);
-  box-shadow: 0 0 0 3px rgba(var(--bg-color--primary-rgb), 0.15);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.15);
 }
 
 .search-clear-btn {
@@ -1506,15 +1543,15 @@ button:focus-visible {
 /* Filter select dropdown */
 .filter-select {
   flex: 0 1 auto;
-  padding: 0.35rem 1.8rem 0.35rem 0.6rem;
+  padding: 0.35em 1.8em 0.35em 0.6em;
   background-color: var(--bg-color--form);
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='%23333'><path d='M3 4.5l3 3 3-3z'/></svg>");
   background-repeat: no-repeat;
-  background-position: right 0.5rem center;
+  background-position: right 0.5em center;
   background-size: 12px 12px;
   border: 1px solid color-mix(in srgb, var(--bg-color--form) 85%, white 15%);
   border-radius: 4px;
-  font-size: 0.82rem;
+  font-size: 0.82em;
   font-weight: 500;
   color: var(--font-color--primary--dark);
   height: 28px;
@@ -1536,8 +1573,8 @@ button:focus-visible {
 
 .filter-select:focus {
   outline: none;
-  border-color: var(--bg-color--primary);
-  box-shadow: 0 0 0 2px rgba(var(--bg-color--primary-rgb), 0.25);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.25);
 }
 
 .filter-select option {
@@ -1556,8 +1593,8 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-color--primary);
-  border: 1px solid var(--bg-color--primary);
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   border-radius: var(--radius-md);
   color: var(--font-color--primary-inverse);
   cursor: pointer;
@@ -1566,8 +1603,8 @@ button:focus-visible {
 }
 
 .search-btn:hover {
-  background-color: color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
-  border-color: color-mix(in srgb, var(--bg-color--primary) 70%, white 30%);
+  background-color: color-mix(in srgb, var(--primary-color) 85%, white 15%);
+  border-color: color-mix(in srgb, var(--primary-color) 70%, white 30%);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -1579,11 +1616,11 @@ button:focus-visible {
 .size-controls {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.5em;
   background: var(--bg-color--secondary);
   border: 1px solid
     color-mix(in srgb, var(--bg-color--secondary) 85%, white 15%);
-  padding: 0.5rem;
+  padding: 0.5em;
   border-radius: 8px;
   font-family: var(--font-body);
 }
@@ -1592,11 +1629,11 @@ button:focus-visible {
 .size-button {
   width: 32px;
   height: 32px;
-  border: 1px solid var(--bg-color--primary);
+  border: 1px solid var(--primary-color);
   border-radius: var(--radius-md);
-  background-color: var(--bg-color--primary);
+  background-color: var(--primary-color);
   color: var(--font-color--primary-on-primary);
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-weight: bold;
   cursor: pointer;
   display: inline-flex;
@@ -1607,8 +1644,8 @@ button:focus-visible {
 }
 
 .size-button:hover:not(:disabled) {
-  background-color: color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
-  border-color: color-mix(in srgb, var(--bg-color--primary) 70%, white 30%);
+  background-color: color-mix(in srgb, var(--primary-color) 85%, white 15%);
+  border-color: color-mix(in srgb, var(--primary-color) 70%, white 30%);
   box-shadow: var(--shadow-md);
   transform: translateY(-1px);
 }
@@ -1641,7 +1678,7 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   margin-left: auto;
-  padding-left: 0.75rem;
+  padding-left: 0.75em;
 }
 
 .theme-switcher--compact {
@@ -1660,7 +1697,7 @@ button:focus-visible {
 }
 
 .theme-switcher--compact .theme-switcher--name {
-  font-size: 0.8rem;
+  font-size: 0.8em;
   white-space: nowrap;
 }
 
@@ -1679,12 +1716,12 @@ button:focus-visible {
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  background: var(--bg-color--primary);
+  background: var(--primary-color);
   color: var(--font-color--primary--light);
-  border: 1px solid color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
+  border: 1px solid color-mix(in srgb, var(--primary-color) 85%, white 15%);
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.85em;
   font-weight: 500;
   line-height: 1;
   transition: all var(--transition-fast);
@@ -1693,8 +1730,8 @@ button:focus-visible {
 }
 
 .theme-switcher--trigger:hover {
-  background: color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
-  border-color: color-mix(in srgb, var(--bg-color--primary) 70%, white 30%);
+  background: color-mix(in srgb, var(--primary-color) 85%, white 15%);
+  border-color: color-mix(in srgb, var(--primary-color) 70%, white 30%);
   color: var(--font-color--primary--light);
 }
 
@@ -1723,7 +1760,7 @@ button:focus-visible {
   top: calc(100% + 4px);
   right: 0;
   background-color: var(--bg-color--secondary);
-  border: 1px solid color-mix(in srgb, var(--bg-color--primary) 70%, white 30%);
+  border: 1px solid color-mix(in srgb, var(--primary-color) 70%, white 30%);
   border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   width: max-content;
@@ -1752,11 +1789,11 @@ button:focus-visible {
   background: none;
   border: none;
   border-bottom: 1px solid
-    color-mix(in srgb, var(--bg-color--primary) 85%, white 15%);
+    color-mix(in srgb, var(--primary-color) 85%, white 15%);
   color: var(--font-color--primary);
   cursor: pointer;
   text-align: left;
-  font-size: 0.85rem;
+  font-size: 0.85em;
   transition: all var(--transition-fast);
   font-family: inherit;
   box-sizing: border-box;
@@ -1767,13 +1804,13 @@ button:focus-visible {
 }
 
 .theme-switcher--option:hover {
-  background-color: color-mix(in srgb, var(--bg-color--primary) 90%, white 10%);
+  background-color: color-mix(in srgb, var(--primary-color) 90%, white 10%);
 }
 
 .theme-switcher--option-active {
   background-color: color-mix(
     in srgb,
-    var(--bg-color--primary-active) 80%,
+    var(--primary-color-active) 80%,
     white 20%
   );
   font-weight: 600;
@@ -1789,11 +1826,11 @@ button:focus-visible {
 .theme-switcher--name {
   font-weight: 500;
   color: var(--font-color--primary);
-  font-size: 0.85rem;
+  font-size: 0.85em;
 }
 
 .theme-switcher--desc {
-  font-size: 0.75rem;
+  font-size: 0.75em;
   color: var(--font-color--tertiary);
   line-height: 1.2;
 }
@@ -1815,14 +1852,14 @@ button:focus-visible {
 :root {
   --gradient-primary: linear-gradient(
     135deg,
-    var(--bg-color--primary),
-    var(--bg-color--primary--dark)
+    var(--primary-color),
+    var(--primary-color--dark)
   );
   --gradient-page: linear-gradient(180deg, var(--bg), var(--bg-card));
   --gradient-radial: radial-gradient(
     circle at center,
-    var(--bg-color--primary--lighter),
-    var(--bg-color--primary--dark)
+    var(--primary-color--lighter),
+    var(--primary-color--dark)
   );
 }
 
@@ -1843,16 +1880,16 @@ button:focus-visible {
 .gradient-hero {
   background: linear-gradient(
     135deg,
-    var(--bg-color--primary),
-    var(--bg-color--primary--dark)
+    var(--primary-color),
+    var(--primary-color--dark)
   );
 }
 
 .gradient-accent {
   background: linear-gradient(
     90deg,
-    var(--bg-color--primary--lighter),
-    var(--bg-color--primary)
+    var(--primary-color--lighter),
+    var(--primary-color)
   );
 }
 
@@ -1865,7 +1902,158 @@ button:focus-visible {
   background: linear-gradient(
     135deg,
     transparent,
-    var(--bg-color--primary--lighter)
+    var(--primary-color--lighter)
   );
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* BADGES - Small labeled components for status and tags                */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+
+
+/* Base badge styles */
+.badge {
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: 0.25em;
+  font-size: 0.875em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Status variants */
+.badge-success {
+  background: var(--color-success);
+  color: white;
+}
+
+.badge-warning {
+  background: var(--color-warning);
+  color: black;
+}
+
+.badge-danger {
+  background: var(--color-danger);
+  color: white;
+}
+
+.badge-info {
+  background: var(--color-info);
+  color: white;
+}
+
+/* Subtle variants */
+.badge-success--subtle {
+  background: color-mix(in srgb, var(--color-success) 20%, transparent 80%);
+  color: var(--color-success);
+}
+
+.badge-warning--subtle {
+  background: color-mix(in srgb, var(--color-warning) 20%, transparent 80%);
+  color: #b45309;
+}
+
+.badge-danger--subtle {
+  background: color-mix(in srgb, var(--color-danger) 20%, transparent 80%);
+  color: var(--color-danger);
+}
+
+.badge-info--subtle {
+  background: color-mix(in srgb, var(--color-info) 20%, transparent 80%);
+  color: var(--color-info);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* FORMS - Form containers, labels, inputs, and groups                  */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+
+
+/* Form group wrapper */
+.form-group {
+  margin-bottom: var(--spacing-4);
+}
+
+/* Form label */
+.form-label {
+  display: block;
+  margin-bottom: var(--spacing-2);
+  font-weight: 500;
+  font-size: 0.95em;
+  color: var(--text-primary);
+}
+
+/* Form input and select base styles */
+.form-input,
+.form-select {
+  width: 100%;
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--border-color);
+  border-radius: 0.375em;
+  font-size: 1em;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
+}
+
+.form-input:disabled,
+.form-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--bg-card);
+}
+
+/* Textarea */
+.form-textarea {
+  width: 100%;
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--border-color);
+  border-radius: 0.375em;
+  font-size: 1em;
+  font-family: inherit;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  resize: vertical;
+  transition: all 0.2s ease;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
+}
+
+/* Form row/columns for layout */
+.form-row {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.form-row--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.form-row--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 640px) {
+  .form-row--2,
+  .form-row--3 {
+    grid-template-columns: 1fr;
+  }
 }
 

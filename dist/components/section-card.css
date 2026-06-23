@@ -24,7 +24,7 @@
 }
 
 .section-card:hover {
-  border-color: var(--bg-color--primary);
+  border-color: var(--primary-color);
   box-shadow:
     var(--shadow-lg),
     0 0 20px var(--glow);

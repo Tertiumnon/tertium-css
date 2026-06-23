@@ -11,9 +11,12 @@
 /* Design tokens (CSS variables) - foundation of all styling */
 @import "../system/tokens.css";
 
-/* Theme presets (Dark Purple Gold, Dark Deep Blue, Light Red) - runtime switchable */
+/* Base reset & normalization - HTML element defaults */
+@import "../system/base.css";
+
+/* Theme presets (Dark Purple Gold, Dark Navy Cyan, Light Red) - runtime switchable */
 @import "../themes/dark.purple--gold.theme.css";
-@import "../themes/dark.deep-blue--blue.theme.css";
+@import "../themes/dark.navy--cyan.theme.css";
 @import "../themes/light.white--red.theme.css";
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -24,12 +27,13 @@
 @import "../utilities/typography.css";
 @import "../utilities/spacing.css";
 @import "../utilities/flexbox.css";
+@import "../utilities/grid.css";
 @import "../utilities/colors.css";
 @import "../utilities/borders.css";
 @import "../utilities/display.css";
 @import "../utilities/positioning.css";
 @import "../utilities/sizing.css";
-@import "../utilities/forms.css";
+@import "../bundles/form.css";
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* NEW: Pre-built Components (optional, can be used with tokens)      */
@@ -37,7 +41,7 @@
 
 @import "../components/buttons.css";
 @import "../components/cards.css";
-@import "../components/menu.css";
+@import "../components/navbar.css";
 @import "../components/section-card.css";
 @import "../components/tables.css";
 @import "../components/theme-switcher.css";

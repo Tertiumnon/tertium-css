@@ -151,7 +151,7 @@ src/
 No changes needed! Your existing code continues to work.
 
 **For New Features:**
-- Use design tokens in custom components: `var(--spacing-4)`, `var(--bg-color--primary)`
+- Use design tokens in custom components: `var(--spacing-4)`, `var(--primary-color)`
 - Enable themes: `<html data-theme="light">`
 - Use pre-built components: `<button class="btn btn--primary">`
 - Choose modular bundles: `dist/tertium.skeleton.min.css`

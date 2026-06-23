@@ -1,0 +1,29 @@
+@import "../system/tokens.css";
+
+.form-radio {
+  appearance: none;
+  width: 1em;
+  height: 1em;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background-origin: border-box;
+  cursor: pointer;
+}
+
+.form-radio:checked {
+  background-color: var(--primary-color);
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+}
+
+.form-radio:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.3);
+}
+
+.form-radio:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  opacity: 0.7;
+}

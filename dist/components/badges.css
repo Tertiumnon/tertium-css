@@ -1,0 +1,57 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* BADGES - Small labeled components for status and tags                */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@import "../system/tokens.css";
+
+/* Base badge styles */
+.badge {
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: 0.25em;
+  font-size: 0.875em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Status variants */
+.badge-success {
+  background: var(--color-success);
+  color: white;
+}
+
+.badge-warning {
+  background: var(--color-warning);
+  color: black;
+}
+
+.badge-danger {
+  background: var(--color-danger);
+  color: white;
+}
+
+.badge-info {
+  background: var(--color-info);
+  color: white;
+}
+
+/* Subtle variants */
+.badge-success--subtle {
+  background: color-mix(in srgb, var(--color-success) 20%, transparent 80%);
+  color: var(--color-success);
+}
+
+.badge-warning--subtle {
+  background: color-mix(in srgb, var(--color-warning) 20%, transparent 80%);
+  color: #b45309;
+}
+
+.badge-danger--subtle {
+  background: color-mix(in srgb, var(--color-danger) 20%, transparent 80%);
+  color: var(--color-danger);
+}
+
+.badge-info--subtle {
+  background: color-mix(in srgb, var(--color-info) 20%, transparent 80%);
+  color: var(--color-info);
+}

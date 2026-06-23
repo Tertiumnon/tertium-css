@@ -1,278 +1,116 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-/* DARK PURPLE GOLD THEME - Purple & Gold                              */
-/* Sophisticated dark theme with gold text accents                     */
-/* Extracted from dragons-legends.www                                  */
-/* Used for gaming, fantasy interfaces, and high-contrast scenarios    */
+/* DARK THEME WITH PURPLE BACKGROUND AND GOLD ACCENTS */
+/* All colors derived from TWO base colors: purple (primary      */
+/* background) and gold (secondary accent). */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 [data-theme="dark--purple--gold"] {
-  /* PRIMARY COLOR - ONE base, all variants derived */
-  --hue--primary: 280;
-  --saturation--primary: 98%;
-  --lightness--primary: 72%;
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TWO BASE COLORS - Everything derives from these                 */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  --bg-color--primary: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    var(--lightness--primary)
-  );
-  --bg-color--primary--light: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) + 8%)
-  );
-  --bg-color--primary--lighter: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) + 15%)
-  );
-  --bg-color--primary--dark: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) - 15%)
-  );
-  --bg-color--primary--darker: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) - 28%)
-  );
+  /* PRIMARY: purple background */
+  --primary-hue: 300;
+  --primary-sat: 100%;
+  --primary-light: 27%;
 
-  /* SECONDARY COLOR - ONE base, all variants derived */
-  --hue--secondary: 41;
-  --saturation--secondary: 100%;
-  --lightness--secondary: 66%;
+  /* ACCENT: gold highlight */
+  --accent-hue: 51;
+  --accent-sat: 100%;
+  --accent-light: 50%;
 
-  --bg-color--seconday: hsl(
-    var(--hue--secondary),
-    var(--saturation--secondary),
-    var(--lightness--secondary)
-  );
-  --bg-color--seconday--light: hsl(
-    var(--hue--secondary),
-    var(--saturation--secondary),
-    calc(var(--lightness--secondary) + 10%)
-  );
-  --bg-color--seconday-darker: hsl(
-    var(--hue--secondary),
-    var(--saturation--secondary),
-    calc(var(--lightness--secondary) - 15%)
-  );
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* PRIMARY BG COLOR - Variations                                   */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* LINK COLORS - derived from secondary (gold accents) */
-  --color-link: var(--bg-color--seconday--light);
-  --color-link-visited: var(--bg-color--seconday-darker);
-  --color-link-hover: var(--bg-color--seconday);
+  --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
+  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
+  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -5%));
 
-  /* NAV COLORS - use accent secondary color */
-  --nav-bg: hsl(
-    var(--hue--secondary),
-    var(--saturation--secondary),
-    calc(var(--lightness--secondary) - 10%)
-  );
-  --nav-text: #ffffff;
-  --nav-link: hsl(
-    var(--hue--secondary),
-    var(--saturation--secondary),
-    calc(var(--lightness--secondary) + 5%)
-  );
-  --nav-link-hover: hsl(
-    var(--hue--secondary),
-    var(--saturation--secondary),
-    calc(var(--lightness--secondary) + 15%)
-  );
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* PRIMARY ACCENT COLOR - Variations                               */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* STATUS COLORS - derived from base hues */
-  --success-hue: 160;
-  --success-saturation: 84%;
-  --success-lightness: 39%;
-  --color-success: hsl(
-    var(--success-hue),
-    var(--success-saturation),
-    var(--success-lightness)
-  );
-  --color-success-light: hsl(
-    var(--success-hue),
-    var(--success-saturation),
-    80%
-  );
-  --color-success-hover: hsl(
-    var(--success-hue),
-    var(--success-saturation),
-    43%
-  );
+  --accent-color: hsl(var(--accent-hue), var(--accent-sat), var(--accent-light));
+  --accent-color--light: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 15%));
+  --accent-color--dark: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -15%));
 
-  --warning-hue: 38;
-  --warning-saturation: 92%;
-  --warning-lightness: 50%;
-  --color-warning: hsl(
-    var(--warning-hue),
-    var(--warning-saturation),
-    var(--warning-lightness)
-  );
-  --color-warning-light: hsl(
-    var(--warning-hue),
-    var(--warning-saturation),
-    85%
-  );
-  --color-warning-hover: hsl(
-    var(--warning-hue),
-    var(--warning-saturation),
-    45%
-  );
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* CONTEXTUAL BACKGROUND COLORS                                    */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  --danger-hue: 0;
-  --danger-saturation: 91%;
-  --danger-lightness: 60%;
-  --color-danger: hsl(
-    var(--danger-hue),
-    var(--danger-saturation),
-    var(--danger-lightness)
-  );
-  --color-danger-light: hsl(var(--danger-hue), var(--danger-saturation), 85%);
-  --color-danger-hover: hsl(var(--danger-hue), var(--danger-saturation), 52%);
+  --bg-page: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -2%));
+  --bg-card: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 5%));
+  --bg-form: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
+  --bg-form-input: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 12%));
+  --bg-button: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -15%));
+  --bg-button--hover: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -5%));
 
-  --info-hue: 217;
-  --info-saturation: 97%;
-  --info-lightness: 61%;
-  --color-info: hsl(
-    var(--info-hue),
-    var(--info-saturation),
-    var(--info-lightness)
-  );
-  --color-info-light: hsl(var(--info-hue), var(--info-saturation), 85%);
-  --color-info-hover: hsl(var(--info-hue), var(--info-saturation), 53%);
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TEXT COLORS - Derived from primary/accent contrast              */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* TEXT COLORS - derived from background colors for contrast */
-  --font-color--primary: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) + 20%)
-  );
-  --font-color--secondary: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) + 5%)
-  );
-  --font-color--on-primary: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) - 50%)
-  );
-  --font-color--on-secondary: hsl(
-    var(--hue--secondary),
-    var(--saturation--secondary),
-    calc(var(--lightness--secondary) - 50%)
-  );
-  --font-color--inverse: #ffffff;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-on-primary: #ffffff;
+  --text-on-accent: #000000;
+  --text-inverse: #ffffff;
 
-  /* Dark text for light backgrounds (form labels, etc.) */
-  --font-color--primary--dark: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) - 50%)
-  );
-  --font-color--primary--dark-tertiary: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) - 35%)
-  );
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* HEADING COLORS - Use accent                                    */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* BACKGROUND COLORS */
-  --bg-color--page: color-mix(
-    in srgb,
-    var(--bg-color--primary) 20%,
-    #000000 80%
-  );
-  --bg-color--primary-active: color-mix(
-    in srgb,
-    var(--bg-color--primary) 40%,
-    #000000 60%
-  );
-  --bg-color--secondary: color-mix(
-    in srgb,
-    var(--bg-color--primary) 33%,
-    #000000 67%
-  );
-  --bg-color--card: color-mix(
-    in srgb,
-    var(--bg-color--primary) 29%,
-    #000000 71%
-  );
-  --bg-color--form: color-mix(
-    in srgb,
-    var(--bg-color--primary) 23%,
-    #000000 77%
-  );
-  --bg-color--form-input: color-mix(
-    in srgb,
-    var(--bg-color--primary) 17%,
-    #000000 83%
-  );
+  --heading-color: var(--accent-color);
+  --heading-shadow: hsla(var(--accent-hue), var(--accent-sat), var(--accent-light), 0.25);
 
-  /* BORDER COLORS */
-  --border: color-mix(in srgb, var(--bg-color--primary) 15%, transparent 85%);
-  --border-strong: color-mix(in srgb, var(--bg-color--primary) 25%, transparent 75%);
-  --border-light: color-mix(in srgb, var(--bg-color--primary) 8%, transparent 92%);
-  --border-medium: rgba(var(--bg-color--primary), 0.18);
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* LINK COLORS - Derived from accent                               */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* SHADOW COLORS */
-  --shadow-color: color-mix(in srgb, #000000 50%, transparent 50%);
+  --link-color: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 15%));
+  --link-visited: hsl(var(--accent-hue), calc(var(--accent-sat) - 20%), calc(var(--accent-light) - 10%));
+  --link-hover: var(--accent-color);
 
-  /* HEADING COLORS - use gold accents */
-  --heading-c1: var(--bg-color--seconday);
-  --heading-c2: var(--bg-color--seconday);
-  --heading-c3: var(--bg-color--seconday);
-  --heading-shadow: color-mix(
-    in srgb,
-    var(--bg-color--seconday) 25%,
-    transparent 75%
-  );
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* BORDER & SHADOW COLORS                                           */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* FORM & STRUCTURAL */
-  --cell-bg: rgba(255, 255, 255, 0.02);
+  --border-color: hsla(300, 100%, 45%, 0.3);
+  --border-color--strong: hsla(300, 100%, 45%, 0.6);
+  --border-color--light: hsla(300, 100%, 35%, 0.15);
+  --shadow-color: rgba(0, 0, 0, 0.3);
 
-  /* PROGRESS */
-  --progress-track: color-mix(
-    in srgb,
-    var(--bg-color--primary) 20%,
-    transparent 80%
-  );
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* STATUS COLORS - Semantic (independent)                          */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* GLOW EFFECTS */
-  --glow: color-mix(in srgb, var(--bg-color--primary) 35%, transparent 65%);
+  --color-success: hsl(160, 84%, 39%);
+  --color-warning: hsl(38, 92%, 50%);
+  --color-danger: hsl(0, 91%, 60%);
+  --color-info: hsl(217, 97%, 61%);
 
-  /* BACKGROUND GRADIENTS */
-  --bg-r1: color-mix(in srgb, var(--bg-color--primary) 12%, transparent 88%);
-  --bg-r2: color-mix(in srgb, var(--bg-color--primary) 8%, transparent 92%);
-  --bg-r3: color-mix(in srgb, var(--bg-color--primary) 25%, #000000 75%);
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* PROGRESS & EFFECTS                                               */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* BUTTONS - use secondary (gold) for primary button accents */
-  --btn-bg: color-mix(in srgb, var(--bg-color--seconday) 14%, #000000 86%);
-  --btn-border: color-mix(in srgb, var(--bg-color--seconday) 12%, transparent 88%);
-  --btn-bg--hover: color-mix(
-    in srgb,
-    var(--bg-color--seconday) 20%,
-    #000000 80%
-  );
-  --btn-hover-border: color-mix(in srgb, var(--bg-color--seconday) 35%, transparent 65%);
+  --progress-track: hsla(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 10%), 0.3);
+  --glow: hsla(var(--accent-hue), var(--accent-sat), var(--accent-light), 0.2);
 
-  /* GRADIENTS */
-  --gradient-page: linear-gradient(
-    180deg,
-    var(--bg-color--page),
-    var(--bg-color--card)
-  );
-  --gradient-primary: linear-gradient(
-    135deg,
-    var(--bg-color--primary),
-    var(--bg-color--primary--dark)
-  );
-  --gradient-radial: radial-gradient(
-    circle at center,
-    var(--bg-color--primary--lighter),
-    var(--bg-color--primary--dark)
-  );
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* BACKGROUND GRADIENTS                                             */
+  /* ═══════════════════════════════════════════════════════════════ */
 
+  --gradient-page: linear-gradient(180deg, var(--bg-page), var(--bg-card));
+  --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-color--light));
+  --gradient-radial: radial-gradient(circle at center, var(--primary-color--light), var(--primary-color--dark));
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* NAVBAR & MENU BACKGROUND - For dark themes                        */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --navbar-bg: var(--primary-color);
+  --menu-bg: var(--bg-card);
+  --menu-text: var(--text-on-primary);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -280,47 +118,7 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 [data-theme="dark--purple--gold"] body {
-  background: var(--bg-color--page);
-  color: var(--font-color--primary);
+  background: var(--bg-page);
+  color: var(--text-primary);
   position: relative;
-}
-
-[data-theme="dark--purple--gold"] body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background:
-    var(--gradient-page),
-    radial-gradient(
-      ellipse at 75% 15%,
-      color-mix(in srgb, var(--bg-color--primary) 18%, transparent 82%) 0%,
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse at 20% 85%,
-      color-mix(in srgb, var(--bg-color--primary) 14%, transparent 86%) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at 50% 50%,
-      color-mix(in srgb, var(--bg-color--primary) 60%, #000000 40%) 0%,
-      transparent 80%
-    );
-  pointer-events: none;
-  z-index: -1;
-}
-
-[data-theme="dark--purple--gold"] a {
-  color: var(--color-link);
-}
-
-[data-theme="dark--purple--gold"] a:visited {
-  color: var(--color-link-visited);
-}
-
-[data-theme="dark--purple--gold"] a:hover {
-  color: var(--color-link-hover);
 }

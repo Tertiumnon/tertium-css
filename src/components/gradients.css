@@ -8,14 +8,14 @@
 :root {
   --gradient-primary: linear-gradient(
     135deg,
-    var(--bg-color--primary),
-    var(--bg-color--primary--dark)
+    var(--primary-color),
+    var(--primary-color--dark)
   );
   --gradient-page: linear-gradient(180deg, var(--bg), var(--bg-card));
   --gradient-radial: radial-gradient(
     circle at center,
-    var(--bg-color--primary--lighter),
-    var(--bg-color--primary--dark)
+    var(--primary-color--lighter),
+    var(--primary-color--dark)
   );
 }
 
@@ -36,16 +36,16 @@
 .gradient-hero {
   background: linear-gradient(
     135deg,
-    var(--bg-color--primary),
-    var(--bg-color--primary--dark)
+    var(--primary-color),
+    var(--primary-color--dark)
   );
 }
 
 .gradient-accent {
   background: linear-gradient(
     90deg,
-    var(--bg-color--primary--lighter),
-    var(--bg-color--primary)
+    var(--primary-color--lighter),
+    var(--primary-color)
   );
 }
 
@@ -58,6 +58,6 @@
   background: linear-gradient(
     135deg,
     transparent,
-    var(--bg-color--primary--lighter)
+    var(--primary-color--lighter)
   );
 }

@@ -50,16 +50,16 @@
   border-radius: 0;
 }
 .rounded-sm {
-  border-radius: 0.125rem;
+  border-radius: 0.125em;
 }
 .rounded {
-  border-radius: 0.25rem;
+  border-radius: 0.25em;
 }
 .rounded-md {
-  border-radius: 0.375rem;
+  border-radius: 0.375em;
 }
 .rounded-lg {
-  border-radius: 0.5rem;
+  border-radius: 0.5em;
 }
 .rounded-full {
   border-radius: 9999px;

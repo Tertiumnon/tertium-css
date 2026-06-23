@@ -1,272 +1,116 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-/* LIGHT WHITE RED THEME - Red & White                                 */
-/* Clean light theme with red accents                                  */
-/* Used for documentation, content-focused applications                */
+/* LIGHT THEME WITH WHITE BACKGROUND AND RED ACCENTS */
+/* All colors derived from TWO base colors: white (primary      */
+/* background) and red (secondary accent). */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 [data-theme="light--white--red"] {
-  /* PRIMARY COLOR - ONE base, all variants derived */
-  --hue--primary: 0;
-  --saturation--primary: 100%;
-  --lightness--primary: 60%;
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TWO BASE COLORS - Everything derives from these                 */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  --bg-color--primary: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    var(--lightness--primary)
-  );
-  --bg-color--primary--light: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) + 15%)
-  );
-  --bg-color--primary--lighter: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) + 30%)
-  );
-  --bg-color--primary--dark: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) - 10%)
-  );
-  --bg-color--primary--darker: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) - 25%)
-  );
+  /* PRIMARY: white background */
+  --primary-hue: 0;
+  --primary-sat: 0%;
+  --primary-light: 100%;
 
-  /* SECONDARY COLOR - ONE base, all variants derived */
-  --hue--secondary: 0;
-  --saturation--secondary: 100%;
-  --lightness--secondary: 60%;
+  /* ACCENT: red highlight */
+  --accent-hue: 0;
+  --accent-sat: 100%;
+  --accent-light: 50%;
 
-  --bg-color--seconday: hsl(
-    var(--hue--secondary),
-    var(--saturation--secondary),
-    var(--lightness--secondary)
-  );
-  --bg-color--seconday--light: hsl(
-    var(--hue--secondary),
-    var(--saturation--secondary),
-    calc(var(--lightness--secondary) + 12%)
-  );
-  --bg-color--seconday-darker: hsl(
-    var(--hue--secondary),
-    var(--saturation--secondary),
-    calc(var(--lightness--secondary) - 10%)
-  );
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* PRIMARY BG COLOR - Variations                                   */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* STATUS COLORS - derived from base hues */
-  --success-hue: 160;
-  --success-saturation: 84%;
-  --success-lightness: 39%;
-  --color-success: hsl(
-    var(--success-hue),
-    var(--success-saturation),
-    var(--success-lightness)
-  );
-  --color-success-light: hsl(
-    var(--success-hue),
-    var(--success-saturation),
-    80%
-  );
-  --color-success-hover: hsl(
-    var(--success-hue),
-    var(--success-saturation),
-    43%
-  );
+  --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
+  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
+  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -3%));
 
-  --warning-hue: 38;
-  --warning-saturation: 92%;
-  --warning-lightness: 50%;
-  --color-warning: hsl(
-    var(--warning-hue),
-    var(--warning-saturation),
-    var(--warning-lightness)
-  );
-  --color-warning-light: hsl(
-    var(--warning-hue),
-    var(--warning-saturation),
-    85%
-  );
-  --color-warning-hover: hsl(
-    var(--warning-hue),
-    var(--warning-saturation),
-    45%
-  );
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* PRIMARY ACCENT COLOR - Variations                               */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  --danger-hue: 0;
-  --danger-saturation: 91%;
-  --danger-lightness: 60%;
-  --color-danger: hsl(
-    var(--danger-hue),
-    var(--danger-saturation),
-    var(--danger-lightness)
-  );
-  --color-danger-light: hsl(var(--danger-hue), var(--danger-saturation), 85%);
-  --color-danger-hover: hsl(var(--danger-hue), var(--danger-saturation), 52%);
+  --accent-color: hsl(var(--accent-hue), var(--accent-sat), var(--accent-light));
+  --accent-color--light: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 15%));
+  --accent-color--dark: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -15%));
 
-  --info-hue: 217;
-  --info-saturation: 97%;
-  --info-lightness: 61%;
-  --color-info: hsl(
-    var(--info-hue),
-    var(--info-saturation),
-    var(--info-lightness)
-  );
-  --color-info-light: hsl(var(--info-hue), var(--info-saturation), 85%);
-  --color-info-hover: hsl(var(--info-hue), var(--info-saturation), 53%);
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* CONTEXTUAL BACKGROUND COLORS                                    */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* NAV COLORS - use accent secondary color (red) */
-  --nav-bg: hsl(
-    var(--hue--secondary),
-    var(--saturation--secondary),
-    calc(var(--lightness--secondary) - 5%)
-  );
-  --nav-text: #ffffff;
-  --nav-link: hsl(
-    var(--hue--secondary),
-    var(--saturation--secondary),
-    calc(var(--lightness--secondary) + 10%)
-  );
-  --nav-link-hover: hsl(
-    var(--hue--secondary),
-    var(--saturation--secondary),
-    calc(var(--lightness--secondary) + 20%)
-  );
+  --bg-page: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 0%));
+  --bg-card: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -4%));
+  --bg-form: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -1%));
+  --bg-form-input: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 0%));
+  --bg-button: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -15%));
+  --bg-button--hover: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -5%));
 
-  /* TEXT COLORS - derived from background colors for contrast */
-  --font-color--primary: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) - 40%)
-  );
-  --font-color--secondary: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) - 25%)
-  );
-  --font-color--on-primary: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) + 35%)
-  );
-  --font-color--on-secondary: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) + 35%)
-  );
-  --font-color--inverse: #ffffff;
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TEXT COLORS - Derived from primary/accent contrast              */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* Dark text for form/button labels */
-  --font-color--primary--dark: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) - 40%)
-  );
-  --font-color--primary--dark-tertiary: hsl(
-    var(--hue--primary),
-    var(--saturation--primary),
-    calc(var(--lightness--primary) - 25%)
-  );
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --text-on-primary: #000000;
+  --text-on-accent: #ffffff;
+  --text-inverse: #ffffff;
 
-  /* BACKGROUND COLORS */
-  --bg-color--page: color-mix(
-    in srgb,
-    var(--bg-color--primary) 15%,
-    #ffffff 85%
-  );
-  --bg-color--primary-active: color-mix(
-    in srgb,
-    var(--bg-color--primary) 20%,
-    #ffffff 80%
-  );
-  --bg-color--secondary: color-mix(
-    in srgb,
-    var(--bg-color--primary) 18%,
-    #ffffff 82%
-  );
-  --bg-color--card: color-mix(
-    in srgb,
-    var(--bg-color--primary) 22%,
-    #ffffff 78%
-  );
-  --bg-color--form: color-mix(
-    in srgb,
-    var(--bg-color--primary) 10%,
-    #ffffff 90%
-  );
-  --bg-color--form-input: color-mix(
-    in srgb,
-    var(--bg-color--primary) 5%,
-    #ffffff 95%
-  );
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* HEADING COLORS - Use accent                                    */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* BORDER COLORS */
-  --border: color-mix(in srgb, var(--bg-color--primary) 15%, transparent 85%);
-  --border-strong: color-mix(in srgb, var(--bg-color--primary) 25%, transparent 75%);
-  --border-light: color-mix(in srgb, var(--bg-color--primary) 8%, transparent 92%);
-  --border-medium: color-mix(in srgb, var(--bg-color--primary) 18%, transparent 82%);
+  --heading-color: var(--accent-color);
+  --heading-shadow: hsla(var(--accent-hue), var(--accent-sat), var(--accent-light), 0.25);
 
-  /* SHADOW COLORS */
-  --shadow-color: color-mix(in srgb, #000000 10%, transparent 90%);
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* LINK COLORS - Derived from accent                               */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* HEADING COLORS */
-  --heading-c1: var(--bg-color--primary);
-  --heading-c2: var(--bg-color--primary);
-  --heading-c3: var(--bg-color--primary);
-  --heading-shadow: color-mix(
-    in srgb,
-    var(--bg-color--primary) 15%,
-    transparent 85%
-  );
+  --link-color: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 15%));
+  --link-visited: hsl(var(--accent-hue), calc(var(--accent-sat) - 20%), calc(var(--accent-light) - 10%));
+  --link-hover: var(--accent-color);
 
-  /* FORM & STRUCTURAL */
-  --cell-bg: rgba(0, 0, 0, 0.02);
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* BORDER & SHADOW COLORS                                           */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* PROGRESS */
-  --progress-track: color-mix(
-    in srgb,
-    var(--bg-color--primary) 15%,
-    transparent 85%
-  );
+  --border-color: hsla(0, 100%, 50%, 0.3);
+  --border-color--strong: hsla(0, 100%, 50%, 0.6);
+  --border-color--light: hsla(0, 100%, 40%, 0.15);
+  --shadow-color: rgba(0, 0, 0, 0.08);
 
-  /* GLOW EFFECTS */
-  --glow: color-mix(in srgb, var(--bg-color--primary) 15%, transparent 85%);
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* STATUS COLORS - Semantic (independent)                          */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* BACKGROUND GRADIENTS */
-  --bg-r1: color-mix(in srgb, var(--bg-color--primary) 8%, transparent 92%);
-  --bg-r2: color-mix(in srgb, var(--bg-color--primary) 5%, transparent 95%);
-  --bg-r3: color-mix(in srgb, var(--bg-color--primary) 15%, #ffffff 85%);
+  --color-success: hsl(160, 84%, 39%);
+  --color-warning: hsl(38, 92%, 50%);
+  --color-danger: hsl(0, 91%, 60%);
+  --color-info: hsl(217, 97%, 61%);
 
-  /* BUTTONS */
-  --btn-bg: color-mix(in srgb, var(--bg-color--primary) 20%, #ffffff 80%);
-  --btn-border: color-mix(in srgb, var(--bg-color--primary) 12%, transparent 88%);
-  --btn-bg--hover: color-mix(
-    in srgb,
-    var(--bg-color--primary) 28%,
-    #ffffff 72%
-  );
-  --btn-hover-border: color-mix(in srgb, var(--bg-color--primary) 25%, transparent 75%);
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* PROGRESS & EFFECTS                                               */
+  /* ═══════════════════════════════════════════════════════════════ */
 
-  /* GRADIENTS */
-  --gradient-page: linear-gradient(
-    180deg,
-    var(--bg-color--page),
-    var(--bg-color--card)
-  );
-  --gradient-primary: linear-gradient(
-    135deg,
-    var(--bg-color--primary),
-    var(--bg-color--primary--dark)
-  );
-  --gradient-radial: radial-gradient(
-    circle at center,
-    var(--bg-color--primary--lighter),
-    var(--bg-color--primary--dark)
-  );
+  --progress-track: hsla(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 10%), 0.3);
+  --glow: hsla(var(--accent-hue), var(--accent-sat), var(--accent-light), 0.2);
 
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* BACKGROUND GRADIENTS                                             */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --gradient-page: linear-gradient(180deg, var(--bg-page), var(--bg-card));
+  --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-color--light));
+  --gradient-radial: radial-gradient(circle at center, var(--primary-color--light), var(--primary-color--dark));
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* NAVBAR & MENU BACKGROUND - For dark themes                        */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --navbar-bg: var(--primary-color);
+  --menu-bg: var(--bg-card);
+  --menu-text: var(--text-on-primary);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -274,62 +118,7 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 [data-theme="light--white--red"] body {
-  background: var(--bg-color--page);
-  color: var(--font-color--primary);
+  background: var(--bg-page);
+  color: var(--text-primary);
   position: relative;
-}
-
-[data-theme="light--white--red"] body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background:
-    var(--gradient-page),
-    radial-gradient(
-      ellipse at 75% 15%,
-      color-mix(in srgb, var(--bg-color--primary) 5%, transparent 95%) 0%,
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse at 20% 85%,
-      color-mix(in srgb, var(--bg-color--primary) 3%, transparent 97%) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at 50% 50%,
-      color-mix(in srgb, var(--bg-color--primary) 30%, #ffffff 70%) 0%,
-      transparent 80%
-    );
-  pointer-events: none;
-  z-index: -1;
-}
-
-[data-theme="light--white--red"] a {
-  color: var(--font-color--primary);
-}
-
-[data-theme="light--white--red"] a:visited {
-  color: var(--font-color--primary--dark);
-}
-
-[data-theme="light--white--red"] a:hover {
-  color: var(--font-color--primary--light);
-}
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-/* TYPOGRAPHY                                                          */
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-
-h1 {
-  font-family: var(--font-heading);
-  color: var(--heading-c1);
-}
-
-h2,
-h3 {
-  font-family: var(--font-heading);
-  color: var(--heading-c2);
 }

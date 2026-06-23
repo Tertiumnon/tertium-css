@@ -12,6 +12,8 @@
 @import "../components/cards.css";
 @import "../components/section-card.css";
 @import "../components/tables.css";
-@import "../components/menu.css";
+@import "../components/navbar.css";
 @import "../components/theme-switcher.css";
 @import "../components/gradients.css";
+@import "../components/badges.css";
+@import "../components/forms.css";

@@ -1,0 +1,45 @@
+@import "../system/tokens.css";
+
+.form-group {
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: var(--font-weight-medium);
+  color: var(--text);
+}
+
+.form-label.required::after {
+  content: " *";
+  color: var(--color-danger);
+}
+
+.form-help {
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+  margin-top: 0.25em;
+}
+
+.form-error {
+  font-size: var(--text-sm);
+  color: var(--color-danger);
+  margin-top: 0.25em;
+}
+
+.form-group.error .form-input,
+.form-group.error .form-select,
+.form-group.error .form-checkbox,
+.form-group.error .form-radio {
+  border-color: var(--color-danger);
+}
+
+.form-group.error .form-input:focus,
+.form-group.error .form-select:focus,
+.form-group.error .form-checkbox:focus,
+.form-group.error .form-radio:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
+}

@@ -105,7 +105,7 @@
 
 /* Primary Accent Card */
 .card--primary {
-  border-left: 4px solid var(--bg-color--primary);
+  border-left: 4px solid var(--primary-color);
 }
 
 /* Success Card */
@@ -138,28 +138,12 @@
   padding: var(--spacing-8);
 }
 
-/* ─────────────────────────────────────────────────────────────────── */
-/* CARD GRID LAYOUTS                                                   */
-/* ─────────────────────────────────────────────────────────────────── */
-
-.card-grid {
-  display: grid;
-  gap: var(--spacing-6);
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
-@media (min-width: 768px) {
-  .card-grid--2col {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .card-grid--3col {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .card-grid--4col {
-    grid-template-columns: repeat(4, 1fr);
-  }
+/* First header in card has no top margin */
+.card > h1:first-child,
+.card > h2:first-child,
+.card > h3:first-child,
+.card > h4:first-child,
+.card > h5:first-child,
+.card > h6:first-child {
+  margin-top: 0;
 }
