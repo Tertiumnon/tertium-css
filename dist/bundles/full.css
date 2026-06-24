@@ -1142,6 +1142,7 @@ button:focus-visible {
   margin-right: auto;
   padding-left: var(--spacing-4);
   padding-right: var(--spacing-4);
+  box-sizing: border-box;
 }
 
 /* Fixed-width container sizes */
@@ -2544,6 +2545,7 @@ button:focus-visible {
   border: 1px solid var(--border);
   border-radius: 0.25em;
   line-height: 1.5;
+  box-sizing: border-box;
 }
 
 .form-input:focus {
@@ -2573,6 +2575,7 @@ button:focus-visible {
   background-repeat: no-repeat;
   background-size: 1.5em 1.5em;
   appearance: none;
+  box-sizing: border-box;
 }
 
 .form-select:focus {
@@ -3174,6 +3177,7 @@ button:focus-visible {
   font-weight: 500;
   transition: all var(--transition-fast);
   font-family: var(--font-body);
+  box-sizing: border-box;
 }
 
 .profile-menu--option:last-child {
@@ -3214,6 +3218,7 @@ button:focus-visible {
   cursor: pointer;
   text-align: left;
   font-size: 0.85em;
+  box-sizing: border-box;
   transition: all var(--transition-fast);
   font-family: var(--font-body);
   box-sizing: border-box;
@@ -3358,6 +3363,7 @@ button:focus-visible {
   font-size: 0.85em;
   transition: all var(--transition-fast);
   font-family: var(--font-body);
+  box-sizing: border-box;
 }
 
 .theme-switcher--option:last-child {
@@ -3412,6 +3418,7 @@ button:focus-visible {
   padding: 0 var(--spacing-lg) var(--spacing-sm) var(--spacing-lg);
   width: 100%;
   font-family: var(--font-body);
+  box-sizing: border-box;
 }
 
 /* Search input wrapper */
@@ -3434,6 +3441,7 @@ button:focus-visible {
   color: var(--font-color--primary);
   height: 32px;
   transition: all var(--transition-fast);
+  box-sizing: border-box;
   font-family: var(--font-body);
   padding-right: var(--spacing-xl);
 }

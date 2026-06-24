@@ -1140,6 +1140,7 @@ button:focus-visible {
   margin-right: auto;
   padding-left: var(--spacing-4);
   padding-right: var(--spacing-4);
+  box-sizing: border-box;
 }
 
 /* Fixed-width container sizes */

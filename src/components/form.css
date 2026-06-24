@@ -30,6 +30,7 @@
   color: var(--text-primary);
   font-family: inherit;
   transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
 .form-input::placeholder {
@@ -62,6 +63,7 @@
   color: var(--text-primary);
   resize: vertical;
   transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
 .form-textarea:focus {
