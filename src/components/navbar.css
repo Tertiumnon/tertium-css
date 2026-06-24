@@ -14,7 +14,7 @@
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--accent-color--darkest);
   font-family: var(--font-body);
   margin: 0;
   padding: 0;

@@ -1,11 +1,9 @@
 import type { ThemeConfig } from "./theme.types";
 
 /**
- * Default theme configuration values shared across all themes.
- * Individual themes can override these values.
+ * Dark theme color variations - used for dark backgrounds
  */
-
-export const DEFAULT_VARIATIONS = {
+export const DEFAULT_DARK_THEME_VARIATIONS = {
   "primary-lightest-offset": 6,
   "primary-lighter-offset": 4,
   "primary-light-offset": 2,
@@ -18,6 +16,24 @@ export const DEFAULT_VARIATIONS = {
   "accent-dark-offset": -15,
   "accent-darker-offset": -25,
   "accent-darkest-offset": -35,
+} as const;
+
+/**
+ * Light theme color variations - used for light backgrounds
+ */
+export const DEFAULT_LIGHT_THEME_VARIATIONS = {
+  "primary-lightest-offset": 6,
+  "primary-lighter-offset": 4,
+  "primary-light-offset": 2,
+  "primary-dark-offset": -24,
+  "primary-darker-offset": -26,
+  "primary-darkest-offset": -28,
+  "accent-lightest-offset": 24,
+  "accent-lighter-offset": 12,
+  "accent-light-offset": 6,
+  "accent-dark-offset": -6,
+  "accent-darker-offset": -12,
+  "accent-darkest-offset": -24,
 } as const;
 
 export const DEFAULT_STATUS_COLORS = {
@@ -108,6 +124,9 @@ export function createTheme(
   const backgrounds = isDark
     ? DEFAULT_DARK_BACKGROUNDS
     : DEFAULT_LIGHT_BACKGROUNDS;
+  const variations = isDark
+    ? DEFAULT_DARK_THEME_VARIATIONS
+    : DEFAULT_LIGHT_THEME_VARIATIONS;
 
   return {
     metadata: overrides.metadata || {
@@ -124,7 +143,7 @@ export function createTheme(
       hsl: { hue: 0, saturation: 0, lightness: 50 },
     },
     variations: {
-      ...DEFAULT_VARIATIONS,
+      ...variations,
       ...overrides.variations,
     },
     "text-colors": overrides["text-colors"] || {

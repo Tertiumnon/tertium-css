@@ -953,7 +953,9 @@ button:focus-visible {
 
 .table td {
   padding: var(--spacing-2) var(--spacing-3);
-  background: var(--primary-color);
+  background: var(--table-cell-bg);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border-bottom: 1px solid var(--button-default-border);
   border-right: 1px solid var(--button-default-border);
   vertical-align: top;
@@ -973,7 +975,7 @@ button:focus-visible {
 }
 
 .table tbody tr:hover td {
-  background: color-mix(in srgb, var(--primary-color) 4%, transparent 96%);
+  background: color-mix(in srgb, var(--table-cell-bg) 120%, transparent 0%);
 }
 
 /* Table with visible borders on all cells */
@@ -1015,7 +1017,7 @@ button:focus-visible {
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--accent-color--darkest);
   font-family: var(--font-body);
   margin: 0;
   padding: 0;

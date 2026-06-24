@@ -23,7 +23,7 @@ for (const dir of dirs) {
 
 console.log('✨ Generating themes from TypeScript config...\n');
 
-const themes = ['dark.blue--white', 'dark.purple--gold', 'light.white--red'];
+const themes = ['dark.blue--white', 'dark.purple--gold', 'dark.violet--gold', 'light.white--red'];
 
 for (const theme of themes) {
   try {

@@ -171,7 +171,7 @@
   /* TABLE HEADER BACKGROUND - Theme-aware                             */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --table-header-bg: var(--primary-color--lighter);
+  --table-header-bg: var(--primary-color--dark);
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* NAVBAR & MENU BACKGROUND - Theme-aware                           */
@@ -180,6 +180,12 @@
   --navbar-bg: hsla(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 2%), 0.98);
   --menu-bg: var(--bg-card);
   --menu-text: var(--text-on-primary);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TABLE CELL BACKGROUND - Theme-aware with opacity                 */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --table-cell-bg: hsla(var(--primary-hue), var(--primary-sat), var(--primary-light), 0.5);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */

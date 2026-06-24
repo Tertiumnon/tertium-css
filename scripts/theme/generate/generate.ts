@@ -236,11 +236,7 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  /* TABLE HEADER BACKGROUND - Theme-aware                             */\n`;
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
 
-  const tableHeaderBg = isDark
-    ? `var(--primary-color--lighter)`    // Dark theme: lighter primary
-    : `var(--primary-color--darker)`;    // Light theme: darker primary
-
-  css += `  --table-header-bg: ${tableHeaderBg};\n\n`;
+  css += `  --table-header-bg: var(--primary-color--dark);\n\n`;
 
   // Navbar & menu colors
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
@@ -253,7 +249,18 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
 
   css += `  --navbar-bg: ${navbarBgHsl};\n`;
   css += `  --menu-bg: var(--bg-card);\n`;
-  css += `  --menu-text: var(--text-on-primary);\n`;
+  css += `  --menu-text: var(--text-on-primary);\n\n`;
+
+  // Table cell background - theme aware with opacity
+  css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
+  css += `  /* TABLE CELL BACKGROUND - Theme-aware with opacity                 */\n`;
+  css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
+
+  const tableCellBg = isDark
+    ? `hsla(var(--primary-hue), var(--primary-sat), var(--primary-light), 0.5)` // Dark theme: base primary with 50% opacity
+    : `hsla(var(--primary-hue), var(--primary-sat), var(--primary-light), 0.3)`; // Light theme: base primary with 30% opacity
+
+  css += `  --table-cell-bg: ${tableCellBg};\n`;
 
   css += `}\n\n`;
 
