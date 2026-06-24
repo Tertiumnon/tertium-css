@@ -118,7 +118,7 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  /* CODE & PRE BACKGROUND COLORS                                    */\n`;
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
 
-  css += `  --code-bg: var(--primary-color--darker);\n`;
+  css += `  --code-bg: var(--primary-color--darkest);\n`;
   css += `  --code-block-bg: var(--primary-color--darkest);\n\n`;
 
   // Headings

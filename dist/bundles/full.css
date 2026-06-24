@@ -418,7 +418,7 @@ pre {
   overflow-x: auto;
   padding: var(--spacing-4);
   margin: 0;
-  background: var(--code-block-bg);
+  background: var(--code-bg);
 }
 
 /* ─────────────────────────────────────────────────────────────────── */
@@ -601,13 +601,13 @@ button:focus-visible {
   /* PRIMARY BG COLOR - Variations                                   */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 15%));
-  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 10%));
-  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 5%));
+  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
+  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
+  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
   --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
-  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -5%));
-  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -10%));
-  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -15%));
+  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -6%));
+  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -8%));
+  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -10%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* PRIMARY ACCENT COLOR - Variations                               */
@@ -647,7 +647,7 @@ button:focus-visible {
   /* CODE & PRE BACKGROUND COLORS                                    */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --code-bg: var(--primary-color--darker);
+  --code-bg: var(--primary-color--darkest);
   --code-block-bg: var(--primary-color--darkest);
 
   /* ═══════════════════════════════════════════════════════════════ */
@@ -795,13 +795,13 @@ button:focus-visible {
   /* PRIMARY BG COLOR - Variations                                   */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 15%));
-  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 10%));
-  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 5%));
+  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
+  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
+  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
   --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
-  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -5%));
-  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -10%));
-  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -15%));
+  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -6%));
+  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -8%));
+  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -10%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* PRIMARY ACCENT COLOR - Variations                               */
@@ -841,7 +841,7 @@ button:focus-visible {
   /* CODE & PRE BACKGROUND COLORS                                    */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --code-bg: var(--primary-color--darker);
+  --code-bg: var(--primary-color--darkest);
   --code-block-bg: var(--primary-color--darkest);
 
   /* ═══════════════════════════════════════════════════════════════ */
@@ -989,13 +989,13 @@ button:focus-visible {
   /* PRIMARY BG COLOR - Variations                                   */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 15%));
-  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 10%));
-  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 5%));
+  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
+  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
+  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
   --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
   --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -3%));
-  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -10%));
-  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -15%));
+  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -8%));
+  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -10%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* PRIMARY ACCENT COLOR - Variations                               */
@@ -1035,7 +1035,7 @@ button:focus-visible {
   /* CODE & PRE BACKGROUND COLORS                                    */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --code-bg: var(--primary-color--darker);
+  --code-bg: var(--primary-color--darkest);
   --code-block-bg: var(--primary-color--darkest);
 
   /* ═══════════════════════════════════════════════════════════════ */
@@ -3266,7 +3266,7 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--navbar-bg, #f5f5f5);
+  background: var(--primary-color--dark);
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -3902,6 +3902,12 @@ button:focus-visible {
   font-family: var(--font-body);
 }
 
+/* Dark theme overrides */
+html[data-theme="dark--purple--gold"] .navbar,
+html[data-theme="dark--navy--cyan"] .navbar {
+  background-color: var(--primary-color--light);
+}
+
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* SECTION COMPONENT                                                  */
@@ -4458,21 +4464,6 @@ button:focus-visible {
 /* GRADIENT BACKGROUNDS COMPONENT                                      */
 /* Reusable gradient classes for theme-aware backgrounds               */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-
-/* Base gradient variables - defined per theme */
-:root {
-  --gradient-primary: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--primary-color--dark)
-  );
-  --gradient-page: linear-gradient(180deg, var(--bg), var(--bg-card));
-  --gradient-radial: radial-gradient(
-    circle at center,
-    var(--primary-color--lighter),
-    var(--primary-color--dark)
-  );
-}
 
 /* Gradient utility classes */
 .gradient-primary {

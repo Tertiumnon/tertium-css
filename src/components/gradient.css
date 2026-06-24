@@ -4,21 +4,6 @@
 /* Reusable gradient classes for theme-aware backgrounds               */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-/* Base gradient variables - defined per theme */
-:root {
-  --gradient-primary: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--primary-color--dark)
-  );
-  --gradient-page: linear-gradient(180deg, var(--bg), var(--bg-card));
-  --gradient-radial: radial-gradient(
-    circle at center,
-    var(--primary-color--lighter),
-    var(--primary-color--dark)
-  );
-}
-
 /* Gradient utility classes */
 .gradient-primary {
   background: var(--gradient-primary);
