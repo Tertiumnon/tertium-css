@@ -1,23 +1,23 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-/* DARK THEME WITH PURPLE BACKGROUND AND GOLD ACCENTS */
-/* All colors derived from TWO base colors: purple (primary      */
-/* background) and gold (secondary accent). */
+/* DARK THEME WITH BLUE BACKGROUND AND WHITE ACCENTS */
+/* All colors derived from TWO base colors: blue (primary      */
+/* background) and white (secondary accent). */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-[data-theme="dark--purple--gold"] {
+[data-theme="dark--blue--white"] {
   /* ═══════════════════════════════════════════════════════════════ */
   /* TWO BASE COLORS - Everything derives from these                 */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  /* PRIMARY: purple background */
-  --primary-hue: 300;
+  /* PRIMARY: blue background */
+  --primary-hue: 240;
   --primary-sat: 100%;
-  --primary-light: 14%;
+  --primary-light: 20%;
 
-  /* ACCENT: gold highlight */
-  --accent-hue: 51;
+  /* ACCENT: white highlight */
+  --accent-hue: 240;
   --accent-sat: 100%;
-  --accent-light: 50%;
+  --accent-light: 91.4%;
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* PRIMARY BG COLOR - Variations                                   */
@@ -91,9 +91,9 @@
   /* BORDER & SHADOW COLORS                                           */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --border-color: hsla(300, 100%, 45%, 0.3);
-  --border-color--strong: hsla(300, 100%, 45%, 0.6);
-  --border-color--light: hsla(300, 100%, 35%, 0.15);
+  --border-color: hsla(240, 100%, 45%, 0.3);
+  --border-color--strong: hsla(240, 100%, 45%, 0.6);
+  --border-color--light: hsla(240, 100%, 35%, 0.15);
   --shadow-color: rgba(0, 0, 0, 0.3);
 
   /* ═══════════════════════════════════════════════════════════════ */
@@ -128,7 +128,7 @@
   --button-default-bg: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
   --button-default-border: var(--text-primary--light);
   --button-default-text: var(--text-primary);
-  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 34%);
+  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 40%);
   --button-default-border--hover: var(--text-primary--light);
   --button-default-text--hover: var(--text-primary);
 
@@ -136,8 +136,8 @@
   --button-primary-bg: var(--accent-color);
   --button-primary-border: var(--accent-color--dark);
   --button-primary-text: var(--text-on-accent);
-  --button-primary-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 70%);
-  --button-primary-border--hover: hsl(var(--accent-hue), var(--accent-sat), 70%);
+  --button-primary-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
+  --button-primary-border--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
   --button-primary-text--hover: var(--text-on-accent);
 
   /* Outline button: transparent bg, accent border, accent text */
@@ -145,15 +145,15 @@
   --button-outline-border: var(--accent-color);
   --button-outline-text: var(--accent-color);
   --button-outline-bg--hover: transparent;
-  --button-outline-border--hover: hsl(var(--accent-hue), var(--accent-sat), 70%);
-  --button-outline-text--hover: hsl(var(--accent-hue), var(--accent-sat), 70%);
+  --button-outline-border--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
+  --button-outline-text--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
 
   /* Submit button: accent bg, darker accent border, text-on-accent */
   --button-submit-bg: var(--accent-color);
   --button-submit-border: var(--accent-color--dark);
   --button-submit-text: var(--text-on-accent);
-  --button-submit-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 70%);
-  --button-submit-border--hover: hsl(var(--accent-hue), var(--accent-sat), 70%);
+  --button-submit-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
+  --button-submit-border--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
   --button-submit-text--hover: var(--text-on-accent);
 
   /* Borderless button: no border, accent text */
@@ -186,7 +186,7 @@
 /* BODY STYLING                                                         */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-[data-theme="dark--purple--gold"] body {
+[data-theme="dark--blue--white"] body {
   background: var(--gradient-page);
   color: var(--text-primary);
   position: relative;

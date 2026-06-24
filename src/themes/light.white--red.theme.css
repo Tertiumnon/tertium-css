@@ -23,13 +23,13 @@
   /* PRIMARY BG COLOR - Variations                                   */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
-  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
-  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
+  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
+  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
+  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 2%));
   --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
   --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -3%));
-  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -8%));
-  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -10%));
+  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -6%));
+  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -8%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* PRIMARY ACCENT COLOR - Variations                               */
@@ -174,10 +174,10 @@
   --table-header-bg: var(--primary-color--darker);
 
   /* ═══════════════════════════════════════════════════════════════ */
-  /* NAVBAR & MENU BACKGROUND - For dark themes                        */
+  /* NAVBAR & MENU BACKGROUND - Theme-aware                           */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --navbar-bg: var(--primary-color);
+  --navbar-bg: hsla(var(--primary-hue), var(--primary-sat), calc(var(--primary-dark) - 4%), 0.85);
   --menu-bg: var(--bg-card);
   --menu-text: var(--text-on-primary);
 }

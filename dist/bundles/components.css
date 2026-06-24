@@ -1011,7 +1011,7 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--primary-color--dark);
+  background: var(--navbar-bg);
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1647,11 +1647,6 @@ button:focus-visible {
   font-family: var(--font-body);
 }
 
-/* Dark theme overrides */
-html[data-theme="dark--purple--gold"] .navbar,
-html[data-theme="dark--navy--cyan"] .navbar {
-  background-color: var(--primary-color--light);
-}
 
 
 

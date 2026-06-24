@@ -5,7 +5,7 @@
       "Bash(git reset *)",
       "Bash(git mv *)",
       "Bash(bun scripts/theme/generate/generate.ts dark.purple--gold)",
-      "Bash(bun scripts/theme/generate/generate.ts dark.navy--cyan)",
+      "Bash(bun scripts/theme/generate/generate.ts dark.blue--white)",
       "Bash(bun scripts/theme/generate/generate.ts light.white--red)",
       "Bash(bun theme:generate:all)",
       "Bash(bun run *)",

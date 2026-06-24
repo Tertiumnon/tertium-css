@@ -244,10 +244,14 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
 
   // Navbar & menu colors
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
-  css += `  /* NAVBAR & MENU BACKGROUND - For dark themes                        */\n`;
+  css += `  /* NAVBAR & MENU BACKGROUND - Theme-aware                           */\n`;
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
 
-  css += `  --navbar-bg: var(--primary-color);\n`;
+  const navbarBgHsl = isDark
+    ? `hsla(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 2%), 0.98)` // Dark theme: lighter primary with high opacity
+    : `hsla(var(--primary-hue), var(--primary-sat), calc(var(--primary-dark) - 4%), 0.85)`; // Light theme: darker primary with lower opacity
+
+  css += `  --navbar-bg: ${navbarBgHsl};\n`;
   css += `  --menu-bg: var(--bg-card);\n`;
   css += `  --menu-text: var(--text-on-primary);\n`;
 

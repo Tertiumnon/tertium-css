@@ -7,7 +7,7 @@
   "scripts": {
     "build": "bun run theme:generate:all && bun scripts/build/build.ts",
     "theme:generate": "bun scripts/theme/generate/generate.ts",
-    "theme:generate:all": "bun theme:generate dark.navy--cyan && bun theme:generate dark.purple--gold && bun theme:generate light.white--red",
+    "theme:generate:all": "bun theme:generate dark.blue--white && bun theme:generate dark.purple--gold && bun theme:generate light.white--red",
     "lint:css:fix": "prettier --write 'src/**/*.css'",
     "release:patch": "bun run build && node node_modules/@tertium/js/scripts/release.js patch",
     "release:minor": "bun run build && node node_modules/@tertium/js/scripts/release.js minor",

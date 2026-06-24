@@ -6,7 +6,7 @@ This directory contains the Tertium CSS theme system with centralized configurat
 
 - **theme.types.ts** - TypeScript type definitions for themes
 - **theme.constants.ts** - Centralized constants with defaults and factory function
-- **[name].theme.ts** - Individual theme definitions (dark.navy--cyan, dark.purple--gold, light.white--red)
+- **[name].theme.ts** - Individual theme definitions (dark.blue--white, dark.purple--gold, light.white--red)
 - **[name].theme.css** - Generated CSS from theme definitions (auto-generated)
 
 ## Adding a New Theme
@@ -20,7 +20,7 @@ import { createTheme } from "./theme.constants";
 
 export const theme = createTheme({
   metadata: {
-    name: "dark--navy--cyan",
+    name: "dark--blue--white",
     description: "Dark theme with navy background and cyan accents",
     darkness: "dark",
   },
@@ -121,7 +121,7 @@ bun run build
 Or generate a single theme:
 
 ```bash
-bun scripts/theme/generate/generate.ts dark.navy--cyan
+bun scripts/theme/generate/generate.ts dark.blue--white
 ```
 
 ### 4. Add to Bundle

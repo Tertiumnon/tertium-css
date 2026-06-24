@@ -47,9 +47,9 @@
                 <span class="theme-option-label">Dark Purple & Gold</span>
                 <span class="theme-option-check">✓</span>
               </button>
-              <button class="theme-option" data-theme="dark.navy--cyan.theme.min.css">
+              <button class="theme-option" data-theme="dark.blue--white.theme.min.css">
                 <span class="theme-color-dot navy"></span>
-                <span class="theme-option-label">Dark Navy & Cyan</span>
+                <span class="theme-option-label">Dark Blue & White</span>
                 <span class="theme-option-check">✓</span>
               </button>
               <button class="theme-option" data-theme="light.white--red.theme.min.css">
@@ -440,13 +440,19 @@
 
     const themeMap = {
       'dark.purple--gold.theme.min.css': 'dark--purple--gold',
-      'dark.navy--cyan.theme.min.css': 'dark--navy--cyan',
+      'dark.blue--white.theme.min.css': 'dark--blue--white',
       'light.white--red.theme.min.css': 'light--white--red'
     };
 
     const updateTheme = (themeFile) => {
       const themeAttr = themeMap[themeFile];
       htmlElement.setAttribute('data-theme', themeAttr);
+
+      // Load the new theme CSS file
+      const themeLink = document.querySelector('link[href*="theme"]');
+      if (themeLink) {
+        themeLink.href = `../dist/themes/${themeFile}`;
+      }
 
       // Update navbar theme options
       themeOptions.forEach(opt => {
@@ -477,6 +483,14 @@
         }
       });
     }
+
+    // Add click listeners to theme options
+    themeOptions.forEach(opt => {
+      opt.addEventListener('click', () => {
+        const themeFile = opt.dataset.theme;
+        updateTheme(themeFile);
+      });
+    });
 
     // Color table population
     const colorDefinitions = [

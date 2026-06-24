@@ -18,7 +18,7 @@ All themes must follow the naming pattern:
 
 ### Examples
 
-- `dark.navy--cyan.theme.css` - Dark theme with navy background and cyan accents
+- `dark.blue--white.theme.css` - Dark theme with navy background and cyan accents
 - `dark.purple--gold.theme.css` - Dark theme with purple background and gold accents
 - `light.white--red.theme.css` - Light theme with white background and red accents
 
@@ -58,7 +58,7 @@ Every theme uses exactly TWO base colors from which all other colors are derived
 ### How It Works
 
 ```css
-[data-theme="dark--navy--cyan"] {
+[data-theme="dark--blue--white"] {
   /* PRIMARY BG COLOR: Navy background */
   --primary-color: hsl(240, 100%, 27%);
 
@@ -79,7 +79,7 @@ Every theme uses exactly TWO base colors from which all other colors are derived
 
 The navbar and all context menus (dropdowns, popups) must follow theme-specific color rules to ensure proper visibility and contrast across light and dark themes.
 
-### Dark Themes (navy--cyan, purple--gold)
+### Dark Themes (blue--white, purple--gold)
 
 **Navbar:**
 - Background: Primary background color (`--primary-color`)
@@ -146,7 +146,7 @@ The navbar and all context menus (dropdowns, popups) must follow theme-specific 
 **Fundamental Rule:** Page background color ALWAYS equals the primary color.
 
 ```css
-[data-theme="dark--navy--cyan"] {
+[data-theme="dark--blue--white"] {
   --primary-color: hsl(240, 100%, 27%);    /* Navy */
   --bg-page: var(--primary-color);         /* Navy page background */
 }
@@ -226,7 +226,7 @@ All theme variables must be scoped to `[data-theme="..."]` selector on the html 
 ### Pattern
 
 ```css
-[data-theme="dark--navy--cyan"] {
+[data-theme="dark--blue--white"] {
   /* Base colors defined here */
   --primary-color: hsl(240, 100%, 27%);
   --accent-color: hsl(240, 100%, 80%);
@@ -237,7 +237,7 @@ All theme variables must be scoped to `[data-theme="..."]` selector on the html 
   /* etc */
 }
 
-[data-theme="dark--navy--cyan"] body {
+[data-theme="dark--blue--white"] body {
   /* Body-specific styling */
   background: var(--bg-color--page);
 }
@@ -308,7 +308,7 @@ const accentHsl = { hue: 240, saturation: 100, lightness: 80 };
 
 export const theme = createTheme({
   metadata: {
-    name: "dark--navy--cyan",
+    name: "dark--blue--white",
     description: "Dark theme with navy background and cyan accents",
     darkness: "dark",
   },
@@ -365,16 +365,16 @@ bun run build
 
 Or generate a single theme:
 ```bash
-bun scripts/theme/generate/generate.ts dark.navy--cyan
+bun scripts/theme/generate/generate.ts dark.blue--white
 ```
 
-This creates `src/themes/dark.navy--cyan.theme.css` with all color calculations.
+This creates `src/themes/dark.blue--white.theme.css` with all color calculations.
 
 ### Step 3: Update Imports
 
 Add theme to `src/bundles/full.css`:
 ```css
-@import "../themes/dark.navy--cyan.theme.css";
+@import "../themes/dark.blue--white.theme.css";
 ```
 
 ### Step 4: Update Demo
@@ -390,7 +390,7 @@ bun run build
 
 Then test in browser with dev tools:
 ```javascript
-document.documentElement.setAttribute('data-theme', 'dark--navy--cyan');
+document.documentElement.setAttribute('data-theme', 'dark--blue--white');
 ```
 
 ### Overriding Defaults
@@ -425,7 +425,7 @@ export const theme = createTheme({
 When you run `bun run build`, the theme generator reads your TypeScript config and produces a CSS file. Here's what gets generated:
 
 ```css
-[data-theme="dark--navy--cyan"] {
+[data-theme="dark--blue--white"] {
   /* 1. Base colors from your config */
   --primary-hue: 240;
   --primary-sat: 100%;
@@ -703,7 +703,7 @@ The `src/components/buttons.css` uses only the generated variables, requiring **
 - `--button-primary-bg` = red (accent)
 - Default button is clearly different from page (white) background ✓
 
-**Dark Theme (navy--cyan):**
+**Dark Theme (blue--white):**
 - `--button-default-bg` = slightly lighter navy (derived from navy with +5% offset)
 - `--button-primary-bg` = cyan (accent)
 - Default button is clearly different from page (navy) background ✓
@@ -750,10 +750,10 @@ Both code backgrounds use the established primary color spectrum:
 
 ```
 --primary-color--lightest   (+25%)    [lightest]
---primary-color--lighter    (+15%)    
---primary-color--light      (+8%)     
---primary-color             (base)    
---primary-color--dark       (-5%)     
+--primary-color--lighter    (+15%)
+--primary-color--light      (+8%)
+--primary-color             (base)
+--primary-color--dark       (-5%)
 --primary-color--darker     (-12%)    ← Used for <code>
 --primary-color--darkest    (-20%)    ← Used for <pre>
 ```
@@ -782,7 +782,7 @@ pre {
 The theme system automatically assigns the correct variations:
 
 ```css
-[data-theme="dark--navy--cyan"] {
+[data-theme="dark--blue--white"] {
   --code-bg: var(--primary-color--darker);
   --code-block-bg: var(--primary-color--darkest);
 }

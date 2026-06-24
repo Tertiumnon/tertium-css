@@ -4,7 +4,7 @@
 /* background) and cyan (secondary accent). */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-[data-theme="dark--navy--cyan"] {
+[data-theme="dark--blue--white"] {
   /* ═══════════════════════════════════════════════════════════════ */
   /* TWO BASE COLORS - Everything derives from these                 */
   /* ═══════════════════════════════════════════════════════════════ */
@@ -12,7 +12,7 @@
   /* PRIMARY: navy background */
   --primary-hue: 240;
   --primary-sat: 100%;
-  --primary-light: 27%;
+  --primary-light: 20%;
 
   /* ACCENT: cyan highlight */
   --accent-hue: 240;
@@ -128,7 +128,7 @@
   --button-default-bg: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
   --button-default-border: var(--text-primary--light);
   --button-default-text: var(--text-primary);
-  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 47%);
+  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 40%);
   --button-default-border--hover: var(--text-primary--light);
   --button-default-text--hover: var(--text-primary);
 
@@ -186,7 +186,7 @@
 /* BODY STYLING                                                         */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-[data-theme="dark--navy--cyan"] body {
+[data-theme="dark--blue--white"] body {
   background: var(--gradient-page);
   color: var(--text-primary);
   position: relative;

@@ -6,12 +6,12 @@ import type { ThemeConfig } from "./theme.types";
  */
 
 export const DEFAULT_VARIATIONS = {
-  "primary-lightest-offset": 8,
-  "primary-lighter-offset": 6,
-  "primary-light-offset": 4,
-  "primary-dark-offset": -6,
-  "primary-darker-offset": -8,
-  "primary-darkest-offset": -10,
+  "primary-lightest-offset": 6,
+  "primary-lighter-offset": 4,
+  "primary-light-offset": 2,
+  "primary-dark-offset": -4,
+  "primary-darker-offset": -6,
+  "primary-darkest-offset": -8,
   "accent-lightest-offset": 35,
   "accent-lighter-offset": 25,
   "accent-light-offset": 15,

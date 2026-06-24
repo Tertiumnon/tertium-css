@@ -12,7 +12,7 @@
   /* PRIMARY: purple background */
   --primary-hue: 300;
   --primary-sat: 100%;
-  --primary-light: 15%;
+  --primary-light: 14%;
 
   /* ACCENT: gold highlight */
   --accent-hue: 51;
@@ -23,13 +23,13 @@
   /* PRIMARY BG COLOR - Variations                                   */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
-  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
-  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
+  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
+  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
+  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 2%));
   --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
-  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -6%));
-  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -8%));
-  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -10%));
+  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -4%));
+  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -6%));
+  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -8%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* PRIMARY ACCENT COLOR - Variations                               */
@@ -128,7 +128,7 @@
   --button-default-bg: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
   --button-default-border: var(--text-primary--light);
   --button-default-text: var(--text-primary);
-  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 35%);
+  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 34%);
   --button-default-border--hover: var(--text-primary--light);
   --button-default-text--hover: var(--text-primary);
 
@@ -174,10 +174,10 @@
   --table-header-bg: var(--primary-color--lighter);
 
   /* ═══════════════════════════════════════════════════════════════ */
-  /* NAVBAR & MENU BACKGROUND - For dark themes                        */
+  /* NAVBAR & MENU BACKGROUND - Theme-aware                           */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --navbar-bg: var(--primary-color);
+  --navbar-bg: hsla(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 2%), 0.98);
   --menu-bg: var(--bg-card);
   --menu-text: var(--text-on-primary);
 }
