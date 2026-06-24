@@ -48,6 +48,7 @@
 @import "../components/theme-switcher.css";
 @import "../components/context-menu.css";
 @import "../components/gradient.css";
+@import "../components/pagination.css";
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* Legacy Body Styles (maintained for backward compatibility)         */

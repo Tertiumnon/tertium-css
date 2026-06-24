@@ -7,9 +7,11 @@
 .section {
   display: block;
   padding: var(--spacing-6);
-  border-radius: 0.375em;
+  border-radius: 0.75em;
   background: var(--section-bg);
-  box-shadow: 0px 0px 8px 0px var(--primary-color--darkest);
+  box-shadow: 0px 0px 20px 4px var(--primary-color--dark);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .section h1:first-child,
@@ -19,4 +21,9 @@
 .section h5:first-child,
 .section h6:first-child {
   margin-top: 0;
+}
+
+/* Light theme overrides */
+[data-theme*="light"] .section {
+  box-shadow: 0px 0px 20px 4px var(--primary-color--darkest);
 }

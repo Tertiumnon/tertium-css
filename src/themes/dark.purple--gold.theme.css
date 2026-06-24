@@ -12,7 +12,7 @@
   /* PRIMARY: purple background */
   --primary-hue: 300;
   --primary-sat: 100%;
-  --primary-light: 27%;
+  --primary-light: 15%;
 
   /* ACCENT: gold highlight */
   --accent-hue: 51;
@@ -128,7 +128,7 @@
   --button-default-bg: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
   --button-default-border: var(--text-primary--light);
   --button-default-text: var(--text-primary);
-  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 47%);
+  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 35%);
   --button-default-border--hover: var(--text-primary--light);
   --button-default-text--hover: var(--text-primary);
 

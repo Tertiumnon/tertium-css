@@ -889,9 +889,11 @@ button:focus-visible {
 .section {
   display: block;
   padding: var(--spacing-6);
-  border-radius: 0.375em;
+  border-radius: 0.75em;
   background: var(--section-bg);
-  box-shadow: 0px 0px 8px 0px var(--primary-color--darkest);
+  box-shadow: 0px 0px 20px 4px var(--primary-color--dark);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .section h1:first-child,
@@ -901,6 +903,11 @@ button:focus-visible {
 .section h5:first-child,
 .section h6:first-child {
   margin-top: 0;
+}
+
+/* Light theme overrides */
+[data-theme*="light"] .section {
+  box-shadow: 0px 0px 20px 4px var(--primary-color--darkest);
 }
 
 
@@ -2192,6 +2199,52 @@ button:focus-visible {
 .badge-info--subtle {
   background: color-mix(in srgb, var(--color-info) 20%, transparent 80%);
   color: var(--color-info);
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* PAGINATION COMPONENT                                               */
+/* Numbered page navigation with prev/next buttons                   */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.pagination {
+  display: flex;
+  gap: var(--spacing-2);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Page number buttons */
+.pagination .btn--page {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--text-sm);
+  min-width: 2.5em;
+  text-align: center;
+}
+
+/* Active page indicator */
+.pagination .btn--page.btn--active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--text-on-accent);
+  font-weight: 600;
+}
+
+.pagination .btn--page.btn--active:hover {
+  background: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) - 10%));
+  border-color: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) - 10%));
+}
+
+/* Previous/Next buttons */
+.pagination .btn--pagination {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.pagination .btn--pagination:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
