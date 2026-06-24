@@ -1,0 +1,1 @@
+@import "../system/tokens.css";.section{display: block;padding: var(--spacing-6);border-radius: 0.375em;background: var(--section-bg);box-shadow: 0px 0px 8px 0px var(--primary-color--darkest);}.section h1:first-child,.section h2:first-child,.section h3:first-child,.section h4:first-child,.section h5:first-child,.section h6:first-child{margin-top: 0;}

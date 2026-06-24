@@ -23,13 +23,13 @@
   /* PRIMARY BG COLOR - Variations                                   */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 25%));
-  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 15%));
-  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
+  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 15%));
+  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 10%));
+  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 5%));
   --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
   --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -5%));
-  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -12%));
-  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -20%));
+  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -10%));
+  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -15%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* PRIMARY ACCENT COLOR - Variations                               */
@@ -116,7 +116,7 @@
   /* BACKGROUND GRADIENTS                                             */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --gradient-page: linear-gradient(180deg, var(--bg-page), var(--bg-card));
+  --gradient-page: radial-gradient(ellipse at center, var(--primary-color--lighter), var(--primary-color));
   --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-color--light));
   --gradient-radial: radial-gradient(circle at center, var(--primary-color--light), var(--primary-color--dark));
 
@@ -162,6 +162,18 @@
   --button-text-color--hover: var(--accent-color--dark);
 
   /* ═══════════════════════════════════════════════════════════════ */
+  /* SECTION BACKGROUND - Theme-aware                                  */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --section-bg: var(--primary-color--light);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TABLE HEADER BACKGROUND - Theme-aware                             */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --table-header-bg: var(--primary-color--lighter);
+
+  /* ═══════════════════════════════════════════════════════════════ */
   /* NAVBAR & MENU BACKGROUND - For dark themes                        */
   /* ═══════════════════════════════════════════════════════════════ */
 
@@ -175,7 +187,7 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 [data-theme="dark--navy--cyan"] body {
-  background: var(--bg-page);
+  background: var(--gradient-page);
   color: var(--text-primary);
   position: relative;
 }

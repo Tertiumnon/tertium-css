@@ -1,22 +1,22 @@
 @import "../system/tokens.css";
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-/* SECTION CARD COMPONENT                                             */
+/* SECTION COMPONENT                                                  */
 /* Container section with dark primary background and content         */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-.section-card {
+.section {
   display: block;
   padding: var(--spacing-6);
   border-radius: 0.375em;
-  background: var(--primary-color--dark);
-  box-shadow: 0px 0px 8px 0px var(--button-default-border);
+  background: var(--section-bg);
+  box-shadow: 0px 0px 8px 0px var(--primary-color--darkest);
 }
 
-.section-card h1:first-child,
-.section-card h2:first-child,
-.section-card h3:first-child,
-.section-card h4:first-child,
-.section-card h5:first-child,
-.section-card h6:first-child {
+.section h1:first-child,
+.section h2:first-child,
+.section h3:first-child,
+.section h4:first-child,
+.section h5:first-child,
+.section h6:first-child {
   margin-top: 0;
 }

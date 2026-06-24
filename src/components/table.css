@@ -15,7 +15,7 @@
 }
 
 .table thead {
-  background: color-mix(in srgb, var(--primary-color) 8%, transparent 92%);
+  background: var(--table-header-bg);
   border-top: 1px solid var(--button-default-border);
 }
 
@@ -82,10 +82,6 @@
 /* ─────────────────────────────────────────────────────────────────── */
 /* LIGHT THEME OVERRIDES                                               */
 /* ─────────────────────────────────────────────────────────────────── */
-
-[data-theme*="light"] .table thead {
-  background: var(--button-default-bg);
-}
 
 [data-theme*="light"] .table th {
   color: var(--accent-color);

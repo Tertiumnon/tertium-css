@@ -307,7 +307,7 @@ Pre-built UI elements with multiple variants:
 </div>
 
 <!-- Section card with darker background (better for grouping) -->
-<div class="section-card">
+<div class="section">
   <div class="card">
     <h2>Content Section</h2>
     <p>Content inside</p>
@@ -323,17 +323,17 @@ Pre-built UI elements with multiple variants:
     <label for="name">Name</label>
     <input type="text" id="name" class="form-input">
   </div>
-  
+
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email" id="email" class="form-input">
   </div>
-  
+
   <div class="form-group">
     <label for="message">Message</label>
     <textarea id="message" class="form-input"></textarea>
   </div>
-  
+
   <button type="submit" class="btn btn--primary">Send</button>
 </form>
 ```
@@ -371,13 +371,13 @@ Pre-built UI elements with multiple variants:
   <div class="container-2xl">
     <div class="navbar-inner">
       <a href="#" class="navbar-brand">Logo</a>
-      
+
       <ul class="navbar-menu">
         <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Docs</a></li>
       </ul>
-      
+
       <div class="navbar-actions">
         <button class="btn btn--primary">Sign In</button>
       </div>
@@ -424,7 +424,7 @@ src/
 ├── system/
 │   ├── tokens/              # Design token definitions
 │   └── themes/              # Theme presets (Dark Purple Gold, Dark Blue, Dark Deep Blue, Light Red)
-├── components/              # Pre-built components (buttons, cards, section-card)
+├── components/              # Pre-built components (buttons, cards, section)
 ├── utilities/               # Utility classes (spacing, display, colors, etc.)
 ├── fonts/                   # Self-hosted font files (Cormorant, Alegreya)
 └── bundles/                 # Composite bundle entry points

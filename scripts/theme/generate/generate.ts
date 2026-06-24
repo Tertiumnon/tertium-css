@@ -171,7 +171,7 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  /* BACKGROUND GRADIENTS                                             */\n`;
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
 
-  css += `  --gradient-page: linear-gradient(180deg, var(--bg-page), var(--bg-card));\n`;
+  css += `  --gradient-page: radial-gradient(ellipse at center, var(--primary-color--lighter), var(--primary-color));\n`;
   css += `  --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-color--light));\n`;
   css += `  --gradient-radial: radial-gradient(circle at center, var(--primary-color--light), var(--primary-color--dark));\n\n`;
 
@@ -220,6 +220,28 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  --button-text-bg--hover: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + ${isDark ? 15 : -15}%), 0.1);\n`;
   css += `  --button-text-color--hover: var(--accent-color--dark);\n\n`;
 
+  // Section background - theme aware
+  css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
+  css += `  /* SECTION BACKGROUND - Theme-aware                                  */\n`;
+  css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
+
+  const sectionBg = isDark
+    ? `var(--primary-color--light)`      // Dark theme: lighter primary
+    : `var(--primary-color--dark)`;      // Light theme: darker primary
+
+  css += `  --section-bg: ${sectionBg};\n\n`;
+
+  // Table header background - theme aware
+  css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
+  css += `  /* TABLE HEADER BACKGROUND - Theme-aware                             */\n`;
+  css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
+
+  const tableHeaderBg = isDark
+    ? `var(--primary-color--lighter)`    // Dark theme: lighter primary
+    : `var(--primary-color--darker)`;    // Light theme: darker primary
+
+  css += `  --table-header-bg: ${tableHeaderBg};\n\n`;
+
   // Navbar & menu colors
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
   css += `  /* NAVBAR & MENU BACKGROUND - For dark themes                        */\n`;
@@ -237,7 +259,7 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */\n\n`;
 
   css += `[data-theme="${dataTheme}"] body {\n`;
-  css += `  background: var(--bg-page);\n`;
+  css += `  background: var(--gradient-page);\n`;
   css += `  color: var(--text-primary);\n`;
   css += `  position: relative;\n`;
   css += `}\n`;
