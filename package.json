@@ -9,9 +9,9 @@
     "theme:generate": "bun scripts/theme/generate/generate.ts",
     "theme:generate:all": "bun theme:generate dark.navy--cyan && bun theme:generate dark.purple--gold && bun theme:generate light.white--red",
     "lint:css:fix": "prettier --write 'src/**/*.css'",
-    "release:patch": "node node_modules/@tertium/js/scripts/release.js patch",
-    "release:minor": "node node_modules/@tertium/js/scripts/release.js minor",
-    "release:major": "node node_modules/@tertium/js/scripts/release.js major"
+    "release:patch": "bun run build && node node_modules/@tertium/js/scripts/release.js patch",
+    "release:minor": "bun run build && node node_modules/@tertium/js/scripts/release.js minor",
+    "release:major": "bun run build && node node_modules/@tertium/js/scripts/release.js major"
   },
   "keywords": [
     "css",

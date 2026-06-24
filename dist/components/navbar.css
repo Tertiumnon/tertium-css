@@ -199,8 +199,7 @@
   padding: 10px 12px;
   background: none;
   border: none;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--menu-bg) 85%, white 15%);
+  border-bottom: 1px solid color-mix(in srgb, var(--menu-bg) 85%, white 15%);
   color: var(--menu-text);
   cursor: pointer;
   text-align: left;
@@ -230,8 +229,7 @@
 
 /* Profile submenu (for nested options like themes) */
 .profile-menu--submenu {
-  border-top: 1px solid
-    color-mix(in srgb, var(--menu-bg) 85%, white 15%);
+  border-top: 1px solid color-mix(in srgb, var(--menu-bg) 85%, white 15%);
   animation: slideDown 150ms ease-out;
 }
 
@@ -244,8 +242,7 @@
   padding: 8px 12px;
   background: none;
   border: none;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--menu-bg) 85%, white 15%);
+  border-bottom: 1px solid color-mix(in srgb, var(--menu-bg) 85%, white 15%);
   color: var(--menu-text);
   cursor: pointer;
   text-align: left;
@@ -387,8 +384,7 @@
   padding: 10px 12px;
   background: none;
   border: none;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--menu-bg) 85%, white 15%);
+  border-bottom: 1px solid color-mix(in srgb, var(--menu-bg) 85%, white 15%);
   color: var(--menu-text);
   cursor: pointer;
   text-align: left;
@@ -438,18 +434,6 @@
   font-weight: bold;
   font-size: 14px;
   flex-shrink: 0;
-}
-
-/* ===== FILTERS SLOT (space for dynamic content) ===== */
-.filters-slot {
-  padding: var(--spacing-md) var(--spacing-lg) 0;
-  min-height: 40px;
-  width: calc(100% - var(--spacing-lg) * 2);
-  flex-basis: 100%;
-}
-
-.filters-slot:empty {
-  display: none;
 }
 
 /* ===== FILTER CONTROLS (search and filter UI) ===== */
