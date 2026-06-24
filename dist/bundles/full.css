@@ -589,8 +589,8 @@ button:focus-visible {
 
   /* PRIMARY: purple background */
   --primary-hue: 300;
-  --primary-sat: 100%;
-  --primary-light: 14%;
+  --primary-sat: 56%;
+  --primary-light: 16%;
 
   /* ACCENT: gold highlight */
   --accent-hue: 51;
@@ -601,12 +601,12 @@ button:focus-visible {
   /* PRIMARY BG COLOR - Variations                                   */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
-  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
-  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 2%));
+  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
+  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
+  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
   --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
-  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -4%));
-  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -6%));
+  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -2%));
+  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -4%));
   --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -8%));
 
   /* ═══════════════════════════════════════════════════════════════ */
@@ -617,9 +617,9 @@ button:focus-visible {
   --accent-color--lighter: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 25%));
   --accent-color--light: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 15%));
   --accent-color: hsl(var(--accent-hue), var(--accent-sat), var(--accent-light));
-  --accent-color--dark: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -15%));
+  --accent-color--dark: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -20%));
   --accent-color--darker: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -25%));
-  --accent-color--darkest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -35%));
+  --accent-color--darkest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -30%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* CONTEXTUAL BACKGROUND COLORS                                    */
@@ -669,9 +669,9 @@ button:focus-visible {
   /* BORDER & SHADOW COLORS                                           */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --border-color: hsla(300, 100%, 45%, 0.3);
-  --border-color--strong: hsla(300, 100%, 45%, 0.6);
-  --border-color--light: hsla(300, 100%, 35%, 0.15);
+  --border-color: hsla(300, 56%, 45%, 0.3);
+  --border-color--strong: hsla(300, 56%, 45%, 0.6);
+  --border-color--light: hsla(300, 56%, 35%, 0.15);
   --shadow-color: rgba(0, 0, 0, 0.3);
 
   /* ═══════════════════════════════════════════════════════════════ */
@@ -706,7 +706,7 @@ button:focus-visible {
   --button-default-bg: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
   --button-default-border: var(--text-primary--light);
   --button-default-text: var(--text-primary);
-  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 34%);
+  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 36%);
   --button-default-border--hover: var(--text-primary--light);
   --button-default-text--hover: var(--text-primary);
 
@@ -749,7 +749,7 @@ button:focus-visible {
   /* TABLE HEADER BACKGROUND - Theme-aware                             */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --table-header-bg: var(--primary-color--dark);
+  --table-header-bg: var(--primary-color--darker);
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* NAVBAR & MENU BACKGROUND - Theme-aware                           */
@@ -764,6 +764,12 @@ button:focus-visible {
   /* ═══════════════════════════════════════════════════════════════ */
 
   --table-cell-bg: hsla(var(--primary-hue), var(--primary-sat), var(--primary-light), 0.5);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TABLE BORDER COLOR - Theme-aware                                 */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --table-border-color: var(--accent-color--darkest);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -789,24 +795,24 @@ button:focus-visible {
 
   /* PRIMARY: blue background */
   --primary-hue: 240;
-  --primary-sat: 100%;
+  --primary-sat: 55%;
   --primary-light: 20%;
 
   /* ACCENT: white highlight */
-  --accent-hue: 240;
-  --accent-sat: 100%;
-  --accent-light: 91.4%;
+  --accent-hue: 0;
+  --accent-sat: 0%;
+  --accent-light: 90%;
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* PRIMARY BG COLOR - Variations                                   */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
-  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
-  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 2%));
+  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
+  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
+  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
   --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
-  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -4%));
-  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -6%));
+  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -2%));
+  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -4%));
   --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -8%));
 
   /* ═══════════════════════════════════════════════════════════════ */
@@ -817,9 +823,9 @@ button:focus-visible {
   --accent-color--lighter: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 25%));
   --accent-color--light: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 15%));
   --accent-color: hsl(var(--accent-hue), var(--accent-sat), var(--accent-light));
-  --accent-color--dark: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -15%));
+  --accent-color--dark: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -20%));
   --accent-color--darker: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -25%));
-  --accent-color--darkest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -35%));
+  --accent-color--darkest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -30%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* CONTEXTUAL BACKGROUND COLORS                                    */
@@ -869,9 +875,9 @@ button:focus-visible {
   /* BORDER & SHADOW COLORS                                           */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --border-color: hsla(240, 100%, 45%, 0.3);
-  --border-color--strong: hsla(240, 100%, 45%, 0.6);
-  --border-color--light: hsla(240, 100%, 35%, 0.15);
+  --border-color: hsla(240, 55%, 45%, 0.3);
+  --border-color--strong: hsla(240, 55%, 45%, 0.6);
+  --border-color--light: hsla(240, 55%, 35%, 0.15);
   --shadow-color: rgba(0, 0, 0, 0.3);
 
   /* ═══════════════════════════════════════════════════════════════ */
@@ -914,8 +920,8 @@ button:focus-visible {
   --button-primary-bg: var(--accent-color);
   --button-primary-border: var(--accent-color--dark);
   --button-primary-text: var(--text-on-accent);
-  --button-primary-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
-  --button-primary-border--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
+  --button-primary-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 110%);
+  --button-primary-border--hover: hsl(var(--accent-hue), var(--accent-sat), 110%);
   --button-primary-text--hover: var(--text-on-accent);
 
   /* Outline button: transparent bg, accent border, accent text */
@@ -923,15 +929,15 @@ button:focus-visible {
   --button-outline-border: var(--accent-color);
   --button-outline-text: var(--accent-color);
   --button-outline-bg--hover: transparent;
-  --button-outline-border--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
-  --button-outline-text--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
+  --button-outline-border--hover: hsl(var(--accent-hue), var(--accent-sat), 110%);
+  --button-outline-text--hover: hsl(var(--accent-hue), var(--accent-sat), 110%);
 
   /* Submit button: accent bg, darker accent border, text-on-accent */
   --button-submit-bg: var(--accent-color);
   --button-submit-border: var(--accent-color--dark);
   --button-submit-text: var(--text-on-accent);
-  --button-submit-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
-  --button-submit-border--hover: hsl(var(--accent-hue), var(--accent-sat), 111.4%);
+  --button-submit-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 110%);
+  --button-submit-border--hover: hsl(var(--accent-hue), var(--accent-sat), 110%);
   --button-submit-text--hover: var(--text-on-accent);
 
   /* Borderless button: no border, accent text */
@@ -949,7 +955,7 @@ button:focus-visible {
   /* TABLE HEADER BACKGROUND - Theme-aware                             */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --table-header-bg: var(--primary-color--dark);
+  --table-header-bg: var(--primary-color--darker);
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* NAVBAR & MENU BACKGROUND - Theme-aware                           */
@@ -964,6 +970,12 @@ button:focus-visible {
   /* ═══════════════════════════════════════════════════════════════ */
 
   --table-cell-bg: hsla(var(--primary-hue), var(--primary-sat), var(--primary-light), 0.5);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TABLE BORDER COLOR - Theme-aware                                 */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --table-border-color: var(--accent-color--darkest);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -1006,8 +1018,8 @@ button:focus-visible {
   --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 2%));
   --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
   --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -3%));
-  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -26%));
-  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -28%));
+  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -15%));
+  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -20%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* PRIMARY ACCENT COLOR - Variations                               */
@@ -1019,7 +1031,7 @@ button:focus-visible {
   --accent-color: hsl(var(--accent-hue), var(--accent-sat), var(--accent-light));
   --accent-color--dark: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -6%));
   --accent-color--darker: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -12%));
-  --accent-color--darkest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -24%));
+  --accent-color--darkest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -30%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* CONTEXTUAL BACKGROUND COLORS                                    */
@@ -1149,7 +1161,7 @@ button:focus-visible {
   /* TABLE HEADER BACKGROUND - Theme-aware                             */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --table-header-bg: var(--primary-color--dark);
+  --table-header-bg: var(--primary-color--darker);
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* NAVBAR & MENU BACKGROUND - Theme-aware                           */
@@ -1164,6 +1176,12 @@ button:focus-visible {
   /* ═══════════════════════════════════════════════════════════════ */
 
   --table-cell-bg: hsla(var(--primary-hue), var(--primary-sat), var(--primary-light), 0.3);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TABLE BORDER COLOR - Theme-aware                                 */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --table-border-color: var(--accent-color--darkest);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -3962,14 +3980,14 @@ button:focus-visible {
   margin: var(--spacing-4) 0;
   font-size: 1em;
   border-collapse: collapse;
-  border: 1px solid var(--button-default-border);
+  border: 1px solid var(--table-border-color);
   border-radius: 0.375em;
   overflow: hidden;
 }
 
 .table thead {
   background: var(--table-header-bg);
-  border-top: 1px solid var(--button-default-border);
+  border-top: 1px solid var(--table-border-color);
 }
 
 .table th {
@@ -3979,36 +3997,34 @@ button:focus-visible {
   padding: var(--spacing-3) var(--spacing-3);
   text-align: left;
   color: var(--heading-color);
-  border-bottom: 2px solid var(--button-default-border);
-  border-right: 1px solid var(--button-default-border);
+  border-bottom: 2px solid var(--table-border-color);
+  border-right: 1px solid var(--table-border-color);
   white-space: nowrap;
 }
 
 .table th:first-child {
-  border-left: 1px solid var(--button-default-border);
+  border-left: 1px solid var(--table-border-color);
 }
 
 .table th:last-child {
-  border-right: 1px solid var(--button-default-border);
+  border-right: 1px solid var(--table-border-color);
 }
 
 .table td {
   padding: var(--spacing-2) var(--spacing-3);
   background: var(--table-cell-bg);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-bottom: 1px solid var(--button-default-border);
-  border-right: 1px solid var(--button-default-border);
+  border-bottom: 1px solid var(--table-border-color);
+  border-right: 1px solid var(--table-border-color);
   vertical-align: top;
   line-height: 1.6;
 }
 
 .table td:first-child {
-  border-left: 1px solid var(--button-default-border);
+  border-left: 1px solid var(--table-border-color);
 }
 
 .table td:last-child {
-  border-right: 1px solid var(--button-default-border);
+  border-right: 1px solid var(--table-border-color);
 }
 
 .table tbody tr:last-child td {
@@ -4022,16 +4038,16 @@ button:focus-visible {
 /* Table with visible borders on all cells */
 .table--border th,
 .table--border td {
-  border: 1px solid var(--button-default-border);
+  border: 1px solid var(--table-border-color);
 }
 
 .table--border th:last-child,
 .table--border td:last-child {
-  border-right: 1px solid var(--button-default-border);
+  border-right: 1px solid var(--table-border-color);
 }
 
 .table--border tbody tr:last-child td {
-  border-bottom: 1px solid var(--button-default-border);
+  border-bottom: 1px solid var(--table-border-color);
 }
 
 /* ─────────────────────────────────────────────────────────────────── */

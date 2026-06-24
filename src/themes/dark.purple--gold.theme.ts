@@ -1,6 +1,6 @@
 import { createTheme, generateBorderColors, generateTextColors } from "./theme.constants";
 
-const primaryHsl = { hue: 300, saturation: 100, lightness: 14 };
+const primaryHsl = { hue: 300, saturation: 56, lightness: 16 };
 const accentHsl = { hue: 51, saturation: 100, lightness: 50 };
 
 export const theme = createTheme({

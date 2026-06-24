@@ -4,18 +4,18 @@ import type { ThemeConfig } from "./theme.types";
  * Dark theme color variations - used for dark backgrounds
  */
 export const DEFAULT_DARK_THEME_VARIATIONS = {
-  "primary-lightest-offset": 6,
-  "primary-lighter-offset": 4,
-  "primary-light-offset": 2,
-  "primary-dark-offset": -4,
-  "primary-darker-offset": -6,
+  "primary-lightest-offset": 8,
+  "primary-lighter-offset": 6,
+  "primary-light-offset": 4,
+  "primary-dark-offset": -2,
+  "primary-darker-offset": -4,
   "primary-darkest-offset": -8,
   "accent-lightest-offset": 35,
   "accent-lighter-offset": 25,
   "accent-light-offset": 15,
-  "accent-dark-offset": -15,
+  "accent-dark-offset": -20,
   "accent-darker-offset": -25,
-  "accent-darkest-offset": -35,
+  "accent-darkest-offset": -30,
 } as const;
 
 /**
@@ -25,15 +25,15 @@ export const DEFAULT_LIGHT_THEME_VARIATIONS = {
   "primary-lightest-offset": 6,
   "primary-lighter-offset": 4,
   "primary-light-offset": 2,
-  "primary-dark-offset": -24,
-  "primary-darker-offset": -26,
-  "primary-darkest-offset": -28,
+  "primary-dark-offset": -10,
+  "primary-darker-offset": -15,
+  "primary-darkest-offset": -20,
   "accent-lightest-offset": 24,
   "accent-lighter-offset": 12,
   "accent-light-offset": 6,
   "accent-dark-offset": -6,
   "accent-darker-offset": -12,
-  "accent-darkest-offset": -24,
+  "accent-darkest-offset": -30,
 } as const;
 
 export const DEFAULT_STATUS_COLORS = {

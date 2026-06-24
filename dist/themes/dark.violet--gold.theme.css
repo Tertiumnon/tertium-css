@@ -23,12 +23,12 @@
   /* PRIMARY BG COLOR - Variations                                   */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
-  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
-  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 2%));
+  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
+  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
+  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
   --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
-  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -4%));
-  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -6%));
+  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -2%));
+  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -4%));
   --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -8%));
 
   /* ═══════════════════════════════════════════════════════════════ */
@@ -39,9 +39,9 @@
   --accent-color--lighter: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 25%));
   --accent-color--light: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 15%));
   --accent-color: hsl(var(--accent-hue), var(--accent-sat), var(--accent-light));
-  --accent-color--dark: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -15%));
+  --accent-color--dark: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -20%));
   --accent-color--darker: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -25%));
-  --accent-color--darkest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -35%));
+  --accent-color--darkest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -30%));
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* CONTEXTUAL BACKGROUND COLORS                                    */
@@ -171,7 +171,7 @@
   /* TABLE HEADER BACKGROUND - Theme-aware                             */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --table-header-bg: var(--primary-color--dark);
+  --table-header-bg: var(--primary-color--darker);
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* NAVBAR & MENU BACKGROUND - Theme-aware                           */
@@ -186,6 +186,12 @@
   /* ═══════════════════════════════════════════════════════════════ */
 
   --table-cell-bg: hsla(var(--primary-hue), var(--primary-sat), var(--primary-light), 0.5);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TABLE BORDER COLOR - Theme-aware                                 */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --table-border-color: var(--accent-color--darkest);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */

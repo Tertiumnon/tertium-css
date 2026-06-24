@@ -236,7 +236,7 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  /* TABLE HEADER BACKGROUND - Theme-aware                             */\n`;
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
 
-  css += `  --table-header-bg: var(--primary-color--dark);\n\n`;
+  css += `  --table-header-bg: var(--primary-color--darker);\n\n`;
 
   // Navbar & menu colors
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
@@ -260,7 +260,14 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
     ? `hsla(var(--primary-hue), var(--primary-sat), var(--primary-light), 0.5)` // Dark theme: base primary with 50% opacity
     : `hsla(var(--primary-hue), var(--primary-sat), var(--primary-light), 0.3)`; // Light theme: base primary with 30% opacity
 
-  css += `  --table-cell-bg: ${tableCellBg};\n`;
+  css += `  --table-cell-bg: ${tableCellBg};\n\n`;
+
+  // Table border color - theme aware
+  css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
+  css += `  /* TABLE BORDER COLOR - Theme-aware                                 */\n`;
+  css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
+
+  css += `  --table-border-color: var(--accent-color--darkest);\n`;
 
   css += `}\n\n`;
 
