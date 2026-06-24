@@ -14,8 +14,9 @@
 /* Base reset & normalization - HTML element defaults */
 @import "../system/base.css";
 
-/* Theme presets (Dark Purple Gold, Dark Navy Cyan, Light Red) - runtime switchable */
+/* Theme presets (Dark Purple Gold, Dark Violet Gold, Dark Blue White, Light Red) - runtime switchable */
 @import "../themes/dark.purple--gold.theme.css";
+@import "../themes/dark.violet--gold.theme.css";
 @import "../themes/dark.blue--white.theme.css";
 @import "../themes/light.white--red.theme.css";
 
