@@ -1,16 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(bun scripts/build/build.ts)",
-      "Bash(git reset *)",
-      "Bash(git mv *)",
-      "Bash(bun scripts/theme/generate/generate.ts dark.purple--gold)",
-      "Bash(bun scripts/theme/generate/generate.ts dark.blue--white)",
-      "Bash(bun scripts/theme/generate/generate.ts light.white--red)",
-      "Bash(bun theme:generate:all)",
-      "Bash(bun run *)",
-      "Bash(sed -n '/^code,/,/^pre {/p' dist/system/base.css)",
-      "Bash(sed -n '/^code,/,/overflow-x:/p' dist/bundles/full.css)"
+      "Bash(bun run *)"
     ]
   }
 }
