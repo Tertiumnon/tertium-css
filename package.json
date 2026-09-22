@@ -145,7 +145,7 @@
     "type": "git"
   },
   "devDependencies": {
-    "@tertium/js": "^1.4.8",
+    "@tertium/js": "^3.0.0",
     "prettier": "^3.8.4"
   }
 }
