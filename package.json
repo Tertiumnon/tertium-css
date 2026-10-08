@@ -148,7 +148,8 @@
     "src/bundles/"
   ],
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/Tertiumnon/tertium-css.git"
   },
   "publishConfig": {
     "access": "public"
