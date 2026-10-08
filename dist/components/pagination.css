@@ -1,3 +1,4 @@
+@import "../themes/light.white--red.theme.css";
 @import "../system/tokens.css";
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* PAGINATION COMPONENT                                               */
@@ -28,16 +29,8 @@
 }
 
 .pagination .btn--page.btn--active:hover {
-  background: hsl(
-    var(--accent-hue),
-    var(--accent-sat),
-    calc(var(--accent-light) - 10%)
-  );
-  border-color: hsl(
-    var(--accent-hue),
-    var(--accent-sat),
-    calc(var(--accent-light) - 10%)
-  );
+  background: var(--button-primary-bg--hover);
+  border-color: var(--button-primary-border--hover);
 }
 
 /* Previous/Next buttons */

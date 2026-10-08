@@ -18,7 +18,7 @@ export const theme = createTheme({
     hsl: accentHsl,
   },
   "text-colors": generateTextColors(true),
-  borders: generateBorderColors(primaryHsl.hue, primaryHsl.saturation, true),
+  borders: generateBorderColors(true),
   shadows: {
     color: "rgba(0, 0, 0, 0.3)",
   },

@@ -8,6 +8,10 @@
   display: inline-flex;
 }
 
+.flex-1 {
+  flex: 1 1 0;
+}
+
 /* Flex direction */
 .flex-row {
   flex-direction: row;

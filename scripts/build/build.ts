@@ -4,7 +4,7 @@ import { readdirSync } from 'fs';
 
 // Clear dist directory if it exists, then recreate it
 const distDir = './dist';
-const dirs = ['dist', 'dist/bundles', 'dist/themes', 'dist/utilities', 'dist/components'];
+const dirs = ['dist', 'dist/bundles', 'dist/themes', 'dist/utilities', 'dist/components', 'dist/form', 'dist/system'];
 
 for (const dir of dirs) {
   try {
@@ -85,12 +85,13 @@ async function resolveImports(filePath: string, visited = new Set<string>()): Pr
 async function writeBundle(name: string, content: string, dir = './dist'): Promise<void> {
   const cssPath = `${dir}/${name}.css`;
   const minPath = `${dir}/${name}.min.css`;
-  const minified = minifyCss(content);
+  const normalized = `${content.trimEnd()}\n`;
+  const minified = minifyCss(normalized);
 
-  await Bun.write(cssPath, content);
+  await Bun.write(cssPath, normalized);
   await Bun.write(minPath, minified);
 
-  const cssKb = (content.length / 1024).toFixed(1);
+  const cssKb = (normalized.length / 1024).toFixed(1);
   const minKb = (minified.length / 1024).toFixed(1);
   console.log(`✓ ${cssPath} (${cssKb}KB)`);
   console.log(`✓ ${minPath} (${minKb}KB)`);
@@ -108,6 +109,8 @@ const bundles = [
   { name: 'utilities', src: './src/bundles/utilities.css', desc: 'All utilities' },
   { name: 'components', src: './src/bundles/components.css', desc: 'Components only' },
   { name: 'variables', src: './src/bundles/variables.css', desc: 'Design tokens only' },
+  { name: 'themes', src: './src/bundles/themes.css', desc: 'Theme presets' },
+  { name: 'form', src: './src/bundles/form.css', desc: 'Form controls' },
 ];
 
 for (const bundle of bundles) {
@@ -172,10 +175,22 @@ try {
 
   for (const fileName of files) {
     const file = join(componentDir, fileName);
-    const content = await Bun.file(file).text();
+    const content = `@import "../themes/light.white--red.theme.css";\n${await Bun.file(file).text()}`;
     const baseName = basename(file, '.css');
     await writeBundle(baseName, content, './dist/components');
   }
 } catch (err) {
   console.error('Error building component files:', err);
+}
+
+console.log('📝 Building individual form files...\n');
+
+for (const fileName of readdirSync('./src/form').filter(f => f.endsWith('.css'))) {
+  const file = join('./src/form', fileName);
+  await writeBundle(basename(file, '.css'), `@import "../themes/light.white--red.theme.css";\n${await Bun.file(file).text()}`, './dist/form');
+}
+
+for (const fileName of readdirSync('./src/system').filter(f => f.endsWith('.css'))) {
+  const file = join('./src/system', fileName);
+  await writeBundle(basename(file, '.css'), await Bun.file(file).text(), './dist/system');
 }

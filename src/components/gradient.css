@@ -36,7 +36,7 @@
 
 /* Soft background gradients */
 .gradient-soft {
-  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-card) 100%);
+  background: linear-gradient(180deg, var(--bg-page) 0%, var(--bg-card) 100%);
 }
 
 .gradient-subtle {

@@ -50,6 +50,8 @@
 @import "../components/context-menu.css";
 @import "../components/gradient.css";
 @import "../components/pagination.css";
+@import "../components/badge.css";
+@import "../components/form.css";
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* Legacy Body Styles (maintained for backward compatibility)         */

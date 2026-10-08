@@ -5,6 +5,7 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 [data-theme="dark--blue--white"] {
+  color-scheme: dark;
   /* ═══════════════════════════════════════════════════════════════ */
   /* TWO BASE COLORS - Everything derives from these                 */
   /* ═══════════════════════════════════════════════════════════════ */
@@ -83,7 +84,7 @@
   /* LINK COLORS - Derived from accent                               */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --link-color: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 15%));
+  --link-color: var(--accent-color--light);
   --link-visited: hsl(var(--accent-hue), calc(var(--accent-sat) - 20%), calc(var(--accent-light) - 10%));
   --link-hover: var(--accent-color);
 
@@ -91,9 +92,9 @@
   /* BORDER & SHADOW COLORS                                           */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --border-color: hsla(240, 55%, 45%, 0.3);
-  --border-color--strong: hsla(240, 55%, 45%, 0.6);
-  --border-color--light: hsla(240, 55%, 35%, 0.15);
+  --border-color: rgba(255, 255, 255, 0.18);
+  --border-color--strong: rgba(255, 255, 255, 0.32);
+  --border-color--light: rgba(255, 255, 255, 0.1);
   --shadow-color: rgba(0, 0, 0, 0.3);
 
   /* ═══════════════════════════════════════════════════════════════ */
@@ -104,6 +105,8 @@
   --color-warning: hsl(38, 92%, 50%);
   --color-danger: hsl(0, 91%, 60%);
   --color-info: hsl(217, 97%, 61%);
+
+  --color-on-status: #111827;
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* PROGRESS & EFFECTS                                               */
@@ -128,7 +131,7 @@
   --button-default-bg: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 8%));
   --button-default-border: var(--text-primary--light);
   --button-default-text: var(--text-primary);
-  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 40%);
+  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 38%);
   --button-default-border--hover: var(--text-primary--light);
   --button-default-text--hover: var(--text-primary);
 
@@ -136,8 +139,8 @@
   --button-primary-bg: var(--accent-color);
   --button-primary-border: var(--accent-color--dark);
   --button-primary-text: var(--text-on-accent);
-  --button-primary-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 110%);
-  --button-primary-border--hover: hsl(var(--accent-hue), var(--accent-sat), 110%);
+  --button-primary-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 95%);
+  --button-primary-border--hover: hsl(var(--accent-hue), var(--accent-sat), 95%);
   --button-primary-text--hover: var(--text-on-accent);
 
   /* Outline button: transparent bg, accent border, accent text */
@@ -145,21 +148,21 @@
   --button-outline-border: var(--accent-color);
   --button-outline-text: var(--accent-color);
   --button-outline-bg--hover: transparent;
-  --button-outline-border--hover: hsl(var(--accent-hue), var(--accent-sat), 110%);
-  --button-outline-text--hover: hsl(var(--accent-hue), var(--accent-sat), 110%);
+  --button-outline-border--hover: hsl(var(--accent-hue), var(--accent-sat), 95%);
+  --button-outline-text--hover: hsl(var(--accent-hue), var(--accent-sat), 95%);
 
   /* Submit button: accent bg, darker accent border, text-on-accent */
   --button-submit-bg: var(--accent-color);
   --button-submit-border: var(--accent-color--dark);
   --button-submit-text: var(--text-on-accent);
-  --button-submit-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 110%);
-  --button-submit-border--hover: hsl(var(--accent-hue), var(--accent-sat), 110%);
+  --button-submit-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 95%);
+  --button-submit-border--hover: hsl(var(--accent-hue), var(--accent-sat), 95%);
   --button-submit-text--hover: var(--text-on-accent);
 
   /* Borderless button: no border, accent text */
   --button-text-color: var(--accent-color);
   --button-text-bg--hover: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 15%), 0.1);
-  --button-text-color--hover: var(--accent-color--dark);
+  --button-text-color--hover: var(--accent-color--light);
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* SECTION BACKGROUND - Theme-aware                                  */
@@ -179,7 +182,7 @@
 
   --navbar-bg: hsla(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 2%), 0.98);
   --menu-bg: var(--bg-card);
-  --menu-text: var(--text-on-primary);
+  --menu-text: var(--text-primary);
 
   /* ═══════════════════════════════════════════════════════════════ */
   /* TABLE CELL BACKGROUND - Theme-aware with opacity                 */
@@ -191,7 +194,7 @@
   /* TABLE BORDER COLOR - Theme-aware                                 */
   /* ═══════════════════════════════════════════════════════════════ */
 
-  --table-border-color: var(--accent-color--darkest);
+  --table-border-color: var(--border-color--strong);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */

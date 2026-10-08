@@ -1,124 +1,85 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark--purple--gold">
+<html lang="en" data-theme="dark--blue--white">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tertium CSS - Design System Demo</title>
   <link rel="stylesheet" href="../dist/bundles/full.min.css">
-  <link rel="stylesheet" href="../dist/themes/dark.purple--gold.theme.min.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container-2xl">
-      <div class="navbar-inner">
-        <a href="#" class="navbar-brand">🎨 Tertium CSS</a>
-        <ul class="navbar-menu">
-          <li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li>
-          <li class="nav-item"><a href="#typography" class="nav-link">Typography</a></li>
-          <li class="nav-item"><a href="#flexbox" class="nav-link">Flexbox</a></li>
-          <li class="nav-item"><a href="#grid" class="nav-link">Grid</a></li>
-          <li class="nav-item"><a href="#buttons" class="nav-link">Buttons</a></li>
-          <li class="nav-item"><a href="#cards" class="nav-link">Cards</a></li>
-          <li class="nav-item"><a href="#forms" class="nav-link">Forms</a></li>
-        </ul>
-      <div class="navbar-actions">
-        <div class="profile-menu">
-          <button class="profile-menu--trigger" aria-label="User menu">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-          </button>
-          <div class="profile-menu--dropdown">
-            <button class="profile-menu--option">
-              <span class="profile-menu--option-label">Profile</span>
-            </button>
-            <button class="profile-menu--option">
-              <span class="profile-menu--option-label">Settings</span>
-            </button>
-            <button class="profile-menu--option theme-submenu-trigger">
-              <span class="profile-menu--option-label">Theme</span>
-              <span class="theme-option-arrow">›</span>
-            </button>
-            <div class="profile-menu--submenu">
-              <button class="theme-option" data-theme="dark.purple--gold.theme.min.css">
-                <span class="theme-color-dot purple"></span>
-                <span class="theme-option-label">Dark Purple & Gold</span>
-                <span class="theme-option-check">✓</span>
-              </button>
-              <button class="theme-option" data-theme="dark.blue--white.theme.min.css">
-                <span class="theme-color-dot navy"></span>
-                <span class="theme-option-label">Dark Blue & White</span>
-                <span class="theme-option-check">✓</span>
-              </button>
-              <button class="theme-option" data-theme="dark.violet--gold.theme.min.css">
-                <span class="theme-color-dot purple"></span>
-                <span class="theme-option-label">Dark Violet & Gold</span>
-                <span class="theme-option-check">✓</span>
-              </button>
-              <button class="theme-option" data-theme="light.white--red.theme.min.css">
-                <span class="theme-color-dot red"></span>
-                <span class="theme-option-label">Light White & Red</span>
-                <span class="theme-option-check">✓</span>
-              </button>
-            </div>
-            <button class="profile-menu--option">
-              <span class="profile-menu--option-label">Sign Out</span>
-            </button>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  </nav>
+  <nav id="site-header" class="navbar navbar--responsive" aria-label="Main navigation"></nav>
+  <script src="header.js"></script>
 
-  <div class="container-2xl">
-    <!-- Header -->
-    <div class="m-6 mb-8">
-      <h1>Tertium CSS</h1>
-      <p>Universal Design System with Tokens, Themes, Components & Utilities</p>
+  <main class="container-xl page-content">
+    <div class="mb-8">
+      <h1 class="mt-0">Tertium CSS</h1>
+      <p data-en="Universal Design System with Tokens, Themes, Components & Utilities">Universal Design System with Tokens, Themes, Components & Utilities</p>
+      <p><a href="#menu" data-en="Browse the component guide ↓">Browse the component guide ↓</a></p>
     </div>
+
+    <nav class="section mb-6 scroll-mt-20" id="menu" aria-label="On this page">
+      <h2 data-en="On this page">On this page</h2>
+      <div class="flex flex-wrap gap-2">
+        <a class="btn btn--sm btn--outline" href="#colors" data-en="Color system">Color system</a>
+        <a class="btn btn--sm btn--outline" href="#navbar" data-en="Navigation">Navigation</a>
+        <a class="btn btn--sm btn--outline" href="#typography" data-en="Typography">Typography</a>
+        <a class="btn btn--sm btn--outline" href="#flexbox" data-en="Flexbox">Flexbox</a>
+        <a class="btn btn--sm btn--outline" href="#grid" data-en="Grid">Grid</a>
+        <a class="btn btn--sm btn--outline" href="#buttons" data-en="Buttons">Buttons</a>
+        <a class="btn btn--sm btn--outline" href="#cards" data-en="Cards">Cards</a>
+        <a class="btn btn--sm btn--outline" href="#forms" data-en="Forms">Forms</a>
+        <a class="btn btn--sm btn--outline" href="#pagination" data-en="Pagination">Pagination</a>
+        <a class="btn btn--sm btn--outline" href="#utility-colors" data-en="Color utilities">Color utilities</a>
+        <a class="btn btn--sm btn--outline" href="#tables" data-en="Tables">Tables</a>
+      </div>
+    </nav>
 
     <!-- Color System -->
-    <div class="section m-6 p-6" id="colors">
-      <h2>Color System</h2>
-      <p>Current theme colors and their usage in the design system. Updates automatically when you switch themes.</p>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Role</th>
-            <th>Color</th>
-            <th>Usage</th>
-          </tr>
-        </thead>
-        <tbody id="colorTableBody">
-          <!-- Dynamically populated by JavaScript -->
-        </tbody>
-      </table>
+    <div class="section mb-6 scroll-mt-20" id="colors">
+      <h2 data-en="Color System">Color System</h2>
+      <p data-en="Current theme colors and their usage in the design system. Updates automatically when you switch themes.">Current theme colors and their usage in the design system. Updates automatically when you switch themes.</p>
+      <div class="table-scroll">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Color</th>
+              <th>Usage</th>
+            </tr>
+          </thead>
+          <tbody id="colorTableBody">
+            <!-- Dynamically populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <!-- Navbar -->
-    <div class="section m-6 p-6" id="navbar">
-      <h2>Navbar</h2>
-      <p>A sticky navigation bar with brand, menu items, and action buttons. Visible at the top of this page.</p>
-      <pre><code>&lt;nav class="navbar"&gt;
+      <div class="section mb-6 scroll-mt-20" id="navbar">
+      <h2 data-en="Navigation">Navigation</h2>
+      <p data-en="A sticky navigation bar with brand, menu items, and action buttons. Resize the page: links move one at a time into the three-dot menu when they no longer fit.">A sticky navigation bar with brand, menu items, and action buttons. Resize the page: links move one at a time into the three-dot menu when they no longer fit.</p>
+      <pre><code>&lt;nav class="navbar navbar--responsive"&gt;
   &lt;div class="navbar-inner"&gt;
     &lt;a href="#" class="navbar-brand"&gt;Logo&lt;/a&gt;
-    &lt;ul class="navbar-menu"&gt;
+    &lt;ul class="navbar-menu" id="main-navigation"&gt;
       &lt;li class="nav-item"&gt;&lt;a href="#" class="nav-link active"&gt;Home&lt;/a&gt;&lt;/li&gt;
       &lt;li class="nav-item"&gt;&lt;a href="#" class="nav-link"&gt;About&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="nav-item navbar-overflow" hidden&gt;
+        &lt;button class="btn btn--sm navbar-toggle" type="button" aria-label="More navigation"
+          aria-controls="main-navigation-overflow" aria-expanded="false"&gt;···&lt;/button&gt;
+        &lt;ul class="navbar-overflow-menu" id="main-navigation-overflow"&gt;&lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
     &lt;div class="navbar-actions"&gt;
       &lt;button class="btn"&gt;Sign In&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/nav&gt;</code></pre>
+      <p>The demo script uses <code>ResizeObserver</code> to move links between the main menu and the overflow list, and updates <code>aria-expanded</code> when the toggle is pressed.</p>
     </div>
 
     <!-- Typography -->
-    <div class="section m-6 p-6" id="typography">
-      <h2>Typography</h2>
+    <div class="section mb-6 scroll-mt-20" id="typography">
+      <h2 data-en="Typography">Typography</h2>
       <h1>Heading 1</h1>
       <h2>Heading 2</h2>
       <h3>Heading 3</h3>
@@ -126,8 +87,8 @@
     </div>
 
     <!-- Flexbox -->
-    <div class="section m-6 p-6" id="flexbox">
-      <h2>Flexbox Layout</h2>
+    <div class="section mb-6 scroll-mt-20" id="flexbox">
+      <h2 data-en="Flexbox Layout">Flexbox Layout</h2>
       <div class="flex gap-4 my-4">
         <div class="flex-1 p-4 rounded text-center font-bold bg-primary">Flex Item 1</div>
         <div class="flex-1 p-4 rounded text-center font-bold bg-primary">Flex Item 2</div>
@@ -136,8 +97,8 @@
     </div>
 
     <!-- Grid -->
-    <div class="section m-6 p-6" id="grid">
-      <h2>Grid Layout</h2>
+    <div class="section mb-6 scroll-mt-20" id="grid">
+      <h2 data-en="Grid Layout">Grid Layout</h2>
       <div class="grid grid-cols-3 gap-4 my-4">
         <div class="p-4 rounded text-center font-bold bg-primary">Grid 1</div>
         <div class="p-4 rounded text-center font-bold bg-primary">Grid 2</div>
@@ -149,8 +110,8 @@
     </div>
 
     <!-- Buttons -->
-    <div class="section m-6 p-6" id="buttons">
-      <h2>Buttons</h2>
+    <div class="section mb-6 scroll-mt-20" id="buttons">
+      <h2 data-en="Buttons">Buttons</h2>
 
       <div class="mb-6">
         <h3>Default Button</h3>
@@ -202,7 +163,7 @@
 
       <div class="mb-6">
         <h3>Disabled States</h3>
-        <div class="my-4" style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+        <div class="flex flex-wrap items-center gap-2 my-4">
           <button class="btn" disabled>Default</button>
           <button class="btn btn--primary" disabled>Primary</button>
           <button class="btn btn--outline" disabled>Outline</button>
@@ -218,8 +179,8 @@
     </div>
 
     <!-- Cards -->
-    <div class="section m-6 p-6" id="cards">
-      <h2>Cards</h2>
+    <div class="section mb-6 scroll-mt-20" id="cards">
+      <h2 data-en="Cards">Cards</h2>
       <div class="grid grid-cols-3 gap-4 my-4">
         <div class="card">
           <div class="card-header">
@@ -260,80 +221,70 @@
     </div>
 
     <!-- Forms -->
-    <div class="section m-6 p-6" id="forms">
-      <h2>Form Elements</h2>
-      <div class="flex flex-wrap gap-4 max-w-2xl my-4">
-        <div class="form-group" style="flex: 1 1 100%;">
-          <label class="form-label">Search</label>
-          <div style="position: relative;">
-            <input type="text" class="form-input" placeholder="Search..." style="padding-right: 2.5em;">
-            <button style="position: absolute; right: 0.75em; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 0.25em; display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.35-4.35"></path>
-            </svg>
-          </button>
-          </div>
+    <div class="section mb-6 scroll-mt-20" id="forms">
+      <h2 data-en="Form Elements">Form Elements</h2>
+      <div class="card-grid card-grid--2col my-4">
+        <div class="form-group">
+          <label class="form-label" for="example-search">Search</label>
+          <input id="example-search" type="search" class="form-input" placeholder="Search...">
         </div>
-
-        <div class="form-group" style="flex: 1 1 calc(50% - 0.5rem);">
-          <label class="form-label">Text Input</label>
-          <input type="text" class="form-input" placeholder="Enter your name...">
+        <div class="form-group">
+          <label class="form-label" for="example-name">Text Input</label>
+          <input id="example-name" type="text" class="form-input" placeholder="Enter your name...">
         </div>
-
-        <div class="form-group" style="flex: 1 1 calc(50% - 0.5rem);">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-input" placeholder="your@email.com">
+        <div class="form-group">
+          <label class="form-label" for="example-email">Email</label>
+          <input id="example-email" type="email" class="form-input" placeholder="your@email.com">
         </div>
-
-        <div class="form-group" style="flex: 1 1 calc(50% - 0.5rem);">
-          <label class="form-label">Select Option</label>
-          <select class="form-select">
-            <option>Option 1</option>
-            <option>Option 2</option>
-            <option>Option 3</option>
-          </select>
+        <div class="form-group">
+          <label class="form-label" for="example-select">Select Option</label>
+          <select id="example-select" class="form-select"><option>Option 1</option><option>Option 2</option><option>Option 3</option></select>
         </div>
-
-        <div class="form-group" style="flex: 1 1 100%;">
-          <label class="form-label">Message</label>
-          <textarea class="form-input" placeholder="Your message..." rows="4"></textarea>
+        <div class="form-group">
+          <span class="form-label" id="example-genres-label">Genres</span>
+          <details class="multi-select" id="example-genres" aria-labelledby="example-genres-label">
+            <summary class="multi-select__summary"><span data-multiselect-label>Select genres</span></summary>
+            <div class="multi-select__panel">
+              <input class="form-input multi-select__search" type="search" aria-label="Search genres" placeholder="Search genres..." autocomplete="off">
+              <div class="multi-select__options">
+                <label class="multi-select__option"><input class="form-checkbox" type="checkbox" name="genres" value="adventure"><span>Adventure</span></label>
+                <label class="multi-select__option"><input class="form-checkbox" type="checkbox" name="genres" value="comedy"><span>Comedy</span></label>
+                <label class="multi-select__option"><input class="form-checkbox" type="checkbox" name="genres" value="drama"><span>Drama</span></label>
+                <label class="multi-select__option"><input class="form-checkbox" type="checkbox" name="genres" value="mystery"><span>Mystery</span></label>
+                <label class="multi-select__option"><input class="form-checkbox" type="checkbox" name="genres" value="science-fiction"><span>Science fiction</span></label>
+              </div>
+              <p class="multi-select__empty" role="status" hidden>No matching genres</p>
+            </div>
+          </details>
         </div>
-
-        <button class="btn btn--submit" style="flex: 1 1 100%;">Submit</button>
+        <div class="form-group">
+          <label class="form-label" for="example-message">Message</label>
+          <textarea id="example-message" class="form-textarea" placeholder="Your message..." rows="4"></textarea>
+        </div>
+        <div class="form-group">
+          <span class="form-label">Checkboxes</span>
+          <label class="form-choice"><input type="checkbox" class="form-checkbox" checked> Checked</label>
+          <label class="form-choice"><input type="checkbox" class="form-checkbox"> Unchecked</label>
+          <label class="form-choice"><input type="checkbox" class="form-checkbox" checked disabled> Disabled</label>
+        </div>
+        <div class="form-group">
+          <span class="form-label">Radio buttons</span>
+          <label class="form-choice"><input type="radio" name="demo-choice" class="form-radio" checked> First</label>
+          <label class="form-choice"><input type="radio" name="demo-choice" class="form-radio"> Second</label>
+        </div>
+        <button class="btn btn--submit" type="button">Submit</button>
       </div>
-
-      <pre><code>&lt;div class="flex flex-wrap gap-4 max-w-2xl"&gt;
-  &lt;!-- Full width --&gt;
-  &lt;div class="form-group" style="flex: 1 1 100%;"&gt;
-    &lt;label class="form-label"&gt;Search&lt;/label&gt;
-    &lt;input type="text" class="form-input" placeholder="Search..."&gt;
+      <pre><code>&lt;div class="card-grid card-grid--2col"&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label class="form-label" for="name"&gt;Name&lt;/label&gt;
+    &lt;input id="name" class="form-input"&gt;
   &lt;/div&gt;
-
-  &lt;!-- 50% width on larger screens, 100% on mobile --&gt;
-  &lt;div class="form-group" style="flex: 1 1 calc(50% - 0.5rem);"&gt;
-    &lt;label class="form-label"&gt;Text Input&lt;/label&gt;
-    &lt;input type="text" class="form-input" placeholder="Enter your name..."&gt;
-  &lt;/div&gt;
-
-  &lt;div class="form-group" style="flex: 1 1 calc(50% - 0.5rem);"&gt;
-    &lt;label class="form-label"&gt;Email&lt;/label&gt;
-    &lt;input type="email" class="form-input" placeholder="your@email.com"&gt;
-  &lt;/div&gt;
-
-  &lt;!-- Full width --&gt;
-  &lt;div class="form-group" style="flex: 1 1 100%;"&gt;
-    &lt;label class="form-label"&gt;Message&lt;/label&gt;
-    &lt;textarea class="form-input" placeholder="..."&gt;&lt;/textarea&gt;
-  &lt;/div&gt;
-
-  &lt;button class="btn btn--submit" style="flex: 1 1 100%;"&gt;Submit&lt;/button&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
     <!-- Pagination -->
-    <div class="section m-6 p-6">
-      <h2>Pagination</h2>
+    <div class="section mb-6 scroll-mt-20" id="pagination">
+      <h2 data-en="Pagination">Pagination</h2>
       <div class="pagination my-4">
         <button class="btn btn--pagination" disabled>← Previous</button>
         <button class="btn btn--page">1</button>
@@ -346,14 +297,14 @@
     </div>
 
     <!-- Colors -->
-    <div class="section m-6 p-6">
-      <h2>Colors</h2>
-      <div class="flex flex-wrap gap-4 my-4">
-        <div class="p-8 rounded font-bold text-center bg-primary" style="flex: 1 1 calc(20% - 0.8rem);">Primary</div>
-        <div class="p-8 rounded font-bold text-center bg-success" style="flex: 1 1 calc(20% - 0.8rem);">Success</div>
-        <div class="p-8 rounded font-bold text-center bg-warning" style="flex: 1 1 calc(20% - 0.8rem);">Warning</div>
-        <div class="p-8 rounded font-bold text-center bg-danger" style="flex: 1 1 calc(20% - 0.8rem);">Danger</div>
-        <div class="p-8 rounded font-bold text-center bg-info" style="flex: 1 1 calc(20% - 0.8rem);">Info</div>
+    <div class="section mb-6 scroll-mt-20" id="utility-colors">
+      <h2 data-en="Colors">Colors</h2>
+      <div class="card-grid my-4">
+        <div class="p-8 rounded font-bold text-center bg-primary">Primary</div>
+        <div class="p-8 rounded font-bold text-center bg-success">Success</div>
+        <div class="p-8 rounded font-bold text-center bg-warning">Warning</div>
+        <div class="p-8 rounded font-bold text-center bg-danger">Danger</div>
+        <div class="p-8 rounded font-bold text-center bg-info">Info</div>
       </div>
 
       <pre><code>&lt;div class="flex flex-wrap gap-4"&gt;
@@ -366,8 +317,9 @@
     </div>
 
     <!-- Tables -->
-    <div class="section m-6 p-6">
-      <h2>Tables</h2>
+    <div class="section mb-6 scroll-mt-20" id="tables">
+      <h2 data-en="Tables">Tables</h2>
+      <div class="table-scroll">
       <table class="table">
         <thead>
           <tr>
@@ -382,122 +334,35 @@
             <td>Alice Johnson</td>
             <td>alice@example.com</td>
             <td><span class="badge badge-success">Active</span></td>
-            <td><button class="btn btn--sm-action">Edit</button></td>
+            <td><button class="btn btn--sm">Edit</button></td>
           </tr>
           <tr>
             <td>Bob Smith</td>
             <td>bob@example.com</td>
             <td><span class="badge badge-warning">Pending</span></td>
-            <td><button class="btn btn--sm-action">Edit</button></td>
+            <td><button class="btn btn--sm">Edit</button></td>
           </tr>
           <tr>
             <td>Carol White</td>
             <td>carol@example.com</td>
             <td><span class="badge badge-danger">Inactive</span></td>
-            <td><button class="btn btn--sm-action">Edit</button></td>
+            <td><button class="btn btn--sm">Edit</button></td>
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
 
-    <!-- Footer -->
-    <div class="section m-6 p-6 text-center">
-      <p>Tertium CSS © 2024 - Universal Design System</p>
-    </div>
-  </div>
+  </main>
 
+  <footer class="page-footer"><div class="container-xl flex flex-wrap justify-between gap-4"><p class="m-0">© Tertium CSS</p><p class="m-0"><a href="about.html" data-en="About">About</a> · <a href="contact.html" data-en="Contact">Contact</a></p></div></footer>
+
+  <script src="site.js"></script>
+  <script type="module">
+    import { initMultiSelect } from "../src/form/multiselect.js";
+    initMultiSelect(document.querySelector("#example-genres"));
+  </script>
   <script>
-    const htmlElement = document.documentElement;
-
-    // Profile menu dropdown toggle
-    const profileTrigger = document.querySelector('.profile-menu--trigger');
-    const profileDropdown = document.querySelector('.profile-menu--dropdown');
-    const themeSubmenuTrigger = document.querySelector('.theme-submenu-trigger');
-    const themeSubmenu = document.querySelector('.profile-menu--submenu');
-
-    // Initialize dropdown visibility
-    profileDropdown.style.display = 'none';
-    themeSubmenu.style.display = 'none';
-
-    profileTrigger.addEventListener('click', () => {
-      const isVisible = profileDropdown.style.display === 'block';
-      profileDropdown.style.display = isVisible ? 'none' : 'block';
-      if (isVisible) themeSubmenu.style.display = 'none';
-    });
-
-    themeSubmenuTrigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isVisible = themeSubmenu.style.display === 'block';
-      themeSubmenu.style.display = isVisible ? 'none' : 'block';
-      themeSubmenuTrigger.classList.toggle('submenu-open');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.profile-menu')) {
-        profileDropdown.style.display = 'none';
-        themeSubmenu.style.display = 'none';
-      }
-    });
-
-    // Theme switching in navbar
-    const themeOptions = document.querySelectorAll('.theme-option');
-
-    const themeMap = {
-      'dark.purple--gold.theme.min.css': 'dark--purple--gold',
-      'dark.blue--white.theme.min.css': 'dark--blue--white',
-      'dark.violet--gold.theme.min.css': 'dark--violet--gold',
-      'light.white--red.theme.min.css': 'light--white--red'
-    };
-
-    const updateTheme = (themeFile) => {
-      const themeAttr = themeMap[themeFile];
-      htmlElement.setAttribute('data-theme', themeAttr);
-
-      // Load the new theme CSS file
-      const themeLink = document.querySelector('link[href*="theme"]');
-      if (themeLink) {
-        themeLink.href = `../dist/themes/${themeFile}`;
-      }
-
-      // Update navbar theme options
-      themeOptions.forEach(opt => {
-        if (opt.dataset.theme === themeFile) {
-          opt.classList.add('active');
-        } else {
-          opt.classList.remove('active');
-        }
-      });
-
-      // Close dropdown after selection
-      profileDropdown.style.display = 'none';
-      themeSubmenu.style.display = 'none';
-
-      // Update color table
-      updateColorTable();
-    };
-
-    // Initialize active theme on page load
-    const currentTheme = htmlElement.getAttribute('data-theme');
-    const currentThemeFile = Object.entries(themeMap).find(([_, attr]) => attr === currentTheme)?.[0];
-    if (currentThemeFile) {
-      themeOptions.forEach(opt => {
-        if (opt.dataset.theme === currentThemeFile) {
-          opt.classList.add('active');
-        } else {
-          opt.classList.remove('active');
-        }
-      });
-    }
-
-    // Add click listeners to theme options
-    themeOptions.forEach(opt => {
-      opt.addEventListener('click', () => {
-        const themeFile = opt.dataset.theme;
-        updateTheme(themeFile);
-      });
-    });
-
     // Color table population
     const colorDefinitions = [
       { section: 'PRIMARY BG COLOR', name: 'Base', cssVar: '--primary-color', usage: 'Base background color - foundation of entire theme' },
@@ -541,93 +406,20 @@
       const tableBody = document.getElementById('colorTableBody');
       const computedStyle = getComputedStyle(document.documentElement);
 
-      tableBody.innerHTML = colorDefinitions.map(color => {
-        let rows = '';
-
-        // Handle section headers
-        if (color.section) {
-          rows += `
-            <tr class="color-table-section-header">
-              <td colspan="3">
-                ${color.section}
-              </td>
-            </tr>
-          `;
-        }
-
-        const colorValue = computedStyle.getPropertyValue(color.cssVar).trim();
-        // Convert to hex if it's RGB or HSL
-        const rgbMatch = colorValue.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
-        let displayColor = colorValue;
-        let displayValue = colorValue;
-
-        if (rgbMatch) {
-          const r = parseInt(rgbMatch[1]);
-          const g = parseInt(rgbMatch[2]);
-          const b = parseInt(rgbMatch[3]);
-          displayColor = `rgb(${r}, ${g}, ${b})`;
-          displayValue = `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, '0').toUpperCase()}`;
-        } else if (colorValue.includes('hsl')) {
-          displayValue = colorValue;
-        }
-
-        rows += `
-          <tr>
-            <td>
-              <div class="color-name">${color.name}</div>
-              <div class="color-value">${color.cssVar}</div>
-            </td>
-            <td>
-              <div class="color-swatch">
-                <div class="color-swatch-box" style="background-color: ${colorValue};"></div>
-                <div class="color-info">
-                  <div class="color-value">${displayValue}</div>
-                </div>
-              </div>
-            </td>
-            <td>${color.usage}</td>
-          </tr>
-        `;
-
-        return rows;
-      }).join('');
+      tableBody.innerHTML = colorDefinitions.map(color => `
+        ${color.section ? `<tr><th colspan="3">${color.section}</th></tr>` : ''}
+        <tr>
+          <td>${color.name}</td>
+          <td><code>${color.cssVar}</code><br><code>${computedStyle.getPropertyValue(color.cssVar).trim()}</code></td>
+          <td>${color.usage}</td>
+        </tr>
+      `).join('');
     };
 
     // Initialize color table on page load
     updateColorTable();
 
-    // Navbar theme options
-    themeOptions.forEach(opt => {
-      opt.addEventListener('click', () => {
-        updateTheme(opt.dataset.theme);
-      });
-    });
-
-    // Active nav link based on scroll position
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section[id]');
-
-    const updateActiveNav = () => {
-      let currentSection = '';
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 100) {
-          currentSection = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-          link.classList.add('active');
-        }
-      });
-    };
-
-    window.addEventListener('scroll', updateActiveNav);
-    updateActiveNav();
+    document.addEventListener('demo-theme-change', updateColorTable);
   </script>
 </body>
 </html>

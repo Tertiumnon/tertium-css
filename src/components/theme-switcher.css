@@ -56,12 +56,6 @@
   font-family: inherit;
 }
 
-.theme-switcher--trigger:hover {
-  background: var(--primary-color--light);
-  border-color: var(--button-default-border);
-  color: var(--text-primary);
-}
-
 .theme-switcher--color-dot {
   width: 8px;
   height: 8px;
@@ -127,10 +121,6 @@
 
 .theme-switcher--option:last-child {
   border-bottom: none;
-}
-
-.theme-switcher--option:hover {
-  background-color: var(--bg-form-input);
 }
 
 .theme-switcher--option-active {

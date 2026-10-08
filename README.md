@@ -2,9 +2,13 @@
 
 A framework-agnostic, universal CSS design system with composable tokens, themes, components, and utilities. Use what you need, nothing more.
 
-**🎉 Now with Design Tokens & Theme System!** This release adds a universal design system foundation while maintaining 100% backward compatibility with existing projects.
+Includes design tokens, four switchable themes, layout utilities, and reusable components.
 
 **📖 [View Interactive Demo](demo/index.html)** - See all components, themes, and design tokens in action
+
+**🎬 [View Movie Catalog Demo](demo/movies.html)** - Try search, filters, themes, and responsive cards
+
+The demo also includes [About](demo/about.html) and [Contact](demo/contact.html) pages, with shared navigation and an English, German, French, and Russian language switcher.
 
 ## Quick Start
 
@@ -12,37 +16,30 @@ A framework-agnostic, universal CSS design system with composable tokens, themes
 npm install @tertium/css
 ```
 
-### For Existing Users
-If you're already using tertium-css, nothing changes! Your existing imports continue to work:
+### Full bundle
 
 ```html
-<!-- Existing projects: fully backward compatible -->
-<link rel="stylesheet" href="dist/tertium.min.css">
+<link rel="stylesheet" href="node_modules/@tertium/css/dist/bundles/full.min.css">
 ```
 
-You now also have access to:
-- ✨ Design tokens (CSS variables for consistency)
-- 🎨 Five built-in themes (Dark Purple Gold, Dark Blue, Dark Deep Blue, Light Red)
-- 🔌 Pre-built components (buttons, cards)
-
-### For New Projects
+### Other bundles
 Choose your entry point based on your needs:
 
 ```html
 <!-- Option 1: Full everything -->
-<link rel="stylesheet" href="node_modules/@tertium/css/dist/tertium.min.css">
+<link rel="stylesheet" href="node_modules/@tertium/css/dist/bundles/full.min.css">
 
 <!-- Option 2: Just themes (for custom components) -->
-<link rel="stylesheet" href="node_modules/@tertium/css/dist/tertium.themes.min.css">
+<link rel="stylesheet" href="node_modules/@tertium/css/dist/bundles/themes.min.css">
 
 <!-- Option 3: Just layout utilities -->
-<link rel="stylesheet" href="node_modules/@tertium/css/dist/tertium.skeleton.min.css">
+<link rel="stylesheet" href="node_modules/@tertium/css/dist/bundles/skeleton.min.css">
 
 <!-- Option 4: All utilities -->
-<link rel="stylesheet" href="node_modules/@tertium/css/dist/tertium.utilities.min.css">
+<link rel="stylesheet" href="node_modules/@tertium/css/dist/bundles/utilities.min.css">
 
 <!-- Option 5: Just design tokens (variables) -->
-<link rel="stylesheet" href="node_modules/@tertium/css/dist/tertium.variables.min.css">
+<link rel="stylesheet" href="node_modules/@tertium/css/dist/bundles/variables.min.css">
 ```
 
 ## Design System Overview
@@ -52,7 +49,7 @@ Tertium CSS is built on a foundation of **design tokens** (CSS variables) that d
 ### Core Concepts
 
 1. **Tokens** - CSS custom properties (--spacing-4, --primary-color, etc.)
-2. **Themes** - Token presets that change appearance (Dark Purple Gold, Dark Blue, Dark Deep Blue, Light Red)
+2. **Themes** - Token presets that change appearance (Dark Purple Gold, Dark Violet Gold, Dark Blue White, Light White Red)
 3. **Skeleton** - Essential layout utilities (flexbox, grid, spacing, positioning)
 4. **Components** - Pre-built UI elements (buttons, cards, etc.)
 5. **Utilities** - Extended utilities for rapid development
@@ -61,15 +58,15 @@ Tertium CSS is built on a foundation of **design tokens** (CSS variables) that d
 
 Choose what you need. All bundles include design tokens.
 
-### Model 1: Full Bundle (Everything) ~22KB
+### Model 1: Full Bundle (Everything)
 
 ```html
-<link rel="stylesheet" href="dist/tertium.min.css">
+<link rel="stylesheet" href="dist/bundles/full.min.css">
 ```
 
 Includes:
 - ✅ Design tokens (CSS variables)
-- ✅ All five themes (Dark Purple Gold, Dark Blue, Dark Deep Blue, Light Red)
+- ✅ All four themes
 - ✅ Base styles (reset)
 - ✅ Skeleton layout utilities (flex, grid, spacing, positioning)
 - ✅ All utility classes
@@ -77,24 +74,24 @@ Includes:
 
 **Best for:** New projects, complete applications, when you want everything out of the box.
 
-### Model 2: Themes Only ~4KB
+### Model 2: Themes Only
 
 ```html
-<link rel="stylesheet" href="dist/tertium.themes.min.css">
+<link rel="stylesheet" href="dist/bundles/themes.min.css">
 <!-- Then build your own components using CSS variables -->
 <link rel="stylesheet" href="your-components.css">
 ```
 
 Includes:
 - ✅ Design tokens
-- ✅ Five theme presets (Dark Purple Gold, Dark Blue, Dark Deep Blue, Light Red)
+- ✅ Four theme presets
 
 **Best for:** Teams with existing component styles who want consistent tokens and theme switching.
 
-### Model 3: Skeleton (Layout Essentials) ~8KB
+### Model 3: Skeleton (Layout Essentials)
 
 ```html
-<link rel="stylesheet" href="dist/tertium.skeleton.min.css">
+<link rel="stylesheet" href="dist/bundles/skeleton.min.css">
 ```
 
 Includes:
@@ -116,10 +113,10 @@ Includes:
 </div>
 ```
 
-### Model 4: All Utilities ~12KB
+### Model 4: All Utilities
 
 ```html
-<link rel="stylesheet" href="dist/tertium.utilities.min.css">
+<link rel="stylesheet" href="dist/bundles/utilities.min.css">
 ```
 
 Includes:
@@ -145,7 +142,7 @@ Includes:
 ### Model 5: Components Only
 
 ```html
-<link rel="stylesheet" href="dist/tertium.components.min.css">
+<link rel="stylesheet" href="dist/bundles/components.min.css">
 ```
 
 Includes:
@@ -155,10 +152,10 @@ Includes:
 
 **Best for:** Using pre-styled components without utilities.
 
-### Model 6: Variables Only ~2KB
+### Model 6: Variables Only
 
 ```html
-<link rel="stylesheet" href="dist/tertium.variables.min.css">
+<link rel="stylesheet" href="dist/bundles/variables.min.css">
 <!-- Then use variables in your own CSS -->
 <link rel="stylesheet" href="your-app.css">
 ```
@@ -181,57 +178,51 @@ Combine bundles to get exactly what you need:
 
 ```html
 <!-- Themes + Skeleton -->
-<link rel="stylesheet" href="dist/tertium.themes.min.css">
-<link rel="stylesheet" href="dist/tertium.skeleton.min.css">
+<link rel="stylesheet" href="dist/bundles/themes.min.css">
+<link rel="stylesheet" href="dist/bundles/skeleton.min.css">
 
 <!-- Variables + Components -->
-<link rel="stylesheet" href="dist/tertium.variables.min.css">
-<link rel="stylesheet" href="dist/tertium.components.min.css">
+<link rel="stylesheet" href="dist/bundles/variables.min.css">
+<link rel="stylesheet" href="dist/bundles/components.min.css">
 
 <!-- Themes + Utilities -->
-<link rel="stylesheet" href="dist/tertium.themes.min.css">
-<link rel="stylesheet" href="dist/tertium.utilities.min.css">
+<link rel="stylesheet" href="dist/bundles/themes.min.css">
+<link rel="stylesheet" href="dist/bundles/utilities.min.css">
 ```
 
 ## Theme System
 
-Five built-in themes with runtime switching:
+Four built-in themes with runtime switching. Without `data-theme`, the light theme is used.
 
-### Dark Purple Gold (Default)
-Purple (#c084fc) + Gold (#f0c060) on dark background. Perfect for gaming and fantasy interfaces. Extracted from dragons-legends.www.
+### Dark Purple Gold
 
 ```html
-<html data-theme="dark">
-<!-- or explicitly -->
-<html data-theme="dark--purple-gold">
+<html data-theme="dark--purple--gold">
 ```
 
-### Dark Blue
-Deep Blue (#2f365e) + Light Blue (#444175) on dark background. Professional coder theme synced from tertiumnon.github.io.
+### Dark Violet Gold
 
 ```html
-<html data-theme="dark--deep-blue">
+<html data-theme="dark--violet--gold">
 ```
 
-### Dark Deep Blue
-Purple (#b494f7) + Deep Blue (#1a1e3f, #2a3456) on dark background. Complex application theme synced from dragons-legends.gm.www.
+### Dark Blue White
 
 ```html
-<html data-theme="dark--deep-blue">
+<html data-theme="dark--blue--white">
 ```
 
-### Light Red
-Red (#d32f2f) + Orange (#f57c00) on light background. Great for documentation and content-focused sites.
+### Light White Red
 
 ```html
-<html data-theme="light">
+<html data-theme="light--white--red">
 ```
 
 ### Switch Themes at Runtime
 
 ```javascript
 // Change theme
-document.documentElement.setAttribute('data-theme', 'light');
+document.documentElement.setAttribute('data-theme', 'light--white--red');
 
 // Persist to localStorage
 function setTheme(theme) {
@@ -240,7 +231,7 @@ function setTheme(theme) {
 }
 
 // Load saved theme on page load
-const savedTheme = localStorage.getItem('theme') || 'dark';
+const savedTheme = localStorage.getItem('theme') || 'light--white--red';
 document.documentElement.setAttribute('data-theme', savedTheme);
 ```
 
@@ -338,6 +329,31 @@ Pre-built UI elements with multiple variants:
 </form>
 ```
 
+### Searchable multiselect
+
+The form bundle includes the dropdown styles. Each checked option remains a native checkbox and submits its value with the form.
+
+```html
+<span class="form-label" id="genres-label">Genres</span>
+<details class="multi-select" aria-labelledby="genres-label">
+  <summary class="multi-select__summary"><span data-multiselect-label>Select genres</span></summary>
+  <div class="multi-select__panel">
+    <input class="form-input multi-select__search" type="search" aria-label="Search genres" placeholder="Search genres...">
+    <div class="multi-select__options">
+      <label class="multi-select__option"><input class="form-checkbox" type="checkbox" name="genres" value="drama"><span>Drama</span></label>
+      <label class="multi-select__option"><input class="form-checkbox" type="checkbox" name="genres" value="mystery"><span>Mystery</span></label>
+    </div>
+    <p class="multi-select__empty" role="status" hidden>No matches</p>
+  </div>
+</details>
+```
+
+```js
+import { initMultiSelect } from "@tertium/css/form/multiselect.js";
+
+initMultiSelect(document.querySelector(".multi-select"));
+```
+
 ### Tables
 
 ```html
@@ -421,28 +437,31 @@ See [COMPONENTS.md](docs/COMPONENTS.md) for detailed component API reference.
 
 ```
 src/
-├── system/
-│   ├── tokens/              # Design token definitions
-│   └── themes/              # Theme presets (Dark Purple Gold, Dark Blue, Dark Deep Blue, Light Red)
-├── components/              # Pre-built components (buttons, cards, section)
+├── system/                  # Design tokens and base styles
+├── themes/                  # Four theme presets and generator configs
+├── form/                    # Form controls and multiselect behavior
+├── components/              # Pre-built components (buttons, cards, navigation)
 ├── utilities/               # Utility classes (spacing, display, colors, etc.)
-├── fonts/                   # Self-hosted font files (Cormorant, Alegreya)
 └── bundles/                 # Composite bundle entry points
 
 dist/
 ├── bundles/
-│   ├── main.min.css         # Full bundle (backward compatible)
+│   ├── full.min.css         # Full bundle
+│   ├── themes.min.css       # Theme presets
+│   ├── form.min.css         # Form controls
 │   ├── skeleton.min.css     # Layout essentials
 │   ├── utilities.min.css    # All utilities
 │   ├── components.min.css   # Components only
 │   └── variables.min.css    # Design tokens only
 ├── themes/
-│   ├── dark.purple-gold.theme.min.css
-│   ├── dark.blue.theme.min.css
-│   ├── dark.deep-blue.theme.min.css
-│   └── light.red.theme.min.css
+│   ├── dark.purple--gold.theme.min.css
+│   ├── dark.violet--gold.theme.min.css
+│   ├── dark.blue--white.theme.min.css
+│   └── light.white--red.theme.min.css
+├── components/              # Individual component files
+├── form/                    # Individual form files
+├── system/                  # Base styles and tokens
 ├── utilities/               # Individual utility files
-└── fonts/                   # Copied font files
 ```
 
 ## Documentation
@@ -480,12 +499,12 @@ CSS custom properties (CSS variables) are supported in all modern browsers.
 ```json
 {
   "exports": {
-    ".": "./dist/tertium.min.css",
-    "./themes": "./dist/tertium.themes.min.css",
-    "./skeleton": "./dist/tertium.skeleton.min.css",
-    "./utilities": "./dist/tertium.utilities.min.css",
-    "./components": "./dist/tertium.components.min.css",
-    "./variables": "./dist/tertium.variables.min.css"
+    ".": "./dist/bundles/full.min.css",
+    "./themes": "./dist/bundles/themes.min.css",
+    "./skeleton": "./dist/bundles/skeleton.min.css",
+    "./utilities": "./dist/bundles/utilities.min.css",
+    "./components": "./dist/bundles/components.min.css",
+    "./variables": "./dist/bundles/variables.min.css"
   }
 }
 ```
@@ -499,8 +518,9 @@ npm install
 # Build all bundles
 npm run build
 
-# Watch for changes
-npm run dev
+# Check formatting and run tests
+npm run lint
+npm test
 ```
 
 ## Contributing

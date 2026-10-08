@@ -357,20 +357,20 @@
 
 .bg-success {
   background: var(--color-success);
-  color: var(--text-on-accent);
+  color: var(--color-on-status);
 }
 
 .bg-warning {
   background: var(--color-warning);
-  color: var(--text-on-accent);
+  color: var(--color-on-status);
 }
 
 .bg-danger {
   background: var(--color-danger);
-  color: var(--text-on-accent);
+  color: var(--color-on-status);
 }
 
 .bg-info {
   background: var(--color-info);
-  color: var(--text-on-accent);
+  color: var(--color-on-status);
 }
