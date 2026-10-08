@@ -231,7 +231,11 @@
 }
 
 .context-menu--item.danger:hover {
-  background-color: color-mix(in srgb, var(--color-danger) 10%, transparent 90%);
+  background-color: color-mix(
+    in srgb,
+    var(--color-danger) 10%,
+    transparent 90%
+  );
 }
 
 /* Success variant */
@@ -240,7 +244,11 @@
 }
 
 .context-menu--item.success:hover {
-  background-color: color-mix(in srgb, var(--color-success) 10%, transparent 90%);
+  background-color: color-mix(
+    in srgb,
+    var(--color-success) 10%,
+    transparent 90%
+  );
 }
 
 /* Responsive */

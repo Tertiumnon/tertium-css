@@ -2781,19 +2781,27 @@ button:focus-visible {
 }
 
 .shadow {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .shadow-md {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .shadow-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .shadow-xl {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .shadow-2xl {
@@ -3250,7 +3258,8 @@ button:focus-visible {
   background: var(--button-primary-bg--hover);
   border-color: var(--button-primary-border--hover);
   color: var(--button-primary-text--hover);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--button-primary-bg) 15%, transparent 85%);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--button-primary-bg) 15%, transparent 85%);
 }
 
 /* Outline Button */
@@ -3344,7 +3353,8 @@ button:focus-visible {
   background: var(--button-submit-bg--hover);
   border-color: var(--button-submit-border--hover);
   color: var(--button-submit-text--hover);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--button-submit-bg) 15%, transparent 85%);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--button-submit-bg) 15%, transparent 85%);
 }
 
 
@@ -4145,7 +4155,6 @@ button:focus-visible {
 }
 
 
-
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* SECTION COMPONENT                                                  */
 /* Container section with dark primary background and content         */
@@ -4663,7 +4672,11 @@ button:focus-visible {
 }
 
 .context-menu--item.danger:hover {
-  background-color: color-mix(in srgb, var(--color-danger) 10%, transparent 90%);
+  background-color: color-mix(
+    in srgb,
+    var(--color-danger) 10%,
+    transparent 90%
+  );
 }
 
 /* Success variant */
@@ -4672,7 +4685,11 @@ button:focus-visible {
 }
 
 .context-menu--item.success:hover {
-  background-color: color-mix(in srgb, var(--color-success) 10%, transparent 90%);
+  background-color: color-mix(
+    in srgb,
+    var(--color-success) 10%,
+    transparent 90%
+  );
 }
 
 /* Responsive */
@@ -4775,8 +4792,16 @@ button:focus-visible {
 }
 
 .pagination .btn--page.btn--active:hover {
-  background: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) - 10%));
-  border-color: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) - 10%));
+  background: hsl(
+    var(--accent-hue),
+    var(--accent-sat),
+    calc(var(--accent-light) - 10%)
+  );
+  border-color: hsl(
+    var(--accent-hue),
+    var(--accent-sat),
+    calc(var(--accent-light) - 10%)
+  );
 }
 
 /* Previous/Next buttons */

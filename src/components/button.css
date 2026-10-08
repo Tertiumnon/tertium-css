@@ -63,7 +63,8 @@
   background: var(--button-primary-bg--hover);
   border-color: var(--button-primary-border--hover);
   color: var(--button-primary-text--hover);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--button-primary-bg) 15%, transparent 85%);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--button-primary-bg) 15%, transparent 85%);
 }
 
 /* Outline Button */
@@ -157,5 +158,6 @@
   background: var(--button-submit-bg--hover);
   border-color: var(--button-submit-border--hover);
   color: var(--button-submit-text--hover);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--button-submit-bg) 15%, transparent 85%);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--button-submit-bg) 15%, transparent 85%);
 }

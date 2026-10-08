@@ -41,7 +41,8 @@
 .form-select:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
 }
 
 .form-input:disabled,
@@ -69,7 +70,8 @@
 .form-textarea:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
 }
 
 /* Form row/columns for layout */

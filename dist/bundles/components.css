@@ -634,7 +634,8 @@ button:focus-visible {
   background: var(--button-primary-bg--hover);
   border-color: var(--button-primary-border--hover);
   color: var(--button-primary-text--hover);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--button-primary-bg) 15%, transparent 85%);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--button-primary-bg) 15%, transparent 85%);
 }
 
 /* Outline Button */
@@ -728,7 +729,8 @@ button:focus-visible {
   background: var(--button-submit-bg--hover);
   border-color: var(--button-submit-border--hover);
   color: var(--button-submit-text--hover);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--button-submit-bg) 15%, transparent 85%);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--button-submit-bg) 15%, transparent 85%);
 }
 
 
@@ -1649,7 +1651,6 @@ button:focus-visible {
 
 
 
-
 .theme-switcher {
   position: relative;
   display: inline-flex;
@@ -2047,7 +2048,11 @@ button:focus-visible {
 }
 
 .context-menu--item.danger:hover {
-  background-color: color-mix(in srgb, var(--color-danger) 10%, transparent 90%);
+  background-color: color-mix(
+    in srgb,
+    var(--color-danger) 10%,
+    transparent 90%
+  );
 }
 
 /* Success variant */
@@ -2056,7 +2061,11 @@ button:focus-visible {
 }
 
 .context-menu--item.success:hover {
-  background-color: color-mix(in srgb, var(--color-success) 10%, transparent 90%);
+  background-color: color-mix(
+    in srgb,
+    var(--color-success) 10%,
+    transparent 90%
+  );
 }
 
 /* Responsive */
@@ -2217,8 +2226,16 @@ button:focus-visible {
 }
 
 .pagination .btn--page.btn--active:hover {
-  background: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) - 10%));
-  border-color: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) - 10%));
+  background: hsl(
+    var(--accent-hue),
+    var(--accent-sat),
+    calc(var(--accent-light) - 10%)
+  );
+  border-color: hsl(
+    var(--accent-hue),
+    var(--accent-sat),
+    calc(var(--accent-light) - 10%)
+  );
 }
 
 /* Previous/Next buttons */
@@ -2276,7 +2293,8 @@ button:focus-visible {
 .form-select:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
 }
 
 .form-input:disabled,
@@ -2304,7 +2322,8 @@ button:focus-visible {
 .form-textarea:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
 }
 
 /* Form row/columns for layout */

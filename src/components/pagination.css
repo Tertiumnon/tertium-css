@@ -28,8 +28,16 @@
 }
 
 .pagination .btn--page.btn--active:hover {
-  background: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) - 10%));
-  border-color: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) - 10%));
+  background: hsl(
+    var(--accent-hue),
+    var(--accent-sat),
+    calc(var(--accent-light) - 10%)
+  );
+  border-color: hsl(
+    var(--accent-hue),
+    var(--accent-sat),
+    calc(var(--accent-light) - 10%)
+  );
 }
 
 /* Previous/Next buttons */

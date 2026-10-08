@@ -8,10 +8,15 @@
     "build": "bun run theme:generate:all && bun scripts/build/build.ts",
     "theme:generate": "bun scripts/theme/generate/generate.ts",
     "theme:generate:all": "bun theme:generate dark.blue--white && bun theme:generate dark.purple--gold && bun theme:generate dark.violet--gold && bun theme:generate light.white--red",
-    "lint:css:fix": "prettier --write 'src/**/*.css'",
-    "release:patch": "bun run build && node node_modules/@tertium/js/scripts/release.js patch",
-    "release:minor": "bun run build && node node_modules/@tertium/js/scripts/release.js minor",
-    "release:major": "bun run build && node node_modules/@tertium/js/scripts/release.js major"
+    "lint": "prettier --check 'src/{bundles,components,form,system,utilities}/**/*.css'",
+    "lint:css:fix": "prettier --write 'src/{bundles,components,form,system,utilities}/**/*.css'",
+    "test": "bun test",
+    "hooks:install": "bun node_modules/@tertium/js/scripts/git-hooks/git-hooks.ts",
+    "workflow:publish": "bun node_modules/@tertium/js/scripts/npm-publish-workflow/npm-publish-workflow.ts",
+    "release:patch": "bun node_modules/@tertium/js/scripts/release/release.ts patch",
+    "release:minor": "bun node_modules/@tertium/js/scripts/release/release.ts minor",
+    "release:major": "bun node_modules/@tertium/js/scripts/release/release.ts major",
+    "prepare": "git config core.hooksPath .githooks"
   },
   "keywords": [
     "css",
@@ -144,8 +149,11 @@
   "repository": {
     "type": "git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
-    "@tertium/js": "^3.1.1",
+    "@tertium/js": "^3.2.0",
     "prettier": "^3.8.4"
   }
 }
