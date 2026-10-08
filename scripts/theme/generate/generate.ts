@@ -14,11 +14,11 @@ function calculateButtonHoverLightness(
   isDark: boolean
 ): number {
   if (isDark) {
-    // Dark theme: make hover lighter by +20%
-    return baseLightness + 20;
+    // Dark theme: make hover lighter without washing out the color.
+    return Math.min(baseLightness + 10, 95);
   } else {
-    // Light theme: make hover darker by -20%
-    return baseLightness - 20;
+    // Light theme: make hover darker without losing the text contrast.
+    return Math.max(baseLightness - 8, 0);
   }
 }
 
@@ -32,7 +32,7 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   const primaryHsl = primary.hsl;
   const accentHsl = accent.hsl;
   const isDark = metadata.darkness === "dark";
-  const buttonHoverLightness = calculateButtonHoverLightness(primaryHsl.lightness, isDark);
+  const buttonHoverLightness = calculateButtonHoverLightness(primaryHsl.lightness + backgrounds["button-light-offset"], isDark);
 
   // Generate CSS
   let css = `/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */\n`;
@@ -41,7 +41,9 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `/* background) and ${accent.name} (secondary accent). */\n`;
   css += `/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */\n\n`;
 
-  css += `[data-theme="${dataTheme}"] {\n`;
+  const selector = isDark ? `[data-theme="${dataTheme}"]` : `:root:not([data-theme]), [data-theme="${dataTheme}"]`;
+  css += `${selector} {\n`;
+  css += `  color-scheme: ${isDark ? "dark" : "light"};\n`;
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
   css += `  /* TWO BASE COLORS - Everything derives from these                 */\n`;
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
@@ -134,7 +136,7 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  /* LINK COLORS - Derived from accent                               */\n`;
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
 
-  css += `  --link-color: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 15%));\n`;
+  css += `  --link-color: ${isDark ? "var(--accent-color--light)" : "var(--accent-color)"};\n`;
   css += `  --link-visited: hsl(var(--accent-hue), calc(var(--accent-sat) - 20%), calc(var(--accent-light) - 10%));\n`;
   css += `  --link-hover: var(--accent-color);\n\n`;
 
@@ -157,6 +159,7 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  --color-warning: ${status.warning};\n`;
   css += `  --color-danger: ${status.danger};\n`;
   css += `  --color-info: ${status.info};\n\n`;
+  css += `  --color-on-status: ${isDark ? "#111827" : "#ffffff"};\n\n`;
 
   // Progress & effects
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
@@ -218,7 +221,7 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  /* Borderless button: no border, accent text */\n`;
   css += `  --button-text-color: var(--accent-color);\n`;
   css += `  --button-text-bg--hover: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + ${isDark ? 15 : -15}%), 0.1);\n`;
-  css += `  --button-text-color--hover: var(--accent-color--dark);\n\n`;
+  css += `  --button-text-color--hover: ${isDark ? "var(--accent-color--light)" : "var(--accent-color--dark)"};\n\n`;
 
   // Section background - theme aware
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
@@ -226,8 +229,8 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
 
   const sectionBg = isDark
-    ? `var(--primary-color--light)`      // Dark theme: lighter primary
-    : `var(--primary-color--dark)`;      // Light theme: darker primary
+    ? `var(--primary-color--light)`
+    : `var(--primary-color--dark)`;
 
   css += `  --section-bg: ${sectionBg};\n\n`;
 
@@ -244,12 +247,12 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
 
   const navbarBgHsl = isDark
-    ? `hsla(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 2%), 0.98)` // Dark theme: lighter primary with high opacity
-    : `hsla(var(--primary-hue), var(--primary-sat), calc(var(--primary-dark) - 4%), 0.85)`; // Light theme: darker primary with lower opacity
+    ? `hsla(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 2%), 0.98)`
+    : `hsla(var(--primary-hue), var(--primary-sat), 98%, 0.98)`;
 
   css += `  --navbar-bg: ${navbarBgHsl};\n`;
   css += `  --menu-bg: var(--bg-card);\n`;
-  css += `  --menu-text: var(--text-on-primary);\n\n`;
+  css += `  --menu-text: var(--text-primary);\n\n`;
 
   // Table cell background - theme aware with opacity
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n`;
@@ -267,7 +270,7 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `  /* TABLE BORDER COLOR - Theme-aware                                 */\n`;
   css += `  /* ═══════════════════════════════════════════════════════════════ */\n\n`;
 
-  css += `  --table-border-color: var(--accent-color--darkest);\n`;
+  css += `  --table-border-color: var(--border-color--strong);\n`;
 
   css += `}\n\n`;
 
@@ -276,7 +279,7 @@ async function generateTheme(themeName: string, cssPath: string): Promise<void> 
   css += `/* BODY STYLING                                                         */\n`;
   css += `/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */\n\n`;
 
-  css += `[data-theme="${dataTheme}"] body {\n`;
+  css += `${selector} body {\n`;
   css += `  background: var(--gradient-page);\n`;
   css += `  color: var(--text-primary);\n`;
   css += `  position: relative;\n`;

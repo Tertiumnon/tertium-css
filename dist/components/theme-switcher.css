@@ -1,3 +1,4 @@
+@import "../themes/light.white--red.theme.css";
 @import "../system/tokens.css";
 
 .theme-switcher {
@@ -54,12 +55,6 @@
   transition: all var(--duration-fast);
   white-space: nowrap;
   font-family: inherit;
-}
-
-.theme-switcher--trigger:hover {
-  background: var(--primary-color--light);
-  border-color: var(--button-default-border);
-  color: var(--text-primary);
 }
 
 .theme-switcher--color-dot {
@@ -127,10 +122,6 @@
 
 .theme-switcher--option:last-child {
   border-bottom: none;
-}
-
-.theme-switcher--option:hover {
-  background-color: var(--bg-form-input);
 }
 
 .theme-switcher--option-active {

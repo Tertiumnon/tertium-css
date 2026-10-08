@@ -43,6 +43,13 @@ export const DEFAULT_STATUS_COLORS = {
   info: "hsl(217, 97%, 61%)",
 } as const;
 
+export const LIGHT_STATUS_COLORS = {
+  success: "#047857",
+  warning: "#92400e",
+  danger: "#b91c1c",
+  info: "#1d4ed8",
+} as const;
+
 /**
  * Default background offsets for light themes
  */
@@ -95,23 +102,20 @@ export function generateTextColors(isDark: boolean) {
 }
 
 /**
- * Generate border colors derived from a base color (hue, saturation)
- * For dark themes: use primary color with adjusted lightness and opacity
- * For light themes: use accent color with adjusted lightness and opacity
+ * Neutral borders keep surfaces separate without competing with action colors.
  */
-export function generateBorderColors(
-  hue: number,
-  saturation: number,
-  isDark: boolean
-) {
-  const baseLightness = isDark ? 45 : 50;
-  const reducedLightness = isDark ? 35 : 40;
-
-  return {
-    color: `hsla(${hue}, ${saturation}%, ${baseLightness}%, 0.3)`,
-    "color-strong": `hsla(${hue}, ${saturation}%, ${baseLightness}%, 0.6)`,
-    "color-light": `hsla(${hue}, ${saturation}%, ${reducedLightness}%, 0.15)`,
-  };
+export function generateBorderColors(isDark: boolean) {
+  return isDark
+    ? {
+        color: "rgba(255, 255, 255, 0.18)",
+        "color-strong": "rgba(255, 255, 255, 0.32)",
+        "color-light": "rgba(255, 255, 255, 0.1)",
+      }
+    : {
+        color: "rgba(15, 23, 42, 0.2)",
+        "color-strong": "rgba(15, 23, 42, 0.36)",
+        "color-light": "rgba(15, 23, 42, 0.1)",
+      };
 }
 
 /**
@@ -162,7 +166,7 @@ export function createTheme(
       color: "rgba(0, 0, 0, 0.1)",
     },
     status: {
-      ...DEFAULT_STATUS_COLORS,
+      ...(isDark ? DEFAULT_STATUS_COLORS : LIGHT_STATUS_COLORS),
       ...overrides.status,
     },
     backgrounds: {

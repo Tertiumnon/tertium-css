@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" data-theme="dark--blue--white">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | Tertium CSS Demo</title>
+    <link rel="stylesheet" href="../dist/bundles/full.min.css" />
+  </head>
+  <body>
+    <nav
+      id="site-header"
+      class="navbar navbar--responsive"
+      aria-label="Main navigation"
+    ></nav>
+    <script src="header.js"></script>
+
+    <main class="container-xl page-content">
+      <section class="card mb-8">
+        <span class="badge badge-info--subtle" data-en="Contact demo"
+          >Contact demo</span
+        >
+        <h1 data-en="Let's start a conversation.">
+          Let's start a conversation.
+        </h1>
+        <p
+          data-en="This page shows a familiar contact layout and the form styles in context. The form is a demo and does not send messages."
+        >
+          This page shows a familiar contact layout and the form styles in
+          context. The form is a demo and does not send messages.
+        </p>
+      </section>
+
+      <div class="card-grid card-grid--2col">
+        <section class="card">
+          <h2 class="card-title" data-en="Send a message">Send a message</h2>
+          <form id="contact-form">
+            <div class="form-group">
+              <label class="form-label" for="contact-name" data-en="Name"
+                >Name</label
+              >
+              <input
+                class="form-input"
+                id="contact-name"
+                name="name"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email" data-en="Email"
+                >Email</label
+              >
+              <input
+                class="form-input"
+                id="contact-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-topic" data-en="Topic"
+                >Topic</label
+              >
+              <select class="form-select" id="contact-topic" name="topic">
+                <option data-en="General question">General question</option>
+                <option data-en="Design feedback">Design feedback</option>
+                <option data-en="Component idea">Component idea</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-message" data-en="Message"
+                >Message</label
+              >
+              <textarea
+                class="form-textarea"
+                id="contact-message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button
+              class="btn btn--primary"
+              type="submit"
+              data-en="Send demo message"
+            >
+              Send demo message
+            </button>
+            <p
+              id="contact-status"
+              role="status"
+              aria-live="polite"
+              hidden
+              data-en="Demo only: no message was sent."
+            >
+              Demo only: no message was sent.
+            </p>
+          </form>
+        </section>
+        <aside class="card card--primary">
+          <h2 class="card-title" data-en="Explore the site">
+            Explore the site
+          </h2>
+          <p
+            data-en="Use these pages to inspect common patterns: navigation, content cards, forms, and responsive layouts."
+          >
+            Use these pages to inspect common patterns: navigation, content
+            cards, forms, and responsive layouts.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <a
+              class="btn btn--outline"
+              href="index.html#menu"
+              data-en="Component guide"
+              >Component guide</a
+            >
+            <a
+              class="btn btn--outline"
+              href="movies.html"
+              data-en="Movie catalog"
+              >Movie catalog</a
+            >
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container-xl flex flex-wrap justify-between gap-4">
+        <p class="m-0">© Tertium CSS</p>
+        <p class="m-0"><a href="about.html" data-en="About">About</a></p>
+      </div>
+    </footer>
+    <script src="site.js"></script>
+    <script>
+      document
+        .querySelector("#contact-form")
+        .addEventListener("submit", (event) => {
+          event.preventDefault();
+          document.querySelector("#contact-status").hidden = false;
+        });
+    </script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 import { createTheme, generateBorderColors, generateTextColors } from "./theme.constants";
 
 const primaryHsl = { hue: 0, saturation: 0, lightness: 100 };
-const accentHsl = { hue: 0, saturation: 100, lightness: 50 };
+const accentHsl = { hue: 0, saturation: 100, lightness: 42 };
 
 export const theme = createTheme({
   metadata: {
@@ -21,7 +21,7 @@ export const theme = createTheme({
     "primary-dark-offset": -3,
   },
   "text-colors": generateTextColors(false),
-  borders: generateBorderColors(accentHsl.hue, accentHsl.saturation, false),
+  borders: generateBorderColors(false),
   shadows: {
     color: "rgba(0, 0, 0, 0.08)",
   },

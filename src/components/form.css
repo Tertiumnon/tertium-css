@@ -26,7 +26,7 @@
   border: 1px solid var(--border-color);
   border-radius: 0.375em;
   font-size: 1em;
-  background: var(--bg-page);
+  background: var(--bg-form-input);
   color: var(--text-primary);
   font-family: inherit;
   transition: all 0.2s ease;
@@ -37,18 +37,18 @@
   color: var(--text-secondary);
 }
 
-.form-input:focus,
-.form-select:focus {
+.form-input:focus-visible,
+.form-select:focus-visible {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
+  box-shadow: inset 0 0 0 1px var(--accent-color);
 }
 
 .form-input:disabled,
 .form-select:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-  background: var(--bg-card);
+  background: var(--bg-form);
 }
 
 /* Textarea */
@@ -59,17 +59,17 @@
   border-radius: 0.375em;
   font-size: 1em;
   font-family: inherit;
-  background: var(--bg-page);
+  background: var(--bg-form-input);
   color: var(--text-primary);
   resize: vertical;
   transition: all 0.2s ease;
   box-sizing: border-box;
 }
 
-.form-textarea:focus {
+.form-textarea:focus-visible {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 10%, transparent 90%);
+  box-shadow: inset 0 0 0 1px var(--accent-color);
 }
 
 /* Form row/columns for layout */

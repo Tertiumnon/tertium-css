@@ -1,6 +1,6 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* TERTIUM CSS - THEMES ONLY                                           */
-/* Design tokens and three theme presets (dark, light, blue)           */
+/* Design tokens and all theme presets                                 */
 /* Use this when building custom components on a consistent token      */
 /* system. Includes CSS variables and theme switching support.         */
 /* File size: ~4KB                                                     */
@@ -8,4 +8,6 @@
 
 @import "../system/tokens.css";
 @import "../themes/dark.purple--gold.theme.css";
+@import "../themes/dark.violet--gold.theme.css";
+@import "../themes/dark.blue--white.theme.css";
 @import "../themes/light.white--red.theme.css";

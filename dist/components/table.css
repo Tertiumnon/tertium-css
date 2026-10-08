@@ -1,4 +1,11 @@
+@import "../themes/light.white--red.theme.css";
 @import "../system/tokens.css";
+
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* OPT-IN TABLE STYLES                                                 */
 /* Apply with explicit .table class only - no default table styling   */
@@ -22,7 +29,6 @@
 .table th {
   font-size: 0.95em;
   font-weight: 600;
-  text-transform: uppercase;
   padding: var(--spacing-3) var(--spacing-3);
   text-align: left;
   color: var(--heading-color);
@@ -61,7 +67,11 @@
 }
 
 .table tbody tr:hover td {
-  background: color-mix(in srgb, var(--table-cell-bg) 120%, transparent 0%);
+  background: color-mix(
+    in srgb,
+    var(--table-cell-bg) 80%,
+    var(--accent-color) 20%
+  );
 }
 
 /* Table with visible borders on all cells */
@@ -82,7 +92,3 @@
 /* ─────────────────────────────────────────────────────────────────── */
 /* LIGHT THEME OVERRIDES                                               */
 /* ─────────────────────────────────────────────────────────────────── */
-
-[data-theme*="light"] .table th {
-  color: var(--accent-color);
-}

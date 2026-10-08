@@ -69,14 +69,14 @@
   color: #fff;
 }
 .text-gray {
-  color: #6b7280;
+  color: var(--text-secondary);
 }
 .text-red {
-  color: #ef4444;
+  color: var(--color-danger);
 }
 .text-blue {
-  color: #3b82f6;
+  color: var(--color-info);
 }
 .text-green {
-  color: #10b981;
+  color: var(--color-success);
 }
