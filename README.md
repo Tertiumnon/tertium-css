@@ -1,4 +1,4 @@
-# Tertium CSS - Universal Design System
+# @tertium/css
 
 A framework-agnostic, universal CSS design system with composable tokens, themes, components, and utilities. Use what you need, nothing more.
 
