@@ -2808,35 +2808,35 @@ button:focus-visible {
 }
 
 .shadow-sm {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 0 var(--shadow-color);
 }
 
 .shadow {
   box-shadow:
-    0 1px 3px 0 rgba(0, 0, 0, 0.1),
-    0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    0 1px 3px 0 var(--shadow-color),
+    0 1px 2px 0 var(--shadow-color);
 }
 
 .shadow-md {
   box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    0 4px 6px -1px var(--shadow-color),
+    0 2px 4px -1px var(--shadow-color);
 }
 
 .shadow-lg {
   box-shadow:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    0 10px 15px -3px var(--shadow-color),
+    0 4px 6px -2px var(--shadow-color);
 }
 
 .shadow-xl {
   box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    0 20px 25px -5px var(--shadow-color),
+    0 10px 10px -5px var(--shadow-color);
 }
 
 .shadow-2xl {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 50px -12px var(--shadow-color);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -3340,6 +3340,65 @@ button:focus-visible {
 .form-radio:disabled {
   cursor: not-allowed;
   opacity: 0.6;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* SWITCH                                                              */
+/* <label class="switch"><input type="checkbox" role="switch"><span>  */
+/* Turn on/off. Uses the primary colour when on.                       */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.switch input {
+  appearance: none;
+  position: relative;
+  width: 2.4em;
+  height: 1.3em;
+  margin: 0;
+  border-radius: 999px;
+  background: var(--progress-track);
+  border: 1px solid var(--border-color--strong);
+  cursor: inherit;
+  transition: background var(--duration-fast);
+}
+
+.switch input::after {
+  content: "";
+  position: absolute;
+  top: 0.12em;
+  left: 0.12em;
+  width: 0.95em;
+  height: 0.95em;
+  border-radius: 50%;
+  background: var(--text-primary);
+  transition: transform var(--duration-fast);
+}
+
+.switch input:checked {
+  background: var(--button-primary-bg);
+  border-color: var(--button-primary-bg);
+}
+
+.switch input:checked::after {
+  transform: translateX(1.1em);
+  background: var(--button-primary-text);
+}
+
+.switch input:focus-visible {
+  outline: 2px solid var(--button-primary-bg);
+  outline-offset: 2px;
+}
+
+.switch input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 
@@ -3925,7 +3984,7 @@ button:focus-visible {
 .profile-menu--trigger:hover {
   background: var(--bg-form);
   border-color: var(--primary-color);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .profile-menu--trigger:active {
@@ -3946,7 +4005,7 @@ button:focus-visible {
   background-color: var(--menu-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px var(--shadow-color);
   min-width: 180px;
   z-index: 1000;
   overflow: hidden;
@@ -4076,7 +4135,7 @@ button:focus-visible {
   background-color: var(--menu-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px var(--shadow-color);
   min-width: 240px;
   z-index: 1000;
   overflow: hidden;
@@ -4270,7 +4329,7 @@ button:focus-visible {
 .search-btn:hover {
   background-color: var(--button-primary-bg--hover);
   border-color: var(--button-primary-border--hover);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .search-btn:active {
@@ -4556,7 +4615,7 @@ button:focus-visible {
   background-color: var(--menu-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px var(--shadow-color);
   width: max-content;
   z-index: 1000;
   overflow: hidden;
@@ -4677,7 +4736,7 @@ button:focus-visible {
   background-color: var(--menu-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px var(--shadow-color);
   width: max-content;
   z-index: 1000;
   overflow: hidden;
@@ -4840,21 +4899,16 @@ button:focus-visible {
   font-size: 0.9em;
 }
 
-/* Dark variant */
+/* Dark variant: the menu surface comes from the theme, so it fits any dark theme. */
 .context-menu.dark .context-menu--dropdown {
-  background-color: #1a1a1a;
-  border-color: #374151;
-  --menu-text: #f9fafb;
-  --text-secondary: #cbd5e1;
-  --bg-form-input: #2a2a2a;
+  background-color: var(--menu-bg);
+  border-color: var(--border-color);
+  color: var(--menu-text);
 }
 
-.context-menu.dark .context-menu--item:hover {
-  background-color: #2a2a2a;
-}
-
+.context-menu.dark .context-menu--item:hover,
 .context-menu.dark .context-menu--item.active {
-  background-color: #2a2a2a;
+  background-color: var(--bg-button--hover);
 }
 
 /* Danger variant (for delete/destructive actions) */
@@ -5150,6 +5204,414 @@ button:focus-visible {
   .form-row--3 {
     grid-template-columns: 1fr;
   }
+}
+
+/* Help text under a field. */
+.form-hint {
+  margin: var(--spacing-1) 0 0;
+  color: var(--text-secondary);
+  font-size: 0.85em;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* ALERTS AND TOASTS                                                   */
+/* Status messages. Colours come from the theme's status tokens.       */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.alert {
+  --alert-color: var(--color-info);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1px solid var(--alert-color);
+  border-left-width: 4px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.alert__title {
+  margin: 0;
+  color: var(--alert-color);
+  font-weight: 600;
+}
+
+.alert--success {
+  --alert-color: var(--color-success);
+}
+.alert--warning {
+  --alert-color: var(--color-warning);
+}
+.alert--danger {
+  --alert-color: var(--color-danger);
+}
+.alert--info {
+  --alert-color: var(--color-info);
+}
+
+/* Toasts: short messages fixed to a corner of the page. */
+.toast-container {
+  position: fixed;
+  right: var(--spacing-4);
+  bottom: var(--spacing-4);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.toast {
+  --alert-color: var(--color-info);
+  min-width: 14em;
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1px solid var(--alert-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.toast--success {
+  --alert-color: var(--color-success);
+}
+.toast--warning {
+  --alert-color: var(--color-warning);
+}
+.toast--danger {
+  --alert-color: var(--color-danger);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TABS                                                                */
+/* Use role="tablist" / role="tab" with aria-selected="true" on the    */
+/* active tab, so the state is also available to assistive tech.      */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab {
+  margin-bottom: -1px;
+  padding: var(--spacing-2) var(--spacing-4);
+  border: 1px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  cursor: pointer;
+}
+
+.tab:hover:not(:disabled) {
+  color: var(--text-primary);
+  background: var(--bg-button--hover);
+}
+
+.tab[aria-selected="true"],
+.tab.active {
+  border-bottom-color: var(--button-primary-bg);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--button-primary-bg);
+  outline-offset: 2px;
+}
+
+.tab:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tab-panel {
+  padding: var(--spacing-4) 0;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* DIALOG                                                              */
+/* Native <dialog> element: open with showModal(), close with close(). */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.dialog {
+  width: min(32rem, calc(100vw - var(--spacing-8)));
+  padding: var(--spacing-6);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.dialog::backdrop {
+  background: var(--shadow-color);
+}
+
+.dialog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+}
+
+.dialog__title {
+  margin: 0;
+  color: var(--heading-color);
+}
+
+.dialog__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-6);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TOOLTIP                                                             */
+/* Add data-tooltip="text" to any element. Shown above it on hover    */
+/* and keyboard focus.                                                 */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + var(--spacing-2));
+  left: 50%;
+  z-index: 50;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  background: var(--menu-bg);
+  color: var(--menu-text);
+  font-size: 0.85em;
+  white-space: nowrap;
+  transform: translate(-50%, 4px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity var(--duration-fast),
+    transform var(--duration-fast);
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* PROGRESS                                                            */
+/* <div class="progress"><div class="progress__bar" style="width: 40%"> */
+/* Use role="progressbar" with aria-valuenow for accessibility.        */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.progress {
+  --progress-color: var(--button-primary-bg);
+  height: 0.6em;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--progress-track);
+}
+
+.progress__bar {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--progress-color);
+  transition: width var(--duration-normal) var(--timing-ease-in-out);
+}
+
+.progress--success {
+  --progress-color: var(--color-success);
+}
+.progress--warning {
+  --progress-color: var(--color-warning);
+}
+.progress--danger {
+  --progress-color: var(--color-danger);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* BREADCRUMB                                                          */
+/* <nav aria-label="Breadcrumb"><ol class="breadcrumb">...            */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-secondary);
+}
+
+.breadcrumb__item + .breadcrumb__item::before {
+  content: "/";
+  margin-right: var(--spacing-1);
+  color: var(--border-color--strong);
+}
+
+.breadcrumb__item a {
+  color: var(--link-color);
+}
+
+.breadcrumb__item a:hover {
+  color: var(--link-hover);
+}
+
+.breadcrumb__item[aria-current="page"] {
+  color: var(--text-primary);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TAGS AND CHIPS                                                      */
+/* Small labels for categories and filters. .tag--outline is lighter. */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  padding: 0.15em 0.7em;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--bg-button);
+  color: var(--text-primary);
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+.tag--accent {
+  border-color: var(--button-primary-bg);
+  background: var(--button-primary-bg);
+  color: var(--button-primary-text);
+}
+
+.tag--outline {
+  background: transparent;
+}
+
+.tag__remove {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* KEYBOARD KEYS                                                       */
+/* <kbd>Ctrl</kbd> + <kbd>Enter</kbd>                                  */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+kbd {
+  display: inline-block;
+  min-width: 1.6em;
+  padding: 0.1em 0.4em;
+  border: 1px solid var(--border-color--strong);
+  border-bottom-width: 2px;
+  border-radius: var(--radius-sm);
+  background: var(--code-bg);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* DIVIDERS                                                            */
+/* <hr class="divider"> or <span class="divider divider--vertical">    */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.divider {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: var(--spacing-4) 0;
+}
+
+.divider--vertical {
+  display: inline-block;
+  align-self: stretch;
+  width: 0;
+  margin: 0 var(--spacing-2);
+  border-top: 0;
+  border-left: 1px solid var(--border-color);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* LISTS                                                               */
+/* Plain lists without bullets, optionally divided by lines.           */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list__item {
+  padding: var(--spacing-2) 0;
+}
+
+.list--bordered .list__item + .list__item {
+  border-top: 1px solid var(--border-color);
+}
+
+.list--interactive .list__item {
+  padding-inline: var(--spacing-2);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.list--interactive .list__item:hover {
+  background: var(--bg-button--hover);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* AVATARS                                                             */
+/* Round picture or initials. Sizes: .avatar--sm, .avatar--lg.         */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5em;
+  height: 2.5em;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar--sm {
+  width: 1.75em;
+  height: 1.75em;
+  font-size: 0.8em;
+}
+.avatar--lg {
+  width: 4em;
+  height: 4em;
+  font-size: 1.4em;
 }
 
 

@@ -30,7 +30,7 @@ test("demo pages render the same header with the current page selected", () => {
     );
     for (const language of ["en", "de", "fr", "ru"])
       expect(header.innerHTML).toContain(`value="${language}"`);
-    expect(header.innerHTML.match(/class="profile-menu--option" type="button" data-theme-choice=/g)).toHaveLength(4);
+    expect(header.innerHTML.match(/class="profile-menu--option" type="button" data-theme-choice=/g)).toHaveLength(5);
     expect(header.innerHTML).not.toMatch(/<button[^>]*\sdata-theme=/);
   }
 });

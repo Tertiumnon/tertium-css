@@ -1,13 +1,14 @@
 {
   "name": "@tertium/css",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "Universal design system with tokens, themes, components, and utilities",
   "main": "dist/bundles/full.min.css",
   "type": "module",
   "scripts": {
-    "build": "bun run theme:generate:all && bun scripts/build/build.ts",
+    "build": "bun run theme:generate:all && bun scripts/build/build.ts && bun run theme:vscode",
+    "theme:vscode": "bun scripts/theme/vscode/vscode.ts",
     "theme:generate": "bun scripts/theme/generate/generate.ts",
-    "theme:generate:all": "bun theme:generate dark.blue--white && bun theme:generate dark.purple--gold && bun theme:generate dark.violet--gold && bun theme:generate light.white--red",
+    "theme:generate:all": "bun theme:generate dark.blue--white && bun theme:generate dark.purple--gold && bun theme:generate dark.violet--gold && bun theme:generate light.white--red && bun theme:generate dark.indigo--gold",
     "lint": "prettier --check 'src/{bundles,components,form,system,utilities}/**/*.css'",
     "lint:css:fix": "prettier --write 'src/{bundles,components,form,system,utilities}/**/*.css'",
     "test": "bun test",
@@ -16,7 +17,8 @@
     "release:patch": "npx @tertium/gith release --patch",
     "release:minor": "npx @tertium/gith release --minor",
     "release:major": "npx @tertium/gith release --major",
-    "prepare": "git config core.hooksPath .githooks"
+    "prepare": "git config core.hooksPath .githooks",
+    "changelog": "npx @tertium/gith changelog"
   },
   "keywords": [
     "css",
@@ -39,6 +41,7 @@
     "./dark.purple--gold.theme": "./dist/themes/dark.purple--gold.theme.min.css",
     "./dark.violet--gold.theme": "./dist/themes/dark.violet--gold.theme.min.css",
     "./dark.blue--white.theme": "./dist/themes/dark.blue--white.theme.min.css",
+    "./dark.indigo--gold.theme": "./dist/themes/dark.indigo--gold.theme.min.css",
     "./light.white--red.theme": "./dist/themes/light.white--red.theme.min.css",
     "./dist/bundles/full.min.css": "./dist/bundles/full.min.css",
     "./dist/bundles/full.css": "./dist/bundles/full.css",
@@ -58,6 +61,8 @@
     "./dist/themes/dark.violet--gold.theme.css": "./dist/themes/dark.violet--gold.theme.css",
     "./dist/themes/dark.blue--white.theme.min.css": "./dist/themes/dark.blue--white.theme.min.css",
     "./dist/themes/dark.blue--white.theme.css": "./dist/themes/dark.blue--white.theme.css",
+    "./dist/themes/dark.indigo--gold.theme.min.css": "./dist/themes/dark.indigo--gold.theme.min.css",
+    "./dist/themes/dark.indigo--gold.theme.css": "./dist/themes/dark.indigo--gold.theme.css",
     "./dist/themes/light.white--red.theme.min.css": "./dist/themes/light.white--red.theme.min.css",
     "./dist/themes/light.white--red.theme.css": "./dist/themes/light.white--red.theme.css",
     "./components/buttons": "./dist/components/button.min.css",

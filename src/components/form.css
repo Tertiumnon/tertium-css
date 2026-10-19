@@ -92,3 +92,10 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Help text under a field. */
+.form-hint {
+  margin: var(--spacing-1) 0 0;
+  color: var(--text-secondary);
+  font-size: 0.85em;
+}

@@ -1,0 +1,30 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* PROGRESS                                                            */
+/* <div class="progress"><div class="progress__bar" style="width: 40%"> */
+/* Use role="progressbar" with aria-valuenow for accessibility.        */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.progress {
+  --progress-color: var(--button-primary-bg);
+  height: 0.6em;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--progress-track);
+}
+
+.progress__bar {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--progress-color);
+  transition: width var(--duration-normal) var(--timing-ease-in-out);
+}
+
+.progress--success {
+  --progress-color: var(--color-success);
+}
+.progress--warning {
+  --progress-color: var(--color-warning);
+}
+.progress--danger {
+  --progress-color: var(--color-danger);
+}

@@ -260,7 +260,7 @@
 .profile-menu--trigger:hover {
   background: var(--bg-form);
   border-color: var(--primary-color);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .profile-menu--trigger:active {
@@ -281,7 +281,7 @@
   background-color: var(--menu-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px var(--shadow-color);
   min-width: 180px;
   z-index: 1000;
   overflow: hidden;
@@ -411,7 +411,7 @@
   background-color: var(--menu-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px var(--shadow-color);
   min-width: 240px;
   z-index: 1000;
   overflow: hidden;
@@ -605,7 +605,7 @@
 .search-btn:hover {
   background-color: var(--button-primary-bg--hover);
   border-color: var(--button-primary-border--hover);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .search-btn:active {

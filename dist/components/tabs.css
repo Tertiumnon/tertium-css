@@ -1,0 +1,51 @@
+@import "../themes/light.white--red.theme.css";
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TABS                                                                */
+/* Use role="tablist" / role="tab" with aria-selected="true" on the    */
+/* active tab, so the state is also available to assistive tech.      */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab {
+  margin-bottom: -1px;
+  padding: var(--spacing-2) var(--spacing-4);
+  border: 1px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  cursor: pointer;
+}
+
+.tab:hover:not(:disabled) {
+  color: var(--text-primary);
+  background: var(--bg-button--hover);
+}
+
+.tab[aria-selected="true"],
+.tab.active {
+  border-bottom-color: var(--button-primary-bg);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--button-primary-bg);
+  outline-offset: 2px;
+}
+
+.tab:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tab-panel {
+  padding: var(--spacing-4) 0;
+}

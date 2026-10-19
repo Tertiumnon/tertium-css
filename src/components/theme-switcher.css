@@ -83,7 +83,7 @@
   background-color: var(--menu-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px var(--shadow-color);
   width: max-content;
   z-index: 1000;
   overflow: hidden;
