@@ -384,6 +384,7 @@ try {
       "dark--blue--white",
       "dark--purple--gold",
       "dark--violet--gold",
+      "dark--indigo--gold",
       "light--white--red",
     ].includes(savedTheme)
   ) {
