@@ -1,0 +1,28 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* LISTS                                                               */
+/* Plain lists without bullets, optionally divided by lines.           */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list__item {
+  padding: var(--spacing-2) 0;
+}
+
+.list--bordered .list__item + .list__item {
+  border-top: 1px solid var(--border-color);
+}
+
+.list--interactive .list__item {
+  padding-inline: var(--spacing-2);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.list--interactive .list__item:hover {
+  background: var(--bg-button--hover);
+}

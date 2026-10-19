@@ -1,0 +1,19 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* KEYBOARD KEYS                                                       */
+/* <kbd>Ctrl</kbd> + <kbd>Enter</kbd>                                  */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+kbd {
+  display: inline-block;
+  min-width: 1.6em;
+  padding: 0.1em 0.4em;
+  border: 1px solid var(--border-color--strong);
+  border-bottom-width: 2px;
+  border-radius: var(--radius-sm);
+  background: var(--code-bg);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  line-height: 1.4;
+  text-align: center;
+}
