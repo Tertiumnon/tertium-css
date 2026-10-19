@@ -17,7 +17,8 @@
     "release:patch": "bun node_modules/@tertium/js/scripts/release/release.ts patch",
     "release:minor": "bun node_modules/@tertium/js/scripts/release/release.ts minor",
     "release:major": "bun node_modules/@tertium/js/scripts/release/release.ts major",
-    "prepare": "git config core.hooksPath .githooks"
+    "prepare": "git config core.hooksPath .githooks",
+    "changelog": "npx @tertium/gith changelog"
   },
   "keywords": [
     "css",
