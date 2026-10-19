@@ -48,7 +48,7 @@
   background-color: var(--menu-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px var(--shadow-color);
   width: max-content;
   z-index: 1000;
   overflow: hidden;
@@ -211,21 +211,16 @@
   font-size: 0.9em;
 }
 
-/* Dark variant */
+/* Dark variant: the menu surface comes from the theme, so it fits any dark theme. */
 .context-menu.dark .context-menu--dropdown {
-  background-color: #1a1a1a;
-  border-color: #374151;
-  --menu-text: #f9fafb;
-  --text-secondary: #cbd5e1;
-  --bg-form-input: #2a2a2a;
+  background-color: var(--menu-bg);
+  border-color: var(--border-color);
+  color: var(--menu-text);
 }
 
-.context-menu.dark .context-menu--item:hover {
-  background-color: #2a2a2a;
-}
-
+.context-menu.dark .context-menu--item:hover,
 .context-menu.dark .context-menu--item.active {
-  background-color: #2a2a2a;
+  background-color: var(--bg-button--hover);
 }
 
 /* Danger variant (for delete/destructive actions) */
