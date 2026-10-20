@@ -45,4 +45,4 @@ npm test
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding new components, tokens, or themes.
+New themes follow the rules in [THEME.md](THEME.md). New components, tokens and utilities go in the `src/` folders listed under File Structure. Run `npm run lint` and `npm test` before committing.
