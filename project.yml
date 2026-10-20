@@ -2,7 +2,7 @@ type: css-library
 display_name:
   en: Tertium CSS
 summary:
-  en: Universal design system with tokens, themes, components, and utilities
+  en: Universal design system with tokens, themes, components, and utilities.
 keywords:
   - css
   - design system

@@ -1,5 +1,7 @@
 # @tertium/css
 
+Universal design system with tokens, themes, components, and utilities.
+
 A framework-agnostic, universal CSS design system with composable tokens, themes, components, and utilities. Use what you need, nothing more.
 
 Includes design tokens, five switchable themes, layout utilities, and reusable components.
