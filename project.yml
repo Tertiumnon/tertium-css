@@ -1,1 +1,27 @@
 type: css-library
+display_name:
+  en: Tertium CSS
+summary:
+  en: Universal design system with tokens, themes, components, and utilities
+keywords:
+  - css
+  - design system
+  - tokens
+status: stable
+languages:
+  - en
+default_language: en
+code_languages:
+  - CSS
+team:
+  - name: Vitalii Balabanov
+    roles:
+      - owner
+      - developer
+platforms:
+  npm:
+    settings:
+      name: "@tertium/css"
+distribution:
+  - npm
+data_collected: none
