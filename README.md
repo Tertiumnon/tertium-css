@@ -439,17 +439,6 @@ initMultiSelect(document.querySelector(".multi-select"));
 
 See [COMPONENTS.md](docs/COMPONENTS.md) for detailed component API reference.
 
-## Documentation
-
-- [DESIGN_SYSTEM_OVERVIEW.md](docs/DESIGN_SYSTEM_OVERVIEW.md) - Principles and architecture
-- [INSTALLATION.md](docs/INSTALLATION.md) - Detailed setup guide
-- [THEMES.md](docs/THEMES.md) - Theme switching and customization
-- [TOKENS.md](docs/TOKENS.md) - Design token reference (TODO)
-- [COMPONENTS.md](docs/COMPONENTS.md) - Component catalog (TODO)
-- [UTILITIES.md](docs/UTILITIES.md) - Utility class reference (TODO)
-- [STRUCTURE.md](docs/STRUCTURE.md) - Directory organization
-- [Development](docs/DEVELOPMENT.md)
-
 ## Why Tertium CSS?
 
 ✅ **Universal** - Works with any framework (vanilla HTML, React, Angular, Vue)
@@ -484,12 +473,6 @@ CSS custom properties (CSS variables) are supported in all modern browsers.
   }
 }
 ```
-
-## License
-
-MIT
-
----
 
 **Built for universality.** Use Tertium CSS in any project, any framework, any context. It's your design system, simplified.
 
