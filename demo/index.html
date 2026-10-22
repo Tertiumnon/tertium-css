@@ -29,6 +29,10 @@
         <a class="btn btn--sm btn--outline" href="#cards" data-en="Cards">Cards</a>
         <a class="btn btn--sm btn--outline" href="#forms" data-en="Forms">Forms</a>
         <a class="btn btn--sm btn--outline" href="#pagination" data-en="Pagination">Pagination</a>
+        <a class="btn btn--sm btn--outline" href="#feedback" data-en="Feedback">Feedback</a>
+        <a class="btn btn--sm btn--outline" href="#navigation" data-en="Navigation and overlays">Navigation and overlays</a>
+        <a class="btn btn--sm btn--outline" href="#content" data-en="Lists and avatars">Lists and avatars</a>
+        <a class="btn btn--sm btn--outline" href="#controls" data-en="Switches">Switches</a>
         <a class="btn btn--sm btn--outline" href="#utility-colors" data-en="Color utilities">Color utilities</a>
         <a class="btn btn--sm btn--outline" href="#tables" data-en="Tables">Tables</a>
       </div>
@@ -295,6 +299,136 @@
         <button class="btn btn--pagination">Next →</button>
       </div>
     </div>
+
+    <!-- Feedback -->
+    <div class="section mb-6 scroll-mt-20" id="feedback">
+      <h2 data-en="Feedback and status">Feedback and status</h2>
+      <div class="flex flex-col gap-4 my-4">
+        <div class="alert alert--info" role="status">
+          <p class="alert__title">Info</p>
+          <p>Your changes are saved automatically.</p>
+        </div>
+        <div class="alert alert--success" role="status">
+          <p class="alert__title">Success</p>
+          <p>The package was published.</p>
+        </div>
+        <div class="alert alert--warning" role="status">
+          <p class="alert__title">Warning</p>
+          <p>Your session expires soon.</p>
+        </div>
+        <div class="alert alert--danger" role="alert">
+          <p class="alert__title">Danger</p>
+          <p>The file could not be deleted.</p>
+        </div>
+      </div>
+      <div class="progress my-4" role="progressbar" aria-label="Upload progress" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress__bar w-33"></div>
+      </div>
+      <div class="flex flex-wrap items-center gap-2 my-4">
+        <span class="tag">Default</span>
+        <span class="tag tag--accent">Accent</span>
+        <span class="tag tag--outline">Outline</span>
+        <span class="tag">Removable <button type="button" class="tag__remove" aria-label="Remove">×</button></span>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 my-4">
+        <button type="button" class="btn" data-tooltip="Shown on hover and focus">Hover me</button>
+        <span><kbd>Ctrl</kbd> + <kbd>Enter</kbd> runs the script</span>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="section mb-6 scroll-mt-20" id="navigation">
+      <h2 data-en="Navigation and overlays">Navigation and overlays</h2>
+      <nav aria-label="Breadcrumb" class="my-4">
+        <ol class="breadcrumb">
+          <li class="breadcrumb__item"><a href="#">Home</a></li>
+          <li class="breadcrumb__item"><a href="#">Components</a></li>
+          <li class="breadcrumb__item" aria-current="page">Navigation</li>
+        </ol>
+      </nav>
+      <div class="tabs" role="tablist" aria-label="Example tabs">
+        <button type="button" role="tab" class="tab" id="demo-tab-1" aria-controls="demo-panel-1" aria-selected="true">Overview</button>
+        <button type="button" role="tab" class="tab" id="demo-tab-2" aria-controls="demo-panel-2" aria-selected="false" tabindex="-1">Details</button>
+        <button type="button" role="tab" class="tab" id="demo-tab-3" aria-controls="demo-panel-3" aria-selected="false" tabindex="-1" disabled>Locked</button>
+      </div>
+      <div role="tabpanel" class="tab-panel" id="demo-panel-1" aria-labelledby="demo-tab-1">Tabs switch between panels without a page change.</div>
+      <div role="tabpanel" class="tab-panel" id="demo-panel-2" aria-labelledby="demo-tab-2" hidden>Each tab controls one panel with aria-controls.</div>
+      <div role="tabpanel" class="tab-panel" id="demo-panel-3" aria-labelledby="demo-tab-3" hidden>Disabled tabs cannot be selected.</div>
+      <div class="flex flex-wrap gap-2 my-4">
+        <button type="button" class="btn btn--primary" id="open-demo-dialog">Open dialog</button>
+      </div>
+      <dialog class="dialog" id="demo-dialog" aria-labelledby="demo-dialog-title">
+        <div class="dialog__header">
+          <h3 class="dialog__title" id="demo-dialog-title">Confirm</h3>
+          <button type="button" class="btn btn--sm" id="close-demo-dialog" aria-label="Close">×</button>
+        </div>
+        <p>Dialogs are native elements: they trap focus and close with Escape.</p>
+        <div class="dialog__footer">
+          <button type="button" class="btn" id="cancel-demo-dialog">Cancel</button>
+          <button type="button" class="btn btn--primary" id="confirm-demo-dialog">OK</button>
+        </div>
+      </dialog>
+    </div>
+
+    <!-- Content -->
+    <div class="section mb-6 scroll-mt-20" id="content">
+      <h2 data-en="Lists, dividers and avatars">Lists, dividers and avatars</h2>
+      <ul class="list list--bordered my-4">
+        <li class="list__item">First item</li>
+        <li class="list__item">Second item</li>
+        <li class="list__item">Third item</li>
+      </ul>
+      <ul class="list list--interactive my-4">
+        <li class="list__item">Interactive item</li>
+        <li class="list__item">Hover to highlight</li>
+      </ul>
+      <hr class="divider">
+      <div class="flex items-center gap-2 my-4">
+        <span>Left</span>
+        <span class="divider divider--vertical" aria-hidden="true"></span>
+        <span>Right</span>
+      </div>
+      <div class="flex items-center gap-4 my-4">
+        <span class="avatar avatar--sm">VB</span>
+        <span class="avatar">VB</span>
+        <span class="avatar avatar--lg">VB</span>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="section mb-6 scroll-mt-20" id="controls">
+      <h2 data-en="Switches and field hints">Switches and field hints</h2>
+      <label class="switch my-4">
+        <input type="checkbox" role="switch" checked>
+        <span>Notifications</span>
+      </label>
+      <div class="my-4">
+        <label class="form-label" for="demo-username">Username</label>
+        <input id="demo-username" class="form-input" type="text">
+        <p class="form-hint">Letters and digits only.</p>
+      </div>
+    </div>
+
+    <script>
+      // Tabs: one selected tab, and its panel shown.
+      document.querySelectorAll('[role="tab"]').forEach((tab) => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('[role="tab"]').forEach((other) => {
+            const selected = other === tab;
+            other.setAttribute('aria-selected', String(selected));
+            other.tabIndex = selected ? 0 : -1;
+            document.getElementById(other.getAttribute('aria-controls')).hidden = !selected;
+          });
+        });
+      });
+
+      // Dialog: open as modal, close with the buttons or Escape.
+      const dialog = document.getElementById('demo-dialog');
+      document.getElementById('open-demo-dialog').addEventListener('click', () => dialog.showModal());
+      ['close-demo-dialog', 'cancel-demo-dialog', 'confirm-demo-dialog'].forEach((id) =>
+        document.getElementById(id).addEventListener('click', () => dialog.close()),
+      );
+    </script>
 
     <!-- Colors -->
     <div class="section mb-6 scroll-mt-20" id="utility-colors">
