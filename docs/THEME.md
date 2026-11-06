@@ -19,6 +19,7 @@ All themes must follow the naming pattern:
 ### Examples
 
 - `dark.blue--white.theme.css` - Dark theme with navy background and cyan accents
+- `dark.slate--blue.theme.css` - TIII theme with slate background and blue accents
 - `dark.purple--gold.theme.css` - Dark theme with purple background and gold accents
 - `light.white--red.theme.css` - Light theme with white background and red accents
 
