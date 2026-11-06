@@ -37,6 +37,7 @@ document.querySelector("#site-header").innerHTML = `
                 <button class="profile-menu--option" type="button" data-theme-choice="dark--blue--white" aria-pressed="false"><span class="profile-menu--option-label" data-en="Dark Blue & White">Dark Blue & White</span><span aria-hidden="true" hidden>✓</span></button>
                 <button class="profile-menu--option" type="button" data-theme-choice="dark--violet--gold" aria-pressed="false"><span class="profile-menu--option-label" data-en="Dark Violet & Gold">Dark Violet & Gold</span><span aria-hidden="true" hidden>✓</span></button>
                 <button class="profile-menu--option" type="button" data-theme-choice="dark--indigo--gold" aria-pressed="false"><span class="profile-menu--option-label" data-en="Dark Indigo & Gold">Dark Indigo & Gold</span><span aria-hidden="true" hidden>✓</span></button>
+                <button class="profile-menu--option" type="button" data-theme-choice="dark--slate--blue" aria-pressed="false"><span class="profile-menu--option-label" data-en="TIII">TIII</span><span aria-hidden="true" hidden>✓</span></button>
                 <button class="profile-menu--option" type="button" data-theme-choice="light--white--red" aria-pressed="false"><span class="profile-menu--option-label" data-en="Light White & Red">Light White & Red</span><span aria-hidden="true" hidden>✓</span></button>
               </div>
             </div>

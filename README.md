@@ -194,7 +194,7 @@ Combine bundles to get exactly what you need:
 
 ## Theme System
 
-Five built-in themes with runtime switching. Without `data-theme`, the light theme is used.
+Six built-in themes with runtime switching. Without `data-theme`, the light theme is used.
 
 Every theme defines the same variables (`src/themes/*.theme.ts` generates them), so a component written with these variables works under any theme. The theme contract test (`bun test`) checks this, and that the theme names follow `darkness--primary--accent`, for example `dark--indigo--gold`.
 
@@ -218,6 +218,12 @@ Every theme defines the same variables (`src/themes/*.theme.ts` generates them),
 
 ```html
 <html data-theme="dark--blue--white">
+```
+
+### TIII
+
+```html
+<html data-theme="dark--slate--blue">
 ```
 
 ### Light White Red
