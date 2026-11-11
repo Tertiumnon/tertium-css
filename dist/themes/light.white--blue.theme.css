@@ -1,0 +1,208 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* LIGHT WORKSPACE THEME WITH NEUTRAL SURFACES AND BLUE ACTIONS */
+/* All colors derived from TWO base colors: white (primary      */
+/* background) and blue (secondary accent). */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+:root:not([data-theme]), [data-theme="light--white--blue"] {
+  color-scheme: light;
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TWO BASE COLORS - Everything derives from these                 */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  /* PRIMARY: white background */
+  --primary-hue: 218;
+  --primary-sat: 24%;
+  --primary-light: 100%;
+
+  /* ACCENT: blue highlight */
+  --accent-hue: 215;
+  --accent-sat: 90%;
+  --accent-light: 47%;
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* PRIMARY BG COLOR - Variations                                   */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --primary-color--lightest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 6%));
+  --primary-color--lighter: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 4%));
+  --primary-color--light: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 0%));
+  --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-light));
+  --primary-color--dark: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -3%));
+  --primary-color--darker: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -15%));
+  --primary-color--darkest: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -20%));
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* PRIMARY ACCENT COLOR - Variations                               */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --accent-color--lightest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 24%));
+  --accent-color--lighter: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 12%));
+  --accent-color--light: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + 6%));
+  --accent-color: hsl(var(--accent-hue), var(--accent-sat), var(--accent-light));
+  --accent-color--dark: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -6%));
+  --accent-color--darker: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -12%));
+  --accent-color--darkest: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -30%));
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* CONTEXTUAL BACKGROUND COLORS                                    */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --bg-page: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 0%));
+  --bg-card: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 0%));
+  --bg-form: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -3%));
+  --bg-form-input: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 0%));
+  --bg-button: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -3%));
+  --bg-button--hover: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -6%));
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TEXT COLORS - Derived from primary/accent contrast              */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --text-primary: #172b4d;
+  --text-secondary: #5e6c84;
+  --text-on-primary: #172b4d;
+  --text-on-accent: #ffffff;
+  --text-inverse: #ffffff;
+  --text-primary--light: hsl(0, 0%, 75%);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* CODE & PRE BACKGROUND COLORS                                    */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --code-bg: var(--primary-color--darkest);
+  --code-block-bg: var(--primary-color--darkest);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* HEADING COLORS - Use accent                                    */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --heading-color: var(--accent-color);
+  --heading-shadow: hsla(var(--accent-hue), var(--accent-sat), var(--accent-light), 0.25);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* LINK COLORS - Derived from accent                               */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --link-color: var(--accent-color);
+  --link-visited: hsl(var(--accent-hue), calc(var(--accent-sat) - 20%), calc(var(--accent-light) - 10%));
+  --link-hover: var(--accent-color);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* BORDER & SHADOW COLORS                                           */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --border-color: #dfe1e6;
+  --border-color--strong: #b3bac5;
+  --border-color--light: #ebecf0;
+  --shadow-color: rgba(9, 30, 66, 0.12);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* STATUS COLORS - Semantic (independent)                          */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --color-success: #216e4e;
+  --color-warning: #974f0c;
+  --color-danger: #c9372c;
+  --color-info: #0c66e4;
+
+  --color-on-status: #ffffff;
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* PROGRESS & EFFECTS                                               */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --progress-track: hsla(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + 10%), 0.3);
+  --glow: hsla(var(--accent-hue), var(--accent-sat), var(--accent-light), 0.2);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* BACKGROUND GRADIENTS                                             */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --gradient-page: radial-gradient(ellipse at center, var(--primary-color--lighter), var(--primary-color));
+  --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-color--light));
+  --gradient-radial: radial-gradient(circle at center, var(--primary-color--light), var(--primary-color--dark));
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* BUTTON COLORS - Auto-derived from theme                          */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  /* Default button: darker primary bg, text-derived border, default text */
+  --button-default-bg: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-light) + -3%));
+  --button-default-border: var(--text-primary--light);
+  --button-default-text: var(--text-primary);
+  --button-default-bg--hover: hsl(var(--primary-hue), var(--primary-sat), 89%);
+  --button-default-border--hover: var(--text-primary--light);
+  --button-default-text--hover: var(--text-primary);
+
+  /* Primary button: accent bg, darker accent border, text-on-accent */
+  --button-primary-bg: var(--accent-color);
+  --button-primary-border: var(--accent-color--dark);
+  --button-primary-text: var(--text-on-accent);
+  --button-primary-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 39%);
+  --button-primary-border--hover: hsl(var(--accent-hue), var(--accent-sat), 39%);
+  --button-primary-text--hover: var(--text-on-accent);
+
+  /* Outline button: transparent bg, accent border, accent text */
+  --button-outline-bg: transparent;
+  --button-outline-border: var(--accent-color);
+  --button-outline-text: var(--accent-color);
+  --button-outline-bg--hover: transparent;
+  --button-outline-border--hover: hsl(var(--accent-hue), var(--accent-sat), 39%);
+  --button-outline-text--hover: hsl(var(--accent-hue), var(--accent-sat), 39%);
+
+  /* Submit button: accent bg, darker accent border, text-on-accent */
+  --button-submit-bg: var(--accent-color);
+  --button-submit-border: var(--accent-color--dark);
+  --button-submit-text: var(--text-on-accent);
+  --button-submit-bg--hover: hsl(var(--accent-hue), var(--accent-sat), 39%);
+  --button-submit-border--hover: hsl(var(--accent-hue), var(--accent-sat), 39%);
+  --button-submit-text--hover: var(--text-on-accent);
+
+  /* Borderless button: no border, accent text */
+  --button-text-color: var(--accent-color);
+  --button-text-bg--hover: hsl(var(--accent-hue), var(--accent-sat), calc(var(--accent-light) + -15%), 0.1);
+  --button-text-color--hover: var(--accent-color--dark);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* SECTION BACKGROUND - Theme-aware                                  */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --section-bg: var(--primary-color--dark);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TABLE HEADER BACKGROUND - Theme-aware                             */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --table-header-bg: var(--primary-color--darker);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* NAVBAR & MENU BACKGROUND - Theme-aware                           */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --navbar-bg: hsla(var(--primary-hue), var(--primary-sat), 98%, 0.98);
+  --menu-bg: var(--bg-card);
+  --menu-text: var(--text-primary);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TABLE CELL BACKGROUND - Theme-aware with opacity                 */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --table-cell-bg: hsla(var(--primary-hue), var(--primary-sat), var(--primary-light), 0.3);
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TABLE BORDER COLOR - Theme-aware                                 */
+  /* ═══════════════════════════════════════════════════════════════ */
+
+  --table-border-color: var(--border-color--strong);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* BODY STYLING                                                         */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+:root:not([data-theme]), [data-theme="light--white--blue"] body {
+  background: var(--gradient-page);
+  color: var(--text-primary);
+  position: relative;
+}

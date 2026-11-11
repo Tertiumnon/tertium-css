@@ -1,6 +1,21 @@
 import { expect, test } from "bun:test";
 import { readdirSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
+import { theme as workspaceTheme } from "../src/themes/light.white--blue.theme";
+
+const luminance = (hex: string): number => {
+  const channels = [1, 3, 5].map((offset): number => {
+    const value = Number.parseInt(hex.slice(offset, offset + 2), 16) / 255;
+    return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+  });
+  return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+};
+
+test("White Blue workspace text and blue actions meet normal text contrast on white", (): void => {
+  for (const color of [workspaceTheme["text-colors"].primary, workspaceTheme["text-colors"].secondary, workspaceTheme.status.info]) {
+    expect((luminance("#ffffff") + 0.05) / (luminance(color) + 0.05)).toBeGreaterThanOrEqual(4.5);
+  }
+});
 
 // Theme contract: every theme defines the same variables, is named the same way, and every
 // component only uses variables that a theme (or the shared tokens) define. That is what makes

@@ -8,7 +8,7 @@
     "build": "bun run theme:generate:all && bun scripts/build/build.ts && bun run theme:vscode",
     "theme:vscode": "bun scripts/theme/vscode/vscode.ts",
     "theme:generate": "bun scripts/theme/generate/generate.ts",
-    "theme:generate:all": "bun theme:generate dark.blue--white && bun theme:generate dark.purple--gold && bun theme:generate dark.violet--gold && bun theme:generate light.white--red && bun theme:generate dark.indigo--gold && bun theme:generate dark.slate--blue",
+    "theme:generate:all": "bun theme:generate dark.blue--white && bun theme:generate dark.purple--gold && bun theme:generate dark.violet--gold && bun theme:generate light.white--red && bun theme:generate dark.indigo--gold && bun theme:generate dark.slate--blue && bun theme:generate light.white--blue",
     "lint": "prettier --check 'src/{bundles,components,form,system,utilities}/**/*.css'",
     "lint:css:fix": "prettier --write 'src/{bundles,components,form,system,utilities}/**/*.css'",
     "test": "bun test",
@@ -143,7 +143,10 @@
     "./utilities/spacing.min.css": "./dist/utilities/spacing.min.css",
     "./utilities/typography": "./dist/utilities/typography.min.css",
     "./utilities/typography.css": "./dist/utilities/typography.css",
-    "./utilities/typography.min.css": "./dist/utilities/typography.min.css"
+    "./utilities/typography.min.css": "./dist/utilities/typography.min.css",
+    "./light.white--blue.theme": "./dist/themes/light.white--blue.theme.min.css",
+    "./dist/themes/light.white--blue.theme.css": "./dist/themes/light.white--blue.theme.css",
+    "./dist/themes/light.white--blue.theme.min.css": "./dist/themes/light.white--blue.theme.min.css"
   },
   "files": [
     "dist/",

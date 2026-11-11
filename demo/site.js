@@ -387,6 +387,7 @@ try {
       "dark--indigo--gold",
       "dark--slate--blue",
       "light--white--red",
+      "light--white--blue",
     ].includes(savedTheme)
   ) {
     document.documentElement.dataset.theme = savedTheme;

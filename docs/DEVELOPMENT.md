@@ -5,7 +5,7 @@
 ```
 src/
 ├── system/                  # Design tokens and base styles
-├── themes/                  # Four theme presets and generator configs
+├── themes/                  # Theme presets and generator configs
 ├── form/                    # Form controls and multiselect behavior
 ├── components/              # Pre-built components (buttons, cards, navigation)
 ├── utilities/               # Utility classes (spacing, display, colors, etc.)
@@ -24,7 +24,8 @@ dist/
 │   ├── dark.purple--gold.theme.min.css
 │   ├── dark.violet--gold.theme.min.css
 │   ├── dark.blue--white.theme.min.css
-│   └── light.white--red.theme.min.css
+│   ├── light.white--red.theme.min.css
+│   └── light.white--blue.theme.min.css
 ├── components/              # Individual component files
 ├── form/                    # Individual form files
 ├── system/                  # Base styles and tokens

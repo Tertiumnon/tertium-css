@@ -797,3 +797,7 @@ The theme system automatically assigns the correct variations:
 4. **Theme Agnostic**: Works identically across light and dark themes
 5. **Scalable**: Adding new themes automatically includes correct code colors
 6. **Accessible**: Maximum contrast for code readability without custom CSS
+
+### Light White & Blue workspace preset
+
+`light.white--blue.theme.ts` defines neutral workspace surfaces, slate text and blue actions. Use `data-theme="light--white--blue"` and import `@tertium/css/light.white--blue.theme`. Headings follow the existing accent contract; workspace applications can use `--text-primary` for neutral page titles. The default light theme remains White & Red.
