@@ -14,9 +14,9 @@
     "test": "bun test",
     "hooks:install": "bun node_modules/@tertium/js/scripts/git-hooks/git-hooks.ts",
     "workflow:publish": "bun node_modules/@tertium/js/scripts/npm-publish-workflow/npm-publish-workflow.ts",
-    "release:patch": "npx @tertium/gith release --patch",
-    "release:minor": "npx @tertium/gith release --minor",
-    "release:major": "npx @tertium/gith release --major",
+    "release:patch": "npx @tertium/gith@0.5.0 release --patch --update-version --npm",
+    "release:minor": "npx @tertium/gith@0.5.0 release --minor --update-version --npm",
+    "release:major": "npx @tertium/gith@0.5.0 release --major --update-version --npm",
     "prepare": "git config core.hooksPath .githooks",
     "changelog": "npx @tertium/gith changelog"
   },
